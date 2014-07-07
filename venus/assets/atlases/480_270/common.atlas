@@ -1,0 +1,61 @@
+
+common.png
+format: RGBA8888
+filter: MipMapLinearNearest,Linear
+repeat: none
+cutter.charging
+  rotate: false
+  xy: 1, 8
+  size: 49, 31
+  orig: 49, 31
+  offset: 0, 0
+  index: 1
+cutter.charging
+  rotate: false
+  xy: 52, 8
+  size: 49, 31
+  orig: 49, 31
+  offset: 0, 0
+  index: 2
+cutter.charging
+  rotate: false
+  xy: 103, 8
+  size: 49, 31
+  orig: 49, 31
+  offset: 0, 0
+  index: 3
+cutter.inventory
+  rotate: false
+  xy: 154, 1
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+diosa.inventory
+  rotate: false
+  xy: 194, 1
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+navaja.inventory
+  rotate: false
+  xy: 234, 1
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+diosa
+  rotate: false
+  xy: 274, 4
+  size: 21, 35
+  orig: 21, 35
+  offset: 0, 0
+  index: -1
+cutter.withcable
+  rotate: false
+  xy: 297, 14
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1

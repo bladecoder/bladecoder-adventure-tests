@@ -1,0 +1,304 @@
+
+policeman.png
+format: RGBA8888
+filter: Linear,Nearest
+repeat: none
+turn.left
+  rotate: false
+  xy: 1, 2577
+  size: 579, 854
+  orig: 579, 854
+  offset: 0, 0
+  index: 1
+turn.left
+  rotate: false
+  xy: 582, 2577
+  size: 579, 854
+  orig: 579, 854
+  offset: 0, 0
+  index: 2
+turn.left
+  rotate: false
+  xy: 1163, 2576
+  size: 579, 855
+  orig: 579, 855
+  offset: 0, 0
+  index: 8
+turn.left
+  rotate: false
+  xy: 1744, 2576
+  size: 579, 855
+  orig: 579, 855
+  offset: 0, 0
+  index: 9
+turn.left
+  rotate: false
+  xy: 2325, 2576
+  size: 579, 855
+  orig: 579, 855
+  offset: 0, 0
+  index: 10
+turn.left
+  rotate: false
+  xy: 2906, 2576
+  size: 576, 855
+  orig: 576, 855
+  offset: 0, 0
+  index: 11
+stand.frontleft
+  rotate: false
+  xy: 3484, 2575
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: -1
+fall
+  rotate: false
+  xy: 1, 1719
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 1
+fall
+  rotate: false
+  xy: 988, 1718
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 2
+fall
+  rotate: false
+  xy: 1975, 1718
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 3
+fall
+  rotate: false
+  xy: 2962, 1717
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 4
+fall
+  rotate: false
+  xy: 1, 861
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 5
+fall
+  rotate: false
+  xy: 988, 860
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 6
+fall
+  rotate: false
+  xy: 1975, 860
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 7
+fall
+  rotate: false
+  xy: 2962, 859
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 8
+fall
+  rotate: false
+  xy: 1, 3
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 9
+fall
+  rotate: false
+  xy: 988, 2
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 10
+fall
+  rotate: false
+  xy: 1975, 2
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 11
+fall
+  rotate: false
+  xy: 2962, 1
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 12
+
+policeman2.png
+format: RGBA8888
+filter: Linear,Nearest
+repeat: none
+fall
+  rotate: false
+  xy: 1, 1717
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 13
+fall
+  rotate: false
+  xy: 1, 859
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 14
+fall
+  rotate: false
+  xy: 988, 1717
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 15
+fall
+  rotate: false
+  xy: 1, 1
+  size: 985, 856
+  orig: 985, 856
+  offset: 0, 0
+  index: 16
+talk.left
+  rotate: false
+  xy: 988, 859
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 1
+talk.left
+  rotate: false
+  xy: 1975, 1717
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 2
+talk.left
+  rotate: false
+  xy: 1975, 1717
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 11
+talk.left
+  rotate: false
+  xy: 988, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 3
+talk.left
+  rotate: false
+  xy: 988, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 13
+talk.left
+  rotate: false
+  xy: 1569, 859
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 4
+talk.left
+  rotate: false
+  xy: 1569, 859
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 5
+talk.left
+  rotate: false
+  xy: 2556, 1717
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 6
+talk.left
+  rotate: false
+  xy: 1569, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 7
+talk.left
+  rotate: false
+  xy: 1569, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 8
+talk.left
+  rotate: false
+  xy: 1569, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 9
+talk.left
+  rotate: false
+  xy: 1569, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 12
+talk.left
+  rotate: false
+  xy: 2150, 859
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 10
+talk.left
+  rotate: false
+  xy: 3137, 1717
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 14
+turn.left
+  rotate: false
+  xy: 2150, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 3
+turn.left
+  rotate: false
+  xy: 2731, 859
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 4
+turn.left
+  rotate: false
+  xy: 2731, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 5
+turn.left
+  rotate: false
+  xy: 3312, 859
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 6
+turn.left
+  rotate: false
+  xy: 3312, 1
+  size: 579, 856
+  orig: 579, 856
+  offset: 0, 0
+  index: 7

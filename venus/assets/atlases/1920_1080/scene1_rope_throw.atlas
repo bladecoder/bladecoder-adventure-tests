@@ -1,0 +1,152 @@
+
+scene1_rope_throw.png
+format: RGBA8888
+filter: Linear,Nearest
+repeat: none
+rope.throw
+  rotate: false
+  xy: 1, 3007
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 1
+rope.throw
+  rotate: false
+  xy: 1, 2005
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 2
+rope.throw
+  rotate: false
+  xy: 673, 3007
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 3
+rope.throw
+  rotate: false
+  xy: 1, 1003
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 4
+rope.throw
+  rotate: false
+  xy: 673, 2005
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 5
+rope.throw
+  rotate: false
+  xy: 1345, 3007
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 6
+rope.throw
+  rotate: false
+  xy: 1, 1
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 7
+rope.throw
+  rotate: false
+  xy: 673, 1003
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 8
+rope.throw
+  rotate: false
+  xy: 1345, 2005
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 9
+rope.throw
+  rotate: false
+  xy: 2017, 3007
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 10
+rope.throw
+  rotate: false
+  xy: 673, 1
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 11
+rope.throw
+  rotate: false
+  xy: 1345, 1003
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 12
+rope.throw
+  rotate: false
+  xy: 2017, 2005
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 13
+rope.throw
+  rotate: false
+  xy: 2689, 3007
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 14
+rope.throw
+  rotate: false
+  xy: 1345, 1
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 15
+rope.throw
+  rotate: false
+  xy: 2017, 1003
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 16
+rope.throw
+  rotate: false
+  xy: 2689, 2005
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 17
+rope.throw
+  rotate: false
+  xy: 3361, 3007
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 18
+rope.throw
+  rotate: false
+  xy: 2017, 1
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 19
+rope.throw
+  rotate: false
+  xy: 2689, 1003
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 20
+rope.throw
+  rotate: false
+  xy: 3361, 2005
+  size: 670, 1000
+  orig: 670, 1000
+  offset: 0, 0
+  index: 21

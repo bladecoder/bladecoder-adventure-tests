@@ -1,0 +1,176 @@
+[
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.6489992,
+	actorId: forward,
+	verb: leave
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 3.7279983,
+	actorId: chair,
+	verb: lookat
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 1.4979999,
+	actorId: chair,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 6.0390024,
+	actorId: chair,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 4.592998,
+	actorId: chair,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 3.776998,
+	actorId: chair,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 1.9139998,
+	pos: {
+		x: 1179,
+		y: 198
+	}
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.2959995,
+	pos: {
+		x: 775,
+		y: 198
+	}
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.546999,
+	actorId: cable,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 3.6609983,
+	actorId: cable,
+	target: navaja,
+	verb: use
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 3.910998,
+	actorId: cutter,
+	target: diosa,
+	verb: use
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 5.656,
+	actorId: cutter,
+	target: cable,
+	verb: use
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.2789993,
+	actorId: cutter,
+	target: socket,
+	verb: use
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 18.105057,
+	actorId: cutter,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 6.818004,
+	actorId: cutter,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.5619993,
+	actorId: cutter,
+	target: diosa,
+	verb: use
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 6.955003,
+	actorId: diosa,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 1.748,
+	pos: {
+		x: 1904,
+		y: 197
+	}
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.795999,
+	actorId: rope,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 4.058998,
+	actorId: rope,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 3.5149984,
+	actorId: rope,
+	target: chair,
+	verb: use
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 1.6609999,
+	actorId: rope,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 3.0649989,
+	actorId: rope,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 15.254024,
+	actorId: policeman,
+	verb: talkto
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.6289992,
+	dialogOption: 2
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 5.391,
+	actorId: diosa,
+	verb: pickup
+},
+{
+	class: org.bladecoder.engine.ui.Recorder$TimeVerb,
+	time: 2.5629992,
+	actorId: diosa,
+	target: policeman,
+	verb: use
+}
+]

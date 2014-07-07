@@ -1,0 +1,304 @@
+
+policeman.png
+format: RGBA8888
+filter: MipMapLinearNearest,Linear
+repeat: none
+fall
+  rotate: false
+  xy: 1, 649
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 1
+fall
+  rotate: false
+  xy: 1, 433
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 2
+fall
+  rotate: false
+  xy: 249, 649
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 3
+fall
+  rotate: false
+  xy: 1, 217
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 4
+fall
+  rotate: false
+  xy: 249, 433
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 5
+fall
+  rotate: false
+  xy: 497, 649
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 6
+fall
+  rotate: false
+  xy: 1, 1
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 7
+fall
+  rotate: false
+  xy: 249, 217
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 8
+fall
+  rotate: false
+  xy: 497, 433
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 9
+fall
+  rotate: false
+  xy: 745, 649
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 10
+fall
+  rotate: false
+  xy: 249, 1
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 11
+fall
+  rotate: false
+  xy: 497, 217
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 12
+fall
+  rotate: false
+  xy: 745, 433
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 13
+fall
+  rotate: false
+  xy: 497, 1
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 14
+fall
+  rotate: false
+  xy: 745, 217
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 15
+fall
+  rotate: false
+  xy: 745, 1
+  size: 246, 214
+  orig: 246, 214
+  offset: 0, 0
+  index: 16
+
+policeman2.png
+format: RGBA8888
+filter: MipMapLinearNearest,Linear
+repeat: none
+stand.frontleft
+  rotate: false
+  xy: 1, 649
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: -1
+talk.left
+  rotate: false
+  xy: 1, 433
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 1
+talk.left
+  rotate: false
+  xy: 148, 649
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 2
+talk.left
+  rotate: false
+  xy: 148, 649
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 11
+talk.left
+  rotate: false
+  xy: 1, 217
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 3
+talk.left
+  rotate: false
+  xy: 1, 217
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 13
+talk.left
+  rotate: false
+  xy: 148, 433
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 4
+talk.left
+  rotate: false
+  xy: 148, 433
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 5
+talk.left
+  rotate: false
+  xy: 295, 649
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 6
+talk.left
+  rotate: false
+  xy: 1, 1
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 7
+talk.left
+  rotate: false
+  xy: 1, 1
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 8
+talk.left
+  rotate: false
+  xy: 1, 1
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 9
+talk.left
+  rotate: false
+  xy: 1, 1
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 12
+talk.left
+  rotate: false
+  xy: 148, 217
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 10
+talk.left
+  rotate: false
+  xy: 295, 433
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 14
+turn.left
+  rotate: false
+  xy: 442, 649
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 1
+turn.left
+  rotate: false
+  xy: 148, 1
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 2
+turn.left
+  rotate: false
+  xy: 295, 217
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 3
+turn.left
+  rotate: false
+  xy: 442, 433
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 4
+turn.left
+  rotate: false
+  xy: 589, 649
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 5
+turn.left
+  rotate: false
+  xy: 295, 1
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 6
+turn.left
+  rotate: false
+  xy: 442, 217
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 7
+turn.left
+  rotate: false
+  xy: 589, 433
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 8
+turn.left
+  rotate: false
+  xy: 442, 1
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 9
+turn.left
+  rotate: false
+  xy: 589, 217
+  size: 145, 214
+  orig: 145, 214
+  offset: 0, 0
+  index: 10
+turn.left
+  rotate: false
+  xy: 589, 1
+  size: 144, 214
+  orig: 144, 214
+  offset: 0, 0
+  index: 11

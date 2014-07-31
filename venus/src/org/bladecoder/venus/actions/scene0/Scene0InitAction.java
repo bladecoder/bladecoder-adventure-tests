@@ -6,14 +6,18 @@ import org.bladecoder.engine.actions.Action;
 import org.bladecoder.engine.actions.ActionCallback;
 import org.bladecoder.engine.actions.Param;
 import org.bladecoder.engine.actions.Param.Type;
-import org.bladecoder.engine.model.OverlayImage;
+import org.bladecoder.engine.anim.FrameAnimation;
+import org.bladecoder.engine.assets.EngineAssetManager;
+import org.bladecoder.engine.model.ImageRenderer;
+import org.bladecoder.engine.model.SpriteActor;
 import org.bladecoder.engine.model.Text;
 import org.bladecoder.engine.model.TextManager;
 import org.bladecoder.engine.model.World;
+import org.bladecoder.engine.model.Actor.ActorLayer;
 import org.bladecoder.engine.util.EngineLogger;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Polygon;
 
 public class Scene0InitAction implements Action, ActionCallback {
 	
@@ -58,15 +62,25 @@ public class Scene0InitAction implements Action, ActionCallback {
 		switch(state) {
 		case INIT_STATE:
 			
-			World.getInstance().getCurrentScene().getActor("forward")
+			World.getInstance().getCurrentScene().getActor("forward", false)
 			.setInteraction(false);			
 			
-			OverlayImage o = new OverlayImage();
-			
-			o.create(titleFilename, new Vector2(0,0), 20, false, null);
-			
-			World.getInstance().getCurrentScene().setOverlay(o);
-					
+			SpriteActor a = new SpriteActor();
+			ImageRenderer r = new ImageRenderer();
+			FrameAnimation fa = new FrameAnimation();
+			fa.source = titleFilename;
+			fa.id = titleFilename;
+			r.addFrameAnimation(fa);
+			a.setLayer(ActorLayer.FOREGROUND);
+			a.setRenderer(r);
+			a.setVisible(true);
+			a.setInteraction(false);
+			a.setBbox(new Polygon());
+			a.setBboxFromRenderer(true);
+			a.startFrameAnimation(fa.id, null);
+			a.setPosition(1920/2 * EngineAssetManager.getInstance().getScale(), 0);
+			World.getInstance().getCurrentScene().addActor(a);
+							
 			World.getInstance().addTimer(TITLE_TIME, this);
 			state = TITLE_STATE;
 			break;

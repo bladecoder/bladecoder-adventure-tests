@@ -9,15 +9,15 @@
 
 
 	<verb id="leave">
-		<action action_name="leave"  target="scene1"/>
+		<action action_name="leave" scene="scene1"/>
 	</verb>
 
-	<actor desc="@forward.desc" id="forward" pos="1800,47" type="atlas">
+	<actor desc="@forward.desc" id="forward" pos="1800,47" type="atlas" layer="dynamic" >
 
 		<frame_animation id="forward" source="scene0"/>
 
 		<verb id="leave">
-			<action action_name="leave"  target="scene1"/>
+			<action action_name="leave" scene="scene1"/>
 		</verb>
 
 
@@ -28,21 +28,21 @@
 <scene background="bg1.jpg" depth_vector="1.0,0.5" id="scene1" initial_music_delay="30" music="scn1.ogg" player="player" repeat_music_delay="90">
 
 
-	<actor id="column_fg" interaction="false" pos="160,0" type="foreground">
+	<actor id="column_fg" interaction="false" pos="160,0" type="atlas" layer="foreground" >
 		<frame_animation id="column_fg" source="scene1"/>
 	</actor>
 
 
-	<actor id="head_fg" interaction="false" pos="2727.276,-0.62638855" type="foreground">
+	<actor id="head_fg" interaction="false" pos="2727.276,-0.62638855" type="atlas" layer="foreground" >
 		<frame_animation id="head_fg" source="scene1"/>
 	</actor>
 
-	<actor id="cabinet_off" interaction="false" pos="384.79813,467.20212" type="atlas" visible="false">
+	<actor id="cabinet_off" interaction="false" pos="384.79813,467.20212" type="atlas" layer="dynamic"  visible="false">
 		<frame_animation id="cabinet_off" source="scene1"/>
 	</actor>
 
 
-	<actor bbox="11.970032,35.910156,0.0,100.0,100.0,100.0,107.18201,43.092316" desc="@placa.desc" id="placa" pos="844.2892,466.03485" type="background">
+	<actor bbox="11.970032,35.910156,0.0,100.0,100.0,100.0,107.18201,43.092316" desc="@placa.desc" id="placa" pos="844.2892,466.03485" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			
@@ -57,7 +57,7 @@
 
 	</actor>
 
-	<actor bbox="2.394165,-67.03241,0.0,100.0,83.2417,83.24176,83.60376,-21.738464,66.48364,-47.88031" desc="@papelera.desc" id="papelera" pos="1769.9749,608.0798" type="background">
+	<actor bbox="2.394165,-67.03241,0.0,100.0,83.2417,83.24176,83.60376,-21.738464,66.48364,-47.88031" desc="@papelera.desc" id="papelera" pos="1769.9749,608.0798" type="no_renderer" layer="dynamic" >
 		<verb id="lookat">
 			
 				<action action_name="set_cutmode" value="true"/>
@@ -72,7 +72,7 @@
 		</verb>
 	</actor>
 
-	<actor bbox="-15.960083,-422.94275,16.572266,-337.66803,24.84021,-315.99585,-12.12384,-135.72235,-1.6645508,-28.39038,27.268433,14.341614,30.324219,98.40405,125.53613,92.0199,115.960205,-427.7307" desc="@estatua.desc" id="estatua" pos="1029.4265,948.03" type="background">
+	<actor bbox="-15.960083,-422.94275,16.572266,-337.66803,24.84021,-315.99585,-12.12384,-135.72235,-1.6645508,-28.39038,27.268433,14.341614,30.324219,98.40405,125.53613,92.0199,115.960205,-427.7307" desc="@estatua.desc" id="estatua" pos="1029.4265,948.03" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			<action action_name="lookat" text="@estatua.lookat.0.text"/>
@@ -84,7 +84,7 @@
 
 	</actor>
 
-	<actor desc="@chair.desc" id="chair" pos="2330,510" state="SIT0" type="atlas">
+	<actor desc="@chair.desc" id="chair" pos="2330,510" state="SIT0" type="atlas" layer="dynamic" >
 
 		<frame_animation id="chair2" source="scene1"/>
 		<frame_animation id="chair.inventory" sound="click" source="scene1"/>
@@ -170,7 +170,7 @@
 
 	</actor>
 
-	<actor bbox="14.364136,-452.4688,10.901123,-319.27582,0.0,100.0,516.5586,104.787964,504.5885,-457.25696" desc="@vasijas.desc" id="vasijas" pos="1260.3755,976.75775" type="background">
+	<actor bbox="14.364136,-452.4688,10.901123,-319.27582,0.0,100.0,516.5586,104.787964,504.5885,-457.25696" desc="@vasijas.desc" id="vasijas" pos="1260.3755,976.75775" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			<action action_name="lookat" text="@vasijas.lookat.0.text"/>
@@ -178,7 +178,7 @@
 
 	</actor>
 
-	<actor bbox="0.0,-172.36902,0.0,100.0,269.97504,88.02991,248.42896,-155.61108" desc="@cuadro.desc" id="cuadro" pos="629.62585,924.0898" type="background">
+	<actor bbox="0.0,-172.36902,0.0,100.0,269.97504,88.02991,248.42896,-155.61108" desc="@cuadro.desc" id="cuadro" pos="629.62585,924.0898" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			<action action_name="lookat" text="@cuadro.lookat.0.text"/>
@@ -189,7 +189,7 @@
 		</verb>
 	</actor>
 
-	<actor bbox="-119.700745,-26.334167,-164.38904,528.52875,88.82794,547.6809,155.06235,151.62097" desc="@vitrina.desc" id="vitrina" pos="406.98236,314.41382" type="background">
+	<actor bbox="-119.700745,-26.334167,-164.38904,528.52875,88.82794,547.6809,155.06235,151.62097" desc="@vitrina.desc" id="vitrina" pos="406.98236,314.41382" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			<action action_name="lookat" text="@vitrina.lookat.0.text"/>
@@ -197,7 +197,7 @@
 
 	</actor>
 
-	<actor desc="@cable.desc" id="cable" pos="582.39404,532.6405" state="CONNECTED" type="atlas">
+	<actor desc="@cable.desc" id="cable" pos="582.39404,532.6405" state="CONNECTED" type="atlas" layer="dynamic" >
 
 		<frame_animation id="cable.connected" source="scene1"/>
 		<frame_animation id="cable.disconnected" source="scene1"/>
@@ -237,7 +237,7 @@
 
 	</actor>
 
-	<actor bbox="-9.57605,14.364075,0.0,100.0,145.4862,92.81799,143.09229,9.57605" desc="@libro.desc" id="libro" pos="1867.3315,806.7831" type="background">
+	<actor bbox="-9.57605,14.364075,0.0,100.0,145.4862,92.81799,143.09229,9.57605" desc="@libro.desc" id="libro" pos="1867.3315,806.7831" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			<action action_name="lookat" text="@libro.lookat.0.text"/>
@@ -248,7 +248,7 @@
 		</verb>
 	</actor>
 
-	<actor desc="@rope.desc" id="rope" pos="2150,102" type="atlas">
+	<actor desc="@rope.desc" id="rope" pos="2150,102" type="atlas" layer="dynamic" >
 
 		<frame_animation id="rope" source="scene1"/>
 		<frame_animation id="rope2" source="scene1"/>
@@ -272,9 +272,9 @@
 				<action action_name="set_cutmode" value="true"/>
 				<action action_name="say" text="@rope.pickup.WITH_GODDESS.0.1.text" wait="false"/>
 				<action action_name="goto" actor="player" pos="2270,12"/>
-				<action action_name="set_active" actor="player" value="false"/>
+				<action action_name="set_active" actor="player" visible="false"/>
 				<action action_name="set_frame_animation" frame_animation="rope.fall"/>
-				<action action_name="set_active" actor="player" value="true"/>
+				<action action_name="set_active" actor="player" visible="true"/>
 				<action action_name="set_frame_animation" frame_animation="rope.floor"/>
 				<action action_name="set_state" state="FALL"/>
 				<action action_name="set_cutmode" value="false"/>
@@ -311,10 +311,10 @@
 			
 				<action action_name="set_cutmode" value="true"/>
 				<action action_name="goto" actor="player" pos="2270,12"/>
-				<action action_name="set_active" actor="player" value="false"/>
+				<action action_name="set_active" actor="player" visible="false"/>
 				<action action_name="drop_item"  pos="2150, 102"/>
 				<action action_name="set_frame_animation" frame_animation="rope.throw"/>
-				<action action_name="set_active" actor="player" value="true"/>
+				<action action_name="set_active" actor="player" visible="true"/>
 				<action action_name="set_frame_animation" frame_animation="rope2"/>
 				<action action_name="set_state" state="ANCHORED"/>
 				<action action_name="set_cutmode" value="false"/>
@@ -326,22 +326,22 @@
 			
 				<action action_name="set_cutmode" value="true"/>
 				<action action_name="goto" actor="player" pos="2270,12"/>
-				<action action_name="set_active" actor="player" value="false"/>
+				<action action_name="set_active" actor="player" visible="false"/>
 				<action action_name="set_frame_animation" frame_animation="rope.up"/>
 				<action action_name="set_cutmode" value="false"/>
-				<action action_name="leave"  target="scene2"/>
+				<action action_name="leave" scene="scene2"/>
 			
 		</verb>
 
 	</actor>
 
-	<actor id="hole" interaction="false" pos="887,587" type="atlas" visible="false">
+	<actor id="hole" interaction="false" pos="887,587" type="atlas" layer="dynamic"  visible="false">
 
 		<frame_animation id="hole" source="scene1"/>
 
 	</actor>
 
-	<actor bbox="1.5959473,74.21448,0.0,100.0,40.149597,100.0,40.94763,75.810425" desc="@socket.desc" id="socket" pos="589.7257,550.6234" type="background">
+	<actor bbox="1.5959473,74.21448,0.0,100.0,40.149597,100.0,40.94763,75.810425" desc="@socket.desc" id="socket" pos="589.7257,550.6234" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			<action action_name="lookat" text="@socket.lookat.0.text"/>
@@ -353,7 +353,7 @@
 
 	</actor>
 
-	<actor desc="@diosa.desc" id="diosa" pos="905,594.5609" type="atlas">
+	<actor desc="@diosa.desc" id="diosa" pos="905,594.5609" type="atlas" layer="dynamic" >
 
 		<frame_animation id="diosa" source="common"/>
 		<frame_animation id="diosa.inventory" source="common"/>
@@ -456,14 +456,14 @@
 				<action action_name="say" text="@diosa.use.INVENTORY.policeman.0.12.text" wait="true"/>
 				<action action_name="wait" time="2"/>
 				<action action_name="remove_inventory_item"/>
-				<action action_name="leave"  target="endSCN"/>
+				<action action_name="leave" scene="endSCN"/>
 			
 		</verb>
 
 	</actor>
 
 
-	<actor desc="@navaja.desc" id="navaja" pos="0,0" type="atlas">
+	<actor desc="@navaja.desc" id="navaja" pos="0,0" type="atlas" layer="dynamic" >
 
 		<frame_animation id="navaja.inventory" source="common"/>
 
@@ -487,7 +487,7 @@
 	</actor>
 
 
-	<actor desc="@cutter.desc" id="cutter" pos="-17.97754,-5.393219" state="WITH_LOW_BATTERY" type="atlas">
+	<actor desc="@cutter.desc" id="cutter" pos="-17.97754,-5.393219" state="WITH_LOW_BATTERY" type="atlas" layer="dynamic" >
 
 		<frame_animation id="cutter.inventory" source="common"/>
 		<frame_animation id="cutter.withcable" sound="click" source="common"/>
@@ -585,7 +585,7 @@
 
 
 
-	<actor depth_type="vector" desc="@player.desc" id="player" pos="2320.8765,61.886017" type="atlas">
+	<actor depth_type="vector" desc="@player.desc" id="player" pos="2320.8765,61.886017" type="atlas" layer="dynamic" >
 
 		<frame_animation id="stand.left" source="player"/>
 		<frame_animation id="stand.back" source="player"/>
@@ -613,10 +613,10 @@
 			<action action_name="pickup" actor="navaja"/>
 			<action action_name="pickup" actor="cutter"/>
 
-			<action action_name="set_active" actor="player" value="false"/>
+			<action action_name="set_active" actor="player" visible="false"/>
 			<action action_name="set_cutmode" value="true"/>
 			<action action_name="set_frame_animation" actor="rope" frame_animation="rope.down" x="2294" y="83"/>
-			<action action_name="set_active" actor="player" value="true"/>
+			<action action_name="set_active" actor="player" visible="true"/>
 			<action action_name="set_frame_animation" actor="player" frame_animation="stand.left"/>
 			<action action_name="set_frame_animation" actor="rope" frame_animation="rope" x="2115" y="83"/>
 			<action action_name="set_cutmode" inventory="true" value="false"/>
@@ -633,7 +633,7 @@
 
 <scene background="bg2.jpg" depth_vector="1.0,0.01" id="scene2" music="scn2.ogg" player="player">
 
-	<actor depth_type="vector" desc="@player.desc" id="player" pos="579.5643,62.69055" type="atlas">
+	<actor depth_type="vector" desc="@player.desc" id="player" pos="579.5643,62.69055" type="atlas" layer="dynamic" >
 
 		<frame_animation id="stand.frontright" source="player_down"/>
 
@@ -669,7 +669,7 @@
 		</verb>
 	</actor>
 
-	<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" pos="1329.5884,0.0" type="atlas" width="320" x="-70" y="0">
+	<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" pos="1329.5884,0.0" type="atlas" layer="dynamic"  width="320" x="-70" y="0">
 
 		<frame_animation id="stand.frontleft" source="policeman"/>
 
@@ -736,7 +736,7 @@
 
 	</actor>
 
-	<actor bbox="106.924866,74.38257,102.27606,299.9031,253.414,290.60538,248.7652,88.32922" desc="@electricbox.desc" id="electricbox" pos="897.23975,255.69016" type="background">
+	<actor bbox="106.924866,74.38257,102.27606,299.9031,253.414,290.60538,248.7652,88.32922" desc="@electricbox.desc" id="electricbox" pos="897.23975,255.69016" type="no_renderer" layer="dynamic" >
 
 		<verb id="lookat">
 			<action action_name="lookat" text="@electricbox.lookat.0.text"/>
@@ -748,7 +748,7 @@
 
 	</actor>
 
-	<actor bbox="0.0,-567.16724,0.0,100.0,272.00964,127.893616,262.71185,-585.7631" desc="@door.desc" id="door" pos="460.2422,692.6878" type="background">
+	<actor bbox="0.0,-567.16724,0.0,100.0,272.00964,127.893616,262.71185,-585.7631" desc="@door.desc" id="door" pos="460.2422,692.6878" type="no_renderer" layer="dynamic" >
 
 		<verb id="leave">
 
@@ -769,7 +769,7 @@
 	</actor>
 
 
-	<actor bbox="4.6488647,-353.31723,23.24451,183.68054,299.90314,160.43591,295.2542,-353.31723" desc="@out.desc" id="out" pos="-5.722046E-5,474.1889" type="background">
+	<actor bbox="4.6488647,-353.31723,23.24451,183.68054,299.90314,160.43591,295.2542,-353.31723" desc="@out.desc" id="out" pos="-5.722046E-5,474.1889" type="no_renderer" layer="dynamic" >
 
 		<verb id="leave">
 
@@ -789,7 +789,7 @@
 
 	</actor>
 
-	<actor id="fence" interaction="false" pos="1750.5,0" type="foreground">
+	<actor id="fence" interaction="false" pos="1750.5,0" type="atlas" layer="foreground" >
 
 		<frame_animation id="fence" source="scene2"/>
 
@@ -820,7 +820,7 @@
 
 <scene id="endSCN" loop="true" music="scn1.ogg">
     
-<actor bbox="0.0,0.0,-4.824341,1074.5214,1913.9606,1079.3456,1918.7849,0.0" desc="@desc" id="exit" pos="0,0" type="background">
+<actor bbox="0.0,0.0,-4.824341,1074.5214,1913.9606,1079.3456,1918.7849,0.0" desc="@desc" id="exit" pos="0,0" type="no_renderer" layer="dynamic" >
 
 <verb id="leave">
     <action class="org.bladecoder.venus.actions.scene2.LeaveAction"/>

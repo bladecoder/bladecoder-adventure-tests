@@ -30,7 +30,7 @@ public class PickupCableAction implements Action, ActionCallback {
 
 	@Override
 	public void run() {
-		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor("cable");
+		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor("cable", false);
 
 		EngineLogger.debug("PICKUP " + actor.getDesc());
 
@@ -48,7 +48,7 @@ public class PickupCableAction implements Action, ActionCallback {
 	@Override
 	public void onEvent() {
 		SpriteActor player = World.getInstance().getCurrentScene().getPlayer();
-		SpriteActor actor = (SpriteActor) World.getInstance().getCurrentScene().getActor("cable");
+		SpriteActor actor = (SpriteActor) World.getInstance().getCurrentScene().getActor("cable", false);
 
 		if (!goTo) { // 1. GO TO THE CABLE
 			goTo = true;
@@ -62,7 +62,7 @@ public class PickupCableAction implements Action, ActionCallback {
 		} else {  // 2. PICKUP THE CABLE
 
 			SpriteActor cabinet_off = (SpriteActor) World.getInstance().getCurrentScene()
-					.getActor("cabinet_off");
+					.getActor("cabinet_off", false);
 
 			if (actor.getState().equals("CONNECTED")) {
 				World.getInstance().getTextManager().addSubtitle(disconnectText, TextManager.POS_SUBTITLE,

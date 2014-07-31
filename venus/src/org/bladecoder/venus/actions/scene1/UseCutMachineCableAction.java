@@ -10,7 +10,6 @@ import org.bladecoder.engine.model.SpriteActor;
 import org.bladecoder.engine.model.Text;
 import org.bladecoder.engine.model.TextManager;
 import org.bladecoder.engine.model.World;
-import org.bladecoder.engine.util.EngineLogger;
 
 import com.badlogic.gdx.graphics.Color;
 
@@ -27,10 +26,10 @@ public class UseCutMachineCableAction implements Action {
 
 	@Override
 	public void run() {
-		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor(actorId);
-		Actor target = World.getInstance().getCurrentScene().getActor("cable");
+		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor(actorId, true);
+		Actor target = World.getInstance().getCurrentScene().getActor("cable", true);
 
-		EngineLogger.debug("USING " + actor.getDesc() + " IN " + target.getDesc());
+//		EngineLogger.debug("USING " + actor.getDesc() + " IN " + target.getDesc());
 
 		if (target.getState().equals("CUT") && actor.getState().equals("NO_BATTERY")) {
 			World.getInstance().getTextManager().addSubtitle(cutCableText, TextManager.POS_SUBTITLE,

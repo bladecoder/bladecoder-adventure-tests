@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import org.bladecoder.engine.BladeEngine;
 import org.bladecoder.engine.actions.Action;
+import org.bladecoder.engine.actions.ActionCallback;
 import org.bladecoder.engine.actions.Param;
 import org.bladecoder.engine.model.World;
 import org.bladecoder.engine.ui.UI;
@@ -45,5 +46,10 @@ public class LeaveAction implements Action {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
+	}
+
+	@Override
+	public boolean waitForFinish(ActionCallback cb) {
+		return false;
 	}
 }

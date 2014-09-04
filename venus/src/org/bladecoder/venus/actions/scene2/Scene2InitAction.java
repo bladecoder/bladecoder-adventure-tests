@@ -4,6 +4,7 @@ import java.text.MessageFormat;
 import java.util.HashMap;
 
 import org.bladecoder.engine.actions.Action;
+import org.bladecoder.engine.actions.ActionCallback;
 import org.bladecoder.engine.actions.Param;
 import org.bladecoder.engine.actions.Param.Type;
 import org.bladecoder.engine.i18n.I18N;
@@ -50,5 +51,10 @@ public class Scene2InitAction implements Action {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
+	}
+
+	@Override
+	public boolean waitForFinish(ActionCallback cb) {
+		return false;
 	}
 }

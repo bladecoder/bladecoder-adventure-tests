@@ -58,7 +58,7 @@ public class Scene0InitAction implements Action, ActionCallback {
 	}
 
 	@Override
-	public void onEvent() {
+	public void resume() {
 		switch(state) {
 		case INIT_STATE:
 			
@@ -104,5 +104,10 @@ public class Scene0InitAction implements Action, ActionCallback {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
+	}
+
+	@Override
+	public boolean waitForFinish(ActionCallback cb) {
+		return false;
 	}
 }

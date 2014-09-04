@@ -46,7 +46,7 @@ public class PickupCableAction implements Action, ActionCallback {
 	}
 
 	@Override
-	public void onEvent() {
+	public void resume() {
 		SpriteActor player = World.getInstance().getCurrentScene().getPlayer();
 		SpriteActor actor = (SpriteActor) World.getInstance().getCurrentScene().getActor("cable", false);
 
@@ -92,5 +92,10 @@ public class PickupCableAction implements Action, ActionCallback {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
+	}
+
+	@Override
+	public boolean waitForFinish(ActionCallback cb) {
+		return false;
 	}
 }

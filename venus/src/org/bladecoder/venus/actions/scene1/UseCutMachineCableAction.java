@@ -3,6 +3,7 @@ package org.bladecoder.venus.actions.scene1;
 import java.util.HashMap;
 
 import org.bladecoder.engine.actions.Action;
+import org.bladecoder.engine.actions.ActionCallback;
 import org.bladecoder.engine.actions.Param;
 import org.bladecoder.engine.actions.Param.Type;
 import org.bladecoder.engine.model.Actor;
@@ -60,5 +61,10 @@ public class UseCutMachineCableAction implements Action {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
+	}
+
+	@Override
+	public boolean waitForFinish(ActionCallback cb) {
+		return false;
 	}
 }

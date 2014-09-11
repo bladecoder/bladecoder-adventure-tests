@@ -8,9 +8,6 @@ import org.bladecoder.engine.actions.ActionCallback;
 import org.bladecoder.engine.actions.Param;
 import org.bladecoder.engine.model.World;
 import org.bladecoder.engine.ui.UI;
-import org.bladecoder.engine.util.EngineLogger;
-
-import com.badlogic.gdx.Gdx;
 
 public class LeaveAction implements Action {
 	public static final String INFO = "Restarts the game";
@@ -22,20 +19,13 @@ public class LeaveAction implements Action {
 
 	@Override
 	public void run() {
-		try {
-			World.restart();
-			
-			UI ui = BladeEngine.getAppUI();
-			
-			World.getInstance().pause();
-			
-			ui.setScreen(UI.State.CREDIT_SCREEN);
-		} catch (Exception e) {
-			EngineLogger.error("ERROR LOADING GAME", e);
+		World.getInstance().newGame();
 
-			World.getInstance().dispose();
-			Gdx.app.exit();
-		}
+		UI ui = BladeEngine.getAppUI();
+
+		World.getInstance().pause();
+
+		ui.setScreen(UI.State.CREDIT_SCREEN);
 	}
 
 	@Override

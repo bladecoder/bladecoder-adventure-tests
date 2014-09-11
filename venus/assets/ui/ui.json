@@ -1,0 +1,22 @@
+{
+com.badlogic.gdx.graphics.Color: {
+	green: { a: 1, b: 0, g: 1, r: 0 },
+	white: { a: 1, b: 1, g: 1, r: 1 },
+	red: { a: 1, b: 0, g: 0, r: 1 },
+	black: { a: 1, b: 0, g: 0, r: 0 }
+},
+com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
+	invBackground: { name: white_pixel, color: { r: 0, g: 0, b: 0, a: 0.8 } }
+},
+com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
+	default: {},
+},
+com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle: {
+	default: {  },
+	inventory: {imageUp: inventory}
+},
+org.bladecoder.engine.ui.InventoryUI$InventoryUIStyle: {
+	default: {background: invBackground}
+}
+
+}

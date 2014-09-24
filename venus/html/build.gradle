@@ -7,8 +7,8 @@ gwt {
     minHeapSize="1G"
 
     src = files(file("src/")) // Needs to be in front of "modules" below.
-    modules 'testpkg.GdxDefinition'
-    devModules 'testpkg.GdxDefinitionSuperdev'
+    modules 'org.bladecoder.engine.GdxDefinition'
+    devModules 'org.bladecoder.engine.GdxDefinitionSuperdev'
     project.webAppDirName = 'webapp'
 
     compiler {

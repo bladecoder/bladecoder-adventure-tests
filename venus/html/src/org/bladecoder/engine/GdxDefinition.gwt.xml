@@ -3,8 +3,8 @@
 <module rename-to="html">
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 
-	<inherits name='testMainClass' />
-	<entry-point class='testpkg.client.HtmlLauncher' />
+	<inherits name='BladeEngine' />
+	<entry-point class='org.bladecoder.engine.client.HtmlLauncher' />
 	
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>

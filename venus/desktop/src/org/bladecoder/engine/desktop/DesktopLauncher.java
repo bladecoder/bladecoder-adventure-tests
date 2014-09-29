@@ -96,7 +96,11 @@ public class DesktopLauncher extends BladeEngine {
 					i++;
 					loadGameState(args[i]);
 				}
+			} else if (s.equals("-h")) {
+				usage();
 			} else {
+				if(i == 0 && !s.startsWith("-")) continue; // When embeded JRE the 0 parameter is the app name
+				System.out.println("Unrecognized parameter: " + s);
 				usage();
 			}
 		}
@@ -113,7 +117,8 @@ public class DesktopLauncher extends BladeEngine {
 			    "-d\tShow debug messages\n" +
 			    "-res width\tForce the resolution width\n" +
 			    "-l game_state\tLoad the previusly saved game state\n" + 
-			    "-r\tRun the game from the begining\n"
+			    "-r\tRun the game from the begining\n" + 
+			    "-h\tShow this screen\n"
 				);
 		
 		System.exit(0);

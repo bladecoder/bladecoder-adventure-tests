@@ -7,6 +7,8 @@ inkscape -w 72 -h 72 --export-area-page --export-png=../../android/res/drawable-
 inkscape -w 48 -h 48 --export-area-page --export-png=../../android/res/drawable-mdpi/ic_launcher.png  icon.svg;
 #inkscape -w 36 -h 36 --export-area-page --export-png=../../android/res/drawable-ldpi/ic_launcher.png  icon.svg;
 
+inkscape -w 512 -h 512 --export-area-page --export-png=../../android/ic_launcher-web.png  icon.svg;
+
 
 #DESKTOP
 inkscape -w 16 -h 16 --export-area-page --export-png=../../desktop/src/icons/icon16.png  icon.svg;

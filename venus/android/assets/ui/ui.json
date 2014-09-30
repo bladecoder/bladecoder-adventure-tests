@@ -2,8 +2,8 @@
 com.badlogic.gdx.graphics.g2d.BitmapFont: {
 		default: {file: Roboto-Regular.ttf, size: 20},
 		debug: {file: Roboto-Regular.ttf, size: 15}, 
-		big-font: {file: Roboto-Black.ttf, size: 40},
-		title-font: {file: Roboto-Black.ttf, size: 70},
+		big-font: {file: Roboto-Black.ttf, size: 35},
+		title-font: {file: Roboto-Black.ttf, size: 60},
 		dialog-font: {file: ArchitectsDaughter_fix.ttf, size: 20},
 		text-manager-font: {file: ArchitectsDaughter_fix.ttf, size: 18},
 		desc: {file: Ubuntu-M.ttf, size: 16},

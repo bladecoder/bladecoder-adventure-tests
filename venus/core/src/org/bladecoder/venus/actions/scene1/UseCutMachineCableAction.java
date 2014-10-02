@@ -2,17 +2,16 @@ package org.bladecoder.venus.actions.scene1;
 
 import java.util.HashMap;
 
-import org.bladecoder.engine.actions.Action;
-import org.bladecoder.engine.actions.ActionCallback;
-import org.bladecoder.engine.actions.Param;
-import org.bladecoder.engine.actions.Param.Type;
-import org.bladecoder.engine.model.Actor;
-import org.bladecoder.engine.model.SpriteActor;
-import org.bladecoder.engine.model.Text;
-import org.bladecoder.engine.model.TextManager;
-import org.bladecoder.engine.model.World;
-
 import com.badlogic.gdx.graphics.Color;
+import com.bladecoder.engine.actions.Action;
+import com.bladecoder.engine.actions.ActionCallback;
+import com.bladecoder.engine.actions.Param;
+import com.bladecoder.engine.actions.Param.Type;
+import com.bladecoder.engine.model.Actor;
+import com.bladecoder.engine.model.SpriteActor;
+import com.bladecoder.engine.model.Text;
+import com.bladecoder.engine.model.TextManager;
+import com.bladecoder.engine.model.World;
 
 public class UseCutMachineCableAction implements Action {
 	public static final String INFO = "Action for using the 'cut_machine' with the 'cable'";

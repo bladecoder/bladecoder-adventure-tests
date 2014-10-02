@@ -2,12 +2,12 @@ package org.bladecoder.venus.actions.scene2;
 
 import java.util.HashMap;
 
-import org.bladecoder.engine.BladeEngine;
-import org.bladecoder.engine.actions.Action;
-import org.bladecoder.engine.actions.ActionCallback;
-import org.bladecoder.engine.actions.Param;
-import org.bladecoder.engine.model.World;
-import org.bladecoder.engine.ui.UI;
+import com.bladecoder.engine.BladeEngine;
+import com.bladecoder.engine.actions.Action;
+import com.bladecoder.engine.actions.ActionCallback;
+import com.bladecoder.engine.actions.Param;
+import com.bladecoder.engine.model.World;
+import com.bladecoder.engine.ui.UI;
 
 public class LeaveAction implements Action {
 	public static final String INFO = "Restarts the game";

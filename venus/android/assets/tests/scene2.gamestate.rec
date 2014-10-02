@@ -3,18 +3,18 @@ width: 1920,
 height: 1080,
 scenes: {
 	endSCN: {
-		class: org.bladecoder.engine.model.Scene,
+		class: com.bladecoder.engine.model.Scene,
 		id: endSCN,
 		interaction: true,
 		visible: true,
 		desc: null,
 		verbs: {
 			init: {
-				class: org.bladecoder.engine.model.Verb,
+				class: com.bladecoder.engine.model.Verb,
 				id: init,
 				actions: [
 					{
-						class: org.bladecoder.engine.actions.SetCutmodeAction,
+						class: com.bladecoder.engine.actions.SetCutmodeAction,
 						value: false,
 						setInventory: true
 					},
@@ -32,14 +32,14 @@ scenes: {
 		atlases: [],
 		actors: {
 			exit: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: exit,
 				interaction: true,
 				visible: true,
 				desc: "Ir al inicio",
 				verbs: {
 					leave: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: leave,
 						actions: [
 							{
@@ -67,38 +67,38 @@ scenes: {
 		isPlaying: false
 	},
 	scene2: {
-		class: org.bladecoder.engine.model.Scene,
+		class: com.bladecoder.engine.model.Scene,
 		id: scene2,
 		interaction: true,
 		visible: true,
 		desc: null,
 		verbs: {
 			test: {
-				class: org.bladecoder.engine.model.Verb,
+				class: com.bladecoder.engine.model.Verb,
 				id: test,
 				actions: [
 					{
-						class: org.bladecoder.engine.actions.PickUpAction,
+						class: com.bladecoder.engine.actions.PickUpAction,
 						scene: scene1,
 						actorId: diosa
 					}
 				]
 			},
 			init: {
-				class: org.bladecoder.engine.model.Verb,
+				class: com.bladecoder.engine.model.Verb,
 				id: init,
 				actions: [
 					{
-						class: org.bladecoder.engine.actions.Sequence,
+						class: com.bladecoder.engine.actions.Sequence,
 						ip: 11,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SetCutmodeAction,
+								class: com.bladecoder.engine.actions.SetCutmodeAction,
 								setInventory: true,
 								inventory: false
 							},
 							{
-								class: org.bladecoder.engine.actions.GotoAction,
+								class: com.bladecoder.engine.actions.GotoAction,
 								posx: 460,
 								posy: 0,
 								targetId: null,
@@ -106,7 +106,7 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: stand.frontright,
 								actorId: player,
 								posx: 0,
@@ -119,7 +119,7 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "Alto ahí Robie, ¡Estás detenido!\\n\\nSuelta la diosa ahora mismo.",
 								wait: true,
@@ -129,7 +129,7 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "¡Maldición!\\n\\nEstá bien me rindo, me has cogido",
 								wait: true,
@@ -139,7 +139,7 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: crouch.right,
 								actorId: player,
 								posx: 0,
@@ -152,18 +152,18 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.DropItemAction,
+								class: com.bladecoder.engine.actions.DropItemAction,
 								itemId: diosa,
 								x: 600,
 								y: 30
 							},
 							{
-								class: org.bladecoder.engine.actions.SetStateAction,
+								class: com.bladecoder.engine.actions.SetStateAction,
 								actorId: diosa,
 								state: FLOOR
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: crouch.right,
 								actorId: player,
 								posx: 0,
@@ -176,7 +176,7 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: stand.frontright,
 								actorId: player,
 								posx: 0,
@@ -189,7 +189,7 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.SetCutmodeAction,
+								class: com.bladecoder.engine.actions.SetCutmodeAction,
 								value: false,
 								setInventory: true
 							}
@@ -225,26 +225,26 @@ scenes: {
 		],
 		actors: {
 			policeman: {
-				class: org.bladecoder.engine.model.CharacterActor,
+				class: com.bladecoder.engine.model.CharacterActor,
 				id: policeman,
 				interaction: true,
 				visible: true,
 				desc: policía,
 				verbs: {
 					dialog1_turn: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: dialog1_turn,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										setInventory: true,
 										inventory: false
 									},
 									{
-										class: org.bladecoder.engine.actions.SayDialogAction,
+										class: com.bladecoder.engine.actions.SayDialogAction,
 										previousFA: null,
 										responseText: null,
 										characterTurn: false,
@@ -252,7 +252,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: turn.left,
 										actorId: policeman,
 										posx: 0,
@@ -265,37 +265,37 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: diosa,
 										state: POLICEMAN_TURN
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: out,
 										state: POLICEMAN_TURN
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: door,
 										state: POLICEMAN_TURN
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: player,
 										state: POLICEMAN_TURN
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false,
 										setInventory: true
 									},
 									{
-										class: org.bladecoder.engine.actions.WaitAction,
+										class: com.bladecoder.engine.actions.WaitAction,
 										time: 6,
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.RunVerbAction,
+										class: com.bladecoder.engine.actions.RunVerbAction,
 										actorId: policeman,
 										verb: back_turn
 									}
@@ -304,24 +304,24 @@ scenes: {
 						]
 					},
 					talkto: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: talkto,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										setInventory: true,
 										inventory: false
 									},
 									{
-										class: org.bladecoder.engine.actions.TalktoAction,
+										class: com.bladecoder.engine.actions.TalktoAction,
 										dialog: dialog1,
 										actorId: policeman
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false,
 										setInventory: true
 									}
@@ -330,19 +330,19 @@ scenes: {
 						]
 					},
 					back_turn: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: back_turn,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										setInventory: true,
 										inventory: false
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: turn.left,
 										actorId: policeman,
 										posx: 0,
@@ -355,7 +355,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: stand.frontleft,
 										actorId: policeman,
 										posx: 0,
@@ -368,27 +368,27 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.RunVerbAction,
+										class: com.bladecoder.engine.actions.RunVerbAction,
 										actorId: diosa,
 										verb: policeman_turn
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: out,
 										state: ""
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: door,
 										state: ""
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: player,
 										state: ""
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: policeman,
 										state: ""
 									}
@@ -397,11 +397,11 @@ scenes: {
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "Mi archienemigo me ha atrapado esta vez.\\nPero no se lo pondré fácil",
 								wait: true,
@@ -421,12 +421,12 @@ scenes: {
 				state: null,
 				sounds: {
 					hit: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/hit.ogg,
 						volume: 0.3
 					},
 					fall: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/fall.ogg,
 						volume: 0.5
 					}
@@ -434,7 +434,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					stand.frontleft: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: policeman,
 						count: -1,
@@ -442,14 +442,14 @@ scenes: {
 						animationType: 1
 					},
 					turn.left: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 0.3,
 						atlas: policeman,
 						count: 1,
 						id: turn.left
 					},
 					fall: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: policeman,
 						count: 1,
@@ -457,7 +457,7 @@ scenes: {
 						id: fall
 					},
 					talk.left: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: policeman,
 						count: -1,
@@ -482,12 +482,12 @@ scenes: {
 				gotoCb: null,
 				dialogs: {
 					dialog1: {
-						class: org.bladecoder.engine.model.Dialog,
+						class: com.bladecoder.engine.model.Dialog,
 						id: dialog1,
 						actor: policeman,
 						options: [
 							{
-								class: org.bladecoder.engine.model.DialogOption,
+								class: com.bladecoder.engine.model.DialogOption,
 								text: "¿A qué estamos esperando?",
 								responseText: "Acabo de pedir refuerzos y en breve estarán aquí\\n\\nEstás acabado Robie",
 								options: [
@@ -513,24 +513,24 @@ scenes: {
 								]
 							},
 							{
-								class: org.bladecoder.engine.model.DialogOption,
+								class: com.bladecoder.engine.model.DialogOption,
 								text: "¡Una vez tuve un perro más listo que tú!",
 								responseText: "Te habrá enseñado todo lo que sabes",
 								next: parent
 							},
 							{
-								class: org.bladecoder.engine.model.DialogOption,
+								class: com.bladecoder.engine.model.DialogOption,
 								text: "¡Mira a tu espalda! ¡Un mono con tres cabezas!",
 								verbId: dialog1_turn
 							},
 							{
-								class: org.bladecoder.engine.model.DialogOption,
+								class: com.bladecoder.engine.model.DialogOption,
 								text: "Venga, porfa, deja que me vaya",
 								responseText: No,
 								next: parent
 							},
 							{
-								class: org.bladecoder.engine.model.DialogOption,
+								class: com.bladecoder.engine.model.DialogOption,
 								text: "No recuerdo lo que iba a decirte..."
 							}
 						],
@@ -539,29 +539,29 @@ scenes: {
 				}
 			},
 			electricbox: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: electricbox,
 				interaction: true,
 				visible: true,
 				desc: "cuadro eléctrico",
 				verbs: {
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Mejor no lo toco, tiene un signo de peligro",
 								actorId: electricbox
 							}
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Parece un cuadro eléctrico",
 								actorId: electricbox
 							}
@@ -579,26 +579,26 @@ scenes: {
 				playingSound: null
 			},
 			door: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: door,
 				interaction: true,
 				visible: true,
 				desc: "al museo",
 				verbs: {
 					leave: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: leave,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										setInventory: true,
 										inventory: false
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "¡Ni se te ocurra!",
 										wait: true,
@@ -608,7 +608,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "No lo estaba ni pensando",
 										wait: true,
@@ -618,7 +618,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false,
 										setInventory: true
 									}
@@ -627,19 +627,19 @@ scenes: {
 						]
 					},
 					leave.POLICEMAN_TURN: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: leave.POLICEMAN_TURN,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.CancelVerbAction,
+										class: com.bladecoder.engine.actions.CancelVerbAction,
 										actorId: policeman,
 										verb: dialog1_turn
 									},
 									{
-										class: org.bladecoder.engine.actions.RunVerbAction,
+										class: com.bladecoder.engine.actions.RunVerbAction,
 										actorId: policeman,
 										verb: back_turn
 									}
@@ -659,40 +659,40 @@ scenes: {
 				playingSound: null
 			},
 			diosa: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: diosa,
 				interaction: true,
 				visible: true,
 				desc: "Diosa de las serpientes",
 				verbs: {
 					use.policeman.INVENTORY: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: use.policeman.INVENTORY,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.MusicAction,
+										class: com.bladecoder.engine.actions.MusicAction,
 										play: "true"
 									},
 									{
-										class: org.bladecoder.engine.actions.CancelVerbAction,
+										class: com.bladecoder.engine.actions.CancelVerbAction,
 										actorId: policeman,
 										verb: dialog1_turn
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: diosa,
 										state: END
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										setInventory: true,
 										inventory: false
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: throwgoddess,
 										actorId: player,
 										posx: 0,
@@ -705,7 +705,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: throwgoddess2,
 										actorId: player,
 										posx: 0,
@@ -718,13 +718,13 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.DropItemAction,
+										class: com.bladecoder.engine.actions.DropItemAction,
 										itemId: diosa,
 										x: 680,
 										y: 744
 									},
 									{
-										class: org.bladecoder.engine.actions.PosAnimationAction,
+										class: com.bladecoder.engine.actions.PosAnimationAction,
 										actorId: diosa,
 										posx: 1370,
 										posy: 846,
@@ -735,7 +735,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.PosAnimationAction,
+										class: com.bladecoder.engine.actions.PosAnimationAction,
 										actorId: diosa,
 										posx: 1600,
 										posy: 1100,
@@ -746,12 +746,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SoundAction,
+										class: com.bladecoder.engine.actions.SoundAction,
 										actorId: policeman,
 										play: hit
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: fall,
 										actorId: policeman,
 										posx: 0,
@@ -764,12 +764,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SoundAction,
+										class: com.bladecoder.engine.actions.SoundAction,
 										actorId: policeman,
 										play: fall
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Espero que el inspector Frabrice no me guarde rencor",
 										wait: true,
@@ -779,7 +779,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: runaway,
 										actorId: player,
 										posx: 360,
@@ -792,12 +792,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetActiveAction,
+										class: com.bladecoder.engine.actions.SetActiveAction,
 										actorId: player,
 										visible: "false"
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Aunque perdí la Diosa, al menos conseguí escapar...\\n\\n...y estoy seguro que el destino me la servirá otra vez en bandeja.",
 										wait: true,
@@ -807,15 +807,15 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.WaitAction,
+										class: com.bladecoder.engine.actions.WaitAction,
 										time: 2,
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.RemoveInventoryItemAction
+										class: com.bladecoder.engine.actions.RemoveInventoryItemAction
 									},
 									{
-										class: org.bladecoder.engine.actions.LeaveAction,
+										class: com.bladecoder.engine.actions.LeaveAction,
 										target: endSCN
 									}
 								]
@@ -823,11 +823,11 @@ scenes: {
 						]
 					},
 					pickup.INVENTORY: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.INVENTORY,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "Ya tengo la diosa, debo salir pitando de aquí.",
 								wait: true,
@@ -839,14 +839,14 @@ scenes: {
 						]
 					},
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 890,
 										posy: 76,
 										targetId: null,
@@ -854,7 +854,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.LookAtAction,
+										class: com.bladecoder.engine.actions.LookAtAction,
 										text: "No puedo cogerla, está destrás de una urna protegida por un sistema de seguridad infranqueable",
 										actorId: diosa
 									}
@@ -863,14 +863,14 @@ scenes: {
 						]
 					},
 					pickup.CUT: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.CUT,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 890,
 										posy: 76,
 										targetId: null,
@@ -878,7 +878,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: use.back,
 										actorId: player,
 										posx: 0,
@@ -891,7 +891,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: use.back,
 										actorId: player,
 										posx: 0,
@@ -904,7 +904,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "¡Ya la tengo, la diosa es mía!\\n\\nTananiananianania\\n\\n¡Soy un genio!\\n\\n¡El mejor!\\n\\n¡El más grande!\\n\\n¡El mayor ladrón de la historia!\\n\\n¡Y el más guapo!",
 										wait: false,
@@ -914,21 +914,21 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.PickUpAction,
+										class: com.bladecoder.engine.actions.PickUpAction,
 										actorId: diosa
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: diosa,
 										state: INVENTORY
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: rope,
 										state: WITH_GODDESS
 									},
 									{
-										class: org.bladecoder.engine.actions.SoundAction,
+										class: com.bladecoder.engine.actions.SoundAction,
 										actorId: diosa,
 										play: chords
 									}
@@ -937,14 +937,14 @@ scenes: {
 						]
 					},
 					policeman_turn.INVENTORY: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: policeman_turn.INVENTORY,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "¡Maldición, suelta la diosa ahora mismo!",
 										wait: true,
@@ -954,7 +954,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Vale, vale...no te pongas así",
 										wait: true,
@@ -964,7 +964,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.right,
 										actorId: player,
 										posx: 0,
@@ -977,18 +977,18 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.DropItemAction,
+										class: com.bladecoder.engine.actions.DropItemAction,
 										itemId: diosa,
 										x: 600,
 										y: 30
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: diosa,
 										state: FLOOR
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.right,
 										actorId: player,
 										posx: 0,
@@ -1001,7 +1001,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: stand.frontright,
 										actorId: player,
 										posx: 0,
@@ -1014,7 +1014,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false,
 										setInventory: true
 									}
@@ -1023,14 +1023,14 @@ scenes: {
 						]
 					},
 					policeman_turn.POLICEMAN_TURN: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: policeman_turn.POLICEMAN_TURN,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "No lo he visto\\n\\nSiempre he querido ver un mono con tres cabezas",
 										wait: true,
@@ -1040,7 +1040,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Te prometo que estaba ahí",
 										wait: true,
@@ -1050,12 +1050,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: diosa,
 										state: FLOOR
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false,
 										setInventory: true
 									}
@@ -1064,14 +1064,14 @@ scenes: {
 						]
 					},
 					pickup.POLICEMAN_TURN: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.POLICEMAN_TURN,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.right,
 										actorId: player,
 										posx: 0,
@@ -1084,16 +1084,16 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.PickUpAction,
+										class: com.bladecoder.engine.actions.PickUpAction,
 										actorId: diosa
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: diosa,
 										state: INVENTORY
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.right,
 										actorId: player,
 										posx: 0,
@@ -1110,14 +1110,14 @@ scenes: {
 						]
 					},
 					pickup.FLOOR: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.FLOOR,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Venga atrévete a cogerla, alégrame el día",
 										wait: true,
@@ -1127,7 +1127,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "No tengo necesidad ninguna",
 										wait: true,
@@ -1141,22 +1141,22 @@ scenes: {
 						]
 					},
 					lookat.FLOOR: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat.FLOOR,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "La tengo tan cerca y a la vez tan lejos...",
 								actorId: diosa
 							}
 						]
 					},
 					lookat.INVENTORY: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat.INVENTORY,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "Ya tengo la diosa, debo salir pitando de aquí.",
 								wait: true,
@@ -1168,11 +1168,11 @@ scenes: {
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "¡Es la Diosa de las Serpientes! Pronto será mia",
 								actorId: diosa
 							}
@@ -1183,7 +1183,7 @@ scenes: {
 				state: FLOOR,
 				sounds: {
 					chords: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/chords.ogg,
 						volume: 0.5
 					}
@@ -1191,7 +1191,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					diosa.inventory: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: common,
 						count: -1,
@@ -1199,7 +1199,7 @@ scenes: {
 						animationType: 1
 					},
 					diosa: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: common,
 						count: -1,
@@ -1220,26 +1220,26 @@ scenes: {
 				posAnimationCb: null
 			},
 			out: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: out,
 				interaction: true,
 				visible: true,
 				desc: "al exterior",
 				verbs: {
 					leave: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: leave,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										setInventory: true,
 										inventory: false
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Si fuera tú no lo intentaría. Está demasiado alto",
 										wait: true,
@@ -1249,7 +1249,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "No me subestimes",
 										wait: true,
@@ -1259,7 +1259,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false,
 										setInventory: true
 									}
@@ -1268,19 +1268,19 @@ scenes: {
 						]
 					},
 					leave.POLICEMAN_TURN: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: leave.POLICEMAN_TURN,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.CancelVerbAction,
+										class: com.bladecoder.engine.actions.CancelVerbAction,
 										actorId: policeman,
 										verb: dialog1_turn
 									},
 									{
-										class: org.bladecoder.engine.actions.RunVerbAction,
+										class: com.bladecoder.engine.actions.RunVerbAction,
 										actorId: policeman,
 										verb: back_turn
 									}
@@ -1301,7 +1301,7 @@ scenes: {
 		},
 		fgActors: [
 			{
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: fence,
 				interaction: false,
 				visible: true,
@@ -1313,7 +1313,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					fence: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene2,
 						count: -1,
@@ -1340,19 +1340,19 @@ scenes: {
 			desc: Robie,
 			verbs: {
 				goto.POLICEMAN_TURN: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: goto.POLICEMAN_TURN,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.Sequence,
+							class: com.bladecoder.engine.actions.Sequence,
 							actions: [
 								{
-									class: org.bladecoder.engine.actions.CancelVerbAction,
+									class: com.bladecoder.engine.actions.CancelVerbAction,
 									actorId: policeman,
 									verb: dialog1_turn
 								},
 								{
-									class: org.bladecoder.engine.actions.RunVerbAction,
+									class: com.bladecoder.engine.actions.RunVerbAction,
 									actorId: policeman,
 									verb: back_turn
 								}
@@ -1361,19 +1361,19 @@ scenes: {
 					]
 				},
 				goto: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: goto,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.Sequence,
+							class: com.bladecoder.engine.actions.Sequence,
 							actions: [
 								{
-									class: org.bladecoder.engine.actions.SetCutmodeAction,
+									class: com.bladecoder.engine.actions.SetCutmodeAction,
 									setInventory: true,
 									inventory: false
 								},
 								{
-									class: org.bladecoder.engine.actions.SayAction,
+									class: com.bladecoder.engine.actions.SayAction,
 									soundId: null,
 									text: "¡No te muevas de donde estás bellaco!",
 									wait: true,
@@ -1383,7 +1383,7 @@ scenes: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: stand.frontright,
 									actorId: player,
 									posx: 0,
@@ -1396,7 +1396,7 @@ scenes: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SayAction,
+									class: com.bladecoder.engine.actions.SayAction,
 									soundId: null,
 									text: "Vale, no te pongas así",
 									wait: true,
@@ -1406,7 +1406,7 @@ scenes: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.GotoAction,
+									class: com.bladecoder.engine.actions.GotoAction,
 									posx: 460,
 									posy: 0,
 									targetId: null,
@@ -1414,7 +1414,7 @@ scenes: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: stand.frontright,
 									actorId: player,
 									posx: 0,
@@ -1427,7 +1427,7 @@ scenes: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SetCutmodeAction,
+									class: com.bladecoder.engine.actions.SetCutmodeAction,
 									value: false,
 									setInventory: true
 								}
@@ -1442,14 +1442,14 @@ scenes: {
 			playingSound: null,
 			fanims: {
 				crouch.right: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 0.3,
 					atlas: player_down,
 					count: 1,
 					id: crouch.right
 				},
 				walk.frontright: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player_down,
 					count: -1,
@@ -1457,7 +1457,7 @@ scenes: {
 					animationType: 1
 				},
 				talk.right: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player_down,
 					count: -1,
@@ -1465,14 +1465,14 @@ scenes: {
 					animationType: 1
 				},
 				runaway: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player_down,
 					count: 1,
 					id: runaway
 				},
 				stand.frontright: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player_down,
 					count: -1,
@@ -1480,14 +1480,14 @@ scenes: {
 					animationType: 1
 				},
 				throwgoddess2: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 0.5,
 					atlas: player_down,
 					count: 1,
 					id: throwgoddess2
 				},
 				throwgoddess: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player_down,
 					count: 1,
@@ -1528,24 +1528,24 @@ scenes: {
 		isPlaying: true
 	},
 	scene0: {
-		class: org.bladecoder.engine.model.Scene,
+		class: com.bladecoder.engine.model.Scene,
 		id: scene0,
 		interaction: true,
 		visible: true,
 		desc: null,
 		verbs: {
 			leave: {
-				class: org.bladecoder.engine.model.Verb,
+				class: com.bladecoder.engine.model.Verb,
 				id: leave,
 				actions: [
 					{
-						class: org.bladecoder.engine.actions.LeaveAction,
+						class: com.bladecoder.engine.actions.LeaveAction,
 						target: scene1
 					}
 				]
 			},
 			init: {
-				class: org.bladecoder.engine.model.Verb,
+				class: com.bladecoder.engine.model.Verb,
 				id: init,
 				actions: [
 					{
@@ -1571,7 +1571,7 @@ scenes: {
 		],
 		actors: {
 			title: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: title,
 				interaction: false,
 				visible: false,
@@ -1581,7 +1581,7 @@ scenes: {
 				state: null,
 				sounds: {
 					intro: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/intro2.ogg,
 						volume: 0.5
 					}
@@ -1589,7 +1589,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					title_es: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene0,
 						count: -1,
@@ -1609,18 +1609,18 @@ scenes: {
 				posAnimationCb: null
 			},
 			forward: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: forward,
 				interaction: true,
 				visible: true,
 				desc: "Saltar Intro",
 				verbs: {
 					leave: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: leave,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LeaveAction,
+								class: com.bladecoder.engine.actions.LeaveAction,
 								target: scene1
 							}
 						]
@@ -1632,7 +1632,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					forward: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene0,
 						count: -1,
@@ -1663,33 +1663,33 @@ scenes: {
 		isPlaying: false
 	},
 	scene1: {
-		class: org.bladecoder.engine.model.Scene,
+		class: com.bladecoder.engine.model.Scene,
 		id: scene1,
 		interaction: true,
 		visible: true,
 		desc: null,
 		verbs: {
 			test: {
-				class: org.bladecoder.engine.model.Verb,
+				class: com.bladecoder.engine.model.Verb,
 				id: test
 			},
 			init: {
-				class: org.bladecoder.engine.model.Verb,
+				class: com.bladecoder.engine.model.Verb,
 				id: init,
 				actions: [
 					{
-						class: org.bladecoder.engine.actions.Sequence,
+						class: com.bladecoder.engine.actions.Sequence,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SetActiveAction,
+								class: com.bladecoder.engine.actions.SetActiveAction,
 								actorId: player,
 								value: "false"
 							},
 							{
-								class: org.bladecoder.engine.actions.SetCutmodeAction
+								class: com.bladecoder.engine.actions.SetCutmodeAction
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: rope.down,
 								actorId: rope,
 								posx: 2294,
@@ -1702,12 +1702,12 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.SetActiveAction,
+								class: com.bladecoder.engine.actions.SetActiveAction,
 								actorId: player,
 								value: "true"
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: stand.left,
 								actorId: player,
 								posx: 0,
@@ -1720,7 +1720,7 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: rope,
 								actorId: rope,
 								posx: 2115,
@@ -1733,19 +1733,19 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.SetCutmodeAction,
+								class: com.bladecoder.engine.actions.SetCutmodeAction,
 								value: false,
 								setInventory: true
 							}
 						]
 					},
 					{
-						class: org.bladecoder.engine.actions.ResourceAction,
+						class: com.bladecoder.engine.actions.ResourceAction,
 						loadThreaded: scene1_rope_throw,
 						actorId: scene1
 					},
 					{
-						class: org.bladecoder.engine.actions.ResourceAction,
+						class: com.bladecoder.engine.actions.ResourceAction,
 						loadThreaded: scene1_rope_up,
 						actorId: scene1
 					}
@@ -1776,32 +1776,32 @@ scenes: {
 		],
 		actors: {
 			cable: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: cable,
 				interaction: true,
 				visible: true,
 				desc: cable,
 				verbs: {
 					use.navaja.CONNECTED: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: use.navaja.CONNECTED,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "¡Ey, que me podría electrocutar!",
 								actorId: cable
 							}
 						]
 					},
 					use.navaja.DISCONNECTED: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: use.navaja.DISCONNECTED,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 641,
 										posy: 413,
 										targetId: null,
@@ -1809,7 +1809,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.left,
 										actorId: player,
 										posx: 0,
@@ -1822,11 +1822,11 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.PickUpAction,
+										class: com.bladecoder.engine.actions.PickUpAction,
 										actorId: cable
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.left,
 										actorId: player,
 										posx: 0,
@@ -1839,7 +1839,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Corto el cable con mi navaja y me lo quedo\\nUn cable siempre es necesario",
 										wait: false,
@@ -1849,7 +1849,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: cable,
 										state: CUT
 									}
@@ -1858,7 +1858,7 @@ scenes: {
 						]
 					},
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
@@ -1869,11 +1869,11 @@ scenes: {
 						]
 					},
 					pickup.CUT: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.CUT,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "No se qué hacer con este cable",
 								wait: true,
@@ -1885,11 +1885,11 @@ scenes: {
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Este cable alimenta la iluminación del expositor",
 								actorId: cable
 							}
@@ -1900,12 +1900,12 @@ scenes: {
 				state: CONNECTED,
 				sounds: {
 					click: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/click1.ogg,
 						volume: 0.2
 					},
 					switch: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/switch.ogg,
 						volume: 0.4
 					}
@@ -1913,7 +1913,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					cable.connected: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -1921,7 +1921,7 @@ scenes: {
 						animationType: 1
 					},
 					cable.disconnected: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -1929,7 +1929,7 @@ scenes: {
 						animationType: 1
 					},
 					cable.inventory: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -1951,29 +1951,29 @@ scenes: {
 				posAnimationCb: null
 			},
 			libro: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: libro,
 				interaction: true,
 				visible: true,
 				desc: libro,
 				verbs: {
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "No quiero que me acusen de robar un codice, se coge mala fama",
 								actorId: libro
 							}
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Ummm, es un codice antiguo escrito en latín",
 								actorId: libro
 							}
@@ -1991,29 +1991,29 @@ scenes: {
 				playingSound: null
 			},
 			estatua: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: estatua,
 				interaction: true,
 				visible: true,
 				desc: estatua,
 				verbs: {
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "¿Crees que puedo coger esta estatua tan grande?",
 								actorId: estatua
 							}
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Que estátua tan impresionante\\nNo tengo ni idea de cómo se llama",
 								actorId: estatua
 							}
@@ -2031,35 +2031,35 @@ scenes: {
 				playingSound: null
 			},
 			chair: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: chair,
 				interaction: true,
 				visible: true,
 				desc: silla,
 				verbs: {
 					lookat.BROKEN: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat.BROKEN,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "La silla se ha roto.\\nAhora no es más que unos trozos de maderos.",
 								actorId: chair
 							}
 						]
 					},
 					pickup.BROKEN: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.BROKEN,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2400,
 										posy: 450,
 										targetId: null,
@@ -2067,7 +2067,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.left,
 										actorId: player,
 										posx: 0,
@@ -2080,11 +2080,11 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.PickUpAction,
+										class: com.bladecoder.engine.actions.PickUpAction,
 										actorId: chair
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.left,
 										actorId: player,
 										posx: 0,
@@ -2097,7 +2097,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Estos trozos de madera puede que me sirvan para algo...",
 										wait: false,
@@ -2107,12 +2107,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: chair,
 										state: INVENTORY
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									}
 								]
@@ -2120,17 +2120,17 @@ scenes: {
 						]
 					},
 					pickup.SIT1: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.SIT1,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2380,
 										posy: 410,
 										targetId: null,
@@ -2138,7 +2138,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: sitdown,
 										actorId: player,
 										posx: 0,
@@ -2151,17 +2151,17 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SoundAction,
+										class: com.bladecoder.engine.actions.SoundAction,
 										actorId: chair,
 										play: chair_squeek
 									},
 									{
-										class: org.bladecoder.engine.actions.WaitAction,
+										class: com.bladecoder.engine.actions.WaitAction,
 										time: 1,
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Ufff, está crujiendo.",
 										wait: true,
@@ -2171,7 +2171,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: sitdown,
 										actorId: player,
 										posx: 0,
@@ -2184,12 +2184,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: chair,
 										state: SIT2
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									}
 								]
@@ -2197,17 +2197,17 @@ scenes: {
 						]
 					},
 					pickup.SIT0: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.SIT0,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2380,
 										posy: 410,
 										targetId: null,
@@ -2215,7 +2215,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: sitdown,
 										actorId: player,
 										posx: 0,
@@ -2228,17 +2228,17 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SoundAction,
+										class: com.bladecoder.engine.actions.SoundAction,
 										actorId: chair,
 										play: chair_squeek
 									},
 									{
-										class: org.bladecoder.engine.actions.WaitAction,
+										class: com.bladecoder.engine.actions.WaitAction,
 										time: 1,
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "No parece muy estable...voy a levantarme.",
 										wait: true,
@@ -2248,7 +2248,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: sitdown,
 										actorId: player,
 										posx: 0,
@@ -2261,12 +2261,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: chair,
 										state: SIT1
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									}
 								]
@@ -2274,11 +2274,11 @@ scenes: {
 						]
 					},
 					lookat.INVENTORY: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat.INVENTORY,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "Son los restos de la silla rota.",
 								wait: true,
@@ -2290,17 +2290,17 @@ scenes: {
 						]
 					},
 					pickup.SIT2: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.SIT2,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2380,
 										posy: 410,
 										targetId: null,
@@ -2308,7 +2308,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: sitdown,
 										actorId: player,
 										posx: 0,
@@ -2321,17 +2321,17 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.WaitAction,
+										class: com.bladecoder.engine.actions.WaitAction,
 										time: 1,
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SoundAction,
+										class: com.bladecoder.engine.actions.SoundAction,
 										actorId: chair,
 										play: chair_broken
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: chair.broken,
 										actorId: chair,
 										posx: 0,
@@ -2344,7 +2344,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: player.chairbroke,
 										actorId: player,
 										posx: 0,
@@ -2357,12 +2357,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.WaitAction,
+										class: com.bladecoder.engine.actions.WaitAction,
 										time: 1,
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Lo sabía, la silla se ha roto ¿tan gordo estoy?",
 										wait: false,
@@ -2372,12 +2372,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: chair,
 										state: BROKEN
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									}
 								]
@@ -2385,11 +2385,11 @@ scenes: {
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Es una silla de madera que usa el vigilante para descansar.",
 								actorId: chair
 							}
@@ -2400,16 +2400,16 @@ scenes: {
 				state: SIT0,
 				sounds: {
 					chair_squeek: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/chair_squeek.ogg,
 						volume: 0.1
 					},
 					chair_broken: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/chair_broken.ogg
 					},
 					click: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/click1.ogg,
 						volume: 0.2
 					}
@@ -2417,7 +2417,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					chair2: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2425,7 +2425,7 @@ scenes: {
 						animationType: 1
 					},
 					chair.broken: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2433,7 +2433,7 @@ scenes: {
 						animationType: 1
 					},
 					chair.inventory: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2455,35 +2455,35 @@ scenes: {
 				posAnimationCb: null
 			},
 			papelera: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: papelera,
 				interaction: true,
 				visible: true,
 				desc: papelera,
 				verbs: {
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "¡No voy a meter la mano ahí!",
 								actorId: papelera
 							}
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 0,
 										posy: 0,
 										targetId: papelera,
@@ -2491,7 +2491,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Contiene:\\n\\nun pañuelo probablemente usado...\\n\\n...un chicle...\\n\\n...un envoltorio de un chicle...\\n\\n...varias hojas de papel...\\n\\n...un palillo de dientes...\\n\\n...un objeto brillante...\\n\\n...una moneda de un céntimo...\\n\\n...un billete de 50 euros...\\n\\n...medio bocadillo...\\n\\n...una rueda de salchichón suelta...\\n\\n...y eso es todo.",
 										wait: true,
@@ -2501,7 +2501,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									}
 								]
@@ -2520,24 +2520,24 @@ scenes: {
 				playingSound: null
 			},
 			rope: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: rope,
 				interaction: true,
 				visible: true,
 				desc: cuerda,
 				verbs: {
 					pickup.ANCHORED: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.ANCHORED,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2270,
 										posy: 12,
 										targetId: null,
@@ -2545,12 +2545,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetActiveAction,
+										class: com.bladecoder.engine.actions.SetActiveAction,
 										actorId: player,
 										value: "false"
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: rope.up,
 										actorId: rope,
 										posx: 0,
@@ -2563,11 +2563,11 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									},
 									{
-										class: org.bladecoder.engine.actions.LeaveAction,
+										class: com.bladecoder.engine.actions.LeaveAction,
 										target: scene2
 									}
 								]
@@ -2575,22 +2575,22 @@ scenes: {
 						]
 					},
 					pickup.INVENTORY: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.INVENTORY,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "No puedo lanzar la cuerda así, no se anclará",
 								actorId: rope
 							}
 						]
 					},
 					use.chair.INVENTORY: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: use.chair.INVENTORY,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.SayAction,
+								class: com.bladecoder.engine.actions.SayAction,
 								soundId: null,
 								text: "Parece que con esto podría salir de aquí.",
 								wait: false,
@@ -2600,11 +2600,11 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.RemoveInventoryItemAction,
+								class: com.bladecoder.engine.actions.RemoveInventoryItemAction,
 								itemId: chair
 							},
 							{
-								class: org.bladecoder.engine.actions.FrameAnimationAction,
+								class: com.bladecoder.engine.actions.FrameAnimationAction,
 								fa: rope.withanchor,
 								actorId: rope,
 								posx: 0,
@@ -2617,21 +2617,21 @@ scenes: {
 								cb: null
 							},
 							{
-								class: org.bladecoder.engine.actions.SetStateAction,
+								class: com.bladecoder.engine.actions.SetStateAction,
 								actorId: rope,
 								state: ARMED
 							}
 						]
 					},
 					pickup.FALL: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.FALL,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2270,
 										posy: 12,
 										targetId: null,
@@ -2639,7 +2639,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.left,
 										actorId: player,
 										posx: 0,
@@ -2652,11 +2652,11 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.PickUpAction,
+										class: com.bladecoder.engine.actions.PickUpAction,
 										actorId: rope
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: crouch.left,
 										actorId: player,
 										posx: 0,
@@ -2669,7 +2669,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: rope,
 										state: INVENTORY
 									}
@@ -2678,28 +2678,28 @@ scenes: {
 						]
 					},
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "No voy a salir de aquí sin la diosa",
 								actorId: rope
 							}
 						]
 					},
 					pickup.ARMED: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.ARMED,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2270,
 										posy: 12,
 										targetId: null,
@@ -2707,18 +2707,18 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetActiveAction,
+										class: com.bladecoder.engine.actions.SetActiveAction,
 										actorId: player,
 										value: "false"
 									},
 									{
-										class: org.bladecoder.engine.actions.DropItemAction,
+										class: com.bladecoder.engine.actions.DropItemAction,
 										itemId: rope,
 										x: 2150,
 										y: 102
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: rope.throw,
 										actorId: rope,
 										posx: 0,
@@ -2731,12 +2731,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetActiveAction,
+										class: com.bladecoder.engine.actions.SetActiveAction,
 										actorId: player,
 										value: "true"
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: rope2,
 										actorId: rope,
 										posx: 0,
@@ -2749,16 +2749,16 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: rope,
 										state: ANCHORED
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									},
 									{
-										class: org.bladecoder.engine.actions.LookAtAction,
+										class: com.bladecoder.engine.actions.LookAtAction,
 										text: "Cuerda anclada y lista para salir",
 										actorId: rope,
 										direction: front
@@ -2768,17 +2768,17 @@ scenes: {
 						]
 					},
 					pickup.WITH_GODDESS: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup.WITH_GODDESS,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction
+										class: com.bladecoder.engine.actions.SetCutmodeAction
 									},
 									{
-										class: org.bladecoder.engine.actions.SayAction,
+										class: com.bladecoder.engine.actions.SayAction,
 										soundId: null,
 										text: "Objetivo cumplido, me voy de aquí raudo y veloz",
 										wait: false,
@@ -2788,7 +2788,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 2270,
 										posy: 12,
 										targetId: null,
@@ -2796,12 +2796,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetActiveAction,
+										class: com.bladecoder.engine.actions.SetActiveAction,
 										actorId: player,
 										value: "false"
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: rope.fall,
 										actorId: rope,
 										posx: 0,
@@ -2814,12 +2814,12 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetActiveAction,
+										class: com.bladecoder.engine.actions.SetActiveAction,
 										actorId: player,
 										value: "true"
 									},
 									{
-										class: org.bladecoder.engine.actions.FrameAnimationAction,
+										class: com.bladecoder.engine.actions.FrameAnimationAction,
 										fa: rope.floor,
 										actorId: rope,
 										posx: 0,
@@ -2832,16 +2832,16 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.SetStateAction,
+										class: com.bladecoder.engine.actions.SetStateAction,
 										actorId: rope,
 										state: FALL
 									},
 									{
-										class: org.bladecoder.engine.actions.SetCutmodeAction,
+										class: com.bladecoder.engine.actions.SetCutmodeAction,
 										value: false
 									},
 									{
-										class: org.bladecoder.engine.actions.LookAtAction,
+										class: com.bladecoder.engine.actions.LookAtAction,
 										text: "¿Y ahora cómo salgo de aquí?",
 										actorId: rope
 									}
@@ -2850,11 +2850,11 @@ scenes: {
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Esta cuerda es mi vía de entrada y de salida",
 								actorId: rope
 							}
@@ -2865,12 +2865,12 @@ scenes: {
 				state: null,
 				sounds: {
 					click: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/click1.ogg,
 						volume: 0.2
 					},
 					slide: {
-						class: org.bladecoder.engine.model.SoundFX,
+						class: com.bladecoder.engine.model.SoundFX,
 						filename: sounds/slide.ogg,
 						volume: 0.05
 					}
@@ -2878,7 +2878,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					rope.withanchor: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2887,7 +2887,7 @@ scenes: {
 						animationType: 1
 					},
 					rope.down: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 2,
 						atlas: scene1_rope,
 						count: -1,
@@ -2895,14 +2895,14 @@ scenes: {
 						id: rope.down
 					},
 					rope.up: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 2,
 						atlas: scene1_rope_up,
 						count: -1,
 						id: rope.up
 					},
 					rope: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2910,7 +2910,7 @@ scenes: {
 						animationType: 1
 					},
 					rope.floor: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2918,7 +2918,7 @@ scenes: {
 						animationType: 1
 					},
 					rope.inventory: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2927,21 +2927,21 @@ scenes: {
 						animationType: 1
 					},
 					rope.fall: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 2,
 						atlas: scene1_rope,
 						count: -1,
 						id: rope.fall
 					},
 					rope.throw: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1.5,
 						atlas: scene1_rope_throw,
 						count: -1,
 						id: rope.throw
 					},
 					rope2: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -2962,32 +2962,32 @@ scenes: {
 				posAnimationCb: null
 			},
 			placa: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: placa,
 				interaction: true,
 				visible: true,
 				desc: placa,
 				verbs: {
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "¿Para qué quiero una placa informativa?",
 								actorId: placa
 							}
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.Sequence,
+								class: com.bladecoder.engine.actions.Sequence,
 								actions: [
 									{
-										class: org.bladecoder.engine.actions.GotoAction,
+										class: com.bladecoder.engine.actions.GotoAction,
 										posx: 910,
 										posy: 100,
 										targetId: null,
@@ -2995,7 +2995,7 @@ scenes: {
 										cb: null
 									},
 									{
-										class: org.bladecoder.engine.actions.LookAtAction,
+										class: com.bladecoder.engine.actions.LookAtAction,
 										text: "La placa dice: 'La Diosa de las Serpientes ha sido datada hacia 1600 a. C.\\n\\n Fue encontrada por Arthur Evans en 1903, en una estancia del ala oeste del palacio de Knosos llamada tesorería sacra'",
 										actorId: placa
 									}
@@ -3015,18 +3015,18 @@ scenes: {
 				playingSound: null
 			},
 			vitrina: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: vitrina,
 				interaction: true,
 				visible: true,
 				desc: vitrina,
 				verbs: {
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Es una vitrina con varios bustos y estatuillas",
 								actorId: vitrina
 							}
@@ -3044,29 +3044,29 @@ scenes: {
 				playingSound: null
 			},
 			socket: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: socket,
 				interaction: true,
 				visible: true,
 				desc: enchufe,
 				verbs: {
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "No quiero que mañana me encuentren electrocutado",
 								actorId: socket
 							}
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Es un enchufe",
 								actorId: socket
 							}
@@ -3084,29 +3084,29 @@ scenes: {
 				playingSound: null
 			},
 			cuadro: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: cuadro,
 				interaction: true,
 				visible: true,
 				desc: cuadro,
 				verbs: {
 					pickup: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: pickup,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "No es lo bastante valioso para mi colección",
 								actorId: cuadro
 							}
 						]
 					},
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Parece un guerrero espartano. ¡AJÚ! ¡AJÚ!",
 								actorId: cuadro
 							}
@@ -3124,7 +3124,7 @@ scenes: {
 				playingSound: null
 			},
 			cabinet_off: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: cabinet_off,
 				interaction: false,
 				visible: false,
@@ -3136,7 +3136,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					cabinet_off: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -3157,18 +3157,18 @@ scenes: {
 				posAnimationCb: null
 			},
 			vasijas: {
-				class: org.bladecoder.engine.model.BaseActor,
+				class: com.bladecoder.engine.model.BaseActor,
 				id: vasijas,
 				interaction: true,
 				visible: true,
 				desc: vasijas,
 				verbs: {
 					lookat: {
-						class: org.bladecoder.engine.model.Verb,
+						class: com.bladecoder.engine.model.Verb,
 						id: lookat,
 						actions: [
 							{
-								class: org.bladecoder.engine.actions.LookAtAction,
+								class: com.bladecoder.engine.actions.LookAtAction,
 								text: "Son unas vasijas muy antiguas y valiosas",
 								actorId: vasijas
 							}
@@ -3186,7 +3186,7 @@ scenes: {
 				playingSound: null
 			},
 			hole: {
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: hole,
 				interaction: false,
 				visible: false,
@@ -3198,7 +3198,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					hole: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -3221,7 +3221,7 @@ scenes: {
 		},
 		fgActors: [
 			{
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: column_fg,
 				interaction: false,
 				visible: true,
@@ -3233,7 +3233,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					column_fg: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -3253,7 +3253,7 @@ scenes: {
 				posAnimationCb: null
 			},
 			{
-				class: org.bladecoder.engine.model.SpriteActor,
+				class: com.bladecoder.engine.model.SpriteActor,
 				id: head_fg,
 				interaction: false,
 				visible: true,
@@ -3265,7 +3265,7 @@ scenes: {
 				playingSound: null,
 				fanims: {
 					head_fg: {
-						class: org.bladecoder.engine.anim.FrameAnimation,
+						class: com.bladecoder.engine.anim.FrameAnimation,
 						speed: 1,
 						atlas: scene1,
 						count: -1,
@@ -3297,21 +3297,21 @@ scenes: {
 			playingSound: null,
 			fanims: {
 				player.chairbroke: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 0.3,
 					atlas: scene1,
 					count: 1,
 					id: player.chairbroke
 				},
 				use.back2: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 0.3,
 					atlas: player,
 					count: 1,
 					id: use.back2
 				},
 				walk.back: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3319,7 +3319,7 @@ scenes: {
 					animationType: 1
 				},
 				walk.left: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3327,14 +3327,14 @@ scenes: {
 					animationType: 1
 				},
 				use.back: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 0.2,
 					atlas: player,
 					count: 1,
 					id: use.back
 				},
 				stand.left: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3342,7 +3342,7 @@ scenes: {
 					animationType: 1
 				},
 				stand.front: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3350,7 +3350,7 @@ scenes: {
 					animationType: 1
 				},
 				stand.frontleft: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3358,7 +3358,7 @@ scenes: {
 					animationType: 1
 				},
 				walk.frontleft: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3366,7 +3366,7 @@ scenes: {
 					animationType: 1
 				},
 				walk.backleft: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3374,21 +3374,21 @@ scenes: {
 					animationType: 1
 				},
 				crouch.left: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 0.3,
 					atlas: player,
 					count: 1,
 					id: crouch.left
 				},
 				sitdown: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 0.3,
 					atlas: scene1,
 					count: 1,
 					id: sitdown
 				},
 				stand.backleft: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3396,7 +3396,7 @@ scenes: {
 					animationType: 1
 				},
 				walk.front: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3404,7 +3404,7 @@ scenes: {
 					animationType: 1
 				},
 				stand.back: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: player,
 					count: -1,
@@ -3447,44 +3447,44 @@ inventory: {
 			desc: "Navaja Suiza Multiusos",
 			verbs: {
 				pickup: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: pickup,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "Mejor la dejo guardada",
 							actorId: navaja
 						}
 					]
 				},
 				use.policeman: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.policeman,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "Estoy demasiado lejos",
 							actorId: navaja
 						}
 					]
 				},
 				use: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "No veo cómo usar la herramienta multiuso con esto",
 							actorId: navaja
 						}
 					]
 				},
 				lookat: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: lookat,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "Es una navaja suiza. Nunca salgo sin ella",
 							actorId: navaja
 						}
@@ -3497,7 +3497,7 @@ inventory: {
 			playingSound: null,
 			fanims: {
 				navaja.inventory: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: common,
 					count: -1,
@@ -3521,14 +3521,14 @@ inventory: {
 			desc: "Máquina Cortadora",
 			verbs: {
 				use.diosa.WITH_LOW_BATTERY: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.diosa.WITH_LOW_BATTERY,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.Sequence,
+							class: com.bladecoder.engine.actions.Sequence,
 							actions: [
 								{
-									class: org.bladecoder.engine.actions.GotoAction,
+									class: com.bladecoder.engine.actions.GotoAction,
 									posx: 890,
 									posy: 76,
 									targetId: null,
@@ -3536,7 +3536,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SayAction,
+									class: com.bladecoder.engine.actions.SayAction,
 									soundId: null,
 									text: "Bien, voy a proceder a cortar el cristal
  y a llevarme la Diosa límpiamente",
@@ -3547,7 +3547,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: use.back,
 									actorId: player,
 									posx: 0,
@@ -3560,12 +3560,12 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SoundAction,
+									class: com.bladecoder.engine.actions.SoundAction,
 									actorId: cutter,
 									play: drill
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: use.back2,
 									actorId: player,
 									posx: 0,
@@ -3578,12 +3578,12 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SoundAction,
+									class: com.bladecoder.engine.actions.SoundAction,
 									stop: drill,
 									actorId: cutter
 								},
 								{
-									class: org.bladecoder.engine.actions.SayAction,
+									class: com.bladecoder.engine.actions.SayAction,
 									soundId: null,
 									text: "...maldita sea, la máquina se ha quedado sin batería!!",
 									wait: false,
@@ -3593,7 +3593,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: use.back,
 									actorId: player,
 									posx: 0,
@@ -3606,7 +3606,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SetStateAction,
+									class: com.bladecoder.engine.actions.SetStateAction,
 									actorId: cutter,
 									state: NO_BATTERY
 								}
@@ -3615,25 +3615,25 @@ inventory: {
 					]
 				},
 				use.diosa.NO_BATTERY: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.diosa.NO_BATTERY,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "¡No puedo!. La máquina está sin batería",
 							actorId: cutter
 						}
 					]
 				},
 				use.diosa.WITH_BATTERY: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.diosa.WITH_BATTERY,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.Sequence,
+							class: com.bladecoder.engine.actions.Sequence,
 							actions: [
 								{
-									class: org.bladecoder.engine.actions.GotoAction,
+									class: com.bladecoder.engine.actions.GotoAction,
 									posx: 890,
 									posy: 76,
 									targetId: null,
@@ -3641,7 +3641,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: use.back,
 									actorId: player,
 									posx: 0,
@@ -3654,12 +3654,12 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SoundAction,
+									class: com.bladecoder.engine.actions.SoundAction,
 									actorId: cutter,
 									play: drill
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: use.back2,
 									actorId: player,
 									posx: 0,
@@ -3672,12 +3672,12 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SoundAction,
+									class: com.bladecoder.engine.actions.SoundAction,
 									stop: drill,
 									actorId: cutter
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: use.back,
 									actorId: player,
 									posx: 0,
@@ -3690,7 +3690,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SayAction,
+									class: com.bladecoder.engine.actions.SayAction,
 									soundId: null,
 									text: "Ahora si, le he hecho un buen agujero a la urna",
 									wait: false,
@@ -3700,17 +3700,17 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SetStateAction,
+									class: com.bladecoder.engine.actions.SetStateAction,
 									actorId: cutter,
 									state: CUT
 								},
 								{
-									class: org.bladecoder.engine.actions.SetStateAction,
+									class: com.bladecoder.engine.actions.SetStateAction,
 									actorId: diosa,
 									state: CUT
 								},
 								{
-									class: org.bladecoder.engine.actions.SetActiveAction,
+									class: com.bladecoder.engine.actions.SetActiveAction,
 									actorId: hole,
 									visible: "true"
 								}
@@ -3719,44 +3719,44 @@ inventory: {
 					]
 				},
 				pickup.CHARGING: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: pickup.CHARGING,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "Mejor la dejo un rato más cargando.",
 							actorId: cutter
 						}
 					]
 				},
 				pickup: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: pickup,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "Ahora mismo no voy a cortar nada",
 							actorId: cutter
 						}
 					]
 				},
 				use.policeman: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.policeman,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "Estoy demasiado lejos",
 							actorId: cutter
 						}
 					]
 				},
 				use: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.SayAction,
+							class: com.bladecoder.engine.actions.SayAction,
 							soundId: null,
 							text: "No creo que deba cortar eso",
 							wait: true,
@@ -3768,25 +3768,25 @@ inventory: {
 					]
 				},
 				use.diosa.WITH_CABLE: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.diosa.WITH_CABLE,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.LookAtAction,
+							class: com.bladecoder.engine.actions.LookAtAction,
 							text: "¡No puedo!. La máquina está sin batería",
 							actorId: cutter
 						}
 					]
 				},
 				use.socket.WITH_CABLE: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.socket.WITH_CABLE,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.Sequence,
+							class: com.bladecoder.engine.actions.Sequence,
 							actions: [
 								{
-									class: org.bladecoder.engine.actions.GotoAction,
+									class: com.bladecoder.engine.actions.GotoAction,
 									posx: 641,
 									posy: 413,
 									targetId: null,
@@ -3794,7 +3794,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: crouch.left,
 									actorId: player,
 									posx: 0,
@@ -3807,13 +3807,13 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.DropItemAction,
+									class: com.bladecoder.engine.actions.DropItemAction,
 									itemId: cutter,
 									x: 648,
 									y: 520
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: cutter.charging,
 									actorId: cutter,
 									posx: 0,
@@ -3826,7 +3826,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: crouch.left,
 									actorId: player,
 									posx: 0,
@@ -3839,7 +3839,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SayAction,
+									class: com.bladecoder.engine.actions.SayAction,
 									soundId: null,
 									text: "¡Cargando!",
 									wait: false,
@@ -3849,17 +3849,17 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SetStateAction,
+									class: com.bladecoder.engine.actions.SetStateAction,
 									actorId: cutter,
 									state: CHARGING
 								},
 								{
-									class: org.bladecoder.engine.actions.WaitAction,
+									class: com.bladecoder.engine.actions.WaitAction,
 									time: 20,
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SetStateAction,
+									class: com.bladecoder.engine.actions.SetStateAction,
 									actorId: cutter,
 									state: WITH_BATTERY
 								}
@@ -3868,14 +3868,14 @@ inventory: {
 					]
 				},
 				pickup.WITH_BATTERY: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: pickup.WITH_BATTERY,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.Sequence,
+							class: com.bladecoder.engine.actions.Sequence,
 							actions: [
 								{
-									class: org.bladecoder.engine.actions.GotoAction,
+									class: com.bladecoder.engine.actions.GotoAction,
 									posx: 682,
 									posy: 434,
 									targetId: null,
@@ -3883,7 +3883,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: crouch.left,
 									actorId: player,
 									posx: 0,
@@ -3896,16 +3896,16 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.PickUpAction,
+									class: com.bladecoder.engine.actions.PickUpAction,
 									actorId: cutter
 								},
 								{
-									class: org.bladecoder.engine.actions.SoundAction,
+									class: com.bladecoder.engine.actions.SoundAction,
 									actorId: cutter,
 									play: click
 								},
 								{
-									class: org.bladecoder.engine.actions.FrameAnimationAction,
+									class: com.bladecoder.engine.actions.FrameAnimationAction,
 									fa: crouch.left,
 									actorId: player,
 									posx: 0,
@@ -3918,7 +3918,7 @@ inventory: {
 									cb: null
 								},
 								{
-									class: org.bladecoder.engine.actions.SayAction,
+									class: com.bladecoder.engine.actions.SayAction,
 									soundId: null,
 									text: "Con esta carga debe ser suficiente.",
 									wait: false,
@@ -3932,7 +3932,7 @@ inventory: {
 					]
 				},
 				use.cable: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: use.cable,
 					actions: [
 						{
@@ -3945,11 +3945,11 @@ empalmar el cable a la entrada de corriente continua",
 					]
 				},
 				lookat: {
-					class: org.bladecoder.engine.model.Verb,
+					class: com.bladecoder.engine.model.Verb,
 					id: lookat,
 					actions: [
 						{
-							class: org.bladecoder.engine.actions.SayAction,
+							class: com.bladecoder.engine.actions.SayAction,
 							soundId: null,
 							text: "Es una máquina cortadora portátil\\nPerfecta para cortar cristal",
 							wait: true,
@@ -3965,12 +3965,12 @@ empalmar el cable a la entrada de corriente continua",
 			state: WITH_LOW_BATTERY,
 			sounds: {
 				click: {
-					class: org.bladecoder.engine.model.SoundFX,
+					class: com.bladecoder.engine.model.SoundFX,
 					filename: sounds/click1.ogg,
 					volume: 0.2
 				},
 				drill: {
-					class: org.bladecoder.engine.model.SoundFX,
+					class: com.bladecoder.engine.model.SoundFX,
 					filename: sounds/drill.ogg,
 					volume: 0.5
 				}
@@ -3978,7 +3978,7 @@ empalmar el cable a la entrada de corriente continua",
 			playingSound: null,
 			fanims: {
 				cutter.inventory: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: common,
 					count: -1,
@@ -3986,7 +3986,7 @@ empalmar el cable a la entrada de corriente continua",
 					animationType: 1
 				},
 				cutter.charging: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 2,
 					atlas: common,
 					count: -1,
@@ -3994,7 +3994,7 @@ empalmar el cable a la entrada de corriente continua",
 					animationType: 1
 				},
 				cutter.withcable: {
-					class: org.bladecoder.engine.anim.FrameAnimation,
+					class: com.bladecoder.engine.anim.FrameAnimation,
 					speed: 1,
 					atlas: common,
 					count: -1,
@@ -4019,21 +4019,21 @@ timeOfGame: 12.596021,
 cutmode: false,
 defaultVerbs: {
 	pickup: {
-		class: org.bladecoder.engine.model.Verb,
+		class: com.bladecoder.engine.model.Verb,
 		id: pickup,
 		actions: [
 			{
-				class: org.bladecoder.engine.actions.LookAtAction,
+				class: com.bladecoder.engine.actions.LookAtAction,
 				text: "No puedo coger eso"
 			}
 		]
 	},
 	use: {
-		class: org.bladecoder.engine.model.Verb,
+		class: com.bladecoder.engine.model.Verb,
 		id: use,
 		actions: [
 			{
-				class: org.bladecoder.engine.actions.SayAction,
+				class: com.bladecoder.engine.actions.SayAction,
 				soundId: null,
 				text: "No se que hacer con esto",
 				wait: true,
@@ -4045,19 +4045,19 @@ defaultVerbs: {
 		]
 	},
 	dialog: {
-		class: org.bladecoder.engine.model.Verb,
+		class: com.bladecoder.engine.model.Verb,
 		id: dialog,
 		actions: [
 			{
-				class: org.bladecoder.engine.actions.Sequence,
+				class: com.bladecoder.engine.actions.Sequence,
 				actions: [
 					{
-						class: org.bladecoder.engine.actions.SetCutmodeAction,
+						class: com.bladecoder.engine.actions.SetCutmodeAction,
 						setInventory: true,
 						inventory: false
 					},
 					{
-						class: org.bladecoder.engine.actions.SayDialogAction,
+						class: com.bladecoder.engine.actions.SayDialogAction,
 						previousFA: null,
 						responseText: null,
 						characterTurn: false,
@@ -4065,7 +4065,7 @@ defaultVerbs: {
 						cb: null
 					},
 					{
-						class: org.bladecoder.engine.actions.SetCutmodeAction,
+						class: com.bladecoder.engine.actions.SetCutmodeAction,
 						value: false,
 						setInventory: true
 					}
@@ -4074,11 +4074,11 @@ defaultVerbs: {
 		]
 	},
 	lookat: {
-		class: org.bladecoder.engine.model.Verb,
+		class: com.bladecoder.engine.model.Verb,
 		id: lookat,
 		actions: [
 			{
-				class: org.bladecoder.engine.actions.LookAtAction,
+				class: com.bladecoder.engine.actions.LookAtAction,
 				text: "Nada interesante"
 			}
 		]

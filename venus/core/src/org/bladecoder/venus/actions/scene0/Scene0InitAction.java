@@ -2,22 +2,21 @@ package org.bladecoder.venus.actions.scene0;
 
 import java.util.HashMap;
 
-import org.bladecoder.engine.actions.Action;
-import org.bladecoder.engine.actions.ActionCallback;
-import org.bladecoder.engine.actions.Param;
-import org.bladecoder.engine.actions.Param.Type;
-import org.bladecoder.engine.anim.FrameAnimation;
-import org.bladecoder.engine.assets.EngineAssetManager;
-import org.bladecoder.engine.model.ImageRenderer;
-import org.bladecoder.engine.model.SpriteActor;
-import org.bladecoder.engine.model.Text;
-import org.bladecoder.engine.model.TextManager;
-import org.bladecoder.engine.model.World;
-import org.bladecoder.engine.model.Actor.ActorLayer;
-import org.bladecoder.engine.util.EngineLogger;
-
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Polygon;
+import com.bladecoder.engine.actions.Action;
+import com.bladecoder.engine.actions.ActionCallback;
+import com.bladecoder.engine.actions.Param;
+import com.bladecoder.engine.actions.Param.Type;
+import com.bladecoder.engine.anim.FrameAnimation;
+import com.bladecoder.engine.assets.EngineAssetManager;
+import com.bladecoder.engine.model.ImageRenderer;
+import com.bladecoder.engine.model.SpriteActor;
+import com.bladecoder.engine.model.Text;
+import com.bladecoder.engine.model.TextManager;
+import com.bladecoder.engine.model.World;
+import com.bladecoder.engine.model.Actor.ActorLayer;
+import com.bladecoder.engine.util.EngineLogger;
 
 public class Scene0InitAction implements Action, ActionCallback {
 	

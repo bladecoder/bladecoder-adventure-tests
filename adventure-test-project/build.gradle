@@ -19,6 +19,7 @@ allprojects {
         version = passed_version
     ext {
         appName = 'adventure-test-project'
+        bladeEngineVersion = '0.3.0-SNAPSHOT'
         gdxVersion = '1.3.1'
         roboVMVersion = '0.0.14'
     }
@@ -48,6 +49,7 @@ project(":desktop") {
     dependencies {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+        compile "com.bladecoder:blade-engine:$bladeEngineVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
     }

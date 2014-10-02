@@ -25,7 +25,7 @@ public class LeaveAction implements Action {
 
 		World.getInstance().pause();
 
-		ui.setScreen(UI.State.CREDIT_SCREEN);
+		ui.setCurrentScreen(UI.Screens.CREDIT_SCREEN);
 	}
 
 	@Override

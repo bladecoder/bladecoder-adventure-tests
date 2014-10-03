@@ -48,12 +48,14 @@ public class Scene0InitAction implements Action, ActionCallback {
 	}
 
 	@Override
-	public void run() {	
+	public boolean run(ActionCallback cb) {
 		EngineLogger.debug("SCENE0 INIT ");
 		
 		World.getInstance().showInventory(false);
 		
 		World.getInstance().getTextManager().addSubtitle(text, TextManager.POS_CENTER, TextManager.POS_CENTER, false, Text.Type.PLAIN, Color.WHITE, this);
+		
+		return false;
 	}
 
 	@Override
@@ -103,10 +105,5 @@ public class Scene0InitAction implements Action, ActionCallback {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
-	}
-
-	@Override
-	public boolean waitForFinish(ActionCallback cb) {
-		return false;
 	}
 }

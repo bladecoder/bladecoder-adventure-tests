@@ -25,7 +25,7 @@ public class UseCutMachineCableAction implements Action {
 	private String actorId;
 
 	@Override
-	public void run() {
+	public boolean run(ActionCallback cb) {
 		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor(actorId, true);
 		Actor target = World.getInstance().getCurrentScene().getActor("cable", true);
 
@@ -42,6 +42,8 @@ public class UseCutMachineCableAction implements Action {
 			World.getInstance().getTextManager().addSubtitle(defaultCableText, TextManager.POS_SUBTITLE,
 					TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, Color.BLACK, null);
 		}
+		
+		return false;
 	}
 
 	@Override
@@ -60,10 +62,5 @@ public class UseCutMachineCableAction implements Action {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
-	}
-
-	@Override
-	public boolean waitForFinish(ActionCallback cb) {
-		return false;
 	}
 }

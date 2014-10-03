@@ -18,7 +18,7 @@ public class LeaveAction implements Action {
 	}
 
 	@Override
-	public void run() {
+	public boolean run(ActionCallback cb) {
 		World.getInstance().newGame();
 
 		UI ui = BladeEngine.getAppUI();
@@ -26,6 +26,8 @@ public class LeaveAction implements Action {
 		World.getInstance().pause();
 
 		ui.setCurrentScreen(UI.Screens.CREDIT_SCREEN);
+		
+		return false;
 	}
 
 	@Override
@@ -36,10 +38,5 @@ public class LeaveAction implements Action {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
-	}
-
-	@Override
-	public boolean waitForFinish(ActionCallback cb) {
-		return false;
 	}
 }

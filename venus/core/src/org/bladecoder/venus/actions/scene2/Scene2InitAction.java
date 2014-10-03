@@ -28,7 +28,7 @@ public class Scene2InitAction implements Action {
 	}
 
 	@Override
-	public void run() {	
+	public boolean run(ActionCallback cb) {
 		EngineLogger.debug("SCENE2 INIT ");
 
 		World w = World.getInstance();
@@ -38,7 +38,7 @@ public class Scene2InitAction implements Action {
 		String t = MessageFormat.format(I18N.getString(text.substring(1)), (int)(w.getTimeOfGame()/60));
 		
 		World.getInstance().getTextManager().addSubtitle(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null);
-
+		return false;
 	}
 	
 
@@ -50,10 +50,5 @@ public class Scene2InitAction implements Action {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
-	}
-
-	@Override
-	public boolean waitForFinish(ActionCallback cb) {
-		return false;
 	}
 }

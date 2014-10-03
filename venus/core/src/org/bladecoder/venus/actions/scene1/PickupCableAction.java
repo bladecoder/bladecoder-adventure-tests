@@ -28,7 +28,7 @@ public class PickupCableAction implements Action, ActionCallback {
 	private boolean goTo = false;
 
 	@Override
-	public void run() {
+	public boolean run(ActionCallback cb) {
 		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor("cable", false);
 
 		EngineLogger.debug("PICKUP " + actor.getDesc());
@@ -36,6 +36,8 @@ public class PickupCableAction implements Action, ActionCallback {
 		SpriteActor player = World.getInstance().getCurrentScene().getPlayer();
 
 		player.goTo(new Vector2(actor.getX() + actor.getWidth(), actor.getY()), this);
+		
+		return false;
 	}
 
 	@Override
@@ -91,10 +93,5 @@ public class PickupCableAction implements Action, ActionCallback {
 	@Override
 	public Param[] getParams() {
 		return PARAMS;
-	}
-
-	@Override
-	public boolean waitForFinish(ActionCallback cb) {
-		return false;
 	}
 }

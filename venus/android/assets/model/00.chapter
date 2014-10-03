@@ -9,6 +9,7 @@
 
 
 	<verb id="leave">
+		<action action_name="ShowInventory" value="true"/>
 		<action action_name="Leave" scene="scene1"/>
 	</verb>
 

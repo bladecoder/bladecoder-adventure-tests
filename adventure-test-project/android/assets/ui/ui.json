@@ -52,5 +52,17 @@ com.bladecoder.engine.ui.TextManagerUI$TextManagerUIStyle: {
 },
 com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
 		default: { selection: grey, background: dark-grey, focusedBackground: dark-grey, disabledBackground: grey, font: default, fontColor: white, focusedFontColor: text-dark, disabledFontColor: text-dark, cursor: white, messageFont: default, messageFontColor: text-dark }
-	}
+},
+com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
+		default: {vScroll: dark-grey, hScrollKnob: dark-grey, background: grey, hScroll: dark-grey, vScrollKnob: dark-grey, corner: grey},
+		opaque: { vScroll: dark-grey, hScrollKnob: dark-grey, background: grey, hScroll: dark-grey, vScrollKnob: dark-grey, corner: grey}
+	},
+com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
+		default: { fontColorUnselected: text-dark, selection: grey, fontColorSelected: text-dark, font: default },
+		opaque: { fontColorUnselected: text-dark, selection: grey, fontColorSelected: text-dark, font: default }
+	},
+
+com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle: {
+	default: { background: dark-grey, backgroundOver: dark-grey, backgroundOpen: dark-grey, listStyle: default, scrollStyle: opaque, font: default, fontColor: white },
+}	
 }

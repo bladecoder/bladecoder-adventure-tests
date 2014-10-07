@@ -15,7 +15,7 @@ import com.bladecoder.engine.model.SpriteActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
-import com.bladecoder.engine.model.Actor.ActorLayer;
+import com.bladecoder.engine.model.BaseActor.ActorLayer;
 import com.bladecoder.engine.util.EngineLogger;
 
 public class Scene0InitAction implements Action, ActionCallback {

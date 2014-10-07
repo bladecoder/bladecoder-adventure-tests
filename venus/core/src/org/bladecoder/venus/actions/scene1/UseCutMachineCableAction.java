@@ -7,7 +7,7 @@ import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.actions.Param.Type;
-import com.bladecoder.engine.model.Actor;
+import com.bladecoder.engine.model.BaseActor;
 import com.bladecoder.engine.model.SpriteActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
@@ -27,7 +27,7 @@ public class UseCutMachineCableAction implements Action {
 	@Override
 	public boolean run(ActionCallback cb) {
 		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor(actorId, true);
-		Actor target = World.getInstance().getCurrentScene().getActor("cable", true);
+		BaseActor target = World.getInstance().getCurrentScene().getActor("cable", true);
 
 //		EngineLogger.debug("USING " + actor.getDesc() + " IN " + target.getDesc());
 

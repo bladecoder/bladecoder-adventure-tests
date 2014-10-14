@@ -1,202 +1,160 @@
 
 ui.png
-size: 339,139
+size: 405,139
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear,Nearest
 repeat: none
 back
   rotate: false
-  xy: 2, 80
+  xy: 84, 80
   size: 59, 59
   orig: 59, 59
   offset: 0, 0
   index: -1
 bubblepointer
   rotate: false
-  xy: 142, 17
-  size: 14, 9
-  orig: 14, 9
+  xy: 84, 65
+  size: 20, 13
+  orig: 20, 13
   offset: 0, 0
   index: -1
-bubblepointer2
+circle
   rotate: false
-  xy: 111, 8
-  size: 7, 9
-  orig: 7, 9
+  xy: 362, 63
+  size: 37, 37
+  orig: 37, 37
   offset: 0, 0
   index: -1
-collapse
+circle_button
   rotate: false
-  xy: 124, 28
-  size: 50, 50
-  orig: 50, 50
+  xy: 2, 59
+  size: 80, 80
+  orig: 80, 80
   offset: 0, 0
   index: -1
 config
   rotate: false
-  xy: 185, 89
+  xy: 55, 7
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 credits
   rotate: false
-  xy: 2, 19
+  xy: 107, 19
   size: 59, 59
   orig: 59, 59
   offset: 0, 0
   index: -1
 help
   rotate: false
-  xy: 63, 80
+  xy: 145, 80
   size: 59, 59
   orig: 59, 59
   offset: 0, 0
   index: -1
 hotspotpointer
   rotate: false
-  xy: 279, 28
-  size: 27, 27
-  orig: 27, 27
+  xy: 2, 6
+  size: 51, 51
+  orig: 51, 51
   offset: 0, 0
   index: -1
-hotspotpointer2
+inventory
   rotate: false
-  xy: 228, 9
-  size: 27, 27
-  orig: 27, 27
+  xy: 362, 102
+  size: 42, 37
+  orig: 42, 37
   offset: 0, 0
   index: -1
-hotspotpointer3
+inventory_plain
   rotate: false
-  xy: 311, 59
-  size: 28, 28
-  orig: 28, 28
-  offset: 0, 0
-  index: -1
-hotspotpointer4
-  rotate: false
-  xy: 279, 57
-  size: 30, 30
-  orig: 30, 30
+  xy: 229, 2
+  size: 34, 24
+  orig: 34, 24
   offset: 0, 0
   index: -1
 leave
   rotate: false
-  xy: 43, 6
-  size: 17, 11
-  orig: 17, 11
-  offset: 0, 0
-  index: -1
-leave2
-  rotate: false
-  xy: 2, 5
-  size: 19, 12
-  orig: 19, 12
-  offset: 0, 0
-  index: -1
-leave3
-  rotate: false
-  xy: 23, 6
-  size: 18, 11
-  orig: 18, 11
-  offset: 0, 0
-  index: -1
-leave4
-  rotate: false
-  xy: 257, 2
-  size: 19, 13
-  orig: 19, 13
+  xy: 281, 5
+  size: 49, 31
+  orig: 49, 31
   offset: 0, 0
   index: -1
 left
   rotate: false
-  xy: 237, 89
+  xy: 229, 28
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 lookat
   rotate: false
-  xy: 62, 7
-  size: 16, 10
-  orig: 16, 10
+  xy: 332, 36
+  size: 40, 25
+  orig: 40, 25
+  offset: 0, 0
+  index: -1
+menu
+  rotate: false
+  xy: 319, 98
+  size: 41, 41
+  orig: 41, 41
   offset: 0, 0
   index: -1
 pickup
   rotate: false
-  xy: 97, 3
-  size: 12, 14
-  orig: 12, 14
+  xy: 332, 67
+  size: 26, 29
+  orig: 26, 29
   offset: 0, 0
   index: -1
 pie
   rotate: false
-  xy: 228, 38
+  xy: 281, 38
   size: 49, 49
   orig: 49, 49
   offset: 0, 0
   index: -1
 pointer
   rotate: false
-  xy: 297, 10
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: -1
-pointer2
-  rotate: false
-  xy: 124, 10
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: -1
-pointer3
-  rotate: false
-  xy: 278, 9
-  size: 17, 17
-  orig: 17, 17
-  offset: 0, 0
-  index: -1
-pointer4
-  rotate: false
-  xy: 257, 17
-  size: 19, 19
-  orig: 19, 19
+  xy: 374, 30
+  size: 31, 31
+  orig: 31, 31
   offset: 0, 0
   index: -1
 quit
   rotate: false
-  xy: 63, 19
+  xy: 168, 19
   size: 59, 59
   orig: 59, 59
   offset: 0, 0
   index: -1
 reload
   rotate: false
-  xy: 124, 80
+  xy: 206, 80
   size: 59, 59
   orig: 59, 59
   offset: 0, 0
   index: -1
 right
   rotate: false
-  xy: 289, 89
+  xy: 267, 89
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 talkto
   rotate: false
-  xy: 80, 5
-  size: 15, 12
-  orig: 15, 12
+  xy: 332, 8
+  size: 31, 26
+  orig: 31, 26
   offset: 0, 0
   index: -1
-uncollapse
+white_pixel
   rotate: false
-  xy: 176, 28
-  size: 50, 50
-  orig: 50, 50
+  xy: 2, 3
+  size: 1, 1
+  orig: 1, 1
   offset: 0, 0
   index: -1

@@ -1,4 +1,4 @@
-package com.bladecoder.engine;
+package com.bladecoder.engine.ios;
 
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.uikit.UIApplication;

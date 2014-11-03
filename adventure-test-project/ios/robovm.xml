@@ -34,9 +34,6 @@
     <pattern>org.apache.harmony.security.provider.crypto.CryptoProvider</pattern>
   </forceLinkClasses>
   <libs>
-    <lib>build/libs/ios/libgdx-freetype.a</lib>
-    <lib>build/libs/ios/libgdx.a</lib>
-    <lib>build/libs/ios/libObjectAL.a</lib>
   </libs>
   <frameworks>
     <framework>UIKit</framework>

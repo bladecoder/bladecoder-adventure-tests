@@ -18,7 +18,7 @@
     </resource>
   </resources>
   <forceLinkClasses>
-    <pattern>com.bladecoder.*</pattern>
+    <pattern>com.bladecoder.**</pattern>
     <pattern>com.badlogic.gdx.scenes.scene2d.ui.*</pattern>
     <pattern>com.badlogic.gdx.physics.bullet.**</pattern>
     <pattern>com.android.okhttp.HttpHandler</pattern>

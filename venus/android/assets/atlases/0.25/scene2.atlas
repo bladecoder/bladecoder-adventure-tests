@@ -1,12 +1,13 @@
 
 scene2.png
+size: 86,253
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 fence
   rotate: false
   xy: 1, 1
-  size: 85, 251
-  orig: 85, 251
+  size: 84, 251
+  orig: 84, 251
   offset: 0, 0
   index: -1

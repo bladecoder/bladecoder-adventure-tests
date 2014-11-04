@@ -1,7 +1,8 @@
 
 scene1_rope.png
+size: 1006,1008
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 rope.down
   rotate: false
@@ -100,14 +101,14 @@ rope.down
   size: 138, 250
   orig: 138, 250
   offset: 0, 0
-  index: 14
+  index: 15
 rope.down
   rotate: false
   xy: 841, 757
   size: 138, 250
   orig: 138, 250
   offset: 0, 0
-  index: 15
+  index: 14
 rope.fall
   rotate: false
   xy: 281, 505
@@ -250,8 +251,9 @@ rope.fall
   index: 20
 
 scene1_rope2.png
+size: 726,252
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 rope.fall
   rotate: false

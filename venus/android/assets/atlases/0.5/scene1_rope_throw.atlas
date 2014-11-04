@@ -1,5 +1,6 @@
 
 scene1_rope_throw.png
+size: 2022,2008
 format: RGBA8888
 filter: Linear,Linear
 repeat: none

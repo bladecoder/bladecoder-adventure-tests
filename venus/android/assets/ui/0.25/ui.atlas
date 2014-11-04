@@ -1,19 +1,19 @@
 
 ui.png
-size: 1005,1005
+size: 251,267
 format: RGBA8888
-filter: Linear,Nearest
+filter: Linear,Linear
 repeat: none
 back
   rotate: false
-  xy: 349, 770
-  size: 235, 235
-  orig: 235, 235
+  xy: 88, 208
+  size: 58, 58
+  orig: 58, 58
   offset: 0, 0
   index: -1
 border_black_rect4
   rotate: false
-  xy: 955, 596
+  xy: 206, 63
   size: 31, 31
   split: 5, 5, 5, 4
   orig: 31, 31
@@ -21,7 +21,7 @@ border_black_rect4
   index: -1
 border_rect2
   rotate: false
-  xy: 955, 631
+  xy: 208, 151
   size: 32, 32
   split: 2, 2, 2, 2
   orig: 32, 32
@@ -29,7 +29,7 @@ border_rect2
   index: -1
 border_rect4
   rotate: false
-  xy: 800, 108
+  xy: 200, 29
   size: 32, 32
   split: 4, 4, 5, 5
   orig: 32, 32
@@ -37,155 +37,155 @@ border_rect4
   index: -1
 bubblepointer
   rotate: false
-  xy: 800, 144
-  size: 79, 51
-  orig: 79, 51
+  xy: 103, 29
+  size: 19, 12
+  orig: 19, 12
   offset: 0, 0
   index: -1
 circle
   rotate: false
-  xy: 648, 47
-  size: 148, 148
-  orig: 148, 148
+  xy: 208, 185
+  size: 37, 37
+  orig: 37, 37
   offset: 0, 0
   index: -1
 circle_border
   rotate: false
-  xy: 4, 347
-  size: 312, 312
-  orig: 312, 312
+  xy: 1, 101
+  size: 78, 78
+  orig: 78, 78
   offset: 0, 0
   index: -1
 circle_button
   rotate: false
-  xy: 4, 663
-  size: 341, 342
-  orig: 341, 342
+  xy: 1, 181
+  size: 85, 85
+  orig: 85, 85
   offset: 0, 0
   index: -1
 config
   rotate: false
-  xy: 529, 327
-  size: 200, 200
-  orig: 200, 200
+  xy: 134, 96
+  size: 50, 50
+  orig: 50, 50
   offset: 0, 0
   index: -1
 credits
   rotate: false
-  xy: 4, 108
-  size: 235, 235
-  orig: 235, 235
+  xy: 1, 41
+  size: 58, 58
+  orig: 58, 58
   offset: 0, 0
   index: -1
 help
   rotate: false
-  xy: 588, 770
-  size: 235, 235
-  orig: 235, 235
+  xy: 148, 208
+  size: 58, 58
+  orig: 58, 58
   offset: 0, 0
   index: -1
 hotspotpointer
   rotate: false
-  xy: 320, 322
-  size: 205, 205
-  orig: 205, 205
+  xy: 81, 95
+  size: 51, 51
+  orig: 51, 51
   offset: 0, 0
   index: -1
 inventory
   rotate: false
-  xy: 827, 834
-  size: 171, 171
-  orig: 171, 171
+  xy: 208, 224
+  size: 42, 42
+  orig: 42, 42
   offset: 0, 0
   index: -1
 inventory_plain
   rotate: false
-  xy: 169, 7
-  size: 136, 97
-  orig: 136, 97
+  xy: 164, 43
+  size: 34, 24
+  orig: 34, 24
   offset: 0, 0
   index: -1
 leave
   rotate: false
-  xy: 648, 199
-  size: 197, 124
-  orig: 197, 124
+  xy: 1, 8
+  size: 49, 31
+  orig: 49, 31
   offset: 0, 0
   index: -1
 left
   rotate: false
-  xy: 243, 118
-  size: 200, 200
-  orig: 200, 200
+  xy: 61, 43
+  size: 50, 50
+  orig: 50, 50
   offset: 0, 0
   index: -1
 lookat
   rotate: false
-  xy: 4, 4
-  size: 161, 100
-  orig: 161, 100
+  xy: 164, 69
+  size: 40, 25
+  orig: 40, 25
   offset: 0, 0
   index: -1
 menu
   rotate: false
-  xy: 827, 667
-  size: 163, 163
-  orig: 163, 163
+  xy: 61, 1
+  size: 40, 40
+  orig: 40, 40
   offset: 0, 0
   index: -1
 pickup
   rotate: false
-  xy: 849, 207
-  size: 103, 116
-  orig: 103, 116
+  xy: 136, 13
+  size: 25, 29
+  orig: 25, 29
   offset: 0, 0
   index: -1
 pie
   rotate: false
-  xy: 447, 121
-  size: 197, 197
-  orig: 197, 197
+  xy: 113, 44
+  size: 49, 49
+  orig: 49, 49
   offset: 0, 0
   index: -1
 pointer
   rotate: false
-  xy: 827, 540
-  size: 124, 123
-  orig: 124, 123
+  xy: 163, 11
+  size: 31, 30
+  orig: 31, 30
   offset: 0, 0
   index: -1
 quit
   rotate: false
-  xy: 349, 531
-  size: 235, 235
-  orig: 235, 235
+  xy: 88, 148
+  size: 58, 58
+  orig: 58, 58
   offset: 0, 0
   index: -1
 reload
   rotate: false
-  xy: 588, 531
-  size: 235, 235
-  orig: 235, 235
+  xy: 148, 148
+  size: 58, 58
+  orig: 58, 58
   offset: 0, 0
   index: -1
 right
   rotate: false
-  xy: 733, 327
-  size: 200, 200
-  orig: 200, 200
+  xy: 186, 96
+  size: 50, 50
+  orig: 50, 50
   offset: 0, 0
   index: -1
 talkto
   rotate: false
-  xy: 309, 10
-  size: 125, 104
-  orig: 125, 104
+  xy: 103, 1
+  size: 31, 26
+  orig: 31, 26
   offset: 0, 0
   index: -1
 white_pixel
   rotate: false
-  xy: 1002, 1002
-  size: 3, 3
-  orig: 3, 3
+  xy: 208, 148
+  size: 1, 1
+  orig: 1, 1
   offset: 0, 0
   index: -1

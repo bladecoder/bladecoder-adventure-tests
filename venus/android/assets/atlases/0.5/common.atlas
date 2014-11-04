@@ -1,5 +1,6 @@
 
 common.png
+size: 626,77
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -31,6 +32,20 @@ cutter.inventory
   orig: 75, 75
   offset: 0, 0
   index: -1
+cutter.withcable
+  rotate: false
+  xy: 575, 26
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+diosa
+  rotate: false
+  xy: 532, 6
+  size: 41, 70
+  orig: 41, 70
+  offset: 0, 0
+  index: -1
 diosa.inventory
   rotate: false
   xy: 378, 1
@@ -43,19 +58,5 @@ navaja.inventory
   xy: 455, 1
   size: 75, 75
   orig: 75, 75
-  offset: 0, 0
-  index: -1
-diosa
-  rotate: false
-  xy: 532, 5
-  size: 41, 71
-  orig: 41, 71
-  offset: 0, 0
-  index: -1
-cutter.withcable
-  rotate: false
-  xy: 575, 26
-  size: 50, 50
-  orig: 50, 50
   offset: 0, 0
   index: -1

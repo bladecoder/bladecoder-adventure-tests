@@ -1,12 +1,13 @@
 
 scene0.png
+size: 40,40
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 forward
   rotate: false
   xy: 1, 1
-  size: 39, 39
-  orig: 39, 39
+  size: 38, 38
+  orig: 38, 38
   offset: 0, 0
   index: -1

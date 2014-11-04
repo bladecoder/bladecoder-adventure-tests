@@ -16,7 +16,7 @@ import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
 
 public class PickupCableAction implements Action, ActionCallback {
-	public static final String INFO = "Action for pickup the cable";
+	public static final String INFO = "Action for conecting/disconecting the cable";
 	public static final Param[] PARAMS = {
 		new Param("connect_text", "The text to show when connect the cable", Type.STRING),
 		new Param("disconnect_text", "The text to show when disconnect the cable", Type.STRING)
@@ -35,6 +35,7 @@ public class PickupCableAction implements Action, ActionCallback {
 
 		SpriteActor player = World.getInstance().getCurrentScene().getPlayer();
 
+		goTo = false;
 		player.goTo(new Vector2(actor.getX() + actor.getWidth(), actor.getY()), this);
 		
 		return false;

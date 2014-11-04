@@ -1,12 +1,13 @@
 
 scene0.png
+size: 79,79
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 forward
   rotate: false
   xy: 1, 1
-  size: 78, 78
-  orig: 78, 78
+  size: 77, 77
+  orig: 77, 77
   offset: 0, 0
   index: -1

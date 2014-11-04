@@ -1,5 +1,6 @@
 
 scene1_rope_up.png
+size: 1967,2008
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -201,8 +202,9 @@ rope.up
   index: 28
 
 scene1_rope_up2.png
+size: 1967,2008
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 rope.up
   rotate: false
@@ -402,8 +404,9 @@ rope.up
   index: 56
 
 scene1_rope_up3.png
+size: 843,502
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 rope.up
   rotate: false

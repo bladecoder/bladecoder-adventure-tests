@@ -1,25 +1,26 @@
 
 common.png
+size: 319,39
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 cutter.charging
   rotate: false
-  xy: 1, 8
+  xy: 1, 7
   size: 49, 31
   orig: 49, 31
   offset: 0, 0
   index: 1
 cutter.charging
   rotate: false
-  xy: 52, 8
+  xy: 52, 7
   size: 49, 31
   orig: 49, 31
   offset: 0, 0
   index: 2
 cutter.charging
   rotate: false
-  xy: 103, 8
+  xy: 103, 7
   size: 49, 31
   orig: 49, 31
   offset: 0, 0
@@ -27,35 +28,35 @@ cutter.charging
 cutter.inventory
   rotate: false
   xy: 154, 1
-  size: 38, 38
-  orig: 38, 38
-  offset: 0, 0
-  index: -1
-diosa.inventory
-  rotate: false
-  xy: 194, 1
-  size: 38, 38
-  orig: 38, 38
-  offset: 0, 0
-  index: -1
-navaja.inventory
-  rotate: false
-  xy: 234, 1
-  size: 38, 38
-  orig: 38, 38
-  offset: 0, 0
-  index: -1
-diosa
-  rotate: false
-  xy: 274, 4
-  size: 21, 35
-  orig: 21, 35
+  size: 37, 37
+  orig: 37, 37
   offset: 0, 0
   index: -1
 cutter.withcable
   rotate: false
-  xy: 297, 14
+  xy: 293, 13
   size: 25, 25
   orig: 25, 25
+  offset: 0, 0
+  index: -1
+diosa
+  rotate: false
+  xy: 271, 3
+  size: 20, 35
+  orig: 20, 35
+  offset: 0, 0
+  index: -1
+diosa.inventory
+  rotate: false
+  xy: 193, 1
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+navaja.inventory
+  rotate: false
+  xy: 232, 1
+  size: 37, 37
+  orig: 37, 37
   offset: 0, 0
   index: -1

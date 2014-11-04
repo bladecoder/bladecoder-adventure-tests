@@ -1,7 +1,7 @@
 
 scene1_rope_up.png
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 rope.up
   rotate: false

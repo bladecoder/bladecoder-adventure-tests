@@ -1,7 +1,7 @@
 
 player_down.png
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 runaway
   rotate: false

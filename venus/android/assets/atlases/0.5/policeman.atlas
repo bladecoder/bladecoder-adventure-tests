@@ -1,7 +1,7 @@
 
 policeman.png
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Linear,Linear
 repeat: none
 fall
   rotate: false

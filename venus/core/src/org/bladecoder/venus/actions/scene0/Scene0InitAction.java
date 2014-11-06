@@ -8,7 +8,7 @@ import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.actions.Param.Type;
-import com.bladecoder.engine.anim.FrameAnimation;
+import com.bladecoder.engine.anim.AnimationDesc;
 import com.bladecoder.engine.assets.EngineAssetManager;
 import com.bladecoder.engine.model.ImageRenderer;
 import com.bladecoder.engine.model.SpriteActor;
@@ -68,17 +68,17 @@ public class Scene0InitAction implements Action, ActionCallback {
 			
 			SpriteActor a = new SpriteActor();
 			ImageRenderer r = new ImageRenderer();
-			FrameAnimation fa = new FrameAnimation();
+			AnimationDesc fa = new AnimationDesc();
 			fa.source = titleFilename;
 			fa.id = titleFilename;
-			r.addFrameAnimation(fa);
+			r.addAnimation(fa);
 			a.setLayer(ActorLayer.FOREGROUND);
 			a.setRenderer(r);
 			a.setVisible(true);
 			a.setInteraction(false);
 			a.setBbox(new Polygon());
 			a.setBboxFromRenderer(true);
-			a.startFrameAnimation(fa.id, null);
+			a.startAnimation(fa.id, null);
 			a.setPosition(1920/2 * EngineAssetManager.getInstance().getScale(), 0);
 			World.getInstance().getCurrentScene().addActor(a);
 							

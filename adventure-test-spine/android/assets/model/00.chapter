@@ -2,25 +2,25 @@
 <chapter id="00">
 <scene background="morgue.png" depth_vector="0.65,-0.4" id="morgue" player="john">
 <actor depth_type="none" id="fg1" pos="2531.217,421.93298" type="atlas" layer="foreground">
-<frame_animation animation_type="no_repeat" disposed_when_played="true" id="morgue.fg" preload="true" source="morgue" speed="1.0"/>
+<animation animation_type="no_repeat" disposed_when_played="true" id="morgue.fg" preload="true" source="morgue" speed="1.0"/>
 </actor>
-<actor depth_type="vector" id="john" init_frame_animation="stand.front" pos="1741.9237,59.542313" type="spine" layer="dynamic">
-<frame_animation animation_type="no_repeat" disposed_when_played="false" id="stand.back" preload="true" source="john_back" speed="1.0"/>
-<frame_animation animation_type="repeat" disposed_when_played="false" id="walk.back" preload="true" source="john_back" speed=".7"/>
-<frame_animation animation_type="no_repeat" disposed_when_played="false" id="stand.front" preload="true" source="john_front" speed="1.0"/>
-<frame_animation animation_type="repeat" count="-1" disposed_when_played="false" id="walk.front" preload="true" source="john_front" speed=".7"/>
-<frame_animation animation_type="no_repeat" disposed_when_played="false" id="stand.left" preload="true" source="john_left" speed="1.0"/>
-<frame_animation animation_type="repeat" count="-1" disposed_when_played="false" id="walk.left" preload="true" source="john_left" speed="1.0"/>
+<actor depth_type="vector" id="john" init_animation="stand.front" pos="1741.9237,59.542313" type="spine" layer="dynamic">
+<animation animation_type="no_repeat" disposed_when_played="false" id="stand.back" preload="true" source="john_back" speed="1.0"/>
+<animation animation_type="repeat" disposed_when_played="false" id="walk.back" preload="true" source="john_back" speed=".7"/>
+<animation animation_type="no_repeat" disposed_when_played="false" id="stand.front" preload="true" source="john_front" speed="1.0"/>
+<animation animation_type="repeat" count="-1" disposed_when_played="false" id="walk.front" preload="true" source="john_front" speed=".7"/>
+<animation animation_type="no_repeat" disposed_when_played="false" id="stand.left" preload="true" source="john_left" speed="1.0"/>
+<animation animation_type="repeat" count="-1" disposed_when_played="false" id="walk.left" preload="true" source="john_left" speed="1.0"/>
 </actor>
 <walk_zone polygon="185.9563,-3.944458,709.73364,286.50357,2186.9773,276.54666,2744.407,3.0993042" pos="0.0,0.0">
 <obstacle polygon="-95.30267,-90.653656,73.70465,123.29321,603.2153,129.7377,561.06506,-89.878876" pos="743.82574,139.46733"/>
 <obstacle polygon="-9.2977295,37.966125,-6.1984863,141.11366,615.3026,144.21307,708.2809,29.4431" pos="1376.0775,92.97821"/>
 </walk_zone>
 <actor depth_type="none" id="table" interaction="false" pos="970.46027,68.57152" type="atlas" layer="dynamic">
-<frame_animation animation_type="no_repeat" disposed_when_played="true" id="table" preload="true" source="morgue" speed="1.0"/>
+<animation animation_type="no_repeat" disposed_when_played="true" id="table" preload="true" source="morgue" speed="1.0"/>
 </actor>
 <actor depth_type="none" desc="litter" id="litter" pos="1712.9275,141.98845" type="atlas" layer="dynamic">
-<frame_animation animation_type="no_repeat" disposed_when_played="true" id="litter" preload="true" source="morgue" speed="1.0"/>
+<animation animation_type="no_repeat" disposed_when_played="true" id="litter" preload="true" source="morgue" speed="1.0"/>
 </actor>
 <actor bbox="23.244507,-543.9225,0.0,200.0,255.78693,167.4577,279.0315,-413.7531" depth_type="none" id="door_left" pos="246.53314,612.811" type="no_renderer" layer="dynamic">
 <verb id="leave">

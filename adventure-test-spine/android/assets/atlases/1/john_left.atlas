@@ -1,96 +1,96 @@
 
 john_left.png
-size: 2038,232
+size: 1024,512
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 foot.r.side
-  rotate: false
-  xy: 1378, 69
+  rotate: true
+  xy: 845, 265
   size: 138, 69
   orig: 138, 69
   offset: 0, 0
   index: -1
 foot.side
-  rotate: false
-  xy: 1518, 69
+  rotate: true
+  xy: 782, 86
   size: 138, 69
   orig: 138, 69
   offset: 0, 0
   index: -1
 forearm.side
   rotate: true
-  xy: 1002, 6
+  xy: 611, 298
   size: 105, 232
   orig: 105, 232
   offset: 0, 0
   index: -1
 hand.side
   rotate: true
-  xy: 1936, 177
+  xy: 2, 2
   size: 55, 102
   orig: 55, 102
   offset: 0, 0
   index: -1
 head.side
   rotate: true
-  xy: 1236, 2
+  xy: 640, 115
   size: 109, 140
   orig: 109, 140
   offset: 0, 0
   index: -1
 leg.r.side
   rotate: true
-  xy: 1665, 169
+  xy: 369, 127
   size: 63, 269
   orig: 63, 269
   offset: 0, 0
   index: -1
 leg.side
   rotate: true
-  xy: 731, 48
+  xy: 2, 59
   size: 63, 269
   orig: 63, 269
   offset: 0, 0
   index: -1
 lowbody.side
-  rotate: true
-  xy: 2, 38
+  rotate: false
+  xy: 2, 124
   size: 194, 373
   orig: 194, 373
   offset: 0, 0
   index: -1
 shadow.side
   rotate: false
-  xy: 1345, 140
+  xy: 611, 405
   size: 318, 92
   orig: 318, 92
   offset: 0, 0
   index: -1
 upperarm.side
   rotate: true
-  xy: 1665, 97
+  xy: 611, 226
   size: 70, 230
   orig: 70, 230
   offset: 0, 0
   index: -1
 upperbody.side
-  rotate: true
-  xy: 377, 63
+  rotate: false
+  xy: 198, 145
   size: 169, 352
   orig: 169, 352
   offset: 0, 0
   index: -1
 upperleg.r.side
-  rotate: true
-  xy: 731, 113
+  rotate: false
+  xy: 369, 192
   size: 119, 305
   orig: 119, 305
   offset: 0, 0
   index: -1
 upperleg.side
-  rotate: true
-  xy: 1038, 113
+  rotate: false
+  xy: 490, 192
   size: 119, 305
   orig: 119, 305
   offset: 0, 0

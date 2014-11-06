@@ -1,0 +1,76 @@
+
+john_front.png
+size: 922,320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+foot.front
+  rotate: false
+  xy: 394, 23
+  size: 85, 89
+  orig: 85, 89
+  offset: 0, 0
+  index: -1
+forearm.front
+  rotate: false
+  xy: 386, 114
+  size: 85, 206
+  orig: 85, 206
+  offset: 0, 0
+  index: -1
+hand.front
+  rotate: true
+  xy: 123, 2
+  size: 37, 124
+  orig: 37, 124
+  offset: 0, 0
+  index: -1
+head.front
+  rotate: true
+  xy: 249, 3
+  size: 92, 143
+  orig: 92, 143
+  offset: 0, 0
+  index: -1
+leg.front
+  rotate: false
+  xy: 123, 41
+  size: 53, 279
+  orig: 53, 279
+  offset: 0, 0
+  index: -1
+lowbody.front
+  rotate: true
+  xy: 178, 97
+  size: 223, 206
+  orig: 223, 206
+  offset: 0, 0
+  index: -1
+shadow.front
+  rotate: true
+  xy: 2, 2
+  size: 318, 119
+  orig: 318, 119
+  offset: 0, 0
+  index: -1
+upperarm.front
+  rotate: true
+  xy: 646, 44
+  size: 74, 201
+  orig: 74, 201
+  offset: 0, 0
+  index: -1
+upperleg.front
+  rotate: true
+  xy: 481, 32
+  size: 86, 163
+  orig: 86, 163
+  offset: 0, 0
+  index: -1
+uppperbody.front
+  rotate: true
+  xy: 473, 120
+  size: 200, 449
+  orig: 200, 449
+  offset: 0, 0
+  index: -1

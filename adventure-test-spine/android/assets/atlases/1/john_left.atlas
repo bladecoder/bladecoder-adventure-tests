@@ -1,0 +1,97 @@
+
+john_left.png
+size: 2038,232
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+foot.r.side
+  rotate: false
+  xy: 1378, 69
+  size: 138, 69
+  orig: 138, 69
+  offset: 0, 0
+  index: -1
+foot.side
+  rotate: false
+  xy: 1518, 69
+  size: 138, 69
+  orig: 138, 69
+  offset: 0, 0
+  index: -1
+forearm.side
+  rotate: true
+  xy: 1002, 6
+  size: 105, 232
+  orig: 105, 232
+  offset: 0, 0
+  index: -1
+hand.side
+  rotate: true
+  xy: 1936, 177
+  size: 55, 102
+  orig: 55, 102
+  offset: 0, 0
+  index: -1
+head.side
+  rotate: true
+  xy: 1236, 2
+  size: 109, 140
+  orig: 109, 140
+  offset: 0, 0
+  index: -1
+leg.r.side
+  rotate: true
+  xy: 1665, 169
+  size: 63, 269
+  orig: 63, 269
+  offset: 0, 0
+  index: -1
+leg.side
+  rotate: true
+  xy: 731, 48
+  size: 63, 269
+  orig: 63, 269
+  offset: 0, 0
+  index: -1
+lowbody.side
+  rotate: true
+  xy: 2, 38
+  size: 194, 373
+  orig: 194, 373
+  offset: 0, 0
+  index: -1
+shadow.side
+  rotate: false
+  xy: 1345, 140
+  size: 318, 92
+  orig: 318, 92
+  offset: 0, 0
+  index: -1
+upperarm.side
+  rotate: true
+  xy: 1665, 97
+  size: 70, 230
+  orig: 70, 230
+  offset: 0, 0
+  index: -1
+upperbody.side
+  rotate: true
+  xy: 377, 63
+  size: 169, 352
+  orig: 169, 352
+  offset: 0, 0
+  index: -1
+upperleg.r.side
+  rotate: true
+  xy: 731, 113
+  size: 119, 305
+  orig: 119, 305
+  offset: 0, 0
+  index: -1
+upperleg.side
+  rotate: true
+  xy: 1038, 113
+  size: 119, 305
+  orig: 119, 305
+  offset: 0, 0
+  index: -1

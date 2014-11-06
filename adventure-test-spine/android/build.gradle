@@ -12,33 +12,23 @@ android {
         }
 
         instrumentTest.setRoot('tests')
-    }
-    
-     if(project.hasProperty('keystore')) {   
-      signingConfigs {
-        release {
+        
+        if(project.hasProperty('keystore')) {   
+          signingConfigs {
+            release {
             storeFile file(project.keystore)
             storePassword project.storePassword
             keyAlias project.alias
             keyPassword project.keyPassword
-        }
-      }
+            }
+          }
     
-      buildTypes {
-        release {
+          buildTypes {
+           release {
             signingConfig signingConfigs.release
-        }
-      }
-    }
-
-    defaultConfig {
-        versionCode 2028
-        versionName version
-    }
-    
-     aaptOptions {
-     	noCompress "png"
-       // ignoreAssetsPattern "1"
+           }
+         }
+       }
     }
 }
 
@@ -90,7 +80,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.bladecoder.venus/com.bladecoder.engine.android.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.bladecoder.advtestspine.android/com.bladecoder.advtestspine.android.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.

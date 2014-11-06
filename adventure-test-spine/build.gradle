@@ -14,20 +14,18 @@ allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
 
-    version = '1.18'
-    
+    version = '1.0'
     if(project.hasProperty('passed_version'))
-      version = passed_version;
-    
+        version = passed_version
     ext {
-        appName = 'venus'
-        bladeEngineVersion = '0.5.1-SNAPSHOT'
+        appName = 'adventure-test-spine'
+        bladeEngineVersion = '0.6.0'
         gdxVersion = '1.4.1'
         roboVMVersion = '1.0.0-alpha-04'
     }
 
     repositories {
-    	mavenLocal()
+		mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
@@ -39,15 +37,17 @@ project(":core") {
 
 
     dependencies {
-    	compile "com.bladecoder.engine:blade-engine:$bladeEngineVersion"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         compile fileTree(dir: '../libs', include: '*.jar')
+        compile "com.bladecoder.engine:blade-engine:$bladeEngineVersion"
+        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        compile "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion"
     }
 }
 
 project(":desktop") {
     apply plugin: "java"
+
 
     dependencies {
         compile project(":core")
@@ -64,15 +64,16 @@ project(":android") {
 
     dependencies {
         compile project(":core")
-        compile fileTree(dir: '../libs', include: '*.jar')
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        compile fileTree(dir: '../libs', include: '*.jar')
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
+        compile "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion"
     }
 }
 
@@ -102,6 +103,7 @@ project(":html") {
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
+        compile "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion:sources"
     }
 }
 

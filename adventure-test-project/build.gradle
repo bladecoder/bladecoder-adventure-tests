@@ -21,7 +21,7 @@ allprojects {
     
     ext {
         appName = 'adventure-test-project'
-        bladeEngineVersion = '0.5.0'
+        bladeEngineVersion = '0.6.0'
         gdxVersion = '1.4.1'
         roboVMVersion = '1.0.0-alpha-04'
     }

@@ -59,7 +59,7 @@ com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 },
 
 com.bladecoder.engine.ui.MenuScreen$MenuScreenStyle: {
-	default: {textButtonStyle: menu, showTitle: true, titleStyle: title}
+	default: {bgFile: images/title_en.jpg, textButtonStyle: menu, showTitle: false}
 },
 com.bladecoder.engine.ui.InventoryUI$InventoryUIStyle: {
 	default: {background: border-rect-grey, itemBackground: border-rect-dark-grey, menuButtonStyle: showMenu}

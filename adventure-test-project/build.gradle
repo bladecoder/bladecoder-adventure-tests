@@ -4,9 +4,9 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.5'
-        classpath 'com.android.tools.build:gradle:0.13+'
-        classpath 'org.robovm:robovm-gradle-plugin:1.0.0-alpha-04'
+        classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'org.robovm:robovm-gradle-plugin:1.0.0-beta-01'
     }
 }
 
@@ -21,9 +21,9 @@ allprojects {
     
     ext {
         appName = 'adventure-test-project'
-        bladeEngineVersion = '0.6.0'
-        gdxVersion = '1.4.1'
-        roboVMVersion = '1.0.0-alpha-04'
+        bladeEngineVersion = '0.6.3'
+        gdxVersion = '1.5.2'
+        roboVMVersion = '1.0.0-beta-01'
     }
 
     repositories {

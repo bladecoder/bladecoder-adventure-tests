@@ -101,14 +101,14 @@ rope.down
   size: 276, 500
   orig: 276, 500
   offset: 0, 0
-  index: 15
+  index: 14
 rope.down
   rotate: false
   xy: 835, 1507
   size: 276, 500
   orig: 276, 500
   offset: 0, 0
-  index: 14
+  index: 15
 rope.fall
   rotate: false
   xy: 835, 1005
@@ -157,14 +157,14 @@ rope.fall
   size: 238, 500
   orig: 238, 500
   offset: 0, 0
-  index: 7
+  index: 8
 rope.fall
   rotate: false
   xy: 1075, 503
   size: 238, 500
   orig: 238, 500
   offset: 0, 0
-  index: 8
+  index: 7
 rope.fall
   rotate: false
   xy: 1075, 1

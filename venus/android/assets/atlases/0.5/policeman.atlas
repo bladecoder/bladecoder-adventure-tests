@@ -240,13 +240,6 @@ talk.left
   size: 289, 428
   orig: 289, 428
   offset: 0, 0
-  index: 8
-talk.left
-  rotate: false
-  xy: 786, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
   index: 9
 talk.left
   rotate: false
@@ -255,6 +248,13 @@ talk.left
   orig: 289, 428
   offset: 0, 0
   index: 12
+talk.left
+  rotate: false
+  xy: 786, 1
+  size: 289, 428
+  orig: 289, 428
+  offset: 0, 0
+  index: 8
 talk.left
   rotate: false
   xy: 1077, 431

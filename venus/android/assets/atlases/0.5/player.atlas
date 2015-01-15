@@ -673,14 +673,14 @@ talk.left
   size: 91, 386
   orig: 91, 386
   offset: 0, 0
-  index: 10
+  index: 14
 talk.left
   rotate: false
   xy: 1786, 1553
   size: 91, 386
   orig: 91, 386
   offset: 0, 0
-  index: 14
+  index: 10
 talk.left
   rotate: false
   xy: 1458, 1
@@ -729,14 +729,14 @@ talk.left
   size: 91, 386
   orig: 91, 386
   offset: 0, 0
-  index: 12
+  index: 8
 talk.left
   rotate: false
   xy: 1644, 1
   size: 91, 386
   orig: 91, 386
   offset: 0, 0
-  index: 8
+  index: 12
 talk.left
   rotate: false
   xy: 1662, 389

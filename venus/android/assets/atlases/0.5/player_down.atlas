@@ -311,6 +311,20 @@ throwgoddess2
   orig: 234, 456
   offset: 0, 0
   index: 8
+throwgoddess2
+  rotate: false
+  xy: 237, 491
+  size: 234, 456
+  orig: 234, 456
+  offset: 0, 0
+  index: 12
+throwgoddess2
+  rotate: false
+  xy: 237, 491
+  size: 234, 456
+  orig: 234, 456
+  offset: 0, 0
+  index: 9
 throwgoddess
   rotate: false
   xy: 237, 491
@@ -331,21 +345,7 @@ throwgoddess2
   size: 234, 456
   orig: 234, 456
   offset: 0, 0
-  index: 12
-throwgoddess2
-  rotate: false
-  xy: 237, 491
-  size: 234, 456
-  orig: 234, 456
-  offset: 0, 0
   index: 10
-throwgoddess2
-  rotate: false
-  xy: 237, 491
-  size: 234, 456
-  orig: 234, 456
-  offset: 0, 0
-  index: 9
 walk.frontright
   rotate: false
   xy: 237, 1407

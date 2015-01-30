@@ -28,6 +28,7 @@ com.badlogic.gdx.graphics.Color: {
 	yellow:  { r: 1, g: 1, b: 0.13, a: 1 }
 },
 com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
+	black: { name: white_pixel, color: { r: 0, g: 0, b: 0, a: 1.0 } },
 	black08: { name: white_pixel, color: { r: 0, g: 0, b: 0, a: 0.8 } },
 	white: { name: white_pixel, color: white },
 	grey: { name: white_pixel, color: grey},
@@ -49,12 +50,19 @@ com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle: {
 	pie_pickup: {up:circle-border, down: circle-border-light, over: circle-border-over, imageUp: pickup},
 	pie_talkto: {up:circle-border, down: circle-border-light, over: circle-border-over, imageUp: talkto},
 	inventory: {up:inventory},
-	showMenu: {up:circle, down: circle-light, imageUp: menu}
+	showMenu: {up:circle, down: circle-light, imageUp: menu},
+
+	help: {up:circle, over: circle-light, down: circle-grey, imageUp:help},
+	credits: {up:circle, over: circle-light, down: circle-grey,imageUp:credits},
+	debug: {up:circle, over: circle-light, down: circle-grey,imageUp:debug},
 },
 
 com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
 		default: { font: default, up: grey, fontColor: white , downFontColor: grey, overFontColor: light-grey, disabledFontColor: dark-grey},
 		menu: { up: border-rect-trans, down: border-rect-trans-down, font: big-font, fontColor: white , downFontColor: grey, overFontColor: yellow, disabledFontColor: dark-grey}		
+},
+com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
+		default: {}		
 },
 com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 		default: { font: default, fontColor: white},
@@ -63,6 +71,9 @@ com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 
 com.bladecoder.engine.ui.MenuScreen$MenuScreenStyle: {
 	default: {bgFile: ui/title_en.jpg, textButtonStyle: menu, showTitle: false, titleStyle: title}
+},
+com.bladecoder.engine.ui.LoadSaveScreen$LoadSaveScreenStyle: {
+	default: {bgFile: ui/title_en.jpg, textButtonStyle: menu}
 },
 com.bladecoder.engine.ui.CreditsScreen$CreditScreenStyle: {
 	default: {titleFont: credits-title, font: credits}

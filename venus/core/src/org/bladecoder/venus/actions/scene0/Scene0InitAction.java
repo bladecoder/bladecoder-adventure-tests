@@ -15,7 +15,6 @@ import com.bladecoder.engine.model.SpriteActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
-import com.bladecoder.engine.model.BaseActor.ActorLayer;
 import com.bladecoder.engine.util.EngineLogger;
 
 public class Scene0InitAction implements Action, ActionCallback {
@@ -72,7 +71,7 @@ public class Scene0InitAction implements Action, ActionCallback {
 			fa.source = titleFilename;
 			fa.id = titleFilename;
 			r.addAnimation(fa);
-			a.setLayer(ActorLayer.FOREGROUND);
+			a.setLayer("foreground");
 			a.setRenderer(r);
 			a.setVisible(true);
 			a.setInteraction(false);

@@ -163,14 +163,14 @@
 {
 	class: com.bladecoder.engine.ui.Recorder$TimeVerb,
 	time: 5.391,
-	actorId: diosa,
+	actorId: diosa_scene2,
 	verb: pickup
 },
 {
 	class: com.bladecoder.engine.ui.Recorder$TimeVerb,
 	time: 2.5629992,
-	actorId: diosa,
-	target: policeman,
+	actorId: policeman,
+	target: diosa_scene2,
 	verb: use
 }
 ]

@@ -2,6 +2,7 @@
 <chapter id="00" init_scene="scene0">
 
 <scene id="scene0" initial_music_delay="0" loop="true" music="scn0.ogg">
+<layer id="foreground" visible="true"/>
 <layer id="background" visible="true"/>
 	<verb id="init">
 		<action class="org.bladecoder.venus.actions.scene0.Scene0InitAction" text="@scene0.init.0.text" title_filename="@scene0.intro.filename"/>
@@ -27,7 +28,7 @@
 </scene>
 
 
-<scene background="bg1.jpg" depth_vector="1.0,0.5" id="scene1" initial_music_delay="30" music="scn1.ogg" player="player" repeat_music_delay="90">
+<scene background="bg1.jpg" depth_vector="2132.6125,0.5" id="scene1" initial_music_delay="30" music="scn1.ogg" player="player" repeat_music_delay="90">
 <layer id="foreground" visible="true"/>
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
@@ -119,7 +120,7 @@
 				<action action_name="Sound" play="chair_squeek"/>
 				<action action_name="Wait" time="1"/>
 				<action action_name="Say" text="@chair.pickup.SIT0.0.4.text" wait="true"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#sitdown"/>
+				<action action_name="Animation" animation="player#sitdown" animation_type="reverse"/>
 				<action action_name="SetState" state="SIT1"/>
 				<action action_name="Cutmode" value="false"/>
 			
@@ -134,7 +135,7 @@
 				action name="sound" play="chair_squeek"/&gt;
 				<action action_name="Wait" time="1"/>
 				<action action_name="Say" text="@chair.pickup.SIT1.0.4.text" wait="true"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#sitdown"/>
+				<action action_name="Animation" animation="player#sitdown" animation_type="reverse"/>
 				<action action_name="SetState" state="SIT2"/>
 				<action action_name="Cutmode" value="false"/>
 			
@@ -164,7 +165,7 @@
 				<action action_name="Lookat" direction="front"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#crouch.left"/>
+				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="Say" text="@chair.pickup.BROKEN.0.5.text" wait="false"/>
 				<action action_name="SetState" state="INVENTORY"/>
 				<action action_name="Cutmode" value="false"/>
@@ -228,7 +229,7 @@
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
 				<!-- <sound play="click"/> -->
-				<action action_name="Animation" animation_type="reverse" animation="player#crouch.left"/>
+				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="Say" text="@cable.use.DISCONNECTED.navaja.0.4.text" wait="false"/>
 				<action action_name="SetState" state="CUT"/>
 			
@@ -299,7 +300,7 @@
 				<action action_name="Goto" actor="player" pos="2270,12"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#crouch.left"/>
+				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="SetState" state="INVENTORY"/>
 			
 		</verb>
@@ -379,7 +380,7 @@
 			
 				<action action_name="Goto" actor="player" pos="890,76"/>
 				<action action_name="Animation" animation="player#use.back"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#use.back"/>
+				<action action_name="Animation" animation="player#use.back" animation_type="reverse"/>
 				<action action_name="Say" text="@diosa.pickup.CUT.0.3.text" wait="false"/>
 				<action action_name="Pickup"/>
 				<action action_name="SetState" state="INVENTORY"/>
@@ -397,13 +398,13 @@
 		</verb>
 
 		<verb id="lookat" state="FLOOR">
-			<action action_name="Lookat" text="@diosa.lookat.FLOOR.0.text"/>
+			<action action_name="Lookat" text="@scene2.diosa.lookat.FLOOR.0.text"/>
 		</verb>
 
 		<verb id="pickup" state="FLOOR">
 			
-				<action action_name="Say" actor="policeman" text="@diosa.pickup.FLOOR.0.0.text" type="talk" wait="true"/>
-				<action action_name="Say" actor="player" text="@diosa.pickup.FLOOR.0.1.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="policeman" text="@scene2.diosa.pickup.FLOOR.0.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="player" text="@scene2.diosa.pickup.FLOOR.1.text" type="talk" wait="true"/>
 			
 		</verb>
 
@@ -412,19 +413,19 @@
 				<action action_name="Animation" animation="player#crouch.right"/>
 				<action action_name="Pickup"/>
 				<action action_name="SetState" state="INVENTORY"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#crouch.right"/>
+				<action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
 			
 		</verb>
 
 		<verb id="policeman_turn" state="INVENTORY">
 			
-				<action action_name="Say" actor="policeman" text="@diosa.policeman_turn.INVENTORY.0.0.text" type="talk" wait="true"/>
-				<action action_name="Say" actor="player" text="@diosa.policeman_turn.INVENTORY.0.1.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.INVENTORY.0.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.INVENTORY.1.text" type="talk" wait="true"/>
 
 				<action action_name="Animation" animation="player#crouch.right"/>
 				<action action_name="DropItem" pos="600,30"/>
 				<action action_name="SetState" state="FLOOR"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#crouch.right"/>
+				<action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
 				<action action_name="Animation" animation="player#stand.frontright"/>
 
 				<action action_name="Cutmode" value="false"/>
@@ -433,36 +434,13 @@
 
 		<verb id="policeman_turn" state="POLICEMAN_TURN">
 			
-				<action action_name="Say" actor="policeman" text="@diosa.policeman_turn.POLICEMAN_TURN.0.0.text" type="talk" wait="true"/>
-				<action action_name="Say" actor="player" text="@diosa.policeman_turn.POLICEMAN_TURN.0.1.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.0.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.1.text" type="talk" wait="true"/>
 				<action action_name="SetState" state="FLOOR"/>
 				<action action_name="Cutmode" value="false"/>
 			
-		</verb>
-
-		<verb id="use" state="INVENTORY" target="policeman">
-			
-				<action action_name="Music" play="true"/>
-				<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
-				<action action_name="SetState" state="END"/>
-				<action action_name="Cutmode" value="true"/>
-				<action action_name="Animation" animation="player#throwgoddess"/>
-				<action action_name="Animation" animation="player#throwgoddess2" wait="false"/>
-				<action action_name="DropItem" actor="diosa" pos="680,744"/>
-				<action action_name="Position" actor="diosa" pos="1370,846" speed="0.2"/>
-				<action action_name="Position" actor="diosa" pos="1600,1100" speed="0.3" wait="false"/>
-				<action action_name="Sound" actor="policeman" play="hit"/>
-				<action action_name="Animation" animation="policeman#fall"/>
-				<action action_name="Sound" actor="policeman" play="fall"/>
-				<action action_name="Say" text="@diosa.use.INVENTORY.policeman.0.9.text" wait="true"/>
-				<action action_name="Animation" animation="player#runaway" pos="360,0"/>
-				<action action_name="SetActive" actor="player" visible="false"/>
-				<action action_name="Say" text="@diosa.use.INVENTORY.policeman.0.12.text" wait="true"/>
-				<action action_name="Wait" time="2"/>
-				<action action_name="RemoveInventoryItem"/>
-				<action action_name="Leave" scene="endSCN"/>
-			
-		</verb>
+		</verb>		
+		
 
 	</actor>
 
@@ -484,9 +462,7 @@
 			<action action_name="Lookat" text="@navaja.use.0.text"/>
 		</verb>
 
-		<verb id="use" target="policeman">
-			<action action_name="Lookat" text="@navaja.use.policeman.0.text"/>
-		</verb>
+		
 
 	</actor>
 
@@ -518,10 +494,10 @@
 				<action action_name="Say" text="@cutter.use.WITH_LOW_BATTERY.diosa.0.1.text" wait="false"/>
 				<action action_name="Animation" animation="player#use.back"/>
 				<action action_name="Sound" play="drill"/>
-				<action action_name="Animation" animation_type="REPEAT" count="3" animation="player#use.back2"/>
+				<action action_name="Animation" animation="player#use.back2" animation_type="REPEAT" count="3"/>
 				<action action_name="Sound" stop="drill"/>
 				<action action_name="Say" text="@cutter.use.WITH_LOW_BATTERY.diosa.0.4.text" wait="false"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#use.back"/>
+				<action action_name="Animation" animation="player#use.back" animation_type="reverse"/>
 				<action action_name="SetState" state="NO_BATTERY"/>
 			
 		</verb>
@@ -544,7 +520,7 @@
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
 				<action action_name="Sound" play="click"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#crouch.left"/>
+				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="Say" text="@cutter.pickup.WITH_BATTERY.0.4.text" wait="false"/>
 			
 		</verb>
@@ -552,11 +528,11 @@
 		<verb id="use" state="WITH_BATTERY" target="diosa">
 			
 				<action action_name="Goto" actor="player" pos="890, 76"/>
-				<action action_name="Animation"  animation="player#use.back"/>
+				<action action_name="Animation" animation="player#use.back"/>
 				<action action_name="Sound" play="drill"/>
-				<action action_name="Animation" animation_type="REPEAT" count="12" animation="player#use.back2"/>
+				<action action_name="Animation" animation="player#use.back2" animation_type="REPEAT" count="12"/>
 				<action action_name="Sound" stop="drill"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#use.back"/>
+				<action action_name="Animation" animation="player#use.back" animation_type="reverse"/>
 				<action action_name="Say" text="@cutter.use.WITH_BATTERY.diosa.0.4.text" wait="false"/>
 				<action action_name="SetState" state="CUT"/>
 				<action action_name="SetState" actor="diosa" state="CUT"/>
@@ -570,7 +546,7 @@
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="DropItem" pos="648,520"/>
 				<action action_name="Animation" animation="cutter.charging" wait="false"/>
-				<action action_name="Animation" animation_type="reverse" animation="player#crouch.left"/>
+				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="Say" text="@cutter.use.WITH_CABLE.socket.0.5.text" wait="false"/>
 				<action action_name="SetState" state="CHARGING"/>
 				<action action_name="Wait" time="20"/>
@@ -635,11 +611,11 @@
 </scene>
 
 
-<scene background="bg2.jpg" depth_vector="1.0,0.01" id="scene2" music="scn2.ogg" player="player">
+<scene background="bg2.jpg" depth_vector="616.38446,0.01" id="scene2" music="scn2.ogg" player="player">
 <layer id="foreground" visible="true"/>
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
-	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="579.5643,62.69055" type="atlas">
+	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="584.22626,95.324524" type="atlas">
 
 		<animation id="stand.frontright" source="player_down"/>
 
@@ -670,12 +646,12 @@
 		<verb id="goto" state="POLICEMAN_TURN">
 
 			<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
-			<action action_name="RunVerb" actor="policeman" verb="back_turn"/>
+			<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
 
 		</verb>
 	</actor>
 
-	<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" layer="dynamic" pos="1329.5884,0.0" type="atlas" width="320" x="-70" y="0">
+<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" layer="dynamic" pos="1329.5884,0.0" type="atlas" width="320" x="-70" y="0">
 
 		<animation id="stand.frontleft" source="policeman"/>
 
@@ -691,7 +667,35 @@
 		</verb>
 
 
-		<verb id="talkto">
+		<verb id="use" target="navaja">
+			<action action_name="Lookat" text="@scene2.policeman.use.policeman.0.text"/>
+		</verb>
+		
+		<verb id="use" target="diosa">
+			
+				<action action_name="Music" play="true"/>
+				<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
+				<action action_name="SetState" actor="diosa" state="END"/>
+				<action action_name="Cutmode" value="true"/>
+				<action action_name="Animation" animation="player#throwgoddess"/>
+				<action action_name="Animation" animation="player#throwgoddess2" wait="false"/>
+				<action action_name="DropItem" actor="diosa" pos="680,744"/>
+				<action action_name="Position" actor="diosa" pos="1370,846" speed="0.2"/>
+				<action action_name="Position" actor="diosa" pos="1600,1100" speed="0.3" wait="false"/>
+				<action action_name="Sound" actor="policeman" play="hit"/>
+				<action action_name="Animation" animation="policeman#fall"/>
+				<action action_name="Sound" actor="policeman" play="fall"/>
+				<action action_name="Say" text="@diosa.use.INVENTORY.policeman.0.9.text" wait="true"/>
+				<action action_name="Animation" animation="player#runaway" pos="360,0"/>
+				<action action_name="SetActive" actor="player" visible="false"/>
+				<action action_name="Say" text="@diosa.use.INVENTORY.policeman.0.12.text" wait="true"/>
+				<action action_name="Wait" time="2"/>
+				<action action_name="RemoveInventoryItem"/>
+				<action action_name="Leave" scene="endSCN"/>
+			
+		</verb>		
+		
+<verb id="talkto">
 
 			<action action_name="Cutmode" value="true"/>
 			<action action_name="Talkto" dialog="dialog1"/>
@@ -721,28 +725,39 @@
 			<action action_name="SetState" actor="out" state="POLICEMAN_TURN"/>
 			<action action_name="SetState" actor="door" state="POLICEMAN_TURN"/>
 			<action action_name="SetState" actor="player" state="POLICEMAN_TURN"/>
-			<action action_name="Cutmode" value="false"/>
+			<action action_name="SetState" state="POLICEMAN_TURN"/>
+<action action_name="Cutmode" value="false"/>
 			<action action_name="Wait" time="6"/>
-			<action action_name="RunVerb" actor="policeman" verb="back_turn"/>
+			<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
 
 		</verb>
 
-		<verb id="back_turn">
+		<verb id="talkto" state="POLICEMAN_TURN">
 
 			<action action_name="Cutmode" value="true"/>
-			<action action_name="Animation" animation_type="reverse" animation="turn.left"/>
+			<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
+<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
+<action action_name="Talkto" dialog="dialog1"/>
+			<action action_name="Cutmode" value="false"/>
+
+		</verb>
+<verb id="turn_back">
+
+			<action action_name="Cutmode" value="true"/>
+			<action action_name="Animation" animation="turn.left" animation_type="reverse"/>
 			<action action_name="Animation" animation="stand.frontleft"/>
 			<action action_name="RunVerb" actor="diosa" verb="policeman_turn"/>
 			<action action_name="SetState" actor="out" state=""/>
 			<action action_name="SetState" actor="door" state=""/>
 			<action action_name="SetState" actor="player" state=""/>
-			<action action_name="SetState" actor="policeman" state=""/>
-
+			<action action_name="SetState"/>
+<action action_name="SetState" actor="policeman" state=""/>
+			<action action_name="Cutmode" value="false"/>
 		</verb>
 
 	</actor>
 
-	<actor bbox="106.924866,74.38257,102.27606,299.9031,253.414,290.60538,248.7652,88.32922" desc="@electricbox.desc" id="electricbox" layer="dynamic" pos="897.23975,255.69016" type="no_renderer">
+	<actor bbox="106.924866,74.38257,102.27606,299.9031,253.414,290.60538,248.7652,88.32922" depth_type="none" desc="@electricbox.desc" id="electricbox" layer="foreground" pos="897.23975,255.69016" type="no_renderer">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@electricbox.lookat.0.text"/>
@@ -768,7 +783,7 @@
 		<verb id="leave" state="POLICEMAN_TURN">
 
 			<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
-			<action action_name="RunVerb" actor="policeman" verb="back_turn"/>
+			<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
 
 		</verb>
 
@@ -789,7 +804,7 @@
 		<verb id="leave" state="POLICEMAN_TURN">
 
 			<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
-			<action action_name="RunVerb" actor="policeman" verb="back_turn"/>
+			<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
 
 		</verb>
 
@@ -804,14 +819,14 @@
 	<verb id="init">
 
 		<action action_name="Cutmode" value="true"/>
-		<action action_name="Goto" actor="player" pos="460,0"/>
+<action action_name="Goto" actor="player" pos="460,0"/>
 		<action action_name="Animation" animation="player#stand.frontright"/>
 		<action action_name="Say" actor="policeman" text="@scene2.init.0.3.text" type="talk" wait="true"/>
 		<action action_name="Say" actor="player" text="@scene2.init.0.4.text" type="talk" wait="true"/>
 		<action action_name="Animation" animation="player#crouch.right"/>
 		<action action_name="DropItem" actor="diosa" pos="600,30"/>
 		<action action_name="SetState" actor="diosa" state="FLOOR"/>
-		<action action_name="Animation" animation_type="reverse" animation="player#crouch.right"/>
+		<action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
 		<action action_name="Animation" animation="player#stand.frontright"/>
 		<action action_name="Cutmode" value="false"/>
 
@@ -819,9 +834,10 @@
 
 	<verb id="test">
 		<action action_name="Pickup" actor="scene1#diosa"/>
-	</verb>
+	<action action_name="Pickup" actor="scene1#navaja"/>
+</verb>
 
-<walk_zone polygon="0.0,0.0,117.039185,68.44714,485.33975,98.17772,932.00696,58.22943,1067.1172,0.0" pos="0.0,0.0"/>
+<walk_zone polygon="0.0,0.0,117.039185,68.44714,528.3438,118.41487,932.00696,58.22943,1067.1172,0.0" pos="0.0,0.0"/>
 </scene>
 
 <scene id="endSCN" loop="true" music="scn1.ogg">

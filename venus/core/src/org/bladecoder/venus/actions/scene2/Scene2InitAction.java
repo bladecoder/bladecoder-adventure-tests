@@ -29,8 +29,6 @@ public class Scene2InitAction implements Action {
 
 	@Override
 	public boolean run(ActionCallback cb) {
-		EngineLogger.debug("SCENE2 INIT ");
-
 		World w = World.getInstance();
 		//w.setCutMode(true);
 		w.showInventory(false);

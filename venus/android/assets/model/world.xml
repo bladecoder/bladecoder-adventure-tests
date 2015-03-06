@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<world height="1080" width="1920" init_chapter="00">
+<world height="1080" width="1920" init_chapter="c00">
 
 	<!-- *********************** DEFAULT VERBS ************************ -->
 	<verb id="lookat">

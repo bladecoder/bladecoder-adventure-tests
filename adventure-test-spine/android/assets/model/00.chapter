@@ -4,6 +4,10 @@
 <layer id="foreground" visible="true"/>
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
+
+<layer id="foreground" visible="true"/>
+<layer dynamic="true" id="dynamic" visible="true"/>
+<layer id="background" visible="true"/>
 <actor depth_type="none" id="fg1" pos="2531.217,421.93298" type="atlas" layer="foreground">
 <animation animation_type="no_repeat" disposed_when_played="true" id="morgue.fg" preload="true" source="morgue" speed="1.0"/>
 </actor>

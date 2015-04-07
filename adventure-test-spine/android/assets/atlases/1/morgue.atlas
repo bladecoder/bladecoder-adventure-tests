@@ -1,26 +1,33 @@
 
 morgue.png
-size: 1178,786
+size: 3811,1093
 format: RGBA8888
-filter: Linear,Nearest
+filter: Linear,Linear
 repeat: none
 litter
   rotate: false
-  xy: 589, 480
+  xy: 2767, 1
   size: 588, 305
   orig: 588, 305
   offset: 0, 0
   index: -1
+morgue
+  rotate: false
+  xy: 1, 12
+  size: 2764, 1080
+  orig: 2764, 1080
+  offset: 0, 0
+  index: -1
 morgue.fg
   rotate: false
-  xy: 1, 1
+  xy: 2767, 308
   size: 586, 784
   orig: 586, 784
   offset: 0, 0
   index: -1
 table
   rotate: false
-  xy: 589, 68
+  xy: 3355, 682
   size: 455, 410
   orig: 455, 410
   offset: 0, 0

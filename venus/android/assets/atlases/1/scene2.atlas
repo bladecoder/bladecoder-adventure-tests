@@ -1,11 +1,19 @@
 
 scene2.png
+size: 2263,1082
 format: RGBA8888
-filter: Linear,Nearest
+filter: Linear,Linear
 repeat: none
-fence
+bg2
   rotate: false
   xy: 1, 1
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+fence
+  rotate: false
+  xy: 1923, 76
   size: 339, 1005
   orig: 339, 1005
   offset: 0, 0

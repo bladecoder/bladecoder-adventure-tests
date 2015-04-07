@@ -1,75 +1,75 @@
 
 john_back.png
-size: 1024,512
+size: 544,541
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 foot.back
   rotate: false
-  xy: 689, 370
+  xy: 204, 90
   size: 75, 65
   orig: 75, 65
   offset: 0, 0
   index: -1
 forearm.front
   rotate: true
-  xy: 204, 76
+  xy: 2, 3
   size: 85, 206
   orig: 85, 206
   offset: 0, 0
   index: -1
 hand.front
-  rotate: true
-  xy: 2, 2
+  rotate: false
+  xy: 505, 415
   size: 37, 124
   orig: 37, 124
   offset: 0, 0
   index: -1
 head.back
   rotate: false
-  xy: 505, 208
+  xy: 375, 16
   size: 95, 139
   orig: 95, 139
   offset: 0, 0
   index: -1
 leg.front
   rotate: true
-  xy: 524, 437
+  xy: 204, 157
   size: 53, 279
   orig: 53, 279
   offset: 0, 0
   index: -1
 lowbody.front
   rotate: false
-  xy: 204, 163
+  xy: 204, 333
   size: 223, 206
   orig: 223, 206
   offset: 0, 0
   index: -1
 shadow.front
   rotate: false
-  xy: 204, 371
+  xy: 204, 212
   size: 318, 119
   orig: 318, 119
   offset: 0, 0
   index: -1
 upperarm.front
   rotate: false
-  xy: 429, 168
+  xy: 429, 338
   size: 74, 201
   orig: 74, 201
   offset: 0, 0
   index: -1
 upperleg.front
   rotate: true
-  xy: 524, 349
+  xy: 210, 2
   size: 86, 163
   orig: 86, 163
   offset: 0, 0
   index: -1
 uppperbody.back
   rotate: false
-  xy: 2, 41
+  xy: 2, 90
   size: 200, 449
   orig: 200, 449
   offset: 0, 0

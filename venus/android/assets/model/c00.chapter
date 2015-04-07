@@ -28,7 +28,7 @@
 </scene>
 
 
-<scene background="bg1.jpg" depth_vector="2132.6125,0.5" id="scene1" initial_music_delay="30" music="scn1.ogg" player="player" repeat_music_delay="90">
+<scene background_atlas="scene1" background_region="bg1" depth_vector="2132.6125,0.5" id="scene1" initial_music_delay="30" music="scn1.ogg" player="player" repeat_music_delay="90">
 <layer id="foreground" visible="true"/>
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
@@ -611,7 +611,7 @@
 </scene>
 
 
-<scene background="bg2.jpg" depth_vector="616.38446,0.01" id="scene2" music="scn2.ogg" player="player">
+<scene background_atlas="scene2" background_region="bg2" depth_vector="616.38446,0.01" id="scene2" music="scn2.ogg" player="player">
 <layer id="foreground" visible="true"/>
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>

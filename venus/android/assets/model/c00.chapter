@@ -680,8 +680,8 @@
 				<action action_name="Animation" animation="player#throwgoddess"/>
 				<action action_name="Animation" animation="player#throwgoddess2" wait="false"/>
 				<action action_name="DropItem" actor="diosa" pos="680,744"/>
-				<action action_name="Position" actor="diosa" pos="1370,846" speed="0.2"/>
-				<action action_name="Position" actor="diosa" pos="1600,1100" speed="0.3" wait="false"/>
+				<action action_name="PositionAnim" actor="diosa" pos="1370,846" speed="0.2"/>
+				<action action_name="PositionAnim" actor="diosa" pos="1600,1100" speed="0.3" wait="false"/>
 				<action action_name="Sound" actor="policeman" play="hit"/>
 				<action action_name="Animation" animation="policeman#fall"/>
 				<action action_name="Sound" actor="policeman" play="fall"/>

@@ -12,7 +12,6 @@ import com.bladecoder.engine.i18n.I18N;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
-import com.bladecoder.engine.util.EngineLogger;
 
 public class Scene2InitAction implements Action {
 	public static final String INFO = "Credit scene init action";

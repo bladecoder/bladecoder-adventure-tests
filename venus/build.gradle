@@ -21,7 +21,7 @@ allprojects {
     
     ext {
         appName = 'venus'
-        bladeEngineVersion = '0.8.1'
+        bladeEngineVersion = '0.8.2'
         gdxVersion = '1.6.0'
         roboVMVersion = '1.2.0'
     }

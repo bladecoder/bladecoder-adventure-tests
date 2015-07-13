@@ -216,8 +216,10 @@
 		</verb>
 
 		<verb id="pickup">
-			<action class="org.bladecoder.venus.actions.scene1.PickupCableAction" connect_text="@cable.pickup.0.connect_text" disconnect_text="@cable.pickup.0.disconnect_text"/>
-		</verb>
+			<action action_name="Cutmode" value="true"/>
+<action class="org.bladecoder.venus.actions.scene1.PickupCableAction" connect_text="@cable.pickup.0.connect_text" disconnect_text="@cable.pickup.0.disconnect_text"/>
+		<action action_name="Cutmode" value="false"/>
+</verb>
 
 		<verb id="pickup" state="CUT">
 			<action action_name="Say" text="@cable.pickup.CUT.text" wait="false"/>
@@ -225,7 +227,8 @@
 
 		<verb id="use" state="DISCONNECTED" target="navaja">
 			
-				<action action_name="Goto" actor="player" pos="641,413"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="Goto" actor="player" pos="641,413"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
 				<!-- <sound play="click"/> -->
@@ -233,7 +236,8 @@
 				<action action_name="Say" text="@cable.use.DISCONNECTED.navaja.0.4.text" wait="false"/>
 				<action action_name="State" state="CUT"/>
 			
-		</verb>
+		<action action_name="Cutmode" value="false"/>
+</verb>
 
 		<verb id="use" state="CONNECTED" target="navaja">
 			<action action_name="Lookat" text="@cable.use.CONNECTED.navaja.0.text"/>
@@ -297,13 +301,15 @@
 
 		<verb id="pickup" state="FALL">
 			
-				<action action_name="Goto" actor="player" pos="2270,12"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="Goto" actor="player" pos="2270,12"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
 				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="State" state="INVENTORY"/>
 			
-		</verb>
+		<action action_name="Cutmode" value="false"/>
+</verb>
 
 		<verb id="use" state="INVENTORY" target="chair">
 			<action action_name="Say" text="@rope.use.INVENTORY.chair.0.text" wait="false"/>
@@ -378,7 +384,8 @@
 
 		<verb id="pickup" state="CUT">
 			
-				<action action_name="Goto" actor="player" pos="890,76"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="Goto" actor="player" pos="890,76"/>
 				<action action_name="Animation" animation="player#use.back"/>
 				<action action_name="Animation" animation="player#use.back" animation_type="reverse"/>
 				<action action_name="Say" text="@diosa.pickup.CUT.0.3.text" wait="false"/>
@@ -387,7 +394,8 @@
 				<action action_name="State" actor="rope" state="WITH_GODDESS"/>
 				<action action_name="Sound" play="chords"/>
 			
-		</verb>
+		<action action_name="Cutmode" value="false"/>
+</verb>
 
 		<verb id="pickup" state="INVENTORY">
 			<action action_name="Say" text="@diosa.pickup.INVENTORY.0.text" wait="false"/>
@@ -403,43 +411,20 @@
 
 		<verb id="pickup" state="FLOOR">
 			
-				<action action_name="Say" actor="policeman" text="@scene2.diosa.pickup.FLOOR.0.text" type="talk" wait="true"/>
-				<action action_name="Say" actor="player" text="@scene2.diosa.pickup.FLOOR.1.text" type="talk" wait="true"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="IfAttr" actor="scene2#policeman" attr="state" endType="else" value="POLICEMAN_TURN"/>
+<action action_name="Animation" animation="player#crouch.right"/>
+<action action_name="Pickup"/>
+<action action_name="State" state="INVENTORY"/>
+<action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
+<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Say" actor="policeman" text="@scene2.diosa.pickup.FLOOR.0.text" type="talk" wait="true"/>
+<action action_name="Say" actor="player" text="@scene2.diosa.pickup.FLOOR.1.text" type="talk" wait="true"/>
+<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+				
 			
-		</verb>
-
-		<verb id="pickup" state="POLICEMAN_TURN">
-			
-				<action action_name="Animation" animation="player#crouch.right"/>
-				<action action_name="Pickup"/>
-				<action action_name="State" state="INVENTORY"/>
-				<action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
-			
-		</verb>
-
-		<verb id="policeman_turn" state="INVENTORY">
-			
-				<action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.INVENTORY.0.text" type="talk" wait="true"/>
-				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.INVENTORY.1.text" type="talk" wait="true"/>
-
-				<action action_name="Animation" animation="player#crouch.right"/>
-				<action action_name="DropItem" pos="600,30"/>
-				<action action_name="State" state="FLOOR"/>
-				<action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
-				<action action_name="Animation" animation="player#stand.frontright"/>
-
-				<action action_name="Cutmode" value="false"/>
-			
-		</verb>
-
-		<verb id="policeman_turn" state="POLICEMAN_TURN">
-			
-				<action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.0.text" type="talk" wait="true"/>
-				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.1.text" type="talk" wait="true"/>
-				<action action_name="State" state="FLOOR"/>
-				<action action_name="Cutmode" value="false"/>
-			
-		</verb>		
+		<action action_name="Cutmode" value="false"/>
+</verb>
 		
 
 	</actor>
@@ -633,7 +618,11 @@
 
 		<verb id="goto">
 
-			<action action_name="Cutmode" value="true"/>
+			<action action_name="IfAttr" actor="policeman" attr="state" endType="else" value="POLICEMAN_TURN"/>
+<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
+<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
+<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Cutmode" value="true"/>
 			<action action_name="Say" actor="policeman" text="@player.goto.0.1.text" type="talk" wait="true"/>
 			<action action_name="Animation" animation="player#stand.frontright"/>
 			<action action_name="Say" actor="player" text="@player.goto.0.3.text" type="talk" wait="true"/>
@@ -641,14 +630,10 @@
 			<action action_name="Animation" animation="player#stand.frontright"/>
 			<action action_name="Cutmode" value="false"/>
 
-		</verb>
+		<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+</verb>
 
-		<verb id="goto" state="POLICEMAN_TURN">
-
-			<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
-			<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
-
-		</verb>
+		
 	</actor>
 
 <actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" layer="dynamic" pos="1329.5884,0.0" type="atlas" width="320" x="-70" y="0">
@@ -721,10 +706,10 @@
 			<action action_name="Cutmode" value="true"/>
 			<action action_name="SayDialog"/>
 			<action action_name="Animation" animation="turn.left"/>
-			<action action_name="State" actor="diosa" state="POLICEMAN_TURN"/>
-			<action action_name="State" actor="out" state="POLICEMAN_TURN"/>
-			<action action_name="State" actor="door" state="POLICEMAN_TURN"/>
-			<action action_name="State" actor="player" state="POLICEMAN_TURN"/>
+			
+			
+			
+			
 			<action action_name="State" state="POLICEMAN_TURN"/>
 <action action_name="Cutmode" value="false"/>
 			<action action_name="Wait" time="6"/>
@@ -745,13 +730,28 @@
 
 			<action action_name="Cutmode" value="true"/>
 			<action action_name="Animation" animation="turn.left" animation_type="reverse"/>
-			<action action_name="Animation" animation="stand.frontleft"/>
-			<action action_name="RunVerb" actor="diosa" verb="policeman_turn"/>
-			<action action_name="State" actor="out" state=""/>
-			<action action_name="State" actor="door" state=""/>
-			<action action_name="State" actor="player" state=""/>
+			<action action_name="Animation" animation="stand.frontleft"/>		
+			<action action_name="IfAttr" actor="diosa" attr="state" endType="else" value="INVENTORY"/>
+<action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.INVENTORY.0.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.INVENTORY.1.text" type="talk" wait="true"/>
+				<action action_name="Animation" animation="player#crouch.right"/>
+				<action action_name="DropItem" actor="diosa" pos="600.0,30.0"/>
+				<action action_name="State" actor="diosa" state="FLOOR"/>
+<action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
+				<action action_name="Animation" animation="player#stand.frontright"/>
+		
+			<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+
+			
+				<action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.0.text" type="talk" wait="true"/>
+				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.1.text" type="talk" wait="true"/>
+				
+			
+			<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>					
+			
 			<action action_name="State"/>
-<action action_name="State" actor="policeman" state=""/>
+			
+
 			<action action_name="Cutmode" value="false"/>
 		</verb>
 
@@ -773,19 +773,22 @@
 
 		<verb id="leave">
 
-			<action action_name="Cutmode" value="true"/>
-			<action action_name="Say" actor="policeman" text="@door.leave.0.1.text" type="talk" wait="true"/>
-			<action action_name="Say" actor="player" text="@door.leave.0.2.text" type="talk" wait="true"/>
-			<action action_name="Cutmode" value="false"/>
+			
+			<action action_name="IfAttr" actor="policeman" attr="state" endType="else" value="POLICEMAN_TURN"/>
+<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
+<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
+<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Cutmode" value="true"/>
+<action action_name="Say" actor="policeman" text="@door.leave.0.1.text" type="talk" wait="true"/>
+<action action_name="Say" actor="player" text="@door.leave.0.2.text" type="talk" wait="true"/>
+<action action_name="Cutmode" value="false"/>
+<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+			
+			
 
 		</verb>
 
-		<verb id="leave" state="POLICEMAN_TURN">
-
-			<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
-			<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
-
-		</verb>
+		
 
 	</actor>
 
@@ -794,19 +797,22 @@
 
 		<verb id="leave">
 
-			<action action_name="Cutmode" value="true"/>
-			<action action_name="Say" actor="policeman" text="@out.leave.0.1.text" type="talk" wait="true"/>
-			<action action_name="Say" actor="player" text="@out.leave.0.2.text" type="talk" wait="true"/>
-			<action action_name="Cutmode" value="false"/>
+			
+			<action action_name="IfAttr" actor="policeman" attr="state" endType="else" value="POLICEMAN_TURN"/>
+<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
+<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
+<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Cutmode" value="true"/>
+<action action_name="Say" actor="policeman" text="@out.leave.0.1.text" type="talk" wait="true"/>
+<action action_name="Say" actor="player" text="@out.leave.0.2.text" type="talk" wait="true"/>
+<action action_name="Cutmode" value="false"/>
+<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+			
+			
 
 		</verb>
 
-		<verb id="leave" state="POLICEMAN_TURN">
-
-			<action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
-			<action action_name="RunVerb" actor="policeman" verb="turn_back"/>
-
-		</verb>
+		
 
 	</actor>
 

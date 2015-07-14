@@ -19,7 +19,7 @@ allprojects {
         version = passed_version
     ext {
         appName = 'adventure-test-spine'
- 		bladeEngineVersion = '0.8.6'
+ 		bladeEngineVersion = '0.8.9'
         gdxVersion = '1.6.4'
         roboVMVersion = '1.5.0'
     }

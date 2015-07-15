@@ -477,7 +477,8 @@
 
 		<verb id="use" state="WITH_LOW_BATTERY" target="diosa">
 			
-				<action action_name="Goto" actor="player" pos="890,76"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="Goto" actor="player" pos="890,76"/>
 				<action action_name="Say" text="@cutter.use.WITH_LOW_BATTERY.diosa.0.1.text" wait="false"/>
 				<action action_name="Animation" animation="player#use.back"/>
 				<action action_name="Sound" play="drill"/>
@@ -487,7 +488,8 @@
 				<action action_name="Animation" animation="player#use.back" animation_type="reverse"/>
 				<action action_name="State" state="NO_BATTERY"/>
 			
-		</verb>
+		<action action_name="Cutmode" value="false"/>
+</verb>
 
 		<verb id="use" state="NO_BATTERY" target="diosa">
 			<action action_name="Lookat" text="@cutter.use.NO_BATTERY.diosa.0.text"/>
@@ -503,18 +505,21 @@
 
 		<verb id="pickup" state="WITH_BATTERY">
 			
-				<action action_name="Goto" actor="player" pos="682,434"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="Goto" actor="player" pos="682,434"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
 				<action action_name="Sound" play="click"/>
 				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="Say" text="@cutter.pickup.WITH_BATTERY.0.4.text" wait="false"/>
 			
-		</verb>
+		<action action_name="Cutmode" value="false"/>
+</verb>
 
 		<verb id="use" state="WITH_BATTERY" target="diosa">
 			
-				<action action_name="Goto" actor="player" pos="890, 76"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="Goto" actor="player" pos="890, 76"/>
 				<action action_name="Animation" animation="player#use.back"/>
 				<action action_name="Sound" play="drill"/>
 				<action action_name="Animation" animation="player#use.back2" animation_type="REPEAT" count="12"/>
@@ -525,21 +530,25 @@
 				<action action_name="State" actor="diosa" state="CUT"/>
 				<action action_name="ActorAttr" actor="hole" visible="true"/>
 			
-		</verb>
+		<action action_name="Cutmode" value="false"/>
+</verb>
 
 		<verb id="use" state="WITH_CABLE" target="socket">
 			
-				<action action_name="Goto" actor="player" pos="641,413"/>
+				<action action_name="Cutmode" value="true"/>
+<action action_name="Goto" actor="player" pos="641,413"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="DropItem" pos="648,520"/>
 				<action action_name="Animation" animation="cutter.charging" wait="false"/>
 				<action action_name="Animation" animation="player#crouch.left" animation_type="reverse"/>
 				<action action_name="Say" text="@cutter.use.WITH_CABLE.socket.0.5.text" wait="false"/>
 				<action action_name="State" state="CHARGING"/>
-				<action action_name="Wait" time="20"/>
+				<action action_name="Cutmode" value="false"/>
+<action action_name="Wait" time="20"/>
 				<action action_name="State" state="WITH_BATTERY"/>
 			
-		</verb>
+		
+</verb>
 
 		<verb id="use">
 			<action action_name="Say" text="@cutter.use.0.text" wait="false"/>
@@ -595,10 +604,11 @@
 
 <walk_zone polygon="192.69849,-3.0716553,727.3014,460.72607,705.0456,399.51163,625.80536,225.32869,880.963,59.99568,1222.0059,209.4747,1145.7484,381.48593,1386.9921,381.94098,1820.9706,374.1726,1882.3246,474.4625,2558.048,479.26852,3023.0,0.0" pos="5.2458496,-5.245926"/>
 
-<actor bbox="-35.29236,5.041809,-50.41748,205.0415,406.71167,200.0,421.83716,0.0" depth_type="none" desc="@scene1.exit.desc" id="exit" layer="foreground" pos="1977.6626,916.05615" type="no_renderer" visible="false" zIndex="0">
-<verb id="pickup">
+<actor bbox="82.4801,54.629944,85.95056,170.94934,327.68018,175.20581,335.05737,61.985413" depth_type="none" desc="@scene1.exit.desc" id="exit" layer="foreground" pos="1977.6626,916.05615" type="no_renderer" visible="false" zIndex="0">
+<verb id="use" target="rope">
 			
-				<action action_name="Cutmode" value="true"/>
+				<action action_name="IfAttr" actor="rope" attr="state" endType="else" value="ARMED"/>
+<action action_name="Cutmode" value="true"/>
 				<action action_name="Goto" actor="player" pos="2270,12"/>
 				<action action_name="ActorAttr" actor="player" visible="false"/>
 				<action action_name="DropItem" actor="rope" pos="2150.0,102.0"/>
@@ -607,11 +617,15 @@
 				<action action_name="Animation" animation="rope#rope2" animation_type="sprite defined" wait="true"/>
 				<action action_name="ActorAttr" visible="false"/>
 				<action action_name="Cutmode" value="false"/>
-				<action action_name="Lookat" actor="rope" direction="front" text="@scene1.exit.pickup.9.text"/>
+				<action action_name="State" actor="rope" state="ANCHORED"/>
+<action action_name="Lookat" actor="rope" direction="front" text="@scene1.exit.pickup.9.text"/>
 			
-		</verb>
+		<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Lookat" text="@scene1.exit.use.rope.12.text_"/>
+<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+</verb>
 <verb id="lookat">
-<action action_name="Lookat" text="@scene1.exit.lookat.0.text"/>
+<action action_name="Say" quee="false" text="@scene1.exit.lookat.0.text_" type="rectangle" wait="false"/>
 </verb>
 </actor>
 </scene>

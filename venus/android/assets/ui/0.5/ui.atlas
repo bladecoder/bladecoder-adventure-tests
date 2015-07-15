@@ -1,0 +1,156 @@
+
+ui.png
+size: 807,173
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+border_black_rect4
+  rotate: false
+  xy: 660, 17
+  size: 31, 31
+  split: 5, 5, 5, 4
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+border_rect2
+  rotate: false
+  xy: 551, 12
+  size: 32, 32
+  split: 2, 2, 2, 2
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+border_rect4
+  rotate: false
+  xy: 585, 12
+  size: 32, 32
+  split: 4, 4, 5, 5
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+bubblepointer
+  rotate: false
+  xy: 619, 19
+  size: 39, 25
+  orig: 39, 25
+  offset: 0, 0
+  index: -1
+circle
+  rotate: false
+  xy: 522, 98
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+circle_border
+  rotate: false
+  xy: 173, 16
+  size: 156, 156
+  orig: 156, 156
+  offset: 0, 0
+  index: -1
+circle_button
+  rotate: false
+  xy: 1, 1
+  size: 170, 171
+  orig: 170, 171
+  offset: 0, 0
+  index: -1
+credits
+  rotate: false
+  xy: 400, 5
+  size: 66, 63
+  orig: 66, 63
+  offset: 0, 0
+  index: -1
+debug
+  rotate: false
+  xy: 735, 123
+  size: 66, 49
+  orig: 66, 49
+  offset: 0, 0
+  index: -1
+help
+  rotate: false
+  xy: 761, 60
+  size: 45, 61
+  orig: 45, 61
+  offset: 0, 0
+  index: -1
+hotspotpointer
+  rotate: false
+  xy: 331, 70
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+inventory
+  rotate: false
+  xy: 435, 87
+  size: 85, 85
+  orig: 85, 85
+  offset: 0, 0
+  index: -1
+inventory_plain
+  rotate: false
+  xy: 665, 124
+  size: 68, 48
+  orig: 68, 48
+  offset: 0, 0
+  index: -1
+leave
+  rotate: false
+  xy: 598, 113
+  size: 65, 59
+  orig: 65, 59
+  offset: 0, 0
+  index: -1
+lookat
+  rotate: false
+  xy: 551, 46
+  size: 80, 50
+  orig: 80, 50
+  offset: 0, 0
+  index: -1
+menu
+  rotate: false
+  xy: 468, 4
+  size: 81, 81
+  orig: 81, 81
+  offset: 0, 0
+  index: -1
+pickup
+  rotate: false
+  xy: 697, 9
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+plus
+  rotate: false
+  xy: 331, 1
+  size: 67, 67
+  orig: 67, 67
+  offset: 0, 0
+  index: -1
+pointer
+  rotate: false
+  xy: 633, 50
+  size: 62, 61
+  orig: 62, 61
+  offset: 0, 0
+  index: -1
+talkto
+  rotate: false
+  xy: 697, 69
+  size: 62, 52
+  orig: 62, 52
+  offset: 0, 0
+  index: -1
+white_pixel
+  rotate: false
+  xy: 173, 13
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1

@@ -286,7 +286,8 @@
 				<action action_name="ActorAttr" actor="player" visible="true"/>
 				<action action_name="Animation" animation="rope.floor"/>
 				<action action_name="State" state="FALL"/>
-				<action action_name="Cutmode" value="false"/>
+				<action action_name="ActorAttr" actor="exit" visible="true"/>
+<action action_name="Cutmode" value="false"/>
 
 				<action action_name="Lookat" text="@rope.pickup.WITH_GODDESS.0.9.text"/>			
 		</verb>
@@ -328,7 +329,8 @@
 				<action action_name="ActorAttr" actor="player" visible="true"/>
 				<action action_name="Animation" animation="rope2"/>
 				<action action_name="State" state="ANCHORED"/>
-				<action action_name="Cutmode" value="false"/>
+				<action action_name="ActorAttr" actor="exit" visible="false"/>
+<action action_name="Cutmode" value="false"/>
 				<action action_name="Lookat" direction="front" text="@rope.pickup.ARMED.0.9.text"/>
 			
 		</verb>
@@ -593,6 +595,25 @@
 
 <walk_zone polygon="192.69849,-3.0716553,727.3014,460.72607,705.0456,399.51163,625.80536,225.32869,880.963,59.99568,1222.0059,209.4747,1145.7484,381.48593,1386.9921,381.94098,1820.9706,374.1726,1882.3246,474.4625,2558.048,479.26852,3023.0,0.0" pos="5.2458496,-5.245926"/>
 
+<actor bbox="-35.29236,5.041809,-50.41748,205.0415,406.71167,200.0,421.83716,0.0" depth_type="none" desc="@scene1.exit.desc" id="exit" layer="foreground" pos="1977.6626,916.05615" type="no_renderer" visible="false" zIndex="0">
+<verb id="pickup">
+			
+				<action action_name="Cutmode" value="true"/>
+				<action action_name="Goto" actor="player" pos="2270,12"/>
+				<action action_name="ActorAttr" actor="player" visible="false"/>
+				<action action_name="DropItem" actor="rope" pos="2150.0,102.0"/>
+				<action action_name="Animation" animation="rope#rope.throw" animation_type="sprite defined" wait="true"/>
+				<action action_name="ActorAttr" actor="player" visible="true"/>
+				<action action_name="Animation" animation="rope#rope2" animation_type="sprite defined" wait="true"/>
+				<action action_name="ActorAttr" visible="false"/>
+				<action action_name="Cutmode" value="false"/>
+				<action action_name="Lookat" actor="rope" direction="front" text="@scene1.exit.pickup.9.text"/>
+			
+		</verb>
+<verb id="lookat">
+<action action_name="Lookat" text="@scene1.exit.lookat.0.text"/>
+</verb>
+</actor>
 </scene>
 
 

@@ -3,13 +3,13 @@ android {
     compileSdkVersion 20   
     
     defaultConfig {
-        versionCode 28
+        versionCode 29
         versionName version
     }
      
     if(project.hasProperty("hd")) {
     
-    	defaultConfig.versionCode 2028
+    	defaultConfig.versionCode 2029
     
     	aaptOptions {
     		noCompress "png", "jpg"
@@ -17,7 +17,7 @@ android {
     	}
     } else if(project.hasProperty("sd")) {
     
-    	defaultConfig.versionCode 1028
+    	defaultConfig.versionCode 1029
     
      	aaptOptions {
     		noCompress "png", "jpg"

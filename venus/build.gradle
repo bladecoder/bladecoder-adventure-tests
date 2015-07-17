@@ -14,14 +14,14 @@ allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
 
-    version = '1.18'
+    version = '1.19'
     
     if(project.hasProperty('passed_version'))
       version = passed_version;
     
     ext {
         appName = 'venus'
-        bladeEngineVersion = '0.8.9'
+        bladeEngineVersion = '0.8.10'
         gdxVersion = '1.6.4'
         roboVMVersion = '1.5.0'
     }

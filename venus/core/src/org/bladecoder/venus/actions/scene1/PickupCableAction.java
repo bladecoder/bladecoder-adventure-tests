@@ -9,6 +9,7 @@ import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.actions.Param.Type;
 import com.bladecoder.engine.anim.Tween;
+import com.bladecoder.engine.model.CharacterActor;
 import com.bladecoder.engine.model.SpriteActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
@@ -33,7 +34,7 @@ public class PickupCableAction implements Action, ActionCallback {
 
 		EngineLogger.debug("PICKUP " + actor.getDesc());
 
-		SpriteActor player = World.getInstance().getCurrentScene().getPlayer();
+		CharacterActor player = World.getInstance().getCurrentScene().getPlayer();
 
 		goTo = false;
 		player.goTo(new Vector2(actor.getX() + actor.getWidth(), actor.getY()), this);

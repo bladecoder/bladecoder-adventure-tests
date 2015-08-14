@@ -5,7 +5,7 @@
 <layer id="foreground" visible="true"/>
 <layer id="background" visible="true"/>
 	<verb id="init">
-		<action class="org.bladecoder.venus.actions.scene0.Scene0InitAction" text="@scene0.init.0.text" title_filename="@scene0.intro.filename"/>
+		<action class="org.bladecoder.venus.actions.scene0.Scene0InitAction" text="@scene0.init.0.text" />
 	</verb>
 
 
@@ -14,7 +14,7 @@
 		<action action_name="Leave" scene="scene1"/>
 	</verb>
 
-	<actor desc="@forward.desc" id="forward" layer="background" pos="1800,47" type="atlas">
+	<actor desc="@forward.desc" id="forward" layer="background" pos="1800,47" type="sprite" renderer="atlas">
 
 		<animation id="forward" source="scene0"/>
 
@@ -25,6 +25,10 @@
 
 
 	</actor>
+	
+	<actor id="title" visible="false" layer="foreground" pos="960,0" type="sprite" renderer="image">
+		<animation id="title" source="title_en.jpg"/>
+	</actor>
 </scene>
 
 
@@ -33,21 +37,21 @@
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
 
-	<actor id="column_fg" interaction="false" layer="foreground" pos="160,0" type="atlas">
+	<actor id="column_fg" interaction="false" layer="foreground" pos="160,0" type="sprite" renderer="atlas">
 		<animation id="column_fg" source="scene1"/>
 	</actor>
 
 
-	<actor id="head_fg" interaction="false" layer="foreground" pos="2727.276,-0.62638855" type="atlas">
+	<actor id="head_fg" interaction="false" layer="foreground" pos="2727.276,-0.62638855" type="sprite" renderer="atlas">
 		<animation id="head_fg" source="scene1"/>
 	</actor>
 
-	<actor id="cabinet_off" interaction="false" layer="dynamic" pos="384.79813,467.20212" type="atlas" visible="false">
+	<actor id="cabinet_off" interaction="false" layer="dynamic" pos="384.79813,467.20212" type="sprite" renderer="atlas" visible="false">
 		<animation id="cabinet_off" source="scene1"/>
 	</actor>
 
 
-	<actor bbox="11.970032,35.910156,0.0,100.0,100.0,100.0,107.18201,43.092316" desc="@placa.desc" id="placa" layer="dynamic" pos="844.2892,466.03485" type="no_renderer">
+	<actor bbox="11.970032,35.910156,0.0,100.0,100.0,100.0,107.18201,43.092316" desc="@placa.desc" id="placa" layer="dynamic" pos="844.2892,466.03485" type="background">
 
 		<verb id="lookat">
 			
@@ -62,7 +66,7 @@
 
 	</actor>
 
-	<actor bbox="2.394165,-67.03241,0.0,100.0,83.2417,83.24176,83.60376,-21.738464,66.48364,-47.88031" desc="@papelera.desc" id="papelera" layer="dynamic" pos="1769.9749,608.0798" type="no_renderer">
+	<actor bbox="2.394165,-67.03241,0.0,100.0,83.2417,83.24176,83.60376,-21.738464,66.48364,-47.88031" desc="@papelera.desc" id="papelera" layer="dynamic" pos="1769.9749,608.0798" type="background">
 		<verb id="lookat">
 			
 				<action action_name="Cutmode" value="true"/>
@@ -77,7 +81,7 @@
 		</verb>
 	</actor>
 
-	<actor bbox="-15.960083,-422.94275,16.572266,-337.66803,24.84021,-315.99585,-12.12384,-135.72235,-1.6645508,-28.39038,27.268433,14.341614,30.324219,98.40405,125.53613,92.0199,115.960205,-427.7307" desc="@estatua.desc" id="estatua" layer="dynamic" pos="1029.4265,948.03" type="no_renderer">
+	<actor bbox="-15.960083,-422.94275,16.572266,-337.66803,24.84021,-315.99585,-12.12384,-135.72235,-1.6645508,-28.39038,27.268433,14.341614,30.324219,98.40405,125.53613,92.0199,115.960205,-427.7307" desc="@estatua.desc" id="estatua" layer="dynamic" pos="1029.4265,948.03" type="background">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@estatua.lookat.0.text"/>
@@ -89,7 +93,7 @@
 
 	</actor>
 
-	<actor desc="@chair.desc" id="chair" layer="dynamic" pos="2330,510" state="SIT0" type="atlas">
+	<actor desc="@chair.desc" id="chair" layer="dynamic" pos="2330,510" state="SIT0" type="sprite" renderer="atlas">
 
 		<animation id="chair2" source="scene1"/>
 		<animation id="chair.inventory" sound="click" source="scene1"/>
@@ -175,7 +179,7 @@
 
 	</actor>
 
-	<actor bbox="14.364136,-452.4688,10.901123,-319.27582,0.0,100.0,516.5586,104.787964,504.5885,-457.25696" desc="@vasijas.desc" id="vasijas" layer="dynamic" pos="1260.3755,976.75775" type="no_renderer">
+	<actor bbox="14.364136,-452.4688,10.901123,-319.27582,0.0,100.0,516.5586,104.787964,504.5885,-457.25696" desc="@vasijas.desc" id="vasijas" layer="dynamic" pos="1260.3755,976.75775" type="background">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@vasijas.lookat.0.text"/>
@@ -183,7 +187,7 @@
 
 	</actor>
 
-	<actor bbox="0.0,-172.36902,0.0,100.0,269.97504,88.02991,248.42896,-155.61108" desc="@cuadro.desc" id="cuadro" layer="dynamic" pos="629.62585,924.0898" type="no_renderer">
+	<actor bbox="0.0,-172.36902,0.0,100.0,269.97504,88.02991,248.42896,-155.61108" desc="@cuadro.desc" id="cuadro" layer="dynamic" pos="629.62585,924.0898" type="background">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@cuadro.lookat.0.text"/>
@@ -194,7 +198,7 @@
 		</verb>
 	</actor>
 
-	<actor bbox="-119.700745,-26.334167,-164.38904,528.52875,88.82794,547.6809,155.06235,151.62097" desc="@vitrina.desc" id="vitrina" layer="dynamic" pos="406.98236,314.41382" type="no_renderer">
+	<actor bbox="-119.700745,-26.334167,-164.38904,528.52875,88.82794,547.6809,155.06235,151.62097" desc="@vitrina.desc" id="vitrina" layer="dynamic" pos="406.98236,314.41382" type="background">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@vitrina.lookat.0.text"/>
@@ -202,7 +206,7 @@
 
 	</actor>
 
-	<actor desc="@cable.desc" id="cable" layer="dynamic" pos="582.39404,532.6405" state="CONNECTED" type="atlas">
+	<actor desc="@cable.desc" id="cable" layer="dynamic" pos="582.39404,532.6405" state="CONNECTED" type="sprite" renderer="atlas">
 
 		<animation id="cable.connected" source="scene1"/>
 		<animation id="cable.disconnected" source="scene1"/>
@@ -246,7 +250,7 @@
 
 	</actor>
 
-	<actor bbox="-9.57605,14.364075,0.0,100.0,145.4862,92.81799,143.09229,9.57605" desc="@libro.desc" id="libro" layer="dynamic" pos="1867.3315,806.7831" type="no_renderer">
+	<actor bbox="-9.57605,14.364075,0.0,100.0,145.4862,92.81799,143.09229,9.57605" desc="@libro.desc" id="libro" layer="dynamic" pos="1867.3315,806.7831" type="background">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@libro.lookat.0.text"/>
@@ -257,7 +261,7 @@
 		</verb>
 	</actor>
 
-	<actor desc="@rope.desc" id="rope" layer="dynamic" pos="2150,102" type="atlas">
+	<actor desc="@rope.desc" id="rope" layer="dynamic" pos="2150,102" type="sprite" renderer="atlas">
 
 		<animation id="rope" source="scene1"/>
 		<animation id="rope2" source="scene1"/>
@@ -348,13 +352,13 @@
 
 	</actor>
 
-	<actor id="hole" interaction="false" layer="dynamic" pos="887,587" type="atlas" visible="false">
+	<actor id="hole" interaction="false" layer="dynamic" pos="887,587" type="sprite" renderer="atlas" visible="false">
 
 		<animation id="hole" source="scene1"/>
 
 	</actor>
 
-	<actor bbox="1.5959473,74.21448,0.0,100.0,40.149597,100.0,40.94763,75.810425" desc="@socket.desc" id="socket" layer="dynamic" pos="589.7257,550.6234" type="no_renderer">
+	<actor bbox="1.5959473,74.21448,0.0,100.0,40.149597,100.0,40.94763,75.810425" desc="@socket.desc" id="socket" layer="dynamic" pos="589.7257,550.6234" type="background">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@socket.lookat.0.text"/>
@@ -366,7 +370,7 @@
 
 	</actor>
 
-	<actor desc="@diosa.desc" id="diosa" layer="dynamic" pos="905,594.5609" type="atlas">
+	<actor desc="@diosa.desc" id="diosa" layer="dynamic" pos="905,594.5609" type="sprite" renderer="atlas">
 
 		<animation id="diosa" source="common"/>
 		<animation id="diosa.inventory" source="common"/>
@@ -432,7 +436,7 @@
 	</actor>
 
 
-	<actor desc="@navaja.desc" id="navaja" layer="dynamic" pos="0,0" type="atlas">
+	<actor desc="@navaja.desc" id="navaja" layer="dynamic" pos="0,0" type="sprite" renderer="atlas">
 
 		<animation id="navaja.inventory" source="common"/>
 
@@ -454,7 +458,7 @@
 	</actor>
 
 
-	<actor desc="@cutter.desc" id="cutter" layer="dynamic" pos="-17.97754,-5.393219" state="WITH_LOW_BATTERY" type="atlas">
+	<actor desc="@cutter.desc" id="cutter" layer="dynamic" pos="-17.97754,-5.393219" state="WITH_LOW_BATTERY" type="sprite" renderer="atlas">
 
 		<animation id="cutter.inventory" source="common"/>
 		<animation id="cutter.withcable" sound="click" source="common"/>
@@ -561,7 +565,7 @@
 
 
 
-	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="2320.8765,61.886017" type="atlas">
+	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="2320.8765,61.886017" type="character" renderer="atlas">
 
 		<animation id="stand.left" source="player"/>
 		<animation id="stand.back" source="player"/>
@@ -604,7 +608,7 @@
 
 <walk_zone polygon="192.69849,-3.0716553,727.3014,460.72607,705.0456,399.51163,625.80536,225.32869,880.963,59.99568,1222.0059,209.4747,1145.7484,381.48593,1386.9921,381.94098,1820.9706,374.1726,1882.3246,474.4625,2558.048,479.26852,3023.0,0.0" pos="5.2458496,-5.245926"/>
 
-<actor bbox="82.4801,54.629944,85.95056,170.94934,327.68018,175.20581,335.05737,61.985413" depth_type="none" desc="@scene1.exit.desc" id="exit" layer="foreground" pos="1977.6626,916.05615" type="no_renderer" visible="false" zIndex="0">
+<actor bbox="82.4801,54.629944,85.95056,170.94934,327.68018,175.20581,335.05737,61.985413" depth_type="none" desc="@scene1.exit.desc" id="exit" layer="foreground" pos="1977.6626,916.05615" type="background" visible="false" zIndex="0">
 <verb id="use" target="rope">
 			
 				<action action_name="IfAttr" actor="rope" attr="state" endType="else" value="ARMED"/>
@@ -635,7 +639,7 @@
 <layer id="foreground" visible="true"/>
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
-	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="584.22626,95.324524" type="atlas">
+	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="584.22626,95.324524" type="character" renderer="atlas">
 
 		<animation id="stand.frontright" source="player_down"/>
 
@@ -671,7 +675,7 @@
 		
 	</actor>
 
-<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" layer="dynamic" pos="1329.5884,0.0" type="atlas" width="320" x="-70" y="0">
+<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" layer="dynamic" pos="1329.5884,0.0" type="character" renderer="atlas" width="320" x="-70" y="0">
 
 		<animation id="stand.frontleft" source="policeman"/>
 
@@ -792,7 +796,7 @@
 
 	</actor>
 
-	<actor bbox="106.924866,74.38257,102.27606,299.9031,253.414,290.60538,248.7652,88.32922" depth_type="none" desc="@electricbox.desc" id="electricbox" layer="foreground" pos="897.23975,255.69016" type="no_renderer">
+	<actor bbox="106.924866,74.38257,102.27606,299.9031,253.414,290.60538,248.7652,88.32922" depth_type="none" desc="@electricbox.desc" id="electricbox" layer="foreground" pos="897.23975,255.69016" type="background">
 
 		<verb id="lookat">
 			<action action_name="Lookat" text="@electricbox.lookat.0.text"/>
@@ -804,7 +808,7 @@
 
 	</actor>
 
-	<actor bbox="0.0,-567.16724,0.0,100.0,272.00964,127.893616,262.71185,-585.7631" desc="@door.desc" id="door" layer="dynamic" pos="460.2422,692.6878" type="no_renderer">
+	<actor bbox="0.0,-567.16724,0.0,100.0,272.00964,127.893616,262.71185,-585.7631" desc="@door.desc" id="door" layer="dynamic" pos="460.2422,692.6878" type="background">
 
 		<verb id="leave">
 
@@ -828,7 +832,7 @@
 	</actor>
 
 
-	<actor bbox="4.6488647,-353.31723,23.24451,183.68054,299.90314,160.43591,295.2542,-353.31723" desc="@out.desc" id="out" layer="dynamic" pos="-5.722046E-5,474.1889" type="no_renderer">
+	<actor bbox="4.6488647,-353.31723,23.24451,183.68054,299.90314,160.43591,295.2542,-353.31723" desc="@out.desc" id="out" layer="dynamic" pos="-5.722046E-5,474.1889" type="background">
 
 		<verb id="leave">
 
@@ -851,7 +855,7 @@
 
 	</actor>
 
-	<actor id="fence" interaction="false" layer="foreground" pos="1750.5,0" type="atlas">
+	<actor id="fence" interaction="false" layer="foreground" pos="1750.5,0" type="sprite" renderer="atlas">
 
 		<animation id="fence" source="scene2"/>
 
@@ -884,7 +888,7 @@
 <scene id="endSCN" loop="true" music="scn1.ogg">
 <layer id="foreground" visible="true"/>
     
-<actor bbox="0.0,0.0,-4.824341,1074.5214,1913.9606,1079.3456,1918.7849,0.0" desc="@desc" id="exit" layer="foreground" pos="0,0" type="no_renderer">
+<actor bbox="0.0,0.0,-4.824341,1074.5214,1913.9606,1079.3456,1918.7849,0.0" desc="@desc" id="exit" layer="foreground" pos="0,0" type="background">
 
 <verb id="leave">
     <action class="org.bladecoder.venus.actions.scene2.LeaveAction"/>

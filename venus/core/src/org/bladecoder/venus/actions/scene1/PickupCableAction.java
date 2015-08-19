@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
+import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.actions.Param.Type;
 import com.bladecoder.engine.anim.Tween;
@@ -16,8 +17,8 @@ import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
 
+@ActionDescription("Action for conecting/disconecting the cable")
 public class PickupCableAction implements Action, ActionCallback {
-	public static final String INFO = "Action for conecting/disconecting the cable";
 	public static final Param[] PARAMS = {
 		new Param("connect_text", "The text to show when connect the cable", Type.STRING),
 		new Param("disconnect_text", "The text to show when disconnect the cable", Type.STRING)
@@ -85,11 +86,6 @@ public class PickupCableAction implements Action, ActionCallback {
 				cabinet_off.setVisible(false);
 			}
 		}
-	}
-
-	@Override
-	public String getInfo() {
-		return INFO;
 	}
 
 	@Override

@@ -5,10 +5,12 @@ import java.util.HashMap;
 import com.bladecoder.engine.BladeEngine;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
+import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.ui.UI;
 
+@ActionDescription("Restarts the game")
 public class LeaveAction implements Action {
 	public static final String INFO = "Restarts the game";
 	public static final Param[] PARAMS = {};
@@ -28,11 +30,6 @@ public class LeaveAction implements Action {
 		ui.setCurrentScreen(UI.Screens.CREDIT_SCREEN);
 		
 		return false;
-	}
-
-	@Override
-	public String getInfo() {
-		return INFO;
 	}
 
 	@Override

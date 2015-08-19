@@ -5,6 +5,7 @@ import java.util.HashMap;
 import com.badlogic.gdx.graphics.Color;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
+import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.actions.Param.Type;
 import com.bladecoder.engine.model.InteractiveActor;
@@ -13,9 +14,9 @@ import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
 
+@ActionDescription("Init action for the intro scene")
 public class Scene0InitAction implements Action, ActionCallback {
 	
-	public static final String INFO = "Init action for the intro scene";
 	public static final Param[] PARAMS = {
 		new Param("text", "The text to show", Type.STRING)
 		};		
@@ -66,11 +67,6 @@ public class Scene0InitAction implements Action, ActionCallback {
 			World.getInstance().getCurrentScene().runVerb("leave");
 			break;
 		}		
-	}
-
-	@Override
-	public String getInfo() {
-		return INFO;
 	}
 
 	@Override

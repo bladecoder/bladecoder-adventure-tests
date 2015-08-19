@@ -35,12 +35,12 @@
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.2.text" type="rectangle" wait="true"/>
 <action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.5.text_" type="rectangle" wait="true"/>
-<action action_name="Animation" animation="error" animation_type="sprite defined" wait="false"/>
+<action action_name="Animation" animation="error" animation_type="sprite_defined" wait="false"/>
 <action action_name="CancelVerb"/>
 <action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
 <action action_name="IfAttr" attr="state" endType="else" value="2"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.10.text_" type="rectangle" wait="true"/>
-<action action_name="Animation" animation="error" animation_type="sprite defined" wait="false"/>
+<action action_name="Animation" animation="error" animation_type="sprite_defined" wait="false"/>
 <action action_name="CancelVerb"/>
 <action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.11.text" type="rectangle" wait="true"/>
@@ -56,10 +56,10 @@
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.21.text_" type="rectangle" wait="true"/>
 <action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.24.text__" type="rectangle" wait="true"/>
-<action action_name="Animation" animation="error" animation_type="sprite defined" wait="false"/>
+<action action_name="Animation" animation="error" animation_type="sprite_defined" wait="false"/>
 <action action_name="CancelVerb"/>
 <action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
-<action action_name="Animation" animation="ok" animation_type="sprite defined" wait="false"/>
+<action action_name="Animation" animation="ok" animation_type="sprite_defined" wait="false"/>
 <action action_name="Cutmode" value="false"/>
 </verb>
 </actor>

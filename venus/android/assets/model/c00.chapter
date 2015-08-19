@@ -616,9 +616,9 @@
 				<action action_name="Goto" actor="player" pos="2270,12"/>
 				<action action_name="ActorAttr" actor="player" visible="false"/>
 				<action action_name="DropItem" actor="rope" pos="2150.0,102.0"/>
-				<action action_name="Animation" animation="rope#rope.throw" animation_type="sprite defined" wait="true"/>
+				<action action_name="Animation" animation="rope#rope.throw" animation_type="sprite_defined" wait="true"/>
 				<action action_name="ActorAttr" actor="player" visible="true"/>
-				<action action_name="Animation" animation="rope#rope2" animation_type="sprite defined" wait="true"/>
+				<action action_name="Animation" animation="rope#rope2" animation_type="sprite_defined" wait="true"/>
 				<action action_name="ActorAttr" visible="false"/>
 				<action action_name="Cutmode" value="false"/>
 				<action action_name="State" actor="rope" state="ANCHORED"/>

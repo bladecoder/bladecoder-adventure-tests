@@ -60,7 +60,7 @@ public class PickupCableAction implements Action, ActionCallback {
 			Vector2 p = new Vector2(actor.getX(), actor.getY());
 
 			if (Math.abs(p.x - player.getBBox().getBoundingRectangle().x) < player.getWidth()) {
-				player.startAnimation("crouch.left", Tween.FROM_FA, 1, this);
+				player.startAnimation("crouch.left", Tween.Type.SPRITE_DEFINED, 1, this);
 			}
 			
 		} else {  // 2. PICKUP THE CABLE
@@ -74,7 +74,7 @@ public class PickupCableAction implements Action, ActionCallback {
 				actor.setState("DISCONNECTED");
 				actor.playSound("switch");
 				actor.startAnimation("cable.disconnected", null);
-				player.startAnimation("crouch.left", Tween.REVERSE, 1, null);
+				player.startAnimation("crouch.left", Tween.Type.REVERSE, 1, null);
 				cabinet_off.setVisible(true);
 			} else if (actor.getState().equals("DISCONNECTED")) {
 				World.getInstance().getTextManager().addSubtitle(connectText, TextManager.POS_SUBTITLE,
@@ -82,7 +82,7 @@ public class PickupCableAction implements Action, ActionCallback {
 				actor.setState("CONNECTED");
 				actor.playSound("switch");
 				actor.startAnimation("cable.connected", null);
-				player.startAnimation("crouch.left", Tween.REVERSE, 1, null);
+				player.startAnimation("crouch.left", Tween.Type.REVERSE, 1, null);
 				cabinet_off.setVisible(false);
 			}
 		}

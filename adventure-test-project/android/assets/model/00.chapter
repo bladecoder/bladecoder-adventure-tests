@@ -21,6 +21,48 @@
 </verb>
 
 
+<actor depth_type="none" desc="@01.test_actions.desc" id="test_actions" init_animation="go" layer="foreground" pos="213.08972,778.28467" renderer="atlas" scale="1" type="sprite" zIndex="0">
+<animation animation_type="no_repeat" dispose_when_played="false" id="error" preload="true" source="testbutton" speed="1.0"/>
+<animation animation_type="no_repeat" dispose_when_played="false" id="go" preload="true" source="testbutton" speed="1.0"/>
+<animation animation_type="no_repeat" dispose_when_played="false" id="ok" preload="true" source="testbutton" speed="1.0"/>
+<verb id="lookat">
+<action action_name="Say" quee="false" text="@01.test_actions.lookat.0.text" type="rectangle" wait="true"/>
+</verb>
+<verb id="pickup">
+<action action_name="State" state="1"/>
+<action action_name="Cutmode" value="true"/>
+<action action_name="IfAttr" attr="state" endType="else" value="1"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.2.text" type="rectangle" wait="true"/>
+<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.5.text_" type="rectangle" wait="true"/>
+<action action_name="Animation" animation="error" animation_type="sprite defined" wait="false"/>
+<action action_name="CancelVerb"/>
+<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+<action action_name="IfAttr" attr="state" endType="else" value="2"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.10.text_" type="rectangle" wait="true"/>
+<action action_name="Animation" animation="error" animation_type="sprite defined" wait="false"/>
+<action action_name="CancelVerb"/>
+<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.11.text" type="rectangle" wait="true"/>
+<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+<action action_name="Repeat" endType="repeat" repeat="3"/>
+<action action_name="Choose" chooseCriteria="cycle" endType="choose"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.18.text" type="rectangle" wait="true"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.16.text_" type="rectangle" wait="true"/>
+<action action_name="State" state="3"/>
+<action action_name="EndChoose" class="com.bladecoder.engine.actions.EndAction" endType="choose"/>
+<action action_name="EndRepeat" class="com.bladecoder.engine.actions.EndAction" endType="repeat"/>
+<action action_name="IfAttr" attr="state" endType="else" value="3"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.21.text_" type="rectangle" wait="true"/>
+<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" endType="else"/>
+<action action_name="Say" quee="false" text="@01.test_actions.pickup.24.text__" type="rectangle" wait="true"/>
+<action action_name="Animation" animation="error" animation_type="sprite defined" wait="false"/>
+<action action_name="CancelVerb"/>
+<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" endType="if"/>
+<action action_name="Animation" animation="ok" animation_type="sprite defined" wait="false"/>
+<action action_name="Cutmode" value="false"/>
+</verb>
+</actor>
 </scene>
 <scene background_atlas="scene2" background_region="bg2" id="02">
 
@@ -45,4 +87,5 @@
 </verb>
 </actor>
 </scene>
+
 </chapter>

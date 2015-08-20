@@ -7,25 +7,26 @@ import com.badlogic.gdx.graphics.Color;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
+import com.bladecoder.engine.actions.ActionPropertyType;
 import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.actions.Param.Type;
 import com.bladecoder.engine.i18n.I18N;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 @ActionDescription("Credit scene init action")
-public class Scene2InitAction implements Action {
-
-	public static final Param[] PARAMS = {
-		new Param("text", "text to show with the credits", Type.STRING)
-		};		
-	
+public class Scene2InitAction implements Action {	
+	@JsonProperty
+	@JsonPropertyDescription("text to show with the credits")
+	@ActionPropertyType(Type.STRING)
 	String text;
 
 	@Override
 	public void setParams(HashMap<String, String> params) {
-			text = params.get("text");
+		text = params.get("text");
 	}
 
 	@Override
@@ -38,10 +39,5 @@ public class Scene2InitAction implements Action {
 		
 		World.getInstance().getTextManager().addSubtitle(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null);
 		return false;
-	}
-
-	@Override
-	public Param[] getParams() {
-		return PARAMS;
 	}
 }

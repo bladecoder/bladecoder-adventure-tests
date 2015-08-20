@@ -6,24 +6,30 @@ import com.badlogic.gdx.graphics.Color;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
-import com.bladecoder.engine.actions.Param;
+import com.bladecoder.engine.actions.ActionPropertyType;
 import com.bladecoder.engine.actions.Param.Type;
 import com.bladecoder.engine.model.InteractiveActor;
 import com.bladecoder.engine.model.SpriteActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 @ActionDescription("Action for using the 'cut_machine' with the 'cable'")
 public class UseCutMachineCableAction implements Action {
 	
-	public static final Param[] PARAMS = {
-		new Param("cut_cable_text", "Text to show when attach the cable to the cut_machine", Type.STRING),
-		new Param("default_cable_text", "Text to show when the cable can not be attached to the cut_machine", Type.STRING)
-		};
-	
+	@JsonProperty
+	@JsonPropertyDescription("Text to show when attach the cable to the cut_machine")
+	@ActionPropertyType(Type.STRING)
 	private String cutCableText;
+	
+	@JsonProperty
+	@JsonPropertyDescription("Text to show when the cable can not be attached to the cut_machine")
+	@ActionPropertyType(Type.STRING)
 	private String defaultCableText;
+	
+	
 	private String actorId;
 
 	@Override
@@ -54,10 +60,5 @@ public class UseCutMachineCableAction implements Action {
 
 		cutCableText = params.get("cut_cable_text");
 		defaultCableText = params.get("default_cable_text");
-	}
-
-	@Override
-	public Param[] getParams() {
-		return PARAMS;
 	}
 }

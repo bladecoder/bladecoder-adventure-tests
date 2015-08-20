@@ -6,26 +6,27 @@ import com.badlogic.gdx.graphics.Color;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
-import com.bladecoder.engine.actions.Param;
+import com.bladecoder.engine.actions.ActionPropertyType;
 import com.bladecoder.engine.actions.Param.Type;
 import com.bladecoder.engine.model.InteractiveActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 @ActionDescription("Init action for the intro scene")
-public class Scene0InitAction implements Action, ActionCallback {
-	
-	public static final Param[] PARAMS = {
-		new Param("text", "The text to show", Type.STRING)
-		};		
+public class Scene0InitAction implements Action, ActionCallback {	
 
 	private static final float TITLE_TIME = 6f;
 	
 	private static final int INIT_STATE = 0;
 	private static final int LEAVE_STATE = 2;
 
+	@JsonProperty
+	@JsonPropertyDescription("The text to show")
+	@ActionPropertyType(Type.STRING)
 	String text;
 	
 	int state = INIT_STATE;
@@ -67,10 +68,5 @@ public class Scene0InitAction implements Action, ActionCallback {
 			World.getInstance().getCurrentScene().runVerb("leave");
 			break;
 		}		
-	}
-
-	@Override
-	public Param[] getParams() {
-		return PARAMS;
 	}
 }

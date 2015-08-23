@@ -1,0 +1,27 @@
+
+00.png
+size: 3935,1082
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg1
+  rotate: false
+  xy: 1, 1
+  size: 3023, 1080
+  orig: 3023, 1080
+  offset: 0, 0
+  index: -1
+column_fg
+  rotate: false
+  xy: 3614, 1
+  size: 320, 1080
+  orig: 320, 1080
+  offset: 0, 0
+  index: -1
+head_fg
+  rotate: false
+  xy: 3026, 100
+  size: 586, 981
+  orig: 586, 981
+  offset: 0, 0
+  index: -1

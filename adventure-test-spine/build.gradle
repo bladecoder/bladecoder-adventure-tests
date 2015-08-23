@@ -6,7 +6,7 @@ buildscript {
     dependencies {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
         classpath 'com.android.tools.build:gradle:1.2.3'
-        classpath 'org.robovm:robovm-gradle-plugin:1.5.0'
+        classpath 'org.robovm:robovm-gradle-plugin:1.6.0'
     }
 }
 
@@ -20,8 +20,8 @@ allprojects {
     ext {
         appName = 'adventure-test-spine'
  		bladeEngineVersion = '0.8.9'
-        gdxVersion = '1.6.4'
-        roboVMVersion = '1.5.0'
+        gdxVersion = '1.6.5'
+        roboVMVersion = '1.6.0'
     }
 
     repositories {

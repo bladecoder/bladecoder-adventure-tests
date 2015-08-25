@@ -728,16 +728,18 @@
 		</verb>
 
 		<dialog id="dialog1">
-			<option response_text="@policeman.dialog1.0.response_text" text="@policeman.dialog1.0.text">
-				<option next="parent" response_text="@policeman.dialog1.0.0.response_text" text="@policeman.dialog1.0.0.text"/>
-				<option next="parent" response_text="@policeman.dialog1.0.1.response_text" text="@policeman.dialog1.0.1.text"/>
-				<option next="parent" response_text="@policeman.dialog1.0.2.response_text" text="@policeman.dialog1.0.2.text"/>
-				<option response_text="@policeman.dialog1.0.3.response_text" text="@policeman.dialog1.0.3.text"/>
-			</option>
-			<option next="parent" response_text="@policeman.dialog1.1.response_text" text="@policeman.dialog1.1.text"/>
+			<option response_text="@policeman.dialog1.0.response_text" text="@policeman.dialog1.0.text" next="dialog2"/>
+			<option next="this" response_text="@policeman.dialog1.1.response_text" text="@policeman.dialog1.1.text"/>
 			<option text="@policeman.dialog1.2.text" verb="dialog1_turn"/>
-			<option next="parent" response_text="@policeman.dialog1.3.response_text" text="@policeman.dialog1.3.text"/>
+			<option next="this" response_text="@policeman.dialog1.3.response_text" text="@policeman.dialog1.3.text"/>
 			<option text="@policeman.dialog1.4.text"/>
+		</dialog>
+		
+		<dialog id="dialog2">
+				<option next="this" once="true" response_text="@policeman.dialog1.0.0.response_text" text="@policeman.dialog1.0.0.text"/>
+				<option next="this" once="true" response_text="@policeman.dialog1.0.1.response_text" text="@policeman.dialog1.0.1.text"/>
+				<option next="this" response_text="@policeman.dialog1.0.2.response_text" text="@policeman.dialog1.0.2.text"/>
+				<option next="dialog1" response_text="@policeman.dialog1.0.3.response_text" text="@policeman.dialog1.0.3.text"/>
 		</dialog>
 
 		<verb id="dialog1_turn">

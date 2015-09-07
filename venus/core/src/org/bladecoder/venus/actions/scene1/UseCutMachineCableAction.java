@@ -2,7 +2,6 @@ package org.bladecoder.venus.actions.scene1;
 
 import java.util.HashMap;
 
-import com.badlogic.gdx.graphics.Color;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
@@ -40,15 +39,15 @@ public class UseCutMachineCableAction implements Action {
 //		EngineLogger.debug("USING " + actor.getDesc() + " IN " + target.getDesc());
 
 		if (target.getState().equals("CUT") && actor.getState().equals("NO_BATTERY")) {
-			World.getInstance().getTextManager().addSubtitle(cutCableText, TextManager.POS_SUBTITLE,
-					TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, Color.BLACK, null);
+			World.getInstance().getTextManager().addText(cutCableText, TextManager.POS_SUBTITLE,
+					TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, null, null, null);
 			actor.setState("WITH_CABLE");
 			actor.startAnimation("cutter.withcable", null);
 			actor.playSound("click");
 			World.getInstance().getInventory().removeItem((SpriteActor) target);
 		} else {
-			World.getInstance().getTextManager().addSubtitle(defaultCableText, TextManager.POS_SUBTITLE,
-					TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, Color.BLACK, null);
+			World.getInstance().getTextManager().addText(defaultCableText, TextManager.POS_SUBTITLE,
+					TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, null, null, null);
 		}
 		
 		return false;

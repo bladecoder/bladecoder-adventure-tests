@@ -73,16 +73,16 @@ public class PickupCableAction implements Action, ActionCallback {
 					.getActor("cabinet_off", false);
 
 			if (actor.getState().equals("CONNECTED")) {
-				World.getInstance().getTextManager().addSubtitle(disconnectText, TextManager.POS_SUBTITLE,
-						TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, Color.BLACK, null);
+				World.getInstance().getTextManager().addText(disconnectText, TextManager.POS_SUBTITLE,
+						TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, Color.BLACK, null, null);
 				actor.setState("DISCONNECTED");
 				actor.playSound("switch");
 				actor.startAnimation("cable.disconnected", null);
 				player.startAnimation("crouch.left", Tween.Type.REVERSE, 1, null);
 				cabinet_off.setVisible(true);
 			} else if (actor.getState().equals("DISCONNECTED")) {
-				World.getInstance().getTextManager().addSubtitle(connectText, TextManager.POS_SUBTITLE,
-						TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, Color.BLACK, null);
+				World.getInstance().getTextManager().addText(connectText, TextManager.POS_SUBTITLE,
+						TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, Color.BLACK, null, null);
 				actor.setState("CONNECTED");
 				actor.playSound("switch");
 				actor.startAnimation("cable.connected", null);

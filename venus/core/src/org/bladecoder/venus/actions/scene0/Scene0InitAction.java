@@ -46,7 +46,7 @@ public class Scene0InitAction implements Action, ActionCallback {
 		
 		World.getInstance().showInventory(false);
 		
-		World.getInstance().getTextManager().addSubtitle(text, TextManager.POS_CENTER, TextManager.POS_CENTER, false, Text.Type.PLAIN, Color.WHITE, this);
+		World.getInstance().getTextManager().addText(text, TextManager.POS_CENTER, TextManager.POS_CENTER, false, Text.Type.PLAIN, Color.WHITE, null, this);
 		
 		return false;
 	}

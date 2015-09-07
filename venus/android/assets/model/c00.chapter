@@ -5,7 +5,7 @@
 <layer id="foreground" visible="true"/>
 <layer id="background" visible="true"/>
 	<verb id="init">
-		<action class="org.bladecoder.venus.actions.scene0.Scene0InitAction" text="@scene0.init.0.text" />
+		<action class="org.bladecoder.venus.actions.scene0.Scene0InitAction" text="@scene0.init.0.text"/>
 	</verb>
 
 
@@ -14,7 +14,7 @@
 		<action action_name="Leave" scene="scene1"/>
 	</verb>
 
-	<actor desc="@forward.desc" id="forward" layer="background" pos="1800,47" type="sprite" renderer="atlas">
+	<actor desc="@forward.desc" id="forward" layer="background" pos="1728.0,47.0" renderer="atlas" type="sprite">
 
 		<animation id="forward" source="scene0"/>
 
@@ -26,7 +26,7 @@
 
 	</actor>
 	
-	<actor id="title" visible="false" layer="foreground" pos="960,0" type="sprite" renderer="image">
+	<actor id="title" layer="foreground" pos="960.0,0.0" renderer="image" type="sprite" visible="false">
 		<animation id="title" source="title_en.jpg"/>
 	</actor>
 </scene>
@@ -37,16 +37,16 @@
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
 
-	<actor id="column_fg" interaction="false" layer="foreground" pos="160,0" type="sprite" renderer="atlas">
+	<actor id="column_fg" interaction="false" layer="foreground" pos="160,0" renderer="atlas" type="sprite">
 		<animation id="column_fg" source="scene1"/>
 	</actor>
 
 
-	<actor id="head_fg" interaction="false" layer="foreground" pos="2727.276,-0.62638855" type="sprite" renderer="atlas">
+	<actor id="head_fg" interaction="false" layer="foreground" pos="2727.276,-0.62638855" renderer="atlas" type="sprite">
 		<animation id="head_fg" source="scene1"/>
 	</actor>
 
-	<actor id="cabinet_off" interaction="false" layer="dynamic" pos="384.79813,467.20212" type="sprite" renderer="atlas" visible="false">
+	<actor id="cabinet_off" interaction="false" layer="dynamic" pos="384.79813,467.20212" renderer="atlas" type="sprite" visible="false">
 		<animation id="cabinet_off" source="scene1"/>
 	</actor>
 
@@ -93,7 +93,7 @@
 
 	</actor>
 
-	<actor desc="@chair.desc" id="chair" layer="dynamic" pos="2330,510" state="SIT0" type="sprite" renderer="atlas">
+	<actor desc="@chair.desc" id="chair" layer="dynamic" pos="2330,510" renderer="atlas" state="SIT0" type="sprite">
 
 		<animation id="chair2" source="scene1"/>
 		<animation id="chair.inventory" sound="click" source="scene1"/>
@@ -206,7 +206,7 @@
 
 	</actor>
 
-	<actor desc="@cable.desc" id="cable" layer="dynamic" pos="582.39404,532.6405" state="CONNECTED" type="sprite" renderer="atlas">
+	<actor desc="@cable.desc" id="cable" layer="dynamic" pos="582.39404,532.6405" renderer="atlas" state="CONNECTED" type="sprite">
 
 		<animation id="cable.connected" source="scene1"/>
 		<animation id="cable.disconnected" source="scene1"/>
@@ -261,7 +261,7 @@
 		</verb>
 	</actor>
 
-	<actor desc="@rope.desc" id="rope" layer="dynamic" pos="2150,102" type="sprite" renderer="atlas">
+	<actor desc="@rope.desc" id="rope" layer="dynamic" pos="2150,102" renderer="atlas" type="sprite">
 
 		<animation id="rope" source="scene1"/>
 		<animation id="rope2" source="scene1"/>
@@ -352,7 +352,7 @@
 
 	</actor>
 
-	<actor id="hole" interaction="false" layer="dynamic" pos="887,587" type="sprite" renderer="atlas" visible="false">
+	<actor id="hole" interaction="false" layer="dynamic" pos="887,587" renderer="atlas" type="sprite" visible="false">
 
 		<animation id="hole" source="scene1"/>
 
@@ -370,7 +370,7 @@
 
 	</actor>
 
-	<actor desc="@diosa.desc" id="diosa" layer="dynamic" pos="905,594.5609" type="sprite" renderer="atlas">
+	<actor desc="@diosa.desc" id="diosa" layer="dynamic" pos="905,594.5609" renderer="atlas" type="sprite">
 
 		<animation id="diosa" source="common"/>
 		<animation id="diosa.inventory" source="common"/>
@@ -423,10 +423,10 @@
 <action action_name="Pickup"/>
 <action action_name="State" state="INVENTORY"/>
 <action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
-<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Say" actor="policeman" text="@scene2.diosa.pickup.FLOOR.0.text" type="talk" wait="true"/>
 <action action_name="Say" actor="player" text="@scene2.diosa.pickup.FLOOR.1.text" type="talk" wait="true"/>
-<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 				
 			
 		<action action_name="Cutmode" value="false"/>
@@ -436,7 +436,7 @@
 	</actor>
 
 
-	<actor desc="@navaja.desc" id="navaja" layer="dynamic" pos="0,0" type="sprite" renderer="atlas">
+	<actor desc="@navaja.desc" id="navaja" layer="dynamic" pos="0,0" renderer="atlas" type="sprite">
 
 		<animation id="navaja.inventory" source="common"/>
 
@@ -458,7 +458,7 @@
 	</actor>
 
 
-	<actor desc="@cutter.desc" id="cutter" layer="dynamic" pos="-17.97754,-5.393219" state="WITH_LOW_BATTERY" type="sprite" renderer="atlas">
+	<actor desc="@cutter.desc" id="cutter" layer="dynamic" pos="-17.97754,-5.393219" renderer="atlas" state="WITH_LOW_BATTERY" type="sprite">
 
 		<animation id="cutter.inventory" source="common"/>
 		<animation id="cutter.withcable" sound="click" source="common"/>
@@ -565,7 +565,7 @@
 
 
 
-	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="2320.8765,61.886017" type="character" renderer="atlas">
+	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="2320.8765,61.886017" renderer="atlas" type="character">
 
 		<animation id="stand.left" source="player"/>
 		<animation id="stand.back" source="player"/>
@@ -624,9 +624,9 @@
 				<action action_name="State" actor="rope" state="ANCHORED"/>
 <action action_name="Lookat" actor="rope" direction="front" text="@scene1.exit.pickup.9.text"/>
 			
-		<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+		<action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Lookat" text="@scene1.exit.use.rope.12.text_"/>
-<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 </verb>
 <verb id="lookat">
 <action action_name="Say" quee="false" text="@scene1.exit.lookat.0.text_" type="rectangle" wait="false"/>
@@ -639,7 +639,7 @@
 <layer id="foreground" visible="true"/>
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
-	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="584.22626,95.324524" type="character" renderer="atlas">
+	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="584.22626,95.324524" renderer="atlas" type="character">
 
 		<animation id="stand.frontright" source="player_down"/>
 
@@ -660,7 +660,7 @@
 			<action action_name="IfAttr" actor="policeman" attr="state" caID="else123" value="POLICEMAN_TURN"/>
 <action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
 <action action_name="RunVerb" actor="policeman" verb="turn_back"/>
-<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Cutmode" value="true"/>
 			<action action_name="Say" actor="policeman" text="@player.goto.0.1.text" type="talk" wait="true"/>
 			<action action_name="Animation" animation="player#stand.frontright"/>
@@ -669,13 +669,13 @@
 			<action action_name="Animation" animation="player#stand.frontright"/>
 			<action action_name="Cutmode" value="false"/>
 
-		<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+		<action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 </verb>
 
 		
 	</actor>
 
-<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" layer="dynamic" pos="1329.5884,0.0" type="character" renderer="atlas" width="320" x="-70" y="0">
+<actor depth_type="vector" desc="@policeman.desc" height="870" id="policeman" layer="dynamic" pos="1329.5884,0.0" renderer="atlas" type="character" width="320" x="-70" y="0">
 
 		<animation id="stand.frontleft" source="policeman"/>
 
@@ -728,7 +728,7 @@
 		</verb>
 
 		<dialog id="dialog1">
-			<option response_text="@policeman.dialog1.0.response_text" text="@policeman.dialog1.0.text" next="dialog2"/>
+			<option next="dialog2" response_text="@policeman.dialog1.0.response_text" text="@policeman.dialog1.0.text"/>
 			<option next="this" response_text="@policeman.dialog1.1.response_text" text="@policeman.dialog1.1.text"/>
 			<option text="@policeman.dialog1.2.text" verb="dialog1_turn"/>
 			<option next="this" response_text="@policeman.dialog1.3.response_text" text="@policeman.dialog1.3.text"/>
@@ -781,14 +781,14 @@
 <action action_name="Animation" animation="player#crouch.right" animation_type="reverse"/>
 				<action action_name="Animation" animation="player#stand.frontright"/>
 		
-			<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+			<action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 
 			
 				<action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.0.text" type="talk" wait="true"/>
 				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.POLICEMAN_TURN.1.text" type="talk" wait="true"/>
 				
 			
-			<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>					
+			<action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>					
 			
 			<action action_name="State"/>
 			
@@ -818,12 +818,12 @@
 			<action action_name="IfAttr" actor="policeman" attr="state" caID="else123" value="POLICEMAN_TURN"/>
 <action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
 <action action_name="RunVerb" actor="policeman" verb="turn_back"/>
-<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Cutmode" value="true"/>
 <action action_name="Say" actor="policeman" text="@door.leave.0.1.text" type="talk" wait="true"/>
 <action action_name="Say" actor="player" text="@door.leave.0.2.text" type="talk" wait="true"/>
 <action action_name="Cutmode" value="false"/>
-<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 			
 			
 
@@ -842,12 +842,12 @@
 			<action action_name="IfAttr" actor="policeman" attr="state" caID="else123" value="POLICEMAN_TURN"/>
 <action action_name="CancelVerb" actor="policeman" verb="dialog1_turn"/>
 <action action_name="RunVerb" actor="policeman" verb="turn_back"/>
-<action action_name="Else" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Cutmode" value="true"/>
 <action action_name="Say" actor="policeman" text="@out.leave.0.1.text" type="talk" wait="true"/>
 <action action_name="Say" actor="player" text="@out.leave.0.2.text" type="talk" wait="true"/>
 <action action_name="Cutmode" value="false"/>
-<action action_name="EndIfAttr" class="com.bladecoder.engine.actions.EndAction" caID="else123"/>
+<action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 			
 			
 
@@ -857,7 +857,7 @@
 
 	</actor>
 
-	<actor id="fence" interaction="false" layer="foreground" pos="1750.5,0" type="sprite" renderer="atlas">
+	<actor id="fence" interaction="false" layer="foreground" pos="1750.5,0" renderer="atlas" type="sprite">
 
 		<animation id="fence" source="scene2"/>
 

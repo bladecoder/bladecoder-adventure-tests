@@ -8,7 +8,6 @@ import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.actions.ActionPropertyType;
-import com.bladecoder.engine.actions.Param;
 import com.bladecoder.engine.actions.Param.Type;
 import com.bladecoder.engine.i18n.I18N;
 import com.bladecoder.engine.model.Text;
@@ -37,7 +36,7 @@ public class Scene2InitAction implements Action {
 
 		String t = MessageFormat.format(I18N.getString(text.substring(1)), (int)(w.getTimeOfGame()/60));
 		
-		World.getInstance().getTextManager().addSubtitle(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null);
+		World.getInstance().getTextManager().addText(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null, null);
 		return false;
 	}
 }

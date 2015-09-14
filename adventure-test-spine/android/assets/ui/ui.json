@@ -3,11 +3,13 @@ com.badlogic.gdx.graphics.g2d.BitmapFont: {
 		default: {file: fonts/Roboto-Regular.ttf, size: 17},
 		debug: {file: fonts/Roboto-Regular.ttf, size: 15}, 
 		big-font: {file: fonts/PaytoneOne.ttf, size: 33},
-		dialog-font: {file: fonts/ArchitectsDaughter_fix.ttf, size: 19},
+		dialog-font: {file: fonts/ArchitectsDaughter_fix.ttf, size: 20},
 		text-manager-font: {file: fonts/ArchitectsDaughter_fix.ttf, size: 17},
 		desc: {file: fonts/Ubuntu-M.ttf, size: 16},
 		credits-title: {file: fonts/Ubuntu-M.ttf, size: 20},
-		credits: {file: fonts/Ubuntu-M.ttf, size: 30}
+		credits: {file: fonts/Ubuntu-M.ttf, size: 30},
+		verb-font: {file: fonts/PaytoneOne.ttf, size: 20},
+		info-font: {file: fonts/Ubuntu-M.ttf, size: 17},
 	},
 com.badlogic.gdx.graphics.Color: {
 	green: { a: 1, b: 0, g: 1, r: 0 },
@@ -25,9 +27,7 @@ com.badlogic.gdx.graphics.Color: {
 	red-light:  { r: 0.99, g: 0.45, b: 0.47, a: 1 },
 	black-trans:  { r: 0.1, g: 0.1, b: 0.1, a: 0.7 },
 	white-trans:  {  r: 0.4, g: 0.4, b: 0.4, a: 0.7 },
-	yellow:  { r: 1, g: 1, b: 0.13, a: 1 },
-	blue:  { r: 0.30, g: 0.42, b: 0.49, a: 1 },
-	light-blue:  { r: 0.62, g: 0.69, b: 0.73, a: 1 },
+	yellow:  { r: 1, g: 1, b: 0.13, a: 1 }
 },
 com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 	black: { name: white_pixel, color: { r: 0, g: 0, b: 0, a: 1.0 } },
@@ -36,16 +36,17 @@ com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 	grey: { name: white_pixel, color: grey},
 	dark-grey: { name: white_pixel, color: dark-grey},
 	red: { name: white_pixel, color: { r: 0.5, g: 0, b: 0, a: 1 }},
-	circle: { name: circle_button, color: blue},
-	circle-grey: { name: circle_button, color: { r: 0.12, g: 0.25, b: 0.34, a: 1 }},
-	circle-light: { name: circle_button, color: light-blue},
+	circle: { name: circle_button, color: red-dark},
+	circle-grey: { name: circle_button, color: grey},
+	circle-light: { name: circle_button, color: red500},
 	circle-border: { name: circle_border, color: black-trans},
 	circle-border-light: { name: circle_border, color: light-grey},	
 	circle-border-over: { name: circle_border, color: white-trans},	
 	border-rect-grey: { name: border_rect4, color: light-grey},
 	border-rect-dark-grey: { name: border_rect2, color: { a: 1, b: 0.6, g: 0.6, r: 0.6 }},
 	border-rect-trans: { name: border_rect4, color: { a: 0.2, b: 0.6, g: 0.6, r: 0.6 }},
-	border-rect-trans-down: { name: border_rect4, color: { a: 0.5, b: 0.3, g: 0.3, r: 0.3 }},
+	border-rect-trans-down: { name: border_rect4, color: { a: 0.5, b: 0.6, g: 0.6, r: 0.6 }},
+
 	menu-up: { name: menu, color: white-trans},
 },
 com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle: {
@@ -63,8 +64,7 @@ com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle: {
 com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
 		default: { font: default, up: grey, fontColor: white , downFontColor: grey, overFontColor: light-grey, disabledFontColor: dark-grey},
 		menu: { up: border-rect-trans, down: border-rect-trans-down, font: big-font, fontColor: white , downFontColor: grey, overFontColor: yellow, disabledFontColor: dark-grey},
-		toggle: { up: border-rect-trans, down: border-rect-trans-down, checked: border-rect-trans-down, font: default, fontColor: white , downFontColor: grey, overFontColor: yellow, disabledFontColor: dark-grey}
-			
+		toggle: { up: border-rect-trans, down: border-rect-trans-down, checked: border-rect-trans-down, font: default, fontColor: white , downFontColor: grey, overFontColor: yellow, disabledFontColor: dark-grey}			
 },
 com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 		default: {}		
@@ -75,10 +75,10 @@ com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 },
 
 com.bladecoder.engine.ui.MenuScreen$MenuScreenStyle: {
-	default: {bgFile: ui/title_en.jpg, textButtonStyle: menu, showTitle: false, titleStyle: title}
+	default: {textButtonStyle: menu, showTitle: true, titleStyle: title}
 },
 com.bladecoder.engine.ui.LoadSaveScreen$LoadSaveScreenStyle: {
-	default: {bgFile: ui/title_en.jpg, textButtonStyle: menu}
+	default: { textButtonStyle: menu}
 },
 com.bladecoder.engine.ui.CreditsScreen$CreditScreenStyle: {
 	default: {titleFont: credits-title, font: credits}
@@ -92,7 +92,7 @@ com.bladecoder.engine.ui.DialogUI$DialogUIStyle: {
 },
 
 com.bladecoder.engine.ui.TextManagerUI$TextManagerUIStyle: {
-	default: {rectBackground: border_black_rect4, font: text-manager-font,  defaultColor: white}
+	default: {rectBackground: border_black_rect4, font: text-manager-font, defaultColor: black}
 },
 
 
@@ -110,5 +110,9 @@ com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
 
 com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle: {
 	default: { background: dark-grey, backgroundOver: dark-grey, backgroundOpen: dark-grey, listStyle: default, scrollStyle: opaque, font: default, fontColor: white },
-}	
+},
+
+com.bladecoder.engine.ui.retro.VerbUI$VerbUIStyle: {
+	default: { verbButtonStyle: {font:verb-font, fontColor: yellow, up: dark-grey, overFontColor: white}, inventoryButtonStyle: {up: dark-grey, over: grey}, infoLineLabelStyle: {font: info-font}, upArrow: inv_up, downArrow: inv_down},
+}		
 }

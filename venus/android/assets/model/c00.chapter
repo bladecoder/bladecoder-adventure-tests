@@ -510,7 +510,7 @@
 		<verb id="pickup" state="WITH_BATTERY">
 			
 				<action action_name="Cutmode" value="true"/>
-<action action_name="Goto" actor="player" pos="682,434"/>
+				<action action_name="Goto" actor="player" pos="682,434"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="Pickup"/>
 				<action action_name="Sound" play="click"/>
@@ -523,7 +523,7 @@
 		<verb id="use" state="WITH_BATTERY" target="diosa">
 			
 				<action action_name="Cutmode" value="true"/>
-<action action_name="Goto" actor="player" pos="890, 76"/>
+				<action action_name="Goto" actor="player" pos="890, 76"/>
 				<action action_name="Animation" animation="player#use.back"/>
 				<action action_name="Sound" play="drill"/>
 				<action action_name="Animation" animation="player#use.back2" animation_type="REPEAT" count="12"/>
@@ -548,7 +548,7 @@
 				<action action_name="Say" text="@cutter.use.WITH_CABLE.socket.0.5.text" wait="false"/>
 				<action action_name="State" state="CHARGING"/>
 				<action action_name="Cutmode" value="false"/>
-<action action_name="Wait" time="20"/>
+				<action action_name="Wait" time="20"/>
 				<action action_name="State" state="WITH_BATTERY"/>
 			
 		
@@ -565,7 +565,7 @@
 
 
 
-	<actor depth_type="vector" desc="@player.desc" id="player" layer="dynamic" pos="2320.8765,61.886017" renderer="atlas" type="character">
+	<actor depth_type="vector" walking_speed="950" desc="@player.desc" id="player" layer="dynamic" pos="2320.8765,61.886017" renderer="atlas" type="character">
 
 		<animation id="stand.left" source="player"/>
 		<animation id="stand.back" source="player"/>
@@ -595,10 +595,12 @@
 
 			<action action_name="ActorAttr" actor="player" visible="false"/>
 			<action action_name="Cutmode" value="true"/>
-			<action action_name="Animation" animation="rope#rope.down" pos="2294,83"/>
+			<action action_name="Position" actor="rope" position="2294,83"/>
+			<action action_name="Animation" animation="rope#rope.down"/>
 			<action action_name="ActorAttr" actor="player" visible="true"/>
 			<action action_name="Animation" animation="player#stand.left" repeat="repeat" wait="false"/>
-			<action action_name="Animation" animation="rope#rope" pos="2115,83"/>
+			<action action_name="Position" actor="rope" position="2115,83"/>
+			<action action_name="Animation" animation="rope#rope"/>
 			<action action_name="Cutmode" value="false"/>
 	</verb>
 
@@ -710,7 +712,8 @@
 				<action action_name="Animation" animation="policeman#fall"/>
 				<action action_name="Sound" actor="policeman" play="fall"/>
 				<action action_name="Say" text="@diosa.use.INVENTORY.policeman.0.9.text" wait="true"/>
-				<action action_name="Animation" animation="player#runaway" pos="360,0"/>
+				<action action_name="Position" actor="player" position="360,0"/>
+				<action action_name="Animation" animation="player#runaway"/>
 				<action action_name="ActorAttr" actor="player" visible="false"/>
 				<action action_name="Say" text="@diosa.use.INVENTORY.policeman.0.12.text" wait="true"/>
 				<action action_name="Wait" time="2"/>

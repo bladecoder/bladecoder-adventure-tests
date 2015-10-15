@@ -2,11 +2,14 @@ package org.bladecoder.venus.actions.scene1;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.Json.Serializable;
+import com.badlogic.gdx.utils.JsonValue;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
-import com.bladecoder.engine.actions.ActionPropertyType;
-import com.bladecoder.engine.actions.Param.Type;
+import com.bladecoder.engine.actions.ActionProperty;
+import com.bladecoder.engine.actions.ActionPropertyDescription;
 import com.bladecoder.engine.anim.Tween;
 import com.bladecoder.engine.model.CharacterActor;
 import com.bladecoder.engine.model.SpriteActor;
@@ -14,19 +17,15 @@ import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 @ActionDescription("Action for conecting/disconecting the cable")
-public class PickupCableAction implements Action, ActionCallback {
-	@JsonProperty
-	@JsonPropertyDescription("The text to show when connect the cable")
-	@ActionPropertyType(Type.STRING)
+public class PickupCableAction implements Action, ActionCallback, Serializable {
+	@ActionProperty
+	@ActionPropertyDescription("The text to show when connect the cable")
 	private String connectText;
 	
-	@JsonProperty
-	@JsonPropertyDescription("The text to show when disconnect the cable")
-	@ActionPropertyType(Type.STRING)
+	@ActionProperty
+	@ActionPropertyDescription("The text to show when disconnect the cable")
 	private String disconnectText;
 	
 	private boolean goTo = false;
@@ -82,5 +81,15 @@ public class PickupCableAction implements Action, ActionCallback {
 				cabinet_off.setVisible(false);
 			}
 		}
+	}
+	
+	@Override
+	public void write(Json json) {
+		json.writeValue("goTo", goTo);
+	}
+
+	@Override
+	public void read (Json json, JsonValue jsonData) {
+		goTo = json.readValue("goTo", Boolean.class, jsonData);
 	}
 }

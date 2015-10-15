@@ -7,15 +7,13 @@ import com.badlogic.gdx.utils.JsonValue;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
-import com.bladecoder.engine.actions.ActionPropertyType;
-import com.bladecoder.engine.actions.Param.Type;
+import com.bladecoder.engine.actions.ActionProperty;
+import com.bladecoder.engine.actions.ActionPropertyDescription;
 import com.bladecoder.engine.model.InteractiveActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 @ActionDescription("Init action for the intro scene")
 public class Scene0InitAction implements Serializable, Action, ActionCallback {	
@@ -25,9 +23,8 @@ public class Scene0InitAction implements Serializable, Action, ActionCallback {
 	private static final int INIT_STATE = 0;
 	private static final int LEAVE_STATE = 2;
 
-	@JsonProperty
-	@JsonPropertyDescription("The text to show")
-	@ActionPropertyType(Type.STRING)
+	@ActionProperty
+	@ActionPropertyDescription("The text to show")
 	String text;
 	
 	int state = INIT_STATE;

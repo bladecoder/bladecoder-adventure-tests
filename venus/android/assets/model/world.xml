@@ -15,8 +15,8 @@
 	</verb>
 
 	<verb id="dialog">
-		<action action_name="Cutmode" inventory="false" value="true" />
+		<action action_name="Cutmode" value="true" />
 		<action action_name="SayDialog" />
-		<action action_name="Cutmode" inventory="true" value="false" />
+		<action action_name="Cutmode" value="false" />
 	</verb>
 </world>

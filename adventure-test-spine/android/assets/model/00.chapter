@@ -9,23 +9,23 @@
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer id="background" visible="true"/>
 <actor depth_type="none" id="fg1" layer="foreground" pos="2531.217,421.93298" type="sprite" renderer="atlas">
-<animation animation_type="no_repeat" disposed_when_played="true" id="morgue.fg" preload="true" source="morgue" speed="1.0"/>
+<animation repeat="no_repeat" disposed_when_played="true" id="morgue.fg" preload="true" source="morgue" speed="1.0"/>
 </actor>
 <actor depth_type="vector" id="john" init_animation="stand.front" layer="dynamic" pos="1720.7924,66.586426" type="character" renderer="spine">
-<animation animation_type="no_repeat" disposed_when_played="false" id="stand.back" preload="true" source="john_back" speed="1.0"/>
-<animation animation_type="repeat" disposed_when_played="false" id="walk.back" preload="true" source="john_back" speed=".7"/>
-<animation animation_type="no_repeat" disposed_when_played="false" id="stand.front" preload="true" source="john_front" speed="1.0"/>
-<animation animation_type="repeat" count="-1" disposed_when_played="false" id="walk.front" preload="true" source="john_front" speed=".7"/>
-<animation animation_type="no_repeat" disposed_when_played="false" id="stand.left" preload="true" source="john_left" speed="1.0"/>
-<animation animation_type="repeat" count="-1" disposed_when_played="false" id="walk.left" preload="true" source="john_left" speed="1.0"/>
+<animation repeat="no_repeat" disposed_when_played="false" id="stand.back" preload="true" source="john_back" speed="1.0"/>
+<animation repeat="repeat" disposed_when_played="false" id="walk.back" preload="true" source="john_back" speed=".7"/>
+<animation repeat="no_repeat" disposed_when_played="false" id="stand.front" preload="true" source="john_front" speed="1.0"/>
+<animation repeat="repeat" count="-1" disposed_when_played="false" id="walk.front" preload="true" source="john_front" speed=".7"/>
+<animation repeat="no_repeat" disposed_when_played="false" id="stand.left" preload="true" source="john_left" speed="1.0"/>
+<animation repeat="repeat" count="-1" disposed_when_played="false" id="walk.left" preload="true" source="john_left" speed="1.0"/>
 </actor>
 <walk_zone polygon="185.9563,-3.944458,709.73364,286.50357,2186.9773,276.54666,2744.407,3.0993042" pos="0.0,0.0"/>
 
 <actor depth_type="none" id="table" interaction="false" layer="dynamic" pos="970.46027,68.57152" type="sprite" renderer="atlas">
-<animation animation_type="no_repeat" disposed_when_played="true" id="table" preload="true" source="morgue" speed="1.0"/>
+<animation repeat="no_repeat" disposed_when_played="true" id="table" preload="true" source="morgue" speed="1.0"/>
 </actor>
 <actor depth_type="none" desc="litter" id="litter" layer="dynamic" pos="1712.9275,141.98845" type="sprite" renderer="atlas">
-<animation animation_type="no_repeat" disposed_when_played="true" id="litter" preload="true" source="morgue" speed="1.0"/>
+<animation repeat="no_repeat" disposed_when_played="true" id="litter" preload="true" source="morgue" speed="1.0"/>
 </actor>
 <actor bbox="23.244507,-543.9225,0.0,200.0,255.78693,167.4577,279.0315,-413.7531" depth_type="none" id="door_left" layer="dynamic" pos="246.53314,612.811" type="background">
 <verb id="leave">

@@ -1,8 +1,9 @@
 package org.bladecoder.venus.actions.scene0;
 
-import java.util.HashMap;
-
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.Json.Serializable;
+import com.badlogic.gdx.utils.JsonValue;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
@@ -17,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 @ActionDescription("Init action for the intro scene")
-public class Scene0InitAction implements Action, ActionCallback {	
+public class Scene0InitAction implements Serializable, Action, ActionCallback {	
 
 	private static final float TITLE_TIME = 6f;
 	
@@ -30,15 +31,6 @@ public class Scene0InitAction implements Action, ActionCallback {
 	String text;
 	
 	int state = INIT_STATE;
-
-	@Override
-	public void setParams(HashMap<String, String> params) {
-		if(params.get("text") != null ) {
-			text = params.get("text");
-		} else {
-			EngineLogger.debug("Scene0InitAction: some parameter missing");
-		}
-	}
 
 	@Override
 	public boolean run(ActionCallback cb) {
@@ -69,4 +61,14 @@ public class Scene0InitAction implements Action, ActionCallback {
 			break;
 		}		
 	}
+	
+	@Override
+	public void write(Json json) {
+		json.writeValue("state", state);
+	}
+
+	@Override
+	public void read (Json json, JsonValue jsonData) {
+		state = json.readValue("state", Integer.class, jsonData);
+	}	
 }

@@ -1,7 +1,5 @@
 package org.bladecoder.venus.actions.scene1;
 
-import java.util.HashMap;
-
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
@@ -29,21 +27,21 @@ public class UseCutMachineCableAction implements Action {
 	private String defaultCableText;
 	
 	
-	private String actorId;
+	private String actor;
 
 	@Override
 	public boolean run(ActionCallback cb) {
-		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor(actorId, true);
+		SpriteActor a = (SpriteActor)World.getInstance().getCurrentScene().getActor(actor, true);
 		InteractiveActor target = (InteractiveActor)World.getInstance().getCurrentScene().getActor("cable", true);
 
 //		EngineLogger.debug("USING " + actor.getDesc() + " IN " + target.getDesc());
 
-		if (target.getState().equals("CUT") && actor.getState().equals("NO_BATTERY")) {
+		if (target.getState().equals("CUT") && a.getState().equals("NO_BATTERY")) {
 			World.getInstance().getTextManager().addText(cutCableText, TextManager.POS_SUBTITLE,
 					TextManager.POS_SUBTITLE, true, Text.Type.RECTANGLE, null, null, null);
-			actor.setState("WITH_CABLE");
-			actor.startAnimation("cutter.withcable", null);
-			actor.playSound("click");
+			a.setState("WITH_CABLE");
+			a.startAnimation("cutter.withcable", null);
+			a.playSound("click");
 			World.getInstance().getInventory().removeItem((SpriteActor) target);
 		} else {
 			World.getInstance().getTextManager().addText(defaultCableText, TextManager.POS_SUBTITLE,
@@ -51,13 +49,5 @@ public class UseCutMachineCableAction implements Action {
 		}
 		
 		return false;
-	}
-
-	@Override
-	public void setParams(HashMap<String, String> params) {
-		actorId = params.get("actor");
-
-		cutCableText = params.get("cut_cable_text");
-		defaultCableText = params.get("default_cable_text");
 	}
 }

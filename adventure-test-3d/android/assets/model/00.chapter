@@ -5,16 +5,16 @@
 <layer dynamic="true" id="dynamic" visible="true"/>
 <layer dynamic="false" id="background" visible="true"/>
 <actor camera_name="Camera" depth_type="vector" fov="49.3" id="player" layer="dynamic" pos="2251.715,59.90509" renderer="3d" scale="1" sprite_size="700,700" type="character" zIndex="0">
-<animation animation_type="no_repeat" dispose_when_played="false" id="stand" preload="true" source="Robie" speed="1.0"/>
-<animation animation_type="repeat" dispose_when_played="false" id="talk" preload="true" source="Robie" speed="1.0"/>
-<animation animation_type="repeat" dispose_when_played="false" id="walk" preload="true" source="Robie" speed="1.0"/>
+<animation repeat="no_repeat" dispose_when_played="false" id="stand" preload="true" source="Robie" speed="1.0"/>
+<animation repeat="repeat" dispose_when_played="false" id="talk" preload="true" source="Robie" speed="1.0"/>
+<animation repeat="repeat" dispose_when_played="false" id="walk" preload="true" source="Robie" speed="1.0"/>
 </actor>
 <walk_zone polygon="108.911804,-40.125336,659.203,552.6376,711.5275,535.3728,533.09656,221.31633,907.7121,111.8475,1196.9875,214.7468,1176.444,387.23248,1793.0767,449.25903,1853.1136,514.7108,2497.128,520.0789,2869.7212,-0.8026047" pos="18.916138,3.7832947"/>
 <actor depth_type="none" id="fg1" interaction="false" layer="foreground" pos="158.68916,0.0" renderer="atlas" scale="1" type="sprite" zIndex="0">
-<animation animation_type="no_repeat" dispose_when_played="false" id="column_fg" preload="true" source="00" speed="1.0"/>
+<animation repeat="no_repeat" dispose_when_played="false" id="column_fg" preload="true" source="00" speed="1.0"/>
 </actor>
 <actor depth_type="none" id="fg2" interaction="false" layer="foreground" pos="2727.407,0.0" renderer="atlas" scale="1" type="sprite" zIndex="0">
-<animation animation_type="no_repeat" dispose_when_played="false" id="head_fg" preload="true" source="00" speed="1.0"/>
+<animation repeat="no_repeat" dispose_when_played="false" id="head_fg" preload="true" source="00" speed="1.0"/>
 </actor>
 </scene>
 </chapter>

@@ -26,9 +26,9 @@
 
 
 <actor depth_type="none" desc="@01.test_actions.desc" id="test_actions" init_animation="go" layer="foreground" pos="213.08972,778.28467" renderer="atlas" scale="1" type="sprite" zIndex="0">
-<animation animation_type="no_repeat" dispose_when_played="false" id="error" preload="true" source="testbutton" speed="1.0"/>
-<animation animation_type="no_repeat" dispose_when_played="false" id="go" preload="true" source="testbutton" speed="1.0"/>
-<animation animation_type="no_repeat" dispose_when_played="false" id="ok" preload="true" source="testbutton" speed="1.0"/>
+<animation repeat="no_repeat" dispose_when_played="false" id="error" preload="true" source="testbutton" speed="1.0"/>
+<animation repeat="no_repeat" dispose_when_played="false" id="go" preload="true" source="testbutton" speed="1.0"/>
+<animation repeat="no_repeat" dispose_when_played="false" id="ok" preload="true" source="testbutton" speed="1.0"/>
 <verb id="lookat">
 <action action_name="Say" quee="false" text="@01.test_actions.lookat.0.text" type="rectangle" wait="true"/>
 </verb>
@@ -39,12 +39,12 @@
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.2.text" type="rectangle" wait="true"/>
 <action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.5.text_" type="rectangle" wait="true"/>
-<action action_name="Animation" animation="error" animation_type="sprite_defined" wait="false"/>
+<action action_name="Animation" animation="error" repeat="sprite_defined" wait="false"/>
 <action action_name="CancelVerb"/>
 <action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="IfAttr" attr="state" caID="else123" value="2"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.10.text_" type="rectangle" wait="true"/>
-<action action_name="Animation" animation="error" animation_type="sprite_defined" wait="false"/>
+<action action_name="Animation" animation="error" repeat="sprite_defined" wait="false"/>
 <action action_name="CancelVerb"/>
 <action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.11.text" type="rectangle" wait="true"/>
@@ -60,10 +60,10 @@
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.21.text_" type="rectangle" wait="true"/>
 <action action_name="Else" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
 <action action_name="Say" quee="false" text="@01.test_actions.pickup.24.text__" type="rectangle" wait="true"/>
-<action action_name="Animation" animation="error" animation_type="sprite_defined" wait="false"/>
+<action action_name="Animation" animation="error" repeat="sprite_defined" wait="false"/>
 <action action_name="CancelVerb"/>
 <action action_name="EndIfAttr" caID="else123" class="com.bladecoder.engine.actions.EndAction"/>
-<action action_name="Animation" animation="ok" animation_type="sprite_defined" wait="false"/>
+<action action_name="Animation" animation="ok" repeat="sprite_defined" wait="false"/>
 <action action_name="Cutmode" value="false"/>
 </verb>
 </actor>

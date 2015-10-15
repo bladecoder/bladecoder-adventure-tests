@@ -1,7 +1,5 @@
 package org.bladecoder.venus.actions.scene2;
 
-import java.util.HashMap;
-
 import com.bladecoder.engine.BladeEngine;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionCallback;
@@ -11,9 +9,6 @@ import com.bladecoder.engine.ui.UI;
 
 @ActionDescription("Restarts the game")
 public class LeaveAction implements Action {
-	@Override
-	public void setParams(HashMap<String, String> params) {
-	}
 
 	@Override
 	public boolean run(ActionCallback cb) {

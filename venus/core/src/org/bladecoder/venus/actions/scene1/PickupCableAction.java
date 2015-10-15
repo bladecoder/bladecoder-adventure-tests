@@ -1,7 +1,5 @@
 package org.bladecoder.venus.actions.scene1;
 
-import java.util.HashMap;
-
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.bladecoder.engine.actions.Action;
@@ -45,12 +43,6 @@ public class PickupCableAction implements Action, ActionCallback {
 		player.goTo(new Vector2(actor.getX() + actor.getWidth(), actor.getY()), this);
 		
 		return false;
-	}
-
-	@Override
-	public void setParams(HashMap<String, String> params) {
-		connectText = params.get("connect_text");
-		disconnectText = params.get("disconnect_text");
 	}
 
 	@Override

@@ -1,7 +1,6 @@
 package org.bladecoder.venus.actions.scene2;
 
 import java.text.MessageFormat;
-import java.util.HashMap;
 
 import com.badlogic.gdx.graphics.Color;
 import com.bladecoder.engine.actions.Action;
@@ -22,11 +21,6 @@ public class Scene2InitAction implements Action {
 	@JsonPropertyDescription("text to show with the credits")
 	@ActionPropertyType(Type.STRING)
 	String text;
-
-	@Override
-	public void setParams(HashMap<String, String> params) {
-		text = params.get("text");
-	}
 
 	@Override
 	public boolean run(ActionCallback cb) {

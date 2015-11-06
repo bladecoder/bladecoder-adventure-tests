@@ -318,7 +318,7 @@
 
 		<verb id="use" state="INVENTORY" target="chair">
 			<action action_name="Say" text="@rope.use.INVENTORY.chair.0.text" wait="false"/>
-			<action action_name="RemoveInventoryItem" id="chair"/>
+			<action action_name="RemoveInventoryItem" id="chair" scene="limbo"/>
 			<action action_name="Animation" animation="rope#rope.withanchor" wait="false"/>
 			<action action_name="State" state="ARMED"/>
 		</verb>
@@ -717,7 +717,7 @@
 				<action action_name="ActorAttr" actor="player" visible="false"/>
 				<action action_name="Say" text="@diosa.use.INVENTORY.policeman.0.12.text" wait="true"/>
 				<action action_name="Wait" time="2"/>
-				<action action_name="RemoveInventoryItem"/>
+				<action action_name="RemoveInventoryItem" scene="limbo"/>
 				<action action_name="Leave" scene="endSCN"/>
 			
 		</verb>		

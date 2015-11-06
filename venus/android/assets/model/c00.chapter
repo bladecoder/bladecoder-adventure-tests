@@ -153,7 +153,7 @@
 				<action action_name="Animation" animation="player#sitdown"/>
 				<action action_name="Wait" time="1"/>
 				<action action_name="Sound" play="chair_broken"/>
-				<action action_name="Animation" animation="chair.broken"/>
+				<action action_name="Animation" animation="chair#chair.broken"/>
 				<action action_name="Animation" animation="player#player.chairbroke"/>
 				<action action_name="Wait" time="1"/>
 				<action action_name="Say" text="@chair.pickup.SIT2.0.7.text" wait="false"/>
@@ -286,9 +286,9 @@
 				<action action_name="Say" text="@rope.pickup.WITH_GODDESS.0.1.text" wait="false"/>
 				<action action_name="Goto" actor="player" pos="2270,12"/>
 				<action action_name="ActorAttr" actor="player" visible="false"/>
-				<action action_name="Animation" animation="rope.fall"/>
+				<action action_name="Animation" animation="rope#rope.fall"/>
 				<action action_name="ActorAttr" actor="player" visible="true"/>
-				<action action_name="Animation" animation="rope.floor"/>
+				<action action_name="Animation" animation="rope#rope.floor"/>
 				<action action_name="State" state="FALL"/>
 				<action action_name="ActorAttr" actor="exit" visible="true"/>
 <action action_name="Cutmode" value="false"/>
@@ -319,7 +319,7 @@
 		<verb id="use" state="INVENTORY" target="chair">
 			<action action_name="Say" text="@rope.use.INVENTORY.chair.0.text" wait="false"/>
 			<action action_name="RemoveInventoryItem" id="chair"/>
-			<action action_name="Animation" animation="rope.withanchor" wait="false"/>
+			<action action_name="Animation" animation="rope#rope.withanchor" wait="false"/>
 			<action action_name="State" state="ARMED"/>
 		</verb>
 
@@ -329,9 +329,9 @@
 				<action action_name="Goto" actor="player" pos="2270,12"/>
 				<action action_name="ActorAttr" actor="player" visible="false"/>
 				<action action_name="DropItem" pos="2150, 102"/>
-				<action action_name="Animation" animation="rope.throw"/>
+				<action action_name="Animation" animation="rope#rope.throw"/>
 				<action action_name="ActorAttr" actor="player" visible="true"/>
-				<action action_name="Animation" animation="rope2"/>
+				<action action_name="Animation" animation="rope#rope2"/>
 				<action action_name="State" state="ANCHORED"/>
 				<action action_name="ActorAttr" actor="exit" visible="false"/>
 <action action_name="Cutmode" value="false"/>
@@ -344,7 +344,7 @@
 				<action action_name="Cutmode" value="true"/>
 				<action action_name="Goto" actor="player" pos="2270,12"/>
 				<action action_name="ActorAttr" actor="player" visible="false"/>
-				<action action_name="Animation" animation="rope.up"/>
+				<action action_name="Animation" animation="rope#rope.up"/>
 				<action action_name="Cutmode" value="false"/>
 				<action action_name="Leave" scene="scene2"/>
 			
@@ -543,7 +543,7 @@
 <action action_name="Goto" actor="player" pos="641,413"/>
 				<action action_name="Animation" animation="player#crouch.left"/>
 				<action action_name="DropItem" pos="648,520"/>
-				<action action_name="Animation" animation="cutter.charging" wait="false"/>
+				<action action_name="Animation" animation="cutter#cutter.charging" wait="false"/>
 				<action action_name="Animation" animation="player#crouch.left" repeat="reverse"/>
 				<action action_name="Say" text="@cutter.use.WITH_CABLE.socket.0.5.text" wait="false"/>
 				<action action_name="State" state="CHARGING"/>
@@ -749,7 +749,7 @@
 
 			<action action_name="Cutmode" value="true"/>
 			<action action_name="SayDialog"/>
-			<action action_name="Animation" animation="turn.left"/>
+			<action action_name="Animation" animation="policeman#turn.left"/>
 			
 			
 			
@@ -773,8 +773,8 @@
 <verb id="turn_back">
 
 			<action action_name="Cutmode" value="true"/>
-			<action action_name="Animation" animation="turn.left" repeat="reverse"/>
-			<action action_name="Animation" animation="stand.frontleft"/>		
+			<action action_name="Animation" animation="policeman#turn.left" repeat="reverse"/>
+			<action action_name="Animation" animation="policeman#stand.frontleft"/>		
 			<action action_name="IfAttr" actor="diosa" attr="state" caID="else123" value="INVENTORY"/>
 <action action_name="Say" actor="policeman" text="@scene2.diosa.policeman_turn.INVENTORY.0.text" type="talk" wait="true"/>
 				<action action_name="Say" actor="player" text="@scene2.diosa.policeman_turn.INVENTORY.1.text" type="talk" wait="true"/>

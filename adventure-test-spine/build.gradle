@@ -19,12 +19,13 @@ allprojects {
         version = passed_version
     ext {
         appName = 'adventure-test-spine'
- 		bladeEngineVersion = '0.8.9'
+ 		bladeEngineVersion = '0.9.0'
         gdxVersion = '1.6.5'
         roboVMVersion = '1.6.0'
     }
 
     repositories {
+        mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }

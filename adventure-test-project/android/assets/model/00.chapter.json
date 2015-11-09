@@ -1,0 +1,459 @@
+{
+scenes: {
+	"01": {
+		id: "01",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			door_right: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "door_right",
+				bbox: [ 1.1622314, 20.920135, 0, 200, 98.88623, 203.48676, 102.3728, 18.595642 ],
+				visible: true,
+				pos: {
+					x: 1455.109,
+					y: 395.15738
+				},
+				desc: null,
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.LeaveAction",
+								scene: "02"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "background"
+			},
+			test_actions: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "test_actions",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 213.08972,
+					y: 778.28467
+				},
+				desc: "@01.test_actions.desc",
+				sounds: null,
+				verbs: {
+					lookat: {
+						id: "lookat",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.lookat.0.text",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "test_actions",
+								state: "1"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfAttrAction",
+								actor: "test_actions",
+								attr: "STATE",
+								value: "1",
+								caID: "else123"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.2.text",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "else123"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.5.text_",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.AnimationAction",
+								animation: "test_actions#error",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED"
+							},
+							{
+								class: "com.bladecoder.engine.actions.CancelVerbAction",
+								actor: "test_actions"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "else123"
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfAttrAction",
+								actor: "test_actions",
+								attr: "STATE",
+								value: "2",
+								caID: "else1234"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.10.text_",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.AnimationAction",
+								animation: "test_actions#error",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED"
+							},
+							{
+								class: "com.bladecoder.engine.actions.CancelVerbAction",
+								actor: "test_actions"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "else1234"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.11.text",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "else1234"
+							},
+							{
+								class: "com.bladecoder.engine.actions.RepeatAction",
+								repeat: 3,
+								caID: "repeat123"
+							},
+							{
+								class: "com.bladecoder.engine.actions.ChooseAction",
+								chooseCriteria: "CYCLE",
+								caID: "choose123"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.18.text",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.16.text_",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "test_actions",
+								state: "3"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "choose123"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "repeat123"
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfAttrAction",
+								actor: "test_actions",
+								attr: "STATE",
+								value: "3",
+								caID: "else12345"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.21.text_",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "else12345"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "test_actions",
+								text: "@01.test_actions.pickup.24.text__",
+								type: "RECTANGLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.AnimationAction",
+								animation: "test_actions#error",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED"
+							},
+							{
+								class: "com.bladecoder.engine.actions.CancelVerbAction",
+								actor: "test_actions"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "else12345"
+							},
+							{
+								class: "com.bladecoder.engine.actions.AnimationAction",
+								animation: "test_actions#ok",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						error: {
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			door_left: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "door_left",
+				bbox: [ 6.1985474, -71.283264, 0, 200, 72.92984, 215.49634, 93.07495, -27.893463 ],
+				visible: true,
+				pos: {
+					x: 251.04129,
+					y: 339.37048
+				},
+				desc: null,
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.LeaveAction",
+								scene: "03"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "background"
+			}
+		},
+		backgroundAtlas: "scene1",
+		backgroundRegionId: "bg1",
+		polygonalNavGraph: {
+			walkZone: {
+				localVertices: [ 297.42737, 284.14938, 568.29877, 434.68887, 718.6812, 440.14285, 645.20966, 343.2135, 1375.7369, 384.14554, 1353.6876, 407.92526, 1922.6555, 410.7885, 1934.324, 311.18817, 1543.7379, 296.05563, 1514.5264, 349.16766, 624.51056, 318.71033, 589.1026, 283.30228 ]
+			}
+		},
+		verbs: {
+			init: {
+				id: "init",
+				target: null,
+				state: null,
+				actions: [
+					{
+						class: "com.bladecoder.engine.actions.SayAction",
+						text: "This is an adventure test for the Adventure Blade Engine and Editor",
+						type: "RECTANGLE",
+						queue: false,
+						wait: false
+					}
+				]
+			}
+		}
+	},
+	"02": {
+		id: "02",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			exit: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "exit",
+				bbox: [ -570.5481, -21.131287, -408.54053, 171.8248, 1172.0449, 214.08759, 1263.6143, -14.0876465 ],
+				visible: true,
+				pos: {
+					x: 405.07428,
+					y: -48.177734
+				},
+				desc: null,
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.LeaveAction",
+								scene: "01"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "background"
+			}
+		},
+		backgroundAtlas: "scene2",
+		backgroundRegionId: "bg2",
+		verbs: {}
+	},
+	"03": {
+		id: "03",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			exit: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "exit",
+				bbox: [ 38.740845, -302.1791, 37.191406, 172.10663, 237.19135, 160.69553, 225.35773, -344.01953 ],
+				visible: true,
+				pos: {
+					x: 1644.7837,
+					y: 578.7209
+				},
+				desc: null,
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.LeaveAction",
+								scene: "01"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "background"
+			}
+		},
+		backgroundAtlas: "scene3",
+		backgroundRegionId: "bg3",
+		verbs: {}
+	}
+},
+initScene: "01"
+}

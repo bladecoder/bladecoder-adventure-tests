@@ -1,0 +1,298 @@
+{
+scenes: {
+	morgue: {
+		id: "morgue",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			},
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			obstacle2: {
+				class: "com.bladecoder.engine.model.ObstacleActor",
+				id: "obstacle2",
+				bbox: [ -9.2977295, 37.966125, -6.1984863, 141.11366, 615.3026, 144.21307, 708.2809, 29.4431 ],
+				visible: true,
+				pos: {
+					x: 1376.0775,
+					y: 92.97821
+				}
+			},
+			fg1: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "fg1",
+				bbox: [ -293, 0, -293, 784, 293, 784, 293, 0 ],
+				visible: true,
+				pos: {
+					x: 2531.217,
+					y: 421.93298
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"morgue.fg": {
+							id: "morgue.fg",
+							source: "morgue",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "morgue.fg"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			obstacle1: {
+				class: "com.bladecoder.engine.model.ObstacleActor",
+				id: "obstacle1",
+				bbox: [ -95.30267, -90.653656, 73.70465, 123.29321, 603.2153, 129.7377, 561.06506, -89.878876 ],
+				visible: true,
+				pos: {
+					x: 743.82574,
+					y: 139.46733
+				}
+			},
+			door_right: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "door_right",
+				bbox: [ 30.992676, -429.24933, 24.30371, 5.56958, 270.8321, 5.432312, 263.98608, -424.169 ],
+				visible: true,
+				pos: {
+					x: 1840.4836,
+					y: 723.28284
+				},
+				desc: null,
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: []
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			litter: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "litter",
+				bbox: [ -294, 0, -294, 305, 294, 305, 294, 0 ],
+				visible: true,
+				pos: {
+					x: 1712.9275,
+					y: 141.98845
+				},
+				desc: "litter",
+				sounds: null,
+				verbs: {},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						litter: {
+							id: "litter",
+							source: "morgue",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "litter"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			john: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "john",
+				bbox: [ -190.76294, -7.8964844, -190.76294, 1145.1714, 179.08897, 1145.1714, 179.08897, -7.8964844 ],
+				visible: true,
+				pos: {
+					x: 1720.7924,
+					y: 66.586426
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.spine.SpineRenderer",
+					fanims: {
+						"stand.left": {
+							class: "com.bladecoder.engine.anim.SpineAnimationDesc",
+							id: "stand.left",
+							source: "john_left",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.front": {
+							class: "com.bladecoder.engine.anim.SpineAnimationDesc",
+							id: "stand.front",
+							source: "john_front",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.back": {
+							class: "com.bladecoder.engine.anim.SpineAnimationDesc",
+							id: "walk.back",
+							source: "john_back",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.back": {
+							class: "com.bladecoder.engine.anim.SpineAnimationDesc",
+							id: "stand.back",
+							source: "john_back",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.front": {
+							class: "com.bladecoder.engine.anim.SpineAnimationDesc",
+							id: "walk.front",
+							source: "john_front",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.left": {
+							class: "com.bladecoder.engine.anim.SpineAnimationDesc",
+							id: "walk.left",
+							source: "john_left",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.front"
+				},
+				scale: 0.5496068,
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 700,
+				textColor: null
+			},
+			table: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "table",
+				bbox: [ -227.5, 0, -227.5, 410, 227.5, 410, 227.5, 0 ],
+				visible: true,
+				pos: {
+					x: 970.46027,
+					y: 68.57152
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						table: {
+							id: "table",
+							source: "morgue",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "table"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			door_left: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "door_left",
+				bbox: [ 23.244507, -543.9225, 0, 200, 255.78693, 167.4577, 279.0315, -413.7531 ],
+				visible: true,
+				pos: {
+					x: 246.53314,
+					y: 612.811
+				},
+				desc: null,
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: []
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic"
+			}
+		},
+		backgroundAtlas: "morgue",
+		backgroundRegionId: "morgue",
+		depthVector: {
+			x: 705.31244,
+			y: -456.8384
+		},
+		polygonalNavGraph: {
+			walkZone: {
+				localVertices: [ 185.9563, -3.944458, 709.73364, 286.50357, 2186.9773, 276.54666, 2744.407, 3.0993042 ]
+			}
+		},
+		verbs: {},
+		player: "john"
+	}
+},
+initScene: "morgue"
+}

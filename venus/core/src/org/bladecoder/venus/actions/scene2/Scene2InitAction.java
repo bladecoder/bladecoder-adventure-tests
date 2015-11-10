@@ -4,13 +4,13 @@ import java.text.MessageFormat;
 
 import com.badlogic.gdx.graphics.Color;
 import com.bladecoder.engine.actions.Action;
-import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.actions.ActionProperty;
 import com.bladecoder.engine.actions.ActionPropertyDescription;
 import com.bladecoder.engine.i18n.I18N;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
+import com.bladecoder.engine.model.VerbRunner;
 import com.bladecoder.engine.model.World;
 
 @ActionDescription("Credit scene init action")
@@ -20,7 +20,7 @@ public class Scene2InitAction implements Action {
 	String text;
 
 	@Override
-	public boolean run(ActionCallback cb) {
+	public boolean run(VerbRunner cb) {
 		World w = World.getInstance();
 		//w.setCutMode(true);
 		w.showInventory(false);

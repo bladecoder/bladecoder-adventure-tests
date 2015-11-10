@@ -12,6 +12,7 @@ import com.bladecoder.engine.actions.ActionPropertyDescription;
 import com.bladecoder.engine.model.InteractiveActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
+import com.bladecoder.engine.model.VerbRunner;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
 
@@ -30,7 +31,7 @@ public class Scene0InitAction implements Serializable, Action, ActionCallback {
 	int state = INIT_STATE;
 
 	@Override
-	public boolean run(ActionCallback cb) {
+	public boolean run(VerbRunner cb) {
 		EngineLogger.debug("SCENE0 INIT ");
 		
 		World.getInstance().showInventory(false);

@@ -15,6 +15,7 @@ import com.bladecoder.engine.model.CharacterActor;
 import com.bladecoder.engine.model.SpriteActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
+import com.bladecoder.engine.model.VerbRunner;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.EngineLogger;
 
@@ -31,7 +32,7 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 	private boolean goTo = false;
 
 	@Override
-	public boolean run(ActionCallback cb) {
+	public boolean run(VerbRunner cb) {
 		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor("cable", false);
 
 		EngineLogger.debug("PICKUP " + actor.getDesc());

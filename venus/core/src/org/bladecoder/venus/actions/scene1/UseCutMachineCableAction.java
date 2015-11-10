@@ -1,7 +1,6 @@
 package org.bladecoder.venus.actions.scene1;
 
 import com.bladecoder.engine.actions.Action;
-import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.actions.ActionProperty;
 import com.bladecoder.engine.actions.ActionPropertyDescription;
@@ -9,6 +8,7 @@ import com.bladecoder.engine.model.InteractiveActor;
 import com.bladecoder.engine.model.SpriteActor;
 import com.bladecoder.engine.model.Text;
 import com.bladecoder.engine.model.TextManager;
+import com.bladecoder.engine.model.VerbRunner;
 import com.bladecoder.engine.model.World;
 
 @ActionDescription("Action for using the 'cut_machine' with the 'cable'")
@@ -23,7 +23,7 @@ public class UseCutMachineCableAction implements Action {
 	private String defaultCableText;
 
 	@Override
-	public boolean run(ActionCallback cb) {
+	public boolean run(VerbRunner cb) {
 		SpriteActor a = (SpriteActor)World.getInstance().getCurrentScene().getActor("cutter", true);
 		InteractiveActor target = (InteractiveActor)World.getInstance().getCurrentScene().getActor("cable", true);
 

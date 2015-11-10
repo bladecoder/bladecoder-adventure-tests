@@ -2,8 +2,8 @@ package org.bladecoder.venus.actions.scene2;
 
 import com.bladecoder.engine.BladeEngine;
 import com.bladecoder.engine.actions.Action;
-import com.bladecoder.engine.actions.ActionCallback;
 import com.bladecoder.engine.actions.ActionDescription;
+import com.bladecoder.engine.model.VerbRunner;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.ui.UI;
 import com.bladecoder.engine.util.EngineLogger;
@@ -12,7 +12,7 @@ import com.bladecoder.engine.util.EngineLogger;
 public class LeaveAction implements Action {
 
 	@Override
-	public boolean run(ActionCallback cb) {
+	public boolean run(VerbRunner cb) {
 		try {
 			World.getInstance().newGame();
 		} catch (Exception e) {

@@ -14,11 +14,7 @@ allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
 
-    version = '1.0'
-    if(project.hasProperty('passed_version'))
-        version = passed_version
     ext {
-        appName = 'adventure-test-spine'
  		bladeEngineVersion = '0.9.2'
         gdxVersion = '1.6.5'
         roboVMVersion = '1.6.0'

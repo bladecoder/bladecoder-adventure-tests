@@ -65,7 +65,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.lookat.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							}
@@ -96,7 +96,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.2.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -108,7 +108,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.5.text_",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -138,7 +138,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.10.text_",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -161,7 +161,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.11.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -183,7 +183,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.18.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -191,7 +191,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.16.text_",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -219,7 +219,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.21.text_",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -231,7 +231,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "test_actions",
 								text: "@01.test_actions.pickup.24.text__",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -348,7 +348,7 @@ scenes: {
 					{
 						class: "com.bladecoder.engine.actions.SayAction",
 						text: "This is an adventure test for the Adventure Blade Engine and Editor",
-						type: "RECTANGLE",
+						type: "SUBTITLE",
 						queue: false,
 						wait: false
 					}

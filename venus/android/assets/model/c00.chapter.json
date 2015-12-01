@@ -531,7 +531,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "policeman",
 								text: "@diosa.use.INVENTORY.policeman.0.9.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -556,7 +556,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "policeman",
 								text: "@diosa.use.INVENTORY.policeman.0.12.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -583,7 +583,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "policeman",
 								text: "@policeman.lookat.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -1293,7 +1293,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "chair",
 								text: "@chair.pickup.BROKEN.0.5.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -1317,7 +1317,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "chair",
 								text: "@chair.lookat.INVENTORY.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -1391,7 +1391,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "chair",
 								text: "@chair.pickup.SIT1.0.4.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -1455,7 +1455,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "chair",
 								text: "@chair.pickup.SIT0.0.4.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -1537,7 +1537,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "chair",
 								text: "@chair.pickup.SIT2.0.7.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -1694,7 +1694,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "rope",
 								text: "@rope.use.INVENTORY.chair.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -1882,7 +1882,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "rope",
 								text: "@rope.pickup.WITH_GODDESS.0.1.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -2072,7 +2072,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.use.WITH_LOW_BATTERY.diosa.0.1.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -2104,7 +2104,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.use.WITH_LOW_BATTERY.diosa.0.4.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -2190,7 +2190,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.use.WITH_BATTERY.diosa.0.4.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -2236,7 +2236,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.use.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -2264,7 +2264,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.lookat.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -2326,7 +2326,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.pickup.WITH_BATTERY.0.4.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -2408,7 +2408,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.use.WITH_CABLE.socket.0.5.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -2498,7 +2498,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "diosa",
 								text: "@diosa.lookat.INVENTORY.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -2571,7 +2571,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "diosa",
 								text: "@diosa.pickup.CUT.0.3.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},
@@ -2609,7 +2609,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "diosa",
 								text: "@diosa.pickup.INVENTORY.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -2692,7 +2692,7 @@ scenes: {
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
 								text: "@scene1.diosa.lookat.FLOOR.0.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							}
@@ -2761,7 +2761,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "papelera",
 								text: "@papelera.lookat.0.2.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: true
 							},
@@ -2996,7 +2996,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "exit",
 								text: "@scene1.exit.lookat.0.text_",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -3246,7 +3246,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cable",
 								text: "@cable.pickup.CUT.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							}
@@ -3290,7 +3290,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cable",
 								text: "@cable.use.DISCONNECTED.navaja.0.4.text",
-								type: "RECTANGLE",
+								type: "SUBTITLE",
 								queue: false,
 								wait: false
 							},

@@ -1,7 +1,7 @@
 {
 width: 1920,
 height: 1080,
-initChapter: "00",
+initChapter: "c00",
 verbs: {
 	dialog: {
 		id: "dialog",
@@ -28,10 +28,8 @@ verbs: {
 		state: null,
 		actions: [
 			{
-				class: "com.bladecoder.engine.actions.SayAction",
+				class: "com.bladecoder.engine.actions.LookAtAction",
 				text: "@default.use.0.text",
-				type: "SUBTITLE",
-				queue: false,
 				wait: false
 			}
 		]

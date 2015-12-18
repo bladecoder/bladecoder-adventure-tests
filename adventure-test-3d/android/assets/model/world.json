@@ -1,7 +1,7 @@
 {
 width: 1920,
 height: 1080,
-initChapter: "00",
+initChapter: "c00",
 verbs: {
 	dialog: {
 		id: "dialog",
@@ -22,40 +22,14 @@ verbs: {
 			}
 		]
 	},
-	pull: {
-		id: "pull",
-		target: null,
-		state: null,
-		actions: [
-			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
-				text: "@default.close3.0.text",
-				wait: true
-			}
-		]
-	},
-	give: {
-		id: "give",
-		target: null,
-		state: null,
-		actions: [
-			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
-				text: "@default.lookat2.0.text",
-				wait: true
-			}
-		]
-	},
 	use: {
 		id: "use",
 		target: null,
 		state: null,
 		actions: [
 			{
-				class: "com.bladecoder.engine.actions.SayAction",
+				class: "com.bladecoder.engine.actions.LookAtAction",
 				text: "@default.use.0.text",
-				type: "SUBTITLE",
-				queue: false,
 				wait: false
 			}
 		]
@@ -80,54 +54,6 @@ verbs: {
 			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
 				text: "@default.pickup.0.text",
-				wait: true
-			}
-		]
-	},
-	talkto: {
-		id: "talkto",
-		target: null,
-		state: null,
-		actions: [
-			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
-				text: "@default.close4.0.text",
-				wait: true
-			}
-		]
-	},
-	close: {
-		id: "close",
-		target: null,
-		state: null,
-		actions: [
-			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
-				text: "@default.lookat4.0.text",
-				wait: true
-			}
-		]
-	},
-	push: {
-		id: "push",
-		target: null,
-		state: null,
-		actions: [
-			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
-				text: "@default.close2.0.text",
-				wait: true
-			}
-		]
-	},
-	open: {
-		id: "open",
-		target: null,
-		state: null,
-		actions: [
-			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
-				text: "@default.lookat3.0.text",
 				wait: true
 			}
 		]

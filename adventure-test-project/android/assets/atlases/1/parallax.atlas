@@ -1,0 +1,27 @@
+
+parallax.png
+size: 3074,2336
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background
+  rotate: false
+  xy: 1, 1255
+  size: 3072, 1080
+  orig: 3072, 1080
+  offset: 0, 0
+  index: -1
+foreground
+  rotate: false
+  xy: 1, 1
+  size: 3072, 320
+  orig: 3072, 1080
+  offset: 0, 0
+  index: -1
+middleground
+  rotate: false
+  xy: 1, 323
+  size: 3072, 930
+  orig: 3072, 1080
+  offset: 0, 0
+  index: -1

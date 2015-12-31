@@ -1,152 +1,153 @@
 
 scene1_rope_throw.png
+size: 3459,1701
 format: RGBA8888
-filter: Linear,Nearest
+filter: Linear,Linear
 repeat: none
 rope.throw
   rotate: false
-  xy: 1, 3007
-  size: 670, 1000
+  xy: 1, 767
+  size: 449, 933
   orig: 670, 1000
-  offset: 0, 0
-  index: 1
-rope.throw
-  rotate: false
-  xy: 1, 2005
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 2
-rope.throw
-  rotate: false
-  xy: 673, 3007
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 3
-rope.throw
-  rotate: false
-  xy: 1, 1003
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 4
-rope.throw
-  rotate: false
-  xy: 673, 2005
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 5
-rope.throw
-  rotate: false
-  xy: 1345, 3007
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 6
-rope.throw
-  rotate: false
-  xy: 1, 1
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 7
-rope.throw
-  rotate: false
-  xy: 673, 1003
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 8
-rope.throw
-  rotate: false
-  xy: 1345, 2005
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 9
-rope.throw
-  rotate: false
-  xy: 2017, 3007
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 10
-rope.throw
-  rotate: false
-  xy: 673, 1
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 11
-rope.throw
-  rotate: false
-  xy: 1345, 1003
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 12
-rope.throw
-  rotate: false
-  xy: 2017, 2005
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 13
-rope.throw
-  rotate: false
-  xy: 2689, 3007
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 14
-rope.throw
-  rotate: false
-  xy: 1345, 1
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
+  offset: 113, 16
   index: 15
 rope.throw
   rotate: false
-  xy: 2017, 1003
-  size: 670, 1000
+  xy: 452, 716
+  size: 331, 984
   orig: 670, 1000
-  offset: 0, 0
+  offset: 231, 16
   index: 16
 rope.throw
   rotate: false
-  xy: 2689, 2005
-  size: 670, 1000
+  xy: 785, 716
+  size: 247, 984
   orig: 670, 1000
-  offset: 0, 0
-  index: 17
-rope.throw
-  rotate: false
-  xy: 3361, 3007
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 18
-rope.throw
-  rotate: false
-  xy: 2017, 1
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
-  index: 19
-rope.throw
-  rotate: false
-  xy: 2689, 1003
-  size: 670, 1000
-  orig: 670, 1000
-  offset: 0, 0
+  offset: 318, 16
   index: 20
 rope.throw
   rotate: false
-  xy: 3361, 2005
-  size: 670, 1000
+  xy: 1034, 716
+  size: 242, 984
   orig: 670, 1000
-  offset: 0, 0
+  offset: 320, 16
   index: 21
+rope.throw
+  rotate: false
+  xy: 1278, 716
+  size: 241, 984
+  orig: 670, 1000
+  offset: 321, 16
+  index: 17
+rope.throw
+  rotate: false
+  xy: 1521, 716
+  size: 241, 984
+  orig: 670, 1000
+  offset: 321, 16
+  index: 18
+rope.throw
+  rotate: false
+  xy: 1764, 716
+  size: 239, 984
+  orig: 670, 1000
+  offset: 323, 16
+  index: 19
+rope.throw
+  rotate: false
+  xy: 2005, 987
+  size: 477, 713
+  orig: 670, 1000
+  offset: 85, 16
+  index: 14
+rope.throw
+  rotate: false
+  xy: 2484, 987
+  size: 460, 713
+  orig: 670, 1000
+  offset: 102, 16
+  index: 13
+rope.throw
+  rotate: false
+  xy: 1, 52
+  size: 444, 713
+  orig: 670, 1000
+  offset: 118, 16
+  index: 4
+rope.throw
+  rotate: false
+  xy: 2946, 987
+  size: 437, 713
+  orig: 670, 1000
+  offset: 125, 16
+  index: 3
+rope.throw
+  rotate: false
+  xy: 447, 1
+  size: 362, 713
+  orig: 670, 1000
+  offset: 200, 16
+  index: 12
+rope.throw
+  rotate: false
+  xy: 811, 1
+  size: 330, 713
+  orig: 670, 1000
+  offset: 321, 16
+  index: 9
+rope.throw
+  rotate: false
+  xy: 1143, 1
+  size: 325, 713
+  orig: 670, 1000
+  offset: 237, 16
+  index: 2
+rope.throw
+  rotate: false
+  xy: 1470, 1
+  size: 324, 713
+  orig: 670, 1000
+  offset: 321, 16
+  index: 8
+rope.throw
+  rotate: false
+  xy: 1796, 1
+  size: 248, 713
+  orig: 670, 1000
+  offset: 314, 16
+  index: 1
+rope.throw
+  rotate: false
+  xy: 2046, 221
+  size: 370, 764
+  orig: 670, 1000
+  offset: 192, 16
+  index: 5
+rope.throw
+  rotate: false
+  xy: 2418, 193
+  size: 294, 792
+  orig: 670, 1000
+  offset: 268, 16
+  index: 6
+rope.throw
+  rotate: false
+  xy: 2714, 246
+  size: 241, 739
+  orig: 670, 1000
+  offset: 321, 16
+  index: 7
+rope.throw
+  rotate: false
+  xy: 2957, 272
+  size: 258, 713
+  orig: 670, 1000
+  offset: 321, 16
+  index: 10
+rope.throw
+  rotate: false
+  xy: 3217, 272
+  size: 241, 713
+  orig: 670, 1000
+  offset: 321, 16
+  index: 11

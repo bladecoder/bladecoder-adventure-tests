@@ -1,4 +1,5 @@
 {
+bladeEngineVersion: "0.9.6-SNAPSHOT",
 scenes: {
 	endSCN: {
 		id: "endSCN",
@@ -195,7 +196,7 @@ scenes: {
 			fence: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "fence",
-				bbox: [ -169.5, 0, -169.5, 1005, 169.5, 1005, 169.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1750.5
@@ -228,7 +229,7 @@ scenes: {
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "player",
-				bbox: [ -120, 0, -120, 849, 120, 849, 120, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 584.22626,
@@ -392,7 +393,7 @@ scenes: {
 			policeman: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "policeman",
-				bbox: [ -289.5, 0, -289.5, 856, 289.5, 856, 289.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1329.5884
@@ -3439,7 +3440,7 @@ scenes: {
 					x: 2320.8765,
 					y: 61.886017
 				},
-				desc: "@player.desc",
+				desc: "@scene1.player.desc",
 				sounds: null,
 				verbs: {},
 				interaction: false,
@@ -3572,11 +3573,11 @@ scenes: {
 					},
 					initAnimation: "stand.left"
 				},
-				scale: 0.9712089,
+				scale: 0.9683697,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
-				walkingSpeed: 950,
+				walkingSpeed: 1100,
 				textColor: null
 			}
 		},
@@ -3587,7 +3588,7 @@ scenes: {
 		initialMusicDelay: 30,
 		repeatMusicDelay: 90,
 		depthVector: {
-			x: 2132.6125,
+			x: 1941.2345,
 			y: 0.5
 		},
 		polygonalNavGraph: {

@@ -1,306 +1,300 @@
 
 policeman.png
-size: 2036,1720
+size: 1971,1952
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 fall
   rotate: false
-  xy: 1, 862
-  size: 492, 428
+  xy: 1, 4
+  size: 290, 227
   orig: 492, 428
-  offset: 0, 0
-  index: 1
+  offset: 113, 0
+  index: 9
 fall
   rotate: false
-  xy: 495, 862
-  size: 492, 428
+  xy: 293, 83
+  size: 302, 151
   orig: 492, 428
-  offset: 0, 0
-  index: 2
+  offset: 114, 0
+  index: 10
 fall
   rotate: false
-  xy: 989, 862
-  size: 492, 428
+  xy: 597, 1833
+  size: 374, 118
   orig: 492, 428
-  offset: 0, 0
-  index: 3
+  offset: 106, 0
+  index: 15
 fall
   rotate: false
-  xy: 1483, 861
-  size: 492, 428
+  xy: 973, 1838
+  size: 374, 113
   orig: 492, 428
-  offset: 0, 0
-  index: 4
+  offset: 106, 0
+  index: 14
 fall
   rotate: false
-  xy: 1, 432
-  size: 492, 428
+  xy: 1349, 1839
+  size: 374, 112
   orig: 492, 428
-  offset: 0, 0
+  offset: 106, 0
+  index: 13
+fall
+  rotate: false
+  xy: 1725, 1612
+  size: 224, 339
+  orig: 492, 428
+  offset: 48, 0
   index: 5
 fall
   rotate: false
-  xy: 495, 432
-  size: 492, 428
+  xy: 1349, 1717
+  size: 373, 120
   orig: 492, 428
-  offset: 0, 0
-  index: 6
+  offset: 107, 0
+  index: 16
 fall
   rotate: false
-  xy: 989, 432
-  size: 492, 428
+  xy: 973, 1729
+  size: 364, 107
   orig: 492, 428
-  offset: 0, 0
-  index: 7
+  offset: 108, 0
+  index: 12
 fall
   rotate: false
-  xy: 1483, 431
-  size: 492, 428
+  xy: 597, 1718
+  size: 319, 113
   orig: 492, 428
-  offset: 0, 0
-  index: 8
-fall
-  rotate: false
-  xy: 1, 2
-  size: 492, 428
-  orig: 492, 428
-  offset: 0, 0
-  index: 9
-fall
-  rotate: false
-  xy: 495, 2
-  size: 492, 428
-  orig: 492, 428
-  offset: 0, 0
-  index: 10
-fall
-  rotate: false
-  xy: 989, 2
-  size: 492, 428
-  orig: 492, 428
-  offset: 0, 0
+  offset: 113, 0
   index: 11
 fall
   rotate: false
-  xy: 1483, 1
-  size: 492, 428
+  xy: 1500, 1414
+  size: 223, 301
   orig: 492, 428
-  offset: 0, 0
-  index: 12
+  offset: 109, 0
+  index: 7
+fall
+  rotate: false
+  xy: 1725, 1216
+  size: 209, 394
+  orig: 492, 428
+  offset: 67, 0
+  index: 2
+fall
+  rotate: false
+  xy: 1500, 1085
+  size: 207, 327
+  orig: 492, 428
+  offset: 92, 0
+  index: 6
+fall
+  rotate: false
+  xy: 1709, 864
+  size: 261, 350
+  orig: 492, 428
+  offset: 12, 0
+  index: 4
+fall
+  rotate: false
+  xy: 1470, 682
+  size: 187, 401
+  orig: 492, 428
+  offset: 89, 0
+  index: 1
+fall
+  rotate: false
+  xy: 1659, 594
+  size: 270, 268
+  orig: 492, 428
+  offset: 110, 0
+  index: 8
+fall
+  rotate: false
+  xy: 1469, 56
+  size: 267, 372
+  orig: 492, 428
+  offset: 8, 0
+  index: 3
 stand.frontleft
   rotate: false
-  xy: 1746, 1291
-  size: 289, 428
+  xy: 292, 1094
+  size: 289, 427
   orig: 289, 428
   offset: 0, 0
   index: -1
+talk.left
+  rotate: false
+  xy: 292, 665
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 1
+talk.left
+  rotate: false
+  xy: 292, 236
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 2
+talk.left
+  rotate: false
+  xy: 292, 236
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 11
+talk.left
+  rotate: false
+  xy: 918, 1300
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 3
+talk.left
+  rotate: false
+  xy: 918, 1300
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 13
+talk.left
+  rotate: false
+  xy: 597, 1289
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 4
+talk.left
+  rotate: false
+  xy: 597, 1289
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 5
+talk.left
+  rotate: false
+  xy: 1209, 1288
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 6
+talk.left
+  rotate: false
+  xy: 888, 871
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 7
+talk.left
+  rotate: false
+  xy: 888, 871
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 8
+talk.left
+  rotate: false
+  xy: 888, 871
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 12
+talk.left
+  rotate: false
+  xy: 888, 871
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 9
+talk.left
+  rotate: false
+  xy: 597, 860
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 10
+talk.left
+  rotate: false
+  xy: 1179, 859
+  size: 289, 427
+  orig: 289, 428
+  offset: 0, 0
+  index: 14
 turn.left
   rotate: false
-  xy: 1, 1292
+  xy: 1, 1523
+  size: 289, 428
+  orig: 289, 428
+  offset: 0, 0
+  index: 3
+turn.left
+  rotate: false
+  xy: 1, 1093
+  size: 289, 428
+  orig: 289, 428
+  offset: 0, 0
+  index: 4
+turn.left
+  rotate: false
+  xy: 1, 663
+  size: 289, 428
+  orig: 289, 428
+  offset: 0, 0
+  index: 5
+turn.left
+  rotate: false
+  xy: 1, 233
+  size: 289, 428
+  orig: 289, 428
+  offset: 0, 0
+  index: 6
+turn.left
+  rotate: false
+  xy: 292, 1523
+  size: 289, 428
+  orig: 289, 428
+  offset: 0, 0
+  index: 7
+turn.left
+  rotate: false
+  xy: 888, 442
   size: 289, 427
   orig: 289, 427
   offset: 0, 0
   index: 1
 turn.left
   rotate: false
-  xy: 292, 1292
+  xy: 597, 431
   size: 289, 427
   orig: 289, 427
   offset: 0, 0
   index: 2
 turn.left
   rotate: false
-  xy: 583, 1292
+  xy: 597, 2
   size: 289, 427
   orig: 289, 427
   offset: 0, 0
   index: 8
 turn.left
   rotate: false
-  xy: 874, 1292
+  xy: 888, 13
   size: 289, 427
   orig: 289, 427
   offset: 0, 0
   index: 9
 turn.left
   rotate: false
-  xy: 1165, 1292
+  xy: 1179, 430
   size: 289, 427
   orig: 289, 427
   offset: 0, 0
   index: 10
 turn.left
   rotate: false
-  xy: 1456, 1292
+  xy: 1179, 1
   size: 288, 427
   orig: 288, 427
   offset: 0, 0
   index: 11
-
-policeman2.png
-size: 1949,1290
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
-fall
-  rotate: false
-  xy: 1, 861
-  size: 492, 428
-  orig: 492, 428
-  offset: 0, 0
-  index: 13
-fall
-  rotate: false
-  xy: 1, 431
-  size: 492, 428
-  orig: 492, 428
-  offset: 0, 0
-  index: 14
-fall
-  rotate: false
-  xy: 495, 861
-  size: 492, 428
-  orig: 492, 428
-  offset: 0, 0
-  index: 15
-fall
-  rotate: false
-  xy: 1, 1
-  size: 492, 428
-  orig: 492, 428
-  offset: 0, 0
-  index: 16
-talk.left
-  rotate: false
-  xy: 495, 431
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 1
-talk.left
-  rotate: false
-  xy: 989, 861
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 2
-talk.left
-  rotate: false
-  xy: 989, 861
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 11
-talk.left
-  rotate: false
-  xy: 495, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 3
-talk.left
-  rotate: false
-  xy: 495, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 13
-talk.left
-  rotate: false
-  xy: 786, 431
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 4
-talk.left
-  rotate: false
-  xy: 786, 431
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 5
-talk.left
-  rotate: false
-  xy: 1280, 861
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 6
-talk.left
-  rotate: false
-  xy: 786, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 7
-talk.left
-  rotate: false
-  xy: 786, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 12
-talk.left
-  rotate: false
-  xy: 786, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 9
-talk.left
-  rotate: false
-  xy: 786, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 8
-talk.left
-  rotate: false
-  xy: 1077, 431
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 10
-talk.left
-  rotate: false
-  xy: 1571, 861
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 14
-turn.left
-  rotate: false
-  xy: 1077, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 3
-turn.left
-  rotate: false
-  xy: 1368, 431
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 4
-turn.left
-  rotate: false
-  xy: 1368, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 5
-turn.left
-  rotate: false
-  xy: 1659, 431
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 6
-turn.left
-  rotate: false
-  xy: 1659, 1
-  size: 289, 428
-  orig: 289, 428
-  offset: 0, 0
-  index: 7

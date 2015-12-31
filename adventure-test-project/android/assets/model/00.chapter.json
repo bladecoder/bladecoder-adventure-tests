@@ -1,4 +1,5 @@
 {
+bladeEngineVersion: "0.9.6-SNAPSHOT",
 scenes: {
 	"01": {
 		id: "01",
@@ -452,6 +453,1366 @@ scenes: {
 		},
 		backgroundAtlas: "scene3",
 		backgroundRegionId: "bg3",
+		verbs: {}
+	},
+	parallax: {
+		id: "parallax",
+		layers: [
+			{
+				name: "foreground",
+				parallax: 2
+			},
+			{
+				name: "dynamic"
+			},
+			{
+				name: "background",
+				parallax: 0
+			}
+		],
+		actors: {
+			middleground: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "middleground",
+				bbox: [ -1536, 0, -1536, 1080, 1536, 1080, 1536, 0 ],
+				visible: true,
+				pos: {
+					x: 1532.5945
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						background: {
+							id: "middleground",
+							source: "parallax",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "background"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			background: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "background",
+				bbox: [ -1536, 0, -1536, 1080, 1536, 1080, 1536, 0 ],
+				visible: true,
+				pos: {
+					x: 1529.7563
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "background",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						background: {
+							id: "background",
+							source: "parallax",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "background"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			char: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "char",
+				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
+				visible: true,
+				pos: {
+					x: 1988.1794,
+					y: 154.22119
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right"
+				},
+				scale: 0.2,
+				depthType: "NONE",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 500,
+				textColor: null
+			},
+			foreground: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "foreground",
+				bbox: [ -1536, 0, -1536, 1080, 1536, 1080, 1536, 0 ],
+				visible: true,
+				pos: {
+					x: 1529.7563
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						background: {
+							id: "foreground",
+							source: "parallax",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "background"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			}
+		},
+		backgroundAtlas: "parallax",
+		backgroundRegionId: "background",
+		polygonalNavGraph: {
+			walkZone: {
+				localVertices: [ 3064.5073, 52.448776, 3008.312, 247.25824, 37.46338, 209.79524, 18.73169, 37.46341 ]
+			}
+		},
+		verbs: {},
+		player: "char"
+	},
+	inventory: {
+		id: "inventory",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			a02: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a02",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1064.3015,
+					y: 754.9446
+				},
+				desc: "@inventory.a02.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a02"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a02",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a02.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a010: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a010",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 204.34589,
+					y: 493.83582
+				},
+				desc: "@inventory.a010.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a010"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a010",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a010.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a011: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a011",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1331.0865,
+					y: 752.1062
+				},
+				desc: "@inventory.a011.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a011"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a011",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a011.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a04: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a04",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 777.64966,
+					y: 471.13092
+				},
+				desc: "@inventory.a04.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a04"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a04",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a04.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a03: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a03",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 780.4877,
+					y: 210.02228
+				},
+				desc: "@inventory.a03.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a03"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a03",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a03.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a06: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a06",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 508.0266,
+					y: 212.86035
+				},
+				desc: "@inventory.a06.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a06"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a06",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a06.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a05: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a05",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 797.5166,
+					y: 752.1063
+				},
+				desc: "@inventory.a05.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a05"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a05",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a05.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a08: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a08",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 508.0266,
+					y: 752.1063
+				},
+				desc: "@inventory.a08.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a08"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a08",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a08.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a0114: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a0114",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1569.49,
+					y: 752.1064
+				},
+				desc: "@inventory.a0114.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a0114"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a0114",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a0114.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a07: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a07",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 508.02658,
+					y: 479.64514
+				},
+				desc: "@inventory.a07.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a07"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a07",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a07.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a0113: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a0113",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1316.8959,
+					y: 488.15967
+				},
+				desc: "@inventory.a0113.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a0113"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a0113",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a0113.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a09: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a09",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 207.18402,
+					y: 198.66962
+				},
+				desc: "@inventory.a09.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a09"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a09",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a09.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a0112: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a0112",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1575.1663,
+					y: 479.64502
+				},
+				desc: "@inventory.a0112.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a0112"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a0112",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a0112.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a0: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a0",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 227.05096,
+					y: 760.6208
+				},
+				desc: "@inventory.a0.desc_",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a0"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a0",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a0.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a01132: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a01132",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1314.0577,
+					y: 227.05109
+				},
+				desc: "@inventory.a01132.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a01132",
+								animation: "error"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a01132",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a01132.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						error: {
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a012: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a012",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1064.3018,
+					y: 210.02216
+				},
+				desc: "@inventory.a012.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a012"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a012",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a012.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			a013: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "a013",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1064.3018,
+					y: 476.80713
+				},
+				desc: "@inventory.a013.desc",
+				sounds: null,
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "a013"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetStateAction",
+								actor: "a013",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						target: null,
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "a0",
+								text: "@inventory.a013.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			}
+		},
 		verbs: {}
 	}
 },

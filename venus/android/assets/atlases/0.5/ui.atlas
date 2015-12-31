@@ -1,0 +1,156 @@
+
+ui.png
+size: 507,269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+border_black_rect4
+  rotate: false
+  xy: 198, 14
+  size: 31, 31
+  split: 5, 5, 5, 4
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+border_rect2
+  rotate: false
+  xy: 371, 76
+  size: 32, 32
+  split: 2, 2, 2, 2
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+border_rect4
+  rotate: false
+  xy: 164, 13
+  size: 32, 32
+  split: 4, 4, 5, 5
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+bubblepointer
+  rotate: false
+  xy: 1, 6
+  size: 39, 25
+  orig: 39, 25
+  offset: 0, 0
+  index: -1
+circle
+  rotate: false
+  xy: 88, 31
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+circle_border
+  rotate: false
+  xy: 169, 112
+  size: 156, 156
+  orig: 156, 156
+  offset: 0, 0
+  index: -1
+circle_button
+  rotate: false
+  xy: 1, 107
+  size: 166, 161
+  orig: 170, 171
+  offset: 2, 0
+  index: -1
+credits
+  rotate: false
+  xy: 169, 47
+  size: 66, 63
+  orig: 66, 63
+  offset: 0, 0
+  index: -1
+debug
+  rotate: false
+  xy: 303, 59
+  size: 66, 49
+  orig: 66, 49
+  offset: 0, 0
+  index: -1
+help
+  rotate: false
+  xy: 417, 17
+  size: 45, 61
+  orig: 45, 61
+  offset: 0, 0
+  index: -1
+hotspotpointer
+  rotate: false
+  xy: 327, 162
+  size: 106, 106
+  orig: 106, 106
+  offset: 0, 0
+  index: -1
+inventory
+  rotate: false
+  xy: 1, 33
+  size: 85, 72
+  orig: 85, 85
+  offset: 0, 0
+  index: -1
+inventory_plain
+  rotate: false
+  xy: 435, 149
+  size: 68, 48
+  orig: 68, 48
+  offset: 0, 0
+  index: -1
+leave
+  rotate: false
+  xy: 237, 51
+  size: 64, 59
+  orig: 64, 59
+  offset: 0, 0
+  index: -1
+lookat
+  rotate: false
+  xy: 327, 110
+  size: 80, 50
+  orig: 80, 50
+  offset: 0, 0
+  index: -1
+menu
+  rotate: false
+  xy: 464, 27
+  size: 38, 51
+  orig: 76, 76
+  offset: 19, 0
+  index: -1
+pickup
+  rotate: false
+  xy: 303, 1
+  size: 48, 56
+  orig: 51, 58
+  offset: 3, 0
+  index: -1
+plus
+  rotate: false
+  xy: 409, 80
+  size: 67, 67
+  orig: 67, 67
+  offset: 0, 0
+  index: -1
+pointer
+  rotate: false
+  xy: 435, 199
+  size: 69, 69
+  orig: 69, 69
+  offset: 0, 0
+  index: -1
+talkto
+  rotate: false
+  xy: 353, 5
+  size: 62, 52
+  orig: 62, 52
+  offset: 0, 0
+  index: -1
+white_pixel
+  rotate: false
+  xy: 505, 196
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1

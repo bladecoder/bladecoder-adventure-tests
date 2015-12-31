@@ -1,307 +1,307 @@
 
 scene1.png
-size: 1775,1706
+size: 1875,1038
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 bg1
   rotate: false
-  xy: 1, 1165
+  xy: 1, 497
   size: 1511, 540
   orig: 1511, 540
   offset: 0, 0
   index: -1
 cabinet_off
   rotate: false
-  xy: 1516, 201
-  size: 196, 186
+  xy: 688, 1
+  size: 170, 139
   orig: 196, 186
-  offset: 0, 0
+  offset: 9, 0
   index: -1
 cable.connected
   rotate: false
-  xy: 1585, 139
-  size: 108, 60
+  xy: 860, 85
+  size: 60, 58
   orig: 108, 60
-  offset: 0, 0
+  offset: 39, 0
   index: -1
 cable.disconnected
   rotate: false
-  xy: 1, 20
-  size: 108, 58
+  xy: 70, 5
+  size: 68, 27
   orig: 108, 58
-  offset: 0, 0
+  offset: 38, 0
   index: -1
 cable.inventory
   rotate: false
-  xy: 1585, 62
+  xy: 457, 51
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 chair.broken
   rotate: false
-  xy: 1, 80
-  size: 127, 89
+  xy: 336, 44
+  size: 119, 82
   orig: 127, 89
-  offset: 0, 0
+  offset: 5, 0
   index: -1
 chair.inventory
   rotate: false
-  xy: 1680, 1128
-  size: 75, 75
+  xy: 534, 4
+  size: 71, 49
   orig: 75, 75
-  offset: 0, 0
+  offset: 3, 0
   index: -1
 chair2
   rotate: false
-  xy: 1516, 28
-  size: 67, 171
+  xy: 922, 8
+  size: 67, 161
   orig: 67, 171
   offset: 0, 0
   index: -1
 column_fg
   rotate: false
-  xy: 1514, 1165
-  size: 160, 540
+  xy: 1514, 497
+  size: 155, 540
   orig: 160, 540
   offset: 0, 0
   index: -1
 head_fg
   rotate: false
-  xy: 1, 673
-  size: 293, 490
+  xy: 70, 34
+  size: 264, 461
   orig: 293, 490
-  offset: 0, 0
+  offset: 29, 0
   index: -1
 hole
   rotate: false
-  xy: 237, 204
-  size: 34, 79
+  xy: 336, 4
+  size: 34, 38
   orig: 34, 79
   offset: 0, 0
   index: -1
 player.chairbroke
   rotate: false
-  xy: 296, 777
-  size: 171, 386
+  xy: 336, 128
+  size: 146, 367
   orig: 171, 386
-  offset: 0, 0
-  index: 1
-sitdown
-  rotate: false
-  xy: 296, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 6
-player.chairbroke
-  rotate: false
-  xy: 469, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 2
-player.chairbroke
-  rotate: false
-  xy: 642, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 3
-player.chairbroke
-  rotate: false
-  xy: 815, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 4
-player.chairbroke
-  rotate: false
-  xy: 815, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 11
-player.chairbroke
-  rotate: false
-  xy: 988, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 5
-player.chairbroke
-  rotate: false
-  xy: 1161, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 6
-player.chairbroke
-  rotate: false
-  xy: 1334, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 7
-player.chairbroke
-  rotate: false
-  xy: 1507, 777
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 8
-player.chairbroke
-  rotate: false
-  xy: 132, 285
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 9
-player.chairbroke
-  rotate: false
-  xy: 305, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 10
-player.chairbroke
-  rotate: false
-  xy: 478, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 12
-player.chairbroke
-  rotate: false
-  xy: 651, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 13
-player.chairbroke
-  rotate: false
-  xy: 824, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 14
-player.chairbroke
-  rotate: false
-  xy: 997, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 15
-player.chairbroke
-  rotate: false
-  xy: 1170, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 16
-player.chairbroke
-  rotate: false
-  xy: 1343, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 17
-player.chairbroke
-  rotate: false
-  xy: 1516, 389
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 18
-player.chairbroke
-  rotate: false
-  xy: 305, 1
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 19
-player.chairbroke
-  rotate: false
-  xy: 478, 1
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
-  index: 20
-player.chairbroke
-  rotate: false
-  xy: 651, 1
-  size: 171, 386
-  orig: 171, 386
-  offset: 0, 0
+  offset: 16, 0
   index: 21
 sitdown
   rotate: false
-  xy: 651, 1
-  size: 171, 386
+  xy: 336, 128
+  size: 146, 367
   orig: 171, 386
-  offset: 0, 0
+  offset: 16, 0
   index: 1
+player.chairbroke
+  rotate: false
+  xy: 484, 132
+  size: 146, 363
+  orig: 171, 386
+  offset: 17, 0
+  index: 20
+player.chairbroke
+  rotate: false
+  xy: 775, 145
+  size: 141, 350
+  orig: 171, 386
+  offset: 19, 0
+  index: 19
+player.chairbroke
+  rotate: false
+  xy: 918, 171
+  size: 129, 324
+  orig: 171, 386
+  offset: 26, 0
+  index: 18
+player.chairbroke
+  rotate: false
+  xy: 1049, 2
+  size: 80, 176
+  orig: 171, 386
+  offset: 45, 0
+  index: 13
+player.chairbroke
+  rotate: false
+  xy: 1131, 6
+  size: 92, 172
+  orig: 171, 386
+  offset: 35, 0
+  index: 5
+player.chairbroke
+  rotate: false
+  xy: 1181, 206
+  size: 116, 289
+  orig: 171, 386
+  offset: 31, 0
+  index: 17
+player.chairbroke
+  rotate: false
+  xy: 1225, 32
+  size: 89, 172
+  orig: 171, 386
+  offset: 38, 0
+  index: 6
+player.chairbroke
+  rotate: false
+  xy: 1316, 33
+  size: 89, 172
+  orig: 171, 386
+  offset: 38, 0
+  index: 7
+player.chairbroke
+  rotate: false
+  xy: 1407, 34
+  size: 94, 171
+  orig: 171, 386
+  offset: 34, 0
+  index: 9
+player.chairbroke
+  rotate: false
+  xy: 1503, 19
+  size: 84, 206
+  orig: 171, 386
+  offset: 47, 0
+  index: 14
+player.chairbroke
+  rotate: false
+  xy: 1515, 235
+  size: 98, 260
+  orig: 171, 386
+  offset: 38, 0
+  index: 1
+sitdown
+  rotate: false
+  xy: 1515, 235
+  size: 98, 260
+  orig: 171, 386
+  offset: 38, 0
+  index: 6
+player.chairbroke
+  rotate: false
+  xy: 1589, 8
+  size: 93, 225
+  orig: 171, 386
+  offset: 43, 0
+  index: 15
+player.chairbroke
+  rotate: false
+  xy: 1615, 242
+  size: 96, 253
+  orig: 171, 386
+  offset: 39, 0
+  index: 2
+player.chairbroke
+  rotate: false
+  xy: 1684, 1
+  size: 88, 239
+  orig: 171, 386
+  offset: 43, 0
+  index: 3
+player.chairbroke
+  rotate: false
+  xy: 1774, 787
+  size: 100, 250
+  orig: 171, 386
+  offset: 38, 0
+  index: 16
+player.chairbroke
+  rotate: false
+  xy: 1774, 113
+  size: 95, 170
+  orig: 171, 386
+  offset: 34, 0
+  index: 4
+player.chairbroke
+  rotate: false
+  xy: 1774, 113
+  size: 95, 170
+  orig: 171, 386
+  offset: 34, 0
+  index: 11
+player.chairbroke
+  rotate: false
+  xy: 1671, 867
+  size: 95, 170
+  orig: 171, 386
+  offset: 34, 0
+  index: 10
+player.chairbroke
+  rotate: false
+  xy: 1671, 694
+  size: 92, 171
+  orig: 171, 386
+  offset: 35, 0
+  index: 8
+player.chairbroke
+  rotate: false
+  xy: 1671, 523
+  size: 91, 169
+  orig: 171, 386
+  offset: 36, 0
+  index: 12
 rope
   rotate: false
-  xy: 1676, 1205
+  xy: 1774, 285
   size: 98, 500
   orig: 98, 500
   offset: 0, 0
   index: -1
 rope.floor
   rotate: false
-  xy: 132, 177
-  size: 103, 106
+  xy: 372, 10
+  size: 99, 32
   orig: 103, 106
-  offset: 0, 0
+  offset: 1, 0
   index: -1
 rope.inventory
   rotate: false
-  xy: 1680, 1051
+  xy: 534, 55
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 rope.withanchor
   rotate: false
-  xy: 1680, 974
+  xy: 611, 55
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 rope2
   rotate: false
-  xy: 1, 171
-  size: 129, 500
+  xy: 1, 8
+  size: 67, 487
   orig: 129, 500
-  offset: 0, 0
+  offset: 56, 0
   index: -1
 sitdown
   rotate: false
-  xy: 824, 1
-  size: 171, 386
+  xy: 632, 142
+  size: 141, 353
   orig: 171, 386
-  offset: 0, 0
+  offset: 18, 0
   index: 2
 sitdown
   rotate: false
-  xy: 997, 1
-  size: 171, 386
+  xy: 1049, 180
+  size: 130, 315
   orig: 171, 386
-  offset: 0, 0
+  offset: 24, 0
   index: 3
 sitdown
   rotate: false
-  xy: 1170, 1
-  size: 171, 386
+  xy: 1299, 207
+  size: 111, 288
   orig: 171, 386
-  offset: 0, 0
+  offset: 32, 0
   index: 4
 sitdown
   rotate: false
-  xy: 1343, 1
-  size: 171, 386
+  xy: 1412, 227
+  size: 101, 268
   orig: 171, 386
-  offset: 0, 0
+  offset: 37, 0
   index: 5

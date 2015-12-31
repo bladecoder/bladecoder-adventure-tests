@@ -1,7 +1,8 @@
 
 scene0.png
+size: 157,157
 format: RGBA8888
-filter: Linear,Nearest
+filter: Linear,Linear
 repeat: none
 forward
   rotate: false

@@ -196,7 +196,7 @@ scenes: {
 			fence: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "fence",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
+				bbox: [ -169.5, 0, -169.5, 1005, 169.5, 1005, 169.5, 0 ],
 				visible: true,
 				pos: {
 					x: 1750.5
@@ -229,7 +229,7 @@ scenes: {
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "player",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
+				bbox: [ -120, 0, -120, 849, 120, 849, 120, 0 ],
 				visible: true,
 				pos: {
 					x: 584.22626,
@@ -393,7 +393,7 @@ scenes: {
 			policeman: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "policeman",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
+				bbox: [ -289.5, 0, -289.5, 856, 289.5, 856, 289.5, 0 ],
 				visible: true,
 				pos: {
 					x: 1329.5884
@@ -3437,10 +3437,10 @@ scenes: {
 				bbox: [ -109, 0, -109, 772, 109, 772, 109, 0 ],
 				visible: true,
 				pos: {
-					x: 2320.8765,
+					x: 2312.8765,
 					y: 61.886017
 				},
-				desc: "@scene1.player.desc",
+				desc: "@scene1.player.desc_",
 				sounds: null,
 				verbs: {},
 				interaction: false,
@@ -3577,7 +3577,7 @@ scenes: {
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
-				walkingSpeed: 1100,
+				walkingSpeed: 1200,
 				textColor: null
 			}
 		},

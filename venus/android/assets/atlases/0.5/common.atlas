@@ -9,35 +9,35 @@ cutter.charging
   xy: 1, 20
   size: 90, 56
   orig: 98, 62
-  offset: 8, 0
+  offset: 8, 6
   index: 1
 cutter.charging
   rotate: false
   xy: 93, 20
   size: 90, 56
   orig: 98, 62
-  offset: 8, 0
+  offset: 8, 6
   index: 2
 cutter.charging
   rotate: false
   xy: 185, 20
   size: 90, 56
   orig: 98, 62
-  offset: 8, 0
+  offset: 8, 6
   index: 3
 cutter.inventory
   rotate: false
-  xy: 277, 4
-  size: 70, 72
+  xy: 277, 5
+  size: 70, 71
   orig: 75, 75
-  offset: 2, 0
+  offset: 2, 2
   index: -1
 cutter.withcable
   rotate: false
   xy: 503, 29
   size: 50, 47
   orig: 50, 50
-  offset: 0, 0
+  offset: 0, 1
   index: -1
 diosa
   rotate: false
@@ -58,5 +58,5 @@ navaja.inventory
   xy: 349, 12
   size: 63, 64
   orig: 75, 75
-  offset: 5, 0
+  offset: 5, 5
   index: -1

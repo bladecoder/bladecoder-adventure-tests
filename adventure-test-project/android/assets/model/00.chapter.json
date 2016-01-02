@@ -34,8 +34,15 @@ scenes: {
 						state: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "char",
+								target: "door_right",
+								align: "CENTER",
+								wait: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "02"
+								scene: "parallax"
 							}
 						]
 					}
@@ -44,6 +51,51 @@ scenes: {
 				state: null,
 				zIndex: 0,
 				layer: "background"
+			},
+			char: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "char",
+				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
+				visible: true,
+				pos: {
+					x: 536.92737,
+					y: 318.76486
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right"
+				},
+				scale: 0.18349738,
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 1800,
+				textColor: null
 			},
 			test_actions: {
 				class: "com.bladecoder.engine.model.SpriteActor",
@@ -321,6 +373,13 @@ scenes: {
 						state: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "char",
+								target: "door_left",
+								align: "CENTER",
+								wait: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
 								scene: "03"
 							}
@@ -331,13 +390,79 @@ scenes: {
 				state: null,
 				zIndex: 0,
 				layer: "background"
+			},
+			test_inventory: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "test_inventory",
+				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				visible: true,
+				pos: {
+					x: 1745.6846,
+					y: 796.58093
+				},
+				desc: "@01.test_inventory.desc_",
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.LeaveAction",
+								scene: "inventory"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						error: {
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
 			}
 		},
 		backgroundAtlas: "scene1",
 		backgroundRegionId: "bg1",
+		depthVector: {
+			x: 612.92163,
+			y: -990.1354
+		},
 		polygonalNavGraph: {
 			walkZone: {
-				localVertices: [ 297.42737, 284.14938, 568.29877, 434.68887, 718.6812, 440.14285, 645.20966, 343.2135, 1375.7369, 384.14554, 1353.6876, 407.92526, 1922.6555, 410.7885, 1934.324, 311.18817, 1543.7379, 296.05563, 1514.5264, 349.16766, 624.51056, 318.71033, 589.1026, 283.30228 ]
+				localVertices: [ 297.42737, 284.14938, 568.29877, 434.68887, 718.6812, 440.14285, 650.82916, 341.34033, 1368.244, 372.9064, 1353.6876, 407.92526, 1922.6555, 410.7885, 1934.324, 311.18817, 1543.7379, 296.05563, 1514.5264, 349.16766, 624.51056, 318.71033, 589.1026, 283.30228 ]
 			}
 		},
 		verbs: {
@@ -355,7 +480,8 @@ scenes: {
 					}
 				]
 			}
-		}
+		},
+		player: "char"
 	},
 	"02": {
 		id: "02",
@@ -460,7 +586,7 @@ scenes: {
 		layers: [
 			{
 				name: "foreground",
-				parallax: 2
+				parallax: 3.5
 			},
 			{
 				name: "dynamic"
@@ -471,20 +597,56 @@ scenes: {
 			}
 		],
 		actors: {
+			goto01: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "goto01",
+				bbox: [ -69.81134, 53.333344, -68.80505, 182.89307, 34.591248, 181.88678, 46.666687, 58.364746 ],
+				visible: true,
+				pos: {
+					x: 801.9821,
+					y: 207.3566
+				},
+				desc: null,
+				sounds: null,
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "char",
+								target: "goto01",
+								align: "CENTER",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.LeaveAction",
+								scene: "01"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground"
+			},
 			middleground: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "middleground",
-				bbox: [ -1536, 0, -1536, 1080, 1536, 1080, 1536, 0 ],
+				bbox: [ -1551.5, 0, -1551.5, 930, 1551.5, 930, 1551.5, 0 ],
 				visible: true,
 				pos: {
-					x: 1532.5945
+					x: 1554
 				},
 				desc: null,
 				sounds: null,
 				verbs: {},
 				interaction: false,
 				state: null,
-				zIndex: 0,
+				zIndex: -1,
 				layer: "dynamic",
 				renderer: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
@@ -507,10 +669,10 @@ scenes: {
 			background: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "background",
-				bbox: [ -1536, 0, -1536, 1080, 1536, 1080, 1536, 0 ],
+				bbox: [ -960, 0, -960, 1080, 960, 1080, 960, 0 ],
 				visible: true,
 				pos: {
-					x: 1529.7563
+					x: 1551
 				},
 				desc: null,
 				sounds: null,
@@ -543,8 +705,8 @@ scenes: {
 				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
 				visible: true,
 				pos: {
-					x: 1988.1794,
-					y: 154.22119
+					x: 1793.2177,
+					y: 65.78964
 				},
 				desc: null,
 				sounds: null,
@@ -575,20 +737,20 @@ scenes: {
 					},
 					initAnimation: "stand.right"
 				},
-				scale: 0.2,
-				depthType: "NONE",
+				scale: 0.3110584,
+				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
-				walkingSpeed: 500,
+				walkingSpeed: 2000,
 				textColor: null
 			},
 			foreground: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "foreground",
-				bbox: [ -1536, 0, -1536, 1080, 1536, 1080, 1536, 0 ],
+				bbox: [ -1462.5, 0, -1462.5, 259, 1462.5, 259, 1462.5, 0 ],
 				visible: true,
 				pos: {
-					x: 1529.7563
+					x: 177.10706
 				},
 				desc: null,
 				sounds: null,
@@ -600,8 +762,8 @@ scenes: {
 				renderer: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
-						background: {
-							id: "foreground",
+						foreground1: {
+							id: "foreground1",
 							source: "parallax",
 							duration: 1,
 							animationType: "NO_REPEAT",
@@ -609,19 +771,58 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "background"
+					initAnimation: "foreground1"
+				},
+				scale: 1,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			foreground2: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "foreground2",
+				bbox: [ -1463, 0, -1463, 238, 1463, 238, 1463, 0 ],
+				visible: true,
+				pos: {
+					x: 3084.321
+				},
+				desc: null,
+				sounds: null,
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						foreground1: {
+							id: "foreground2",
+							source: "parallax",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "foreground1"
 				},
 				scale: 1,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			}
 		},
-		backgroundAtlas: "parallax",
-		backgroundRegionId: "background",
+		depthVector: {
+			x: 344.45578,
+			y: -551.40857
+		},
 		polygonalNavGraph: {
 			walkZone: {
 				localVertices: [ 3064.5073, 52.448776, 3008.312, 247.25824, 37.46338, 209.79524, 18.73169, 37.46341 ]
 			}
+		},
+		sceneSize: {
+			x: 3103,
+			y: 1080
 		},
 		verbs: {},
 		player: "char"
@@ -644,7 +845,7 @@ scenes: {
 			a02: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a02",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1064.3015,
@@ -710,7 +911,7 @@ scenes: {
 			a010: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a010",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 204.34589,
@@ -776,7 +977,7 @@ scenes: {
 			a011: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a011",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1331.0865,
@@ -850,7 +1051,7 @@ scenes: {
 			a04: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a04",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 777.64966,
@@ -916,7 +1117,7 @@ scenes: {
 			a03: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a03",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 780.4877,
@@ -982,7 +1183,7 @@ scenes: {
 			a06: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a06",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 508.0266,
@@ -1048,7 +1249,7 @@ scenes: {
 			a05: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a05",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 797.5166,
@@ -1114,7 +1315,7 @@ scenes: {
 			a08: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a08",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 508.0266,
@@ -1180,7 +1381,7 @@ scenes: {
 			a0114: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0114",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1569.49,
@@ -1254,7 +1455,7 @@ scenes: {
 			a07: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a07",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 508.02658,
@@ -1320,7 +1521,7 @@ scenes: {
 			a0113: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0113",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1316.8959,
@@ -1394,7 +1595,7 @@ scenes: {
 			a09: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a09",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 207.18402,
@@ -1460,7 +1661,7 @@ scenes: {
 			a0112: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0112",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1575.1663,
@@ -1534,7 +1735,7 @@ scenes: {
 			a0: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 227.05096,
@@ -1600,7 +1801,7 @@ scenes: {
 			a01132: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a01132",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1314.0577,
@@ -1683,7 +1884,7 @@ scenes: {
 			a012: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a012",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1064.3018,
@@ -1749,7 +1950,7 @@ scenes: {
 			a013: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a013",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				visible: true,
 				pos: {
 					x: 1064.3018,

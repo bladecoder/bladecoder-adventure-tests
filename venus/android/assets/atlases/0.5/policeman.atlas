@@ -9,217 +9,217 @@ fall
   xy: 1, 4
   size: 290, 227
   orig: 492, 428
-  offset: 113, 0
+  offset: 113, 50
   index: 9
 fall
   rotate: false
   xy: 293, 83
   size: 302, 151
   orig: 492, 428
-  offset: 114, 0
+  offset: 114, 52
   index: 10
 fall
   rotate: false
   xy: 597, 1833
   size: 374, 118
   orig: 492, 428
-  offset: 106, 0
+  offset: 106, 23
   index: 15
 fall
   rotate: false
   xy: 973, 1838
   size: 374, 113
   orig: 492, 428
-  offset: 106, 0
+  offset: 106, 28
   index: 14
 fall
   rotate: false
   xy: 1349, 1839
   size: 374, 112
   orig: 492, 428
-  offset: 106, 0
+  offset: 106, 28
   index: 13
 fall
   rotate: false
   xy: 1725, 1612
   size: 224, 339
   orig: 492, 428
-  offset: 48, 0
+  offset: 48, 29
   index: 5
 fall
   rotate: false
   xy: 1349, 1717
   size: 373, 120
   orig: 492, 428
-  offset: 107, 0
+  offset: 107, 21
   index: 16
 fall
   rotate: false
   xy: 973, 1729
   size: 364, 107
   orig: 492, 428
-  offset: 108, 0
+  offset: 108, 39
   index: 12
 fall
   rotate: false
   xy: 597, 1718
   size: 319, 113
   orig: 492, 428
-  offset: 113, 0
+  offset: 113, 51
   index: 11
 fall
   rotate: false
   xy: 1500, 1414
   size: 223, 301
   orig: 492, 428
-  offset: 109, 0
+  offset: 109, 36
   index: 7
 fall
   rotate: false
   xy: 1725, 1216
   size: 209, 394
   orig: 492, 428
-  offset: 67, 0
+  offset: 67, 27
   index: 2
 fall
   rotate: false
   xy: 1500, 1085
   size: 207, 327
   orig: 492, 428
-  offset: 92, 0
+  offset: 92, 30
   index: 6
 fall
   rotate: false
-  xy: 1709, 864
-  size: 261, 350
+  xy: 1709, 863
+  size: 261, 351
   orig: 492, 428
-  offset: 12, 0
+  offset: 12, 28
   index: 4
 fall
   rotate: false
   xy: 1470, 682
   size: 187, 401
   orig: 492, 428
-  offset: 89, 0
+  offset: 89, 27
   index: 1
 fall
   rotate: false
-  xy: 1659, 594
+  xy: 1659, 593
   size: 270, 268
   orig: 492, 428
-  offset: 110, 0
+  offset: 110, 47
   index: 8
 fall
   rotate: false
   xy: 1469, 56
   size: 267, 372
   orig: 492, 428
-  offset: 8, 0
+  offset: 8, 28
   index: 3
 stand.frontleft
   rotate: false
   xy: 292, 1094
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: -1
 talk.left
   rotate: false
   xy: 292, 665
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 1
 talk.left
   rotate: false
   xy: 292, 236
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 2
 talk.left
   rotate: false
   xy: 292, 236
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 11
 talk.left
   rotate: false
   xy: 918, 1300
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 3
 talk.left
   rotate: false
   xy: 918, 1300
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 13
 talk.left
   rotate: false
   xy: 597, 1289
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 4
 talk.left
   rotate: false
   xy: 597, 1289
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 5
 talk.left
   rotate: false
   xy: 1209, 1288
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 6
 talk.left
   rotate: false
   xy: 888, 871
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 7
 talk.left
   rotate: false
   xy: 888, 871
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 8
 talk.left
   rotate: false
   xy: 888, 871
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 12
 talk.left
   rotate: false
   xy: 888, 871
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 9
 talk.left
   rotate: false
   xy: 597, 860
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 10
 talk.left
   rotate: false
   xy: 1179, 859
   size: 289, 427
   orig: 289, 428
-  offset: 0, 0
+  offset: 0, 1
   index: 14
 turn.left
   rotate: false

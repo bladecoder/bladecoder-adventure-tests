@@ -1,41 +1,83 @@
 
 char.png
-size: 2209,1118
+size: 2070,2188
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 stand.right
   rotate: false
-  xy: 1893, 19
-  size: 315, 1098
+  xy: 1132, 10
+  size: 310, 1096
   orig: 315, 1098
-  offset: 0, 0
+  offset: 3, 0
   index: -1
 walk.right
   rotate: false
-  xy: 1, 1
-  size: 471, 1116
+  xy: 1, 1128
+  size: 460, 1059
   orig: 471, 1116
-  offset: 0, 0
-  index: 0
+  offset: 0, 34
+  index: 3
 walk.right
   rotate: false
-  xy: 474, 1
-  size: 471, 1116
+  xy: 1, 47
+  size: 437, 1079
   orig: 471, 1116
-  offset: 0, 0
-  index: 1
-walk.right
-  rotate: false
-  xy: 947, 1
-  size: 471, 1116
-  orig: 471, 1116
-  offset: 0, 0
+  offset: 4, 14
   index: 2
 walk.right
   rotate: false
-  xy: 1420, 1
-  size: 471, 1116
+  xy: 463, 1111
+  size: 413, 1076
   orig: 471, 1116
-  offset: 0, 0
-  index: 3
+  offset: 49, 17
+  index: 8
+walk.right
+  rotate: false
+  xy: 878, 1108
+  size: 412, 1079
+  orig: 471, 1116
+  offset: 49, 14
+  index: 7
+walk.right
+  rotate: false
+  xy: 1292, 1119
+  size: 388, 1068
+  orig: 471, 1116
+  offset: 53, 36
+  index: 4
+walk.right
+  rotate: false
+  xy: 1682, 1085
+  size: 360, 1102
+  orig: 471, 1116
+  offset: 81, 2
+  index: 1
+walk.right
+  rotate: false
+  xy: 440, 5
+  size: 344, 1104
+  orig: 471, 1116
+  offset: 97, 0
+  index: 6
+walk.right
+  rotate: false
+  xy: 786, 18
+  size: 344, 1088
+  orig: 471, 1116
+  offset: 97, 16
+  index: 9
+walk.right
+  rotate: false
+  xy: 1444, 3
+  size: 328, 1080
+  orig: 471, 1116
+  offset: 113, 34
+  index: 5
+walk.right
+  rotate: false
+  xy: 1774, 1
+  size: 295, 1082
+  orig: 471, 1116
+  offset: 146, 32
+  index: 0

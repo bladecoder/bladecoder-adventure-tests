@@ -9,11 +9,19 @@ android {
             renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
         }
 
         instrumentTest.setRoot('tests')
         
         
+    }
+    
+       
+    defaultConfig {
+        applicationId "com.bladecoder.advtestspine"
+        minSdkVersion 8
+        targetSdkVersion 20
     }
 
 	if(project.hasProperty('keystore')) {   
@@ -32,12 +40,6 @@ android {
              }
           }
        }
-}
-
-// needed to add JNI shared libraries to APK when compiling on CLI
-tasks.withType(com.android.build.gradle.tasks.PackageApplication) { pkgTask ->
-    pkgTask.jniFolders = new HashSet<File>()
-    pkgTask.jniFolders.add(new File(projectDir, 'libs'))
 }
 
 // called every time gradle gets executed, takes the native dependencies of
@@ -82,7 +84,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.bladecoder.advtestspine.android/com.bladecoder.advtestspine.android.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.bladecoder.advtestspine/com.bladecoder.advtestspine.android.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.

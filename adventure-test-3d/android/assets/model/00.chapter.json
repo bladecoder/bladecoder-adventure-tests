@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.5",
+bladeEngineVersion: "0.9.7-SNAPSHOT",
 scenes: {
 	"00": {
 		id: "00",
@@ -82,50 +82,14 @@ scenes: {
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
-			test: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "test",
-				bbox: [ -150, 0, -150, 300, 150, 300, 150, 0 ],
-				visible: true,
-				pos: {
-					x: 314.08423,
-					y: 73.18469
-				},
-				desc: null,
-				sounds: null,
-				verbs: {},
-				interaction: false,
-				state: null,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.Sprite3DRenderer",
-					fanims: {},
-					initAnimation: null,
-					width: 300,
-					height: 300,
-					cameraPos: null,
-					cameraRot: null,
-					cameraName: "Camera",
-					cameraFOV: 49.3,
-					modelRotation: 0,
-					renderShadow: true
-				},
-				scale: 1,
-				depthType: "NONE",
-				bboxFromRenderer: true,
-				dialogs: null,
-				walkingSpeed: 700,
-				textColor: null
-			},
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "player",
 				bbox: [ -350, 0, -350, 700, 350, 700, 350, 0 ],
 				visible: true,
 				pos: {
-					x: 2165.5493,
-					y: 48.665955
+					x: 2174.0637,
+					y: 45.82788
 				},
 				desc: null,
 				sounds: null,
@@ -180,7 +144,7 @@ scenes: {
 					modelRotation: 0,
 					renderShadow: true
 				},
-				scale: 0.9776053,
+				scale: 0.9786623,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
@@ -202,7 +166,7 @@ scenes: {
 			}
 		},
 		verbs: {},
-		player: "test"
+		player: "player"
 	}
 },
 initScene: "00"

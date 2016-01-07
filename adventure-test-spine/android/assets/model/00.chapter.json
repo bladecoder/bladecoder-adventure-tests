@@ -1,4 +1,5 @@
 {
+bladeEngineVersion: "0.9.7-SNAPSHOT",
 scenes: {
 	morgue: {
 		id: "morgue",
@@ -217,7 +218,7 @@ scenes: {
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
-				walkingSpeed: 700,
+				walkingSpeed: 1200,
 				textColor: null
 			},
 			table: {

@@ -1,12 +1,12 @@
 
 ui.png
-size: 532,1024
+size: 1588,348
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 border_black_rect4
   rotate: false
-  xy: 499, 751
+  xy: 345, 1
   size: 31, 31
   split: 5, 5, 5, 4
   orig: 31, 31
@@ -14,7 +14,7 @@ border_black_rect4
   index: -1
 border_rect2
   rotate: false
-  xy: 499, 818
+  xy: 876, 141
   size: 32, 32
   split: 2, 2, 2, 2
   orig: 32, 32
@@ -22,7 +22,7 @@ border_rect2
   index: -1
 border_rect4
   rotate: false
-  xy: 499, 784
+  xy: 911, 141
   size: 32, 32
   split: 4, 4, 5, 5
   orig: 32, 32
@@ -30,126 +30,126 @@ border_rect4
   index: -1
 bubblepointer
   rotate: false
-  xy: 128, 57
+  xy: 1182, 4
   size: 79, 51
   orig: 79, 51
   offset: 0, 0
   index: -1
 circle
   rotate: false
-  xy: 344, 547
+  xy: 1050, 199
   size: 148, 148
   orig: 148, 148
   offset: 0, 0
   index: -1
 circle_border
   rotate: false
-  xy: 1, 367
+  xy: 345, 35
   size: 312, 312
   orig: 312, 312
   offset: 0, 0
   index: -1
 circle_button
   rotate: false
-  xy: 1, 681
+  xy: 1, 5
   size: 341, 342
   orig: 341, 342
   offset: 0, 0
   index: -1
 credits
   rotate: false
-  xy: 277, 203
+  xy: 660, 4
   size: 133, 127
   orig: 133, 127
   offset: 0, 0
   index: -1
 debug
   rotate: false
-  xy: 271, 103
+  xy: 1451, 46
   size: 132, 98
   orig: 132, 98
   offset: 0, 0
   index: -1
 help
   rotate: false
-  xy: 412, 90
+  xy: 796, 9
   size: 90, 122
   orig: 90, 122
   offset: 0, 0
   index: -1
 hotspotpointer
   rotate: false
-  xy: 315, 332
+  xy: 660, 134
   size: 213, 213
   orig: 213, 213
   offset: 0, 0
   index: -1
 inventory
   rotate: false
-  xy: 344, 852
+  xy: 876, 176
   size: 171, 171
   orig: 171, 171
   offset: 0, 0
   index: -1
 inventory_plain
   rotate: false
-  xy: 1, 128
+  xy: 1451, 147
   size: 136, 97
   orig: 136, 97
   offset: 0, 0
   index: -1
 leave
   rotate: false
-  xy: 141, 110
+  xy: 1201, 228
   size: 128, 119
   orig: 128, 119
   offset: 0, 0
   index: -1
 lookat
   rotate: false
-  xy: 209, 1
+  xy: 1332, 247
   size: 161, 100
   orig: 161, 100
   offset: 0, 0
   index: -1
 menu
   rotate: false
-  xy: 344, 697
+  xy: 1026, 20
   size: 153, 153
   orig: 153, 153
   offset: 0, 0
   index: -1
 pickup
   rotate: false
-  xy: 412, 214
+  xy: 1323, 109
   size: 103, 116
   orig: 103, 116
   offset: 0, 0
   index: -1
 plus
   rotate: false
-  xy: 141, 231
+  xy: 889, 4
   size: 134, 134
   orig: 134, 134
   offset: 0, 0
   index: -1
 pointer
   rotate: false
-  xy: 1, 227
+  xy: 1182, 58
   size: 138, 138
   orig: 138, 138
   offset: 0, 0
   index: -1
 talkto
   rotate: false
-  xy: 1, 22
+  xy: 1323, 2
   size: 125, 104
   orig: 125, 104
   offset: 0, 0
   index: -1
 white_pixel
   rotate: false
-  xy: 517, 1020
+  xy: 379, 29
   size: 3, 3
   orig: 3, 3
   offset: 0, 0

@@ -3701,12 +3701,9 @@ scenes: {
 						state: null,
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.ShowInventoryAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "scene1"
+								class: "com.bladecoder.engine.actions.RunVerbAction",
+								verb: "leave",
+								wait: true
 							}
 						]
 					}

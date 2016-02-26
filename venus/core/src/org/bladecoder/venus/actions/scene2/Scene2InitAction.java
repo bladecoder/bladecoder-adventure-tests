@@ -25,7 +25,7 @@ public class Scene2InitAction implements Action {
 		//w.setCutMode(true);
 		w.showInventory(false);
 
-		String t = MessageFormat.format(I18N.getString(text.substring(1)), (int)(w.getTimeOfGame()/60));
+		String t = MessageFormat.format(I18N.getString(text.substring(1)), (int)(w.getTimeOfGame() / 60000));
 		
 		World.getInstance().getTextManager().addText(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null, null);
 		return false;

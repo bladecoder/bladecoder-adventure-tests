@@ -192,7 +192,7 @@ talk.left
   size: 289, 427
   orig: 289, 428
   offset: 0, 1
-  index: 8
+  index: 9
 talk.left
   rotate: false
   xy: 888, 871
@@ -206,7 +206,7 @@ talk.left
   size: 289, 427
   orig: 289, 428
   offset: 0, 1
-  index: 9
+  index: 8
 talk.left
   rotate: false
   xy: 597, 860

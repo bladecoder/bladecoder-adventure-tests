@@ -47,7 +47,9 @@ public class Scene0InitAction implements Serializable, Action, ActionCallback {
 		case INIT_STATE:
 			
 			((InteractiveActor)World.getInstance().getCurrentScene().getActor("forward", false))
-			.setInteraction(false);			
+			.setInteraction(false);
+			
+			World.getInstance().setCutMode(true);
 			
 			World.getInstance().getCurrentScene().getActor("title", false).setVisible(true);
 							
@@ -55,6 +57,7 @@ public class Scene0InitAction implements Serializable, Action, ActionCallback {
 			state = LEAVE_STATE;
 			break;
 		case LEAVE_STATE:
+			World.getInstance().setCutMode(false);
 			World.getInstance().getCurrentScene().runVerb("leave");
 			break;
 		}		

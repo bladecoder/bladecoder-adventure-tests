@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.7-SNAPSHOT",
+bladeEngineVersion: "0.9.8",
 scenes: {
 	endSCN: {
 		id: "endSCN",
@@ -13,8 +13,8 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "exit",
 				bbox: [ 0, 0, -4.824341, 1074.5214, 1913.9606, 1079.3456, 1918.7849, 0 ],
-				visible: true,
 				pos: {},
+				visible: true,
 				desc: "@desc",
 				sounds: null,
 				verbs: {
@@ -22,6 +22,7 @@ scenes: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "org.bladecoder.venus.actions.scene2.LeaveAction"
@@ -35,15 +36,16 @@ scenes: {
 				layer: "foreground"
 			}
 		},
-		musicFilename: "scn1.ogg",
-		loopMusic: false,
-		initialMusicDelay: 0,
-		repeatMusicDelay: -1,
+		musicDesc: {
+			filename: "scn1.ogg",
+			repeatDelay: 0
+		},
 		verbs: {
 			init: {
 				id: "init",
 				target: null,
 				state: null,
+				icon: null,
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -76,11 +78,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "door",
 				bbox: [ 0, -567.16724, 0, 100, 272.00964, 127.893616, 262.71185, -585.7631 ],
-				visible: true,
 				pos: {
 					x: 460.2422,
 					y: 692.6878
 				},
+				visible: true,
 				desc: "@door.desc",
 				sounds: null,
 				verbs: {
@@ -88,6 +90,7 @@ scenes: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.IfAttrAction",
@@ -151,11 +154,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "electricbox",
 				bbox: [ 106.924866, 74.38257, 102.27606, 299.9031, 253.414, 290.60538, 248.7652, 88.32922 ],
-				visible: true,
 				pos: {
 					x: 897.23975,
 					y: 255.69016
 				},
+				visible: true,
 				desc: "@electricbox.desc",
 				sounds: null,
 				verbs: {
@@ -163,6 +166,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -177,6 +181,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -196,11 +201,11 @@ scenes: {
 			fence: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "fence",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -169.5, 0, -169.5, 1005, 169.5, 1005, 169.5, 0 ],
 				pos: {
 					x: 1750.5
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
 				verbs: {},
@@ -229,12 +234,12 @@ scenes: {
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "player",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -120, 0, -120, 849, 120, 849, 120, 0 ],
 				pos: {
 					x: 584.22626,
 					y: 95.324524
 				},
+				visible: true,
 				desc: "@player.desc",
 				sounds: null,
 				verbs: {
@@ -242,6 +247,7 @@ scenes: {
 						id: "goto",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.IfAttrAction",
@@ -393,11 +399,11 @@ scenes: {
 			policeman: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "policeman",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -289.5, 0, -289.5, 856, 289.5, 856, 289.5, 0 ],
 				pos: {
 					x: 1329.5884
 				},
+				visible: true,
 				desc: "@policeman.desc",
 				sounds: {
 					hit: {
@@ -414,6 +420,7 @@ scenes: {
 						id: "dialog1_turn",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -455,10 +462,14 @@ scenes: {
 						id: "use",
 						target: "diosa",
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.MusicAction",
-								play: "true"
+								loop: false,
+								initialDelay: 0,
+								repeatDelay: -1,
+								stopWhenLeaving: true
 							},
 							{
 								class: "com.bladecoder.engine.actions.CancelVerbAction",
@@ -579,6 +590,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -594,6 +606,7 @@ scenes: {
 						id: "turn_back",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -705,6 +718,7 @@ scenes: {
 						id: "use",
 						target: "navaja",
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -718,6 +732,7 @@ scenes: {
 						id: "talkto",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -738,6 +753,7 @@ scenes: {
 						id: "talkto",
 						target: null,
 						state: "POLICEMAN_TURN",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -817,7 +833,6 @@ scenes: {
 				dialogs: {
 					dialog1: {
 						id: "dialog1",
-						actor: "policeman",
 						options: [
 							{
 								text: "@policeman.dialog1.0.text",
@@ -863,7 +878,6 @@ scenes: {
 					},
 					dialog2: {
 						id: "dialog2",
-						actor: "policeman",
 						options: [
 							{
 								text: "@policeman.dialog1.0.0.text",
@@ -907,11 +921,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "out",
 				bbox: [ 4.6488647, -353.31723, 23.24451, 183.68054, 299.90314, 160.43591, 295.2542, -353.31723 ],
-				visible: true,
 				pos: {
 					x: -5.722046E-5,
 					y: 474.1889
 				},
+				visible: true,
 				desc: "@out.desc",
 				sounds: null,
 				verbs: {
@@ -919,6 +933,7 @@ scenes: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.IfAttrAction",
@@ -981,10 +996,9 @@ scenes: {
 		},
 		backgroundAtlas: "scene2",
 		backgroundRegionId: "bg2",
-		musicFilename: "scn2.ogg",
-		loopMusic: false,
-		initialMusicDelay: 0,
-		repeatMusicDelay: -1,
+		musicDesc: {
+			filename: "scn2.ogg"
+		},
 		depthVector: {
 			x: 616.38446,
 			y: 0.01
@@ -999,6 +1013,7 @@ scenes: {
 				id: "init",
 				target: null,
 				state: null,
+				icon: null,
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1075,6 +1090,7 @@ scenes: {
 				id: "test",
 				target: null,
 				state: null,
+				icon: null,
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1107,12 +1123,12 @@ scenes: {
 			cabinet_off: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "cabinet_off",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: false,
+				bbox: [ -196, 0, -196, 372, 196, 372, 196, 0 ],
 				pos: {
 					x: 384.79813,
 					y: 467.20212
 				},
+				visible: false,
 				desc: null,
 				sounds: null,
 				verbs: {},
@@ -1142,11 +1158,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "libro",
 				bbox: [ -9.57605, 14.364075, 0, 100, 145.4862, 92.81799, 143.09229, 9.57605 ],
-				visible: true,
 				pos: {
 					x: 1867.3315,
 					y: 806.7831
 				},
+				visible: true,
 				desc: "@libro.desc",
 				sounds: null,
 				verbs: {
@@ -1154,6 +1170,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1167,6 +1184,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1186,11 +1204,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "estatua",
 				bbox: [ -15.960083, -422.94275, 16.572266, -337.66803, 24.84021, -315.99585, -12.12384, -135.72235, -1.6645508, -28.39038, 27.268433, 14.341614, 30.324219, 98.40405, 125.53613, 92.0199, 115.960205, -427.7307 ],
-				visible: true,
 				pos: {
 					x: 1029.4265,
 					y: 948.03
 				},
+				visible: true,
 				desc: "@estatua.desc",
 				sounds: null,
 				verbs: {
@@ -1198,6 +1216,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1211,6 +1230,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1229,12 +1249,12 @@ scenes: {
 			chair: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "chair",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -67.5, 0, -67.5, 343, 67.5, 343, 67.5, 0 ],
 				pos: {
 					x: 2330,
 					y: 510
 				},
+				visible: true,
 				desc: "@chair.desc",
 				sounds: {
 					chair_broken: {
@@ -1254,6 +1274,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "BROKEN",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1313,6 +1334,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1328,6 +1350,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: "BROKEN",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1341,6 +1364,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1354,6 +1378,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "SIT1",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1418,6 +1443,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "SIT0",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1482,6 +1508,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "SIT2",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1596,12 +1623,12 @@ scenes: {
 			head_fg: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "head_fg",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -293, 0, -293, 981, 293, 981, 293, 0 ],
 				pos: {
 					x: 2727.276,
 					y: -0.62638855
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
 				verbs: {},
@@ -1630,12 +1657,12 @@ scenes: {
 			rope: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "rope",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -98.5, 0, -98.5, 1000, 98.5, 1000, 98.5, 0 ],
 				pos: {
 					x: 2150,
 					y: 102
 				},
+				visible: true,
 				desc: "@rope.desc",
 				sounds: {
 					slide: {
@@ -1652,6 +1679,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "ANCHORED",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1690,6 +1718,7 @@ scenes: {
 						id: "use",
 						target: "chair",
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1722,6 +1751,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1735,6 +1765,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1748,6 +1779,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "ARMED",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1816,6 +1848,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -1829,6 +1862,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "FALL",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1874,6 +1908,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "WITH_GODDESS",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2035,12 +2070,12 @@ scenes: {
 			cutter: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "cutter",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -75, 0, -75, 150, 75, 150, 75, 0 ],
 				pos: {
 					x: 66.548096,
 					y: 1199.0973
 				},
+				visible: true,
 				desc: "@cutter.desc",
 				sounds: {
 					drill: {
@@ -2057,6 +2092,7 @@ scenes: {
 						id: "use",
 						target: "diosa",
 						state: "WITH_LOW_BATTERY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2098,8 +2134,7 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "cutter",
-								stop: "drill"
+								actor: "cutter"
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2131,6 +2166,7 @@ scenes: {
 						id: "use",
 						target: "diosa",
 						state: "WITH_CABLE",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2144,6 +2180,7 @@ scenes: {
 						id: "use",
 						target: "diosa",
 						state: "WITH_BATTERY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2177,8 +2214,7 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "cutter",
-								stop: "drill"
+								actor: "cutter"
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
@@ -2220,6 +2256,7 @@ scenes: {
 						id: "use",
 						target: "cable",
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "org.bladecoder.venus.actions.scene1.UseCutMachineCableAction",
@@ -2232,6 +2269,7 @@ scenes: {
 						id: "use",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2247,6 +2285,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "CHARGING",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2260,6 +2299,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2275,6 +2315,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2288,6 +2329,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "WITH_BATTERY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2341,6 +2383,7 @@ scenes: {
 						id: "use",
 						target: "policeman",
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2354,6 +2397,7 @@ scenes: {
 						id: "use",
 						target: "diosa",
 						state: "NO_BATTERY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2367,6 +2411,7 @@ scenes: {
 						id: "use",
 						target: "socket",
 						state: "WITH_CABLE",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2476,12 +2521,12 @@ scenes: {
 			diosa: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "diosa",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -41, 0, -41, 141, 41, 141, 41, 0 ],
 				pos: {
 					x: 905,
 					y: 594.5609
 				},
+				visible: true,
 				desc: "@diosa.desc",
 				sounds: {
 					chords: {
@@ -2494,6 +2539,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2509,6 +2555,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2522,6 +2569,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.GotoAction",
@@ -2542,6 +2590,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "CUT",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2605,6 +2654,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2620,6 +2670,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "FLOOR",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2689,6 +2740,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: "FLOOR",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2734,11 +2786,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "papelera",
 				bbox: [ 2.394165, -67.03241, 0, 100, 83.2417, 83.24176, 83.60376, -21.738464, 66.48364, -47.88031 ],
-				visible: true,
 				pos: {
 					x: 1769.9749,
 					y: 608.0798
 				},
+				visible: true,
 				desc: "@papelera.desc",
 				sounds: null,
 				verbs: {
@@ -2746,6 +2798,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2776,6 +2829,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2795,11 +2849,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "vitrina",
 				bbox: [ -119.700745, -26.334167, -164.38904, 528.52875, 88.82794, 547.6809, 155.06235, 151.62097 ],
-				visible: true,
 				pos: {
 					x: 406.98236,
 					y: 314.41382
 				},
+				visible: true,
 				desc: "@vitrina.desc",
 				sounds: null,
 				verbs: {
@@ -2807,6 +2861,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2826,11 +2881,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "vasijas",
 				bbox: [ 14.364136, -452.4688, 10.901123, -319.27582, 0, 100, 516.5586, 104.787964, 504.5885, -457.25696 ],
-				visible: true,
 				pos: {
 					x: 1260.3755,
 					y: 976.75775
 				},
+				visible: true,
 				desc: "@vasijas.desc",
 				sounds: null,
 				verbs: {
@@ -2838,6 +2893,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -2856,12 +2912,12 @@ scenes: {
 			hole: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "hole",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: false,
+				bbox: [ -34, 0, -34, 158, 34, 158, 34, 0 ],
 				pos: {
 					x: 887,
 					y: 587
 				},
+				visible: false,
 				desc: null,
 				sounds: null,
 				verbs: {},
@@ -2891,11 +2947,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "exit",
 				bbox: [ 82.4801, 54.629944, 85.95056, 170.94934, 327.68018, 175.20581, 335.05737, 61.985413 ],
-				visible: false,
 				pos: {
 					x: 1977.6626,
 					y: 916.05615
 				},
+				visible: false,
 				desc: "@scene1.exit.desc",
 				sounds: null,
 				verbs: {
@@ -2903,6 +2959,7 @@ scenes: {
 						id: "use",
 						target: "rope",
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.IfAttrAction",
@@ -2992,6 +3049,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -3012,12 +3070,12 @@ scenes: {
 			navaja: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "navaja",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -75, 0, -75, 150, 75, 150, 75, 0 ],
 				pos: {
 					x: 274.7083,
 					y: 1183.3589
 				},
+				visible: true,
 				desc: "@navaja.desc",
 				sounds: null,
 				verbs: {
@@ -3025,6 +3083,7 @@ scenes: {
 						id: "use",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3038,6 +3097,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3051,6 +3111,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3087,11 +3148,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "socket",
 				bbox: [ 1.5959473, 74.21448, 0, 100, 40.149597, 100, 40.94763, 75.810425 ],
-				visible: true,
 				pos: {
 					x: 589.7257,
 					y: 550.6234
 				},
+				visible: true,
 				desc: "@socket.desc",
 				sounds: null,
 				verbs: {
@@ -3099,6 +3160,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3112,6 +3174,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3131,11 +3194,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "cuadro",
 				bbox: [ 0, -172.36902, 0, 100, 269.97504, 88.02991, 248.42896, -155.61108 ],
-				visible: true,
 				pos: {
 					x: 629.62585,
 					y: 924.0898
 				},
+				visible: true,
 				desc: "@cuadro.desc",
 				sounds: null,
 				verbs: {
@@ -3143,6 +3206,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3156,6 +3220,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3174,12 +3239,12 @@ scenes: {
 			cable: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "cable",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -108, 0, -108, 120, 108, 120, 108, 0 ],
 				pos: {
 					x: 582.39404,
 					y: 532.6405
 				},
+				visible: true,
 				desc: "@cable.desc",
 				sounds: {
 					click: {
@@ -3196,6 +3261,7 @@ scenes: {
 						id: "use",
 						target: "navaja",
 						state: "CONNECTED",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3209,6 +3275,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3222,6 +3289,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -3242,6 +3310,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "CUT",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -3257,6 +3326,7 @@ scenes: {
 						id: "use",
 						target: "navaja",
 						state: "DISCONNECTED",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -3349,11 +3419,11 @@ scenes: {
 			column_fg: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "column_fg",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -160, 0, -160, 1080, 160, 1080, 160, 0 ],
 				pos: {
 					x: 160
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
 				verbs: {},
@@ -3383,11 +3453,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "placa",
 				bbox: [ 11.970032, 35.910156, 0, 100, 100, 100, 107.18201, 43.092316 ],
-				visible: true,
 				pos: {
 					x: 844.2892,
 					y: 466.03485
 				},
+				visible: true,
 				desc: "@placa.desc",
 				sounds: null,
 				verbs: {
@@ -3395,6 +3465,7 @@ scenes: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.GotoAction",
@@ -3416,6 +3487,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
@@ -3434,12 +3506,12 @@ scenes: {
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "player",
-				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
+				bbox: [ -109, 0, -109, 772, 109, 772, 109, 0 ],
 				pos: {
 					x: 2312.8765,
 					y: 61.886017
 				},
+				visible: true,
 				desc: "@scene1.player.desc_",
 				sounds: null,
 				verbs: {},
@@ -3583,10 +3655,11 @@ scenes: {
 		},
 		backgroundAtlas: "scene1",
 		backgroundRegionId: "bg1",
-		musicFilename: "scn1.ogg",
-		loopMusic: false,
-		initialMusicDelay: 30,
-		repeatMusicDelay: 90,
+		musicDesc: {
+			filename: "scn1.ogg",
+			initialDelay: 30,
+			repeatDelay: 90
+		},
 		depthVector: {
 			x: 1941.2345,
 			y: 0.5
@@ -3603,6 +3676,7 @@ scenes: {
 				id: "init",
 				target: null,
 				state: null,
+				icon: null,
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.PickUpAction",
@@ -3667,6 +3741,7 @@ scenes: {
 				id: "test",
 				target: null,
 				state: null,
+				icon: null,
 				actions: []
 			}
 		},
@@ -3687,11 +3762,11 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "forward",
 				bbox: [ -77.5, 0, -77.5, 155, 77.5, 155, 77.5, 0 ],
-				visible: true,
 				pos: {
 					x: 1728,
 					y: 47
 				},
+				visible: true,
 				desc: "@forward.desc",
 				sounds: null,
 				verbs: {
@@ -3699,6 +3774,7 @@ scenes: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.RunVerbAction",
@@ -3734,10 +3810,10 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "title",
 				bbox: [ -960, 0, -960, 1080, 960, 1080, 960, 0 ],
-				visible: false,
 				pos: {
 					x: 960
 				},
+				visible: false,
 				desc: null,
 				sounds: null,
 				verbs: {},
@@ -3764,15 +3840,15 @@ scenes: {
 				bboxFromRenderer: true
 			}
 		},
-		musicFilename: "scn0.ogg",
-		loopMusic: false,
-		initialMusicDelay: 0,
-		repeatMusicDelay: -1,
+		musicDesc: {
+			filename: "scn0.ogg"
+		},
 		verbs: {
 			init: {
 				id: "init",
 				target: null,
 				state: null,
+				icon: null,
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.ScreenPositionAction",
@@ -3790,6 +3866,7 @@ scenes: {
 				id: "leave",
 				target: null,
 				state: null,
+				icon: null,
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.ShowInventoryAction",
@@ -3807,6 +3884,7 @@ scenes: {
 		id: "limbo",
 		layers: [],
 		actors: {},
+		musicDesc: null,
 		verbs: {}
 	}
 },

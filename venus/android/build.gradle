@@ -42,8 +42,8 @@ android {
 		(major * 1000000) + (minor * 10000) + (patch * 100) + candidate;
 	} 
 
-    buildToolsVersion "20.0.0"
-    compileSdkVersion 20   
+    buildToolsVersion "23.0.3"
+    compileSdkVersion 23  
     
     defaultConfig {
         versionCode buildVersionCode()
@@ -92,8 +92,8 @@ android {
        
     defaultConfig {
         applicationId "org.bladecoder.engine"
-        minSdkVersion 8
-        targetSdkVersion 20
+        minSdkVersion 15
+        targetSdkVersion 23
     }
 
 	if(project.hasProperty('keystore')) {   

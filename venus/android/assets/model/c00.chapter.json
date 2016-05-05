@@ -401,7 +401,8 @@ scenes: {
 				id: "policeman",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
-					x: 1329.5884
+					x: 1332.4265,
+					y: -2.8381348
 				},
 				visible: true,
 				desc: "@policeman.desc",
@@ -429,6 +430,39 @@ scenes: {
 							{
 								class: "com.bladecoder.engine.actions.SayDialogAction",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.ChooseAction",
+								chooseCriteria: "RANDOM",
+								caID: "2075346474"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "player",
+								text: "@scene2.policeman.dialog1_turn.5.text",
+								type: "TALK",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "player",
+								text: "@scene2.policeman.dialog1_turn.3.text",
+								type: "TALK",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "player",
+								text: "@scene2.policeman.dialog1_turn.4.text",
+								type: "TALK",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "2075346474"
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
@@ -828,7 +862,7 @@ scenes: {
 					},
 					initAnimation: "stand.frontleft"
 				},
-				scale: 1.0000162,
+				scale: 1.0046208,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: {
@@ -1124,7 +1158,7 @@ scenes: {
 			cabinet_off: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "cabinet_off",
-				bbox: [ -196, 0, -196, 372, 196, 372, 196, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 384.79813,
 					y: 467.20212
@@ -1250,7 +1284,7 @@ scenes: {
 			chair: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "chair",
-				bbox: [ -67.5, 0, -67.5, 343, 67.5, 343, 67.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 2330,
 					y: 510
@@ -1624,7 +1658,7 @@ scenes: {
 			head_fg: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "head_fg",
-				bbox: [ -293, 0, -293, 981, 293, 981, 293, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 2727.276,
 					y: -0.62638855
@@ -1658,7 +1692,7 @@ scenes: {
 			rope: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "rope",
-				bbox: [ -98.5, 0, -98.5, 1000, 98.5, 1000, 98.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 2150,
 					y: 102
@@ -2071,7 +2105,7 @@ scenes: {
 			cutter: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "cutter",
-				bbox: [ -75, 0, -75, 150, 75, 150, 75, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 66.548096,
 					y: 1199.0973
@@ -2522,7 +2556,7 @@ scenes: {
 			diosa: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "diosa",
-				bbox: [ -41, 0, -41, 141, 41, 141, 41, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 905,
 					y: 594.5609
@@ -2913,7 +2947,7 @@ scenes: {
 			hole: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "hole",
-				bbox: [ -34, 0, -34, 158, 34, 158, 34, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 887,
 					y: 587
@@ -3088,7 +3122,7 @@ scenes: {
 			navaja: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "navaja",
-				bbox: [ -75, 0, -75, 150, 75, 150, 75, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 274.7083,
 					y: 1183.3589
@@ -3257,7 +3291,7 @@ scenes: {
 			cable: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "cable",
-				bbox: [ -108, 0, -108, 120, 108, 120, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 582.39404,
 					y: 532.6405
@@ -3437,7 +3471,7 @@ scenes: {
 			column_fg: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "column_fg",
-				bbox: [ -160, 0, -160, 1080, 160, 1080, 160, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 160
 				},
@@ -3470,7 +3504,7 @@ scenes: {
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "player",
-				bbox: [ -109, 0, -109, 772, 109, 772, 109, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 2312.8765,
 					y: 61.886017

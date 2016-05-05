@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.8",
+bladeEngineVersion: "0.9.10",
 scenes: {
 	endSCN: {
 		id: "endSCN",
@@ -201,7 +201,7 @@ scenes: {
 			fence: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "fence",
-				bbox: [ -169.5, 0, -169.5, 1005, 169.5, 1005, 169.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1750.5
 				},
@@ -234,7 +234,7 @@ scenes: {
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "player",
-				bbox: [ -120, 0, -120, 849, 120, 849, 120, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 584.22626,
 					y: 95.324524
@@ -399,7 +399,7 @@ scenes: {
 			policeman: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "policeman",
-				bbox: [ -289.5, 0, -289.5, 856, 289.5, 856, 289.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1329.5884
 				},
@@ -469,7 +469,8 @@ scenes: {
 								loop: false,
 								initialDelay: 0,
 								repeatDelay: -1,
-								stopWhenLeaving: true
+								stopWhenLeaving: true,
+								volume: 1
 							},
 							{
 								class: "com.bladecoder.engine.actions.CancelVerbAction",
@@ -2527,7 +2528,7 @@ scenes: {
 					y: 594.5609
 				},
 				visible: true,
-				desc: "@diosa.desc",
+				desc: "@scene1.diosa.desc",
 				sounds: {
 					chords: {
 						filename: "chords.ogg",
@@ -2754,7 +2755,7 @@ scenes: {
 				},
 				interaction: true,
 				state: null,
-				zIndex: 0,
+				zIndex: 1,
 				layer: "dynamic",
 				renderer: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
@@ -2848,7 +2849,7 @@ scenes: {
 			vitrina: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "vitrina",
-				bbox: [ -119.700745, -26.334167, -164.38904, 528.52875, 88.82794, 547.6809, 155.06235, 151.62097 ],
+				bbox: [ -119.700745, -26.334167, -165.35144, 490.99487, 11.835449, 539.9816, 123.30301, 138.14728 ],
 				pos: {
 					x: 406.98236,
 					y: 314.41382
@@ -2944,15 +2945,15 @@ scenes: {
 				bboxFromRenderer: true
 			},
 			exit: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
+				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "exit",
-				bbox: [ 82.4801, 54.629944, 85.95056, 170.94934, 327.68018, 175.20581, 335.05737, 61.985413 ],
+				bbox: [ -222.5, 0, -222.5, 756, 222.5, 756, 222.5, 0 ],
 				pos: {
-					x: 1977.6626,
-					y: 916.05615
+					x: 2184.3882,
+					y: 817.01294
 				},
 				visible: false,
-				desc: "@scene1.exit.desc",
+				desc: "@scene1.exit.desc____",
 				sounds: null,
 				verbs: {
 					"use.rope": {
@@ -3011,7 +3012,7 @@ scenes: {
 							{
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
 								actor: "exit",
-								visible: false
+								interaction: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -3065,7 +3066,24 @@ scenes: {
 				interaction: true,
 				state: null,
 				zIndex: 0,
-				layer: "foreground"
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						exit: {
+							id: "exit",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "exit"
+				},
+				scale: 0.7,
+				depthType: "NONE",
+				bboxFromRenderer: true
 			},
 			navaja: {
 				class: "com.bladecoder.engine.model.SpriteActor",
@@ -3153,7 +3171,7 @@ scenes: {
 					y: 550.6234
 				},
 				visible: true,
-				desc: "@socket.desc",
+				desc: "@scene1.socket.desc",
 				sounds: null,
 				verbs: {
 					lookat: {
@@ -3187,7 +3205,7 @@ scenes: {
 				},
 				interaction: true,
 				state: null,
-				zIndex: 0,
+				zIndex: 3,
 				layer: "dynamic"
 			},
 			cuadro: {
@@ -3245,7 +3263,7 @@ scenes: {
 					y: 532.6405
 				},
 				visible: true,
-				desc: "@cable.desc",
+				desc: "@scene1.cable.desc",
 				sounds: {
 					click: {
 						filename: "click1.ogg",
@@ -3379,7 +3397,7 @@ scenes: {
 				},
 				interaction: true,
 				state: "CONNECTED",
-				zIndex: 0,
+				zIndex: 4,
 				layer: "dynamic",
 				renderer: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
@@ -3448,60 +3466,6 @@ scenes: {
 				scale: 1,
 				depthType: "NONE",
 				bboxFromRenderer: true
-			},
-			placa: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "placa",
-				bbox: [ 11.970032, 35.910156, 0, 100, 100, 100, 107.18201, 43.092316 ],
-				pos: {
-					x: 844.2892,
-					y: 466.03485
-				},
-				visible: true,
-				desc: "@placa.desc",
-				sounds: null,
-				verbs: {
-					lookat: {
-						id: "lookat",
-						target: null,
-						state: null,
-						icon: null,
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "910.0,100.0",
-								align: "CENTER",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "placa",
-								text: "@placa.lookat.0.1.text",
-								direction: "BACK",
-								wait: true
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						target: null,
-						state: null,
-						icon: null,
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "placa",
-								text: "@placa.pickup.0.text",
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
 			},
 			player: {
 				class: "com.bladecoder.engine.model.CharacterActor",
@@ -3651,6 +3615,60 @@ scenes: {
 				dialogs: null,
 				walkingSpeed: 1200,
 				textColor: null
+			},
+			placa: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "placa",
+				bbox: [ 11.970032, 35.910156, 0, 100, 100, 100, 107.18201, 43.092316 ],
+				pos: {
+					x: 844.2892,
+					y: 466.03485
+				},
+				visible: true,
+				desc: "@scene1.placa.desc",
+				sounds: null,
+				verbs: {
+					lookat: {
+						id: "lookat",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "player",
+								pos: "910.0,100.0",
+								align: "CENTER",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.LookAtAction",
+								actor: "placa",
+								text: "@placa.lookat.0.1.text",
+								direction: "BACK",
+								wait: true
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.LookAtAction",
+								actor: "placa",
+								text: "@placa.pickup.0.text",
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic"
 			}
 		},
 		backgroundAtlas: "scene1",
@@ -3742,7 +3760,13 @@ scenes: {
 				target: null,
 				state: null,
 				icon: null,
-				actions: []
+				actions: [
+					{
+						class: "com.bladecoder.engine.actions.SetStateAction",
+						actor: "rope",
+						state: "WITH_GODDESS"
+					}
+				]
 			}
 		},
 		player: "player"
@@ -3761,7 +3785,7 @@ scenes: {
 			forward: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "forward",
-				bbox: [ -77.5, 0, -77.5, 155, 77.5, 155, 77.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1728,
 					y: 47

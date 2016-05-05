@@ -1,6 +1,6 @@
 
 scene1.png
-size: 3727,2075
+size: 3921,2075
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -13,14 +13,14 @@ bg1
   index: -1
 cabinet_off
   rotate: false
-  xy: 1363, 8
+  xy: 1700, 8
   size: 339, 277
   orig: 392, 372
   offset: 18, 36
   index: -1
 cable.connected
   rotate: false
-  xy: 1704, 176
+  xy: 1363, 142
   size: 119, 115
   orig: 216, 120
   offset: 78, 0
@@ -34,28 +34,28 @@ cable.disconnected
   index: -1
 cable.inventory
   rotate: false
-  xy: 907, 107
+  xy: 907, 84
   size: 150, 150
   orig: 150, 150
   offset: 0, 0
   index: -1
 chair.broken
   rotate: false
-  xy: 666, 92
+  xy: 666, 69
   size: 239, 165
   orig: 255, 178
   offset: 10, 0
   index: -1
 chair.inventory
   rotate: false
-  xy: 907, 8
+  xy: 1211, 8
   size: 141, 97
   orig: 150, 150
   offset: 6, 23
   index: -1
 chair2
   rotate: false
-  xy: 3391, 749
+  xy: 3645, 563
   size: 135, 323
   orig: 135, 343
   offset: 0, 0
@@ -67,6 +67,13 @@ column_fg
   orig: 320, 1080
   offset: 0, 0
   index: -1
+exit
+  rotate: false
+  xy: 666, 236
+  size: 445, 756
+  orig: 445, 756
+  offset: 0, 0
+  index: -1
 head_fg
   rotate: false
   xy: 136, 69
@@ -76,172 +83,172 @@ head_fg
   index: -1
 hole
   rotate: false
-  xy: 666, 15
+  xy: 907, 7
   size: 68, 75
   orig: 68, 158
   offset: 0, 83
   index: -1
 player.chairbroke
   rotate: false
-  xy: 666, 259
+  xy: 1113, 259
   size: 292, 733
   orig: 342, 772
   offset: 32, 24
   index: 21
 sitdown
   rotate: false
-  xy: 666, 259
+  xy: 1113, 259
   size: 292, 733
   orig: 342, 772
   offset: 32, 24
   index: 1
 player.chairbroke
   rotate: false
-  xy: 960, 266
+  xy: 1407, 266
   size: 291, 726
   orig: 342, 772
   offset: 34, 20
   index: 20
 player.chairbroke
   rotate: false
-  xy: 1537, 293
+  xy: 1984, 293
   size: 281, 699
   orig: 342, 772
   offset: 38, 13
   index: 19
 player.chairbroke
   rotate: false
-  xy: 1820, 344
+  xy: 2267, 344
   size: 257, 648
   orig: 342, 772
   offset: 52, 6
   index: 18
 player.chairbroke
   rotate: false
-  xy: 1825, 1
+  xy: 2267, 1
   size: 187, 341
   orig: 342, 772
   offset: 69, 100
   index: 9
 player.chairbroke
   rotate: false
-  xy: 2014, 2
+  xy: 2456, 2
   size: 189, 340
   orig: 342, 772
   offset: 69, 100
   index: 10
 player.chairbroke
   rotate: false
-  xy: 2205, 9
+  xy: 2647, 9
   size: 159, 352
   orig: 342, 772
   offset: 90, 80
   index: 13
 player.chairbroke
   rotate: false
-  xy: 2341, 415
+  xy: 2788, 415
   size: 231, 577
   orig: 342, 772
   offset: 63, 4
   index: 17
 player.chairbroke
   rotate: false
-  xy: 2366, 2
+  xy: 2808, 2
   size: 168, 411
   orig: 342, 772
   offset: 94, 21
   index: 14
 player.chairbroke
   rotate: false
-  xy: 2536, 69
+  xy: 2978, 69
   size: 178, 344
   orig: 342, 772
   offset: 76, 100
   index: 6
 player.chairbroke
   rotate: false
-  xy: 2716, 70
+  xy: 3158, 70
   size: 183, 343
   orig: 342, 772
   offset: 71, 100
   index: 5
 player.chairbroke
   rotate: false
-  xy: 2901, 5
+  xy: 3343, 5
   size: 184, 449
   orig: 342, 772
   offset: 87, 10
   index: 15
 player.chairbroke
   rotate: false
-  xy: 3001, 471
+  xy: 3448, 551
   size: 195, 521
   orig: 342, 772
   offset: 77, 98
   index: 1
 sitdown
   rotate: false
-  xy: 3001, 471
+  xy: 3448, 551
   size: 195, 521
   orig: 342, 772
   offset: 77, 98
   index: 6
 player.chairbroke
   rotate: false
-  xy: 3087, 126
-  size: 178, 343
-  orig: 342, 772
-  offset: 76, 100
-  index: 7
-player.chairbroke
-  rotate: false
-  xy: 3198, 486
+  xy: 3529, 43
   size: 191, 506
   orig: 342, 772
   offset: 79, 94
   index: 2
 player.chairbroke
   rotate: false
-  xy: 3267, 7
-  size: 175, 477
+  xy: 3722, 1574
+  size: 198, 500
   orig: 342, 772
-  offset: 87, 89
-  index: 3
+  offset: 77, 11
+  index: 16
 player.chairbroke
   rotate: false
-  xy: 3537, 1735
-  size: 189, 339
-  orig: 342, 772
-  offset: 69, 100
-  index: 4
-player.chairbroke
-  rotate: false
-  xy: 3537, 1735
-  size: 189, 339
-  orig: 342, 772
-  offset: 69, 100
-  index: 11
-player.chairbroke
-  rotate: false
-  xy: 3537, 1391
+  xy: 3537, 1732
   size: 183, 342
   orig: 342, 772
   offset: 71, 100
   index: 8
 player.chairbroke
   rotate: false
-  xy: 3537, 1051
+  xy: 3537, 1392
   size: 181, 338
   orig: 342, 772
   offset: 72, 100
   index: 12
 player.chairbroke
   rotate: false
-  xy: 3528, 549
-  size: 198, 500
+  xy: 3722, 1233
+  size: 189, 339
   orig: 342, 772
-  offset: 77, 11
-  index: 16
+  offset: 69, 100
+  index: 4
+player.chairbroke
+  rotate: false
+  xy: 3722, 1233
+  size: 189, 339
+  orig: 342, 772
+  offset: 69, 100
+  index: 11
+player.chairbroke
+  rotate: false
+  xy: 3722, 888
+  size: 178, 343
+  orig: 342, 772
+  offset: 76, 100
+  index: 7
+player.chairbroke
+  rotate: false
+  xy: 3722, 84
+  size: 175, 477
+  orig: 342, 772
+  offset: 87, 89
+  index: 3
 rope
   rotate: false
   xy: 3338, 1074
@@ -258,14 +265,14 @@ rope.floor
   index: -1
 rope.inventory
   rotate: false
-  xy: 1059, 114
+  xy: 1059, 84
   size: 150, 150
   orig: 150, 150
   offset: 0, 0
   index: -1
 rope.withanchor
   rotate: false
-  xy: 1211, 114
+  xy: 1211, 107
   size: 150, 150
   orig: 150, 150
   offset: 0, 0
@@ -279,28 +286,28 @@ rope2
   index: -1
 sitdown
   rotate: false
-  xy: 1253, 287
+  xy: 1700, 287
   size: 282, 705
   orig: 342, 772
   offset: 36, 38
   index: 2
 sitdown
   rotate: false
-  xy: 2079, 363
+  xy: 2526, 363
   size: 260, 629
   orig: 342, 772
   offset: 48, 76
   index: 3
 sitdown
   rotate: false
-  xy: 2574, 415
+  xy: 3021, 415
   size: 221, 577
   orig: 342, 772
   offset: 64, 84
   index: 4
 sitdown
   rotate: false
-  xy: 2797, 456
+  xy: 3244, 456
   size: 202, 536
   orig: 342, 772
   offset: 74, 93

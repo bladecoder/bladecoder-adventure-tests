@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.6-SNAPSHOT",
+bladeEngineVersion: "0.9.12",
 scenes: {
 	"01": {
 		id: "01",
@@ -20,24 +20,28 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "door_right",
 				bbox: [ 1.1622314, 20.920135, 0, 200, 98.88623, 203.48676, 102.3728, 18.595642 ],
-				visible: true,
 				pos: {
 					x: 1455.109,
 					y: 395.15738
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {
+					x: 50.575684,
+					y: 7.4927063
+				},
 				verbs: {
 					leave: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: "up",
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "char",
 								target: "door_right",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -56,13 +60,14 @@ scenes: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "char",
 				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
-				visible: true,
 				pos: {
 					x: 536.92737,
 					y: 318.76486
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -94,25 +99,27 @@ scenes: {
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
-				walkingSpeed: 1800,
+				walkingSpeed: 2000,
 				textColor: null
 			},
 			test_actions: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "test_actions",
 				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
-				visible: true,
 				pos: {
 					x: 213.08972,
 					y: 778.28467
 				},
+				visible: true,
 				desc: "@01.test_actions.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -128,6 +135,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -359,24 +367,28 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "door_left",
 				bbox: [ 6.1985474, -71.283264, 0, 200, 72.92984, 215.49634, 93.07495, -27.893463 ],
-				visible: true,
 				pos: {
 					x: 251.04129,
 					y: 339.37048
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {
+					x: 103.024414,
+					y: -58.068237
+				},
 				verbs: {
 					leave: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "char",
 								target: "door_left",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -395,18 +407,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "test_inventory",
 				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
-				visible: true,
 				pos: {
 					x: 1745.6846,
 					y: 796.58093
 				},
+				visible: true,
 				desc: "@01.test_inventory.desc_",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
@@ -456,6 +470,7 @@ scenes: {
 		},
 		backgroundAtlas: "scene1",
 		backgroundRegionId: "bg1",
+		musicDesc: null,
 		depthVector: {
 			x: 612.92163,
 			y: -990.1354
@@ -470,6 +485,7 @@ scenes: {
 				id: "init",
 				target: null,
 				state: null,
+				icon: null,
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.SayAction",
@@ -502,18 +518,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "exit",
 				bbox: [ -570.5481, -21.131287, -408.54053, 171.8248, 1172.0449, 214.08759, 1263.6143, -14.0876465 ],
-				visible: true,
 				pos: {
 					x: 405.07428,
 					y: -48.177734
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
@@ -530,6 +548,7 @@ scenes: {
 		},
 		backgroundAtlas: "scene2",
 		backgroundRegionId: "bg2",
+		musicDesc: null,
 		verbs: {}
 	},
 	"03": {
@@ -551,18 +570,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "exit",
 				bbox: [ 38.740845, -302.1791, 37.191406, 172.10663, 237.19135, 160.69553, 225.35773, -344.01953 ],
-				visible: true,
 				pos: {
 					x: 1644.7837,
 					y: 578.7209
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
@@ -579,6 +600,7 @@ scenes: {
 		},
 		backgroundAtlas: "scene3",
 		backgroundRegionId: "bg3",
+		musicDesc: null,
 		verbs: {}
 	},
 	parallax: {
@@ -601,24 +623,25 @@ scenes: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "goto01",
 				bbox: [ -69.81134, 53.333344, -68.80505, 182.89307, 34.591248, 181.88678, 46.666687, 58.364746 ],
-				visible: true,
 				pos: {
 					x: 801.9821,
 					y: 207.3566
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "char",
 								target: "goto01",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -636,13 +659,14 @@ scenes: {
 			middleground: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "middleground",
-				bbox: [ -1551.5, 0, -1551.5, 930, 1551.5, 930, 1551.5, 0 ],
-				visible: true,
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1554
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -669,13 +693,14 @@ scenes: {
 			background: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "background",
-				bbox: [ -960, 0, -960, 1080, 960, 1080, 960, 0 ],
-				visible: true,
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1551
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -702,14 +727,15 @@ scenes: {
 			char: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "char",
-				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
-				visible: true,
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1793.2177,
 					y: 65.78964
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -747,13 +773,14 @@ scenes: {
 			foreground: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "foreground",
-				bbox: [ -1462.5, 0, -1462.5, 259, 1462.5, 259, 1462.5, 0 ],
-				visible: true,
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 177.10706
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -780,13 +807,14 @@ scenes: {
 			foreground2: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "foreground2",
-				bbox: [ -1463, 0, -1463, 238, 1463, 238, 1463, 0 ],
-				visible: true,
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 3084.321
 				},
+				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -811,6 +839,7 @@ scenes: {
 				bboxFromRenderer: true
 			}
 		},
+		musicDesc: null,
 		depthVector: {
 			x: 344.45578,
 			y: -551.40857
@@ -846,18 +875,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a02",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1064.3015,
 					y: 754.9446
 				},
+				visible: true,
 				desc: "@inventory.a02.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -874,6 +905,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -912,18 +944,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a010",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 204.34589,
 					y: 493.83582
 				},
+				visible: true,
 				desc: "@inventory.a010.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -940,6 +974,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -978,18 +1013,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a011",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1331.0865,
 					y: 752.1062
 				},
+				visible: true,
 				desc: "@inventory.a011.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1006,6 +1043,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1052,18 +1090,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a04",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 777.64966,
 					y: 471.13092
 				},
+				visible: true,
 				desc: "@inventory.a04.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1080,6 +1120,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1118,18 +1159,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a03",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 780.4877,
 					y: 210.02228
 				},
+				visible: true,
 				desc: "@inventory.a03.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1146,6 +1189,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1184,18 +1228,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a06",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 508.0266,
 					y: 212.86035
 				},
+				visible: true,
 				desc: "@inventory.a06.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1212,6 +1258,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1250,18 +1297,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a05",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 797.5166,
 					y: 752.1063
 				},
+				visible: true,
 				desc: "@inventory.a05.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1278,6 +1327,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1316,18 +1366,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a08",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 508.0266,
 					y: 752.1063
 				},
+				visible: true,
 				desc: "@inventory.a08.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1344,6 +1396,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1382,18 +1435,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0114",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1569.49,
 					y: 752.1064
 				},
+				visible: true,
 				desc: "@inventory.a0114.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1410,6 +1465,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1456,18 +1512,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a07",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 508.02658,
 					y: 479.64514
 				},
+				visible: true,
 				desc: "@inventory.a07.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1484,6 +1542,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1522,18 +1581,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0113",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1316.8959,
 					y: 488.15967
 				},
+				visible: true,
 				desc: "@inventory.a0113.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1550,6 +1611,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1596,18 +1658,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a09",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 207.18402,
 					y: 198.66962
 				},
+				visible: true,
 				desc: "@inventory.a09.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1624,6 +1688,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1662,18 +1727,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0112",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1575.1663,
 					y: 479.64502
 				},
+				visible: true,
 				desc: "@inventory.a0112.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1690,6 +1757,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1736,18 +1804,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 227.05096,
 					y: 760.6208
 				},
+				visible: true,
 				desc: "@inventory.a0.desc_",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1764,6 +1834,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1802,18 +1873,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a01132",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1314.0577,
 					y: 227.05109
 				},
+				visible: true,
 				desc: "@inventory.a01132.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1831,6 +1904,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1885,18 +1959,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a012",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1064.3018,
 					y: 210.02216
 				},
+				visible: true,
 				desc: "@inventory.a012.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1913,6 +1989,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1951,18 +2028,20 @@ scenes: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a013",
 				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
-				visible: true,
 				pos: {
 					x: 1064.3018,
 					y: 476.80713
 				},
+				visible: true,
 				desc: "@inventory.a013.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						target: null,
 						state: null,
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1979,6 +2058,7 @@ scenes: {
 						id: "pickup",
 						target: null,
 						state: "INVENTORY",
+						icon: null,
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2014,6 +2094,7 @@ scenes: {
 				bboxFromRenderer: true
 			}
 		},
+		musicDesc: null,
 		verbs: {}
 	}
 },

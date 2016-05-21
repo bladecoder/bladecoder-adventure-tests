@@ -7,6 +7,7 @@ verbs: {
 		id: "dialog",
 		target: null,
 		state: null,
+		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -26,6 +27,7 @@ verbs: {
 		id: "use",
 		target: null,
 		state: null,
+		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
@@ -38,6 +40,7 @@ verbs: {
 		id: "lookat",
 		target: null,
 		state: null,
+		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
@@ -50,6 +53,7 @@ verbs: {
 		id: "pickup",
 		target: null,
 		state: null,
+		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.LookAtAction",

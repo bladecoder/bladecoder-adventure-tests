@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.10",
+bladeEngineVersion: "0.9.12",
 scenes: {
 	endSCN: {
 		id: "endSCN",
@@ -17,6 +17,7 @@ scenes: {
 				visible: true,
 				desc: "@desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
@@ -85,6 +86,7 @@ scenes: {
 				visible: true,
 				desc: "@door.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
@@ -161,6 +163,7 @@ scenes: {
 				visible: true,
 				desc: "@electricbox.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -208,6 +211,7 @@ scenes: {
 				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -242,6 +246,7 @@ scenes: {
 				visible: true,
 				desc: "@player.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					goto: {
 						id: "goto",
@@ -302,7 +307,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "460.0,0.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -416,6 +420,7 @@ scenes: {
 						volume: 0.5
 					}
 				},
+				refPoint: {},
 				verbs: {
 					dialog1_turn: {
 						id: "dialog1_turn",
@@ -963,6 +968,7 @@ scenes: {
 				visible: true,
 				desc: "@out.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
@@ -1058,7 +1064,6 @@ scenes: {
 						class: "com.bladecoder.engine.actions.GotoAction",
 						actor: "player",
 						pos: "460.0,0.0",
-						align: "CENTER",
 						wait: true
 					},
 					{
@@ -1166,6 +1171,7 @@ scenes: {
 				visible: false,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -1200,6 +1206,7 @@ scenes: {
 				visible: true,
 				desc: "@libro.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -1246,6 +1253,7 @@ scenes: {
 				visible: true,
 				desc: "@estatua.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -1304,6 +1312,7 @@ scenes: {
 						volume: 0.2
 					}
 				},
+				refPoint: {},
 				verbs: {
 					"pickup.BROKEN": {
 						id: "pickup",
@@ -1319,7 +1328,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2400.0,450.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -1423,7 +1431,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2330.0,410.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -1488,7 +1495,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2330.0,410.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -1553,7 +1559,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2330.0,410.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -1666,6 +1671,7 @@ scenes: {
 				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -1709,6 +1715,7 @@ scenes: {
 						volume: 0.2
 					}
 				},
+				refPoint: {},
 				verbs: {
 					"pickup.ANCHORED": {
 						id: "pickup",
@@ -1724,7 +1731,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -1824,7 +1830,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -1907,7 +1912,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -1961,7 +1965,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2122,6 +2125,7 @@ scenes: {
 						volume: 0.2
 					}
 				},
+				refPoint: {},
 				verbs: {
 					"use.diosa.WITH_LOW_BATTERY": {
 						id: "use",
@@ -2137,7 +2141,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2225,7 +2228,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2374,7 +2376,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "682.0,434.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2456,7 +2457,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "641.0,413.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2569,6 +2569,7 @@ scenes: {
 						volume: 0.5
 					}
 				},
+				refPoint: {},
 				verbs: {
 					"lookat.INVENTORY": {
 						id: "lookat",
@@ -2610,7 +2611,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2635,7 +2635,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2828,6 +2827,10 @@ scenes: {
 				visible: true,
 				desc: "@papelera.desc",
 				sounds: null,
+				refPoint: {
+					x: 43.14612,
+					y: -77.303406
+				},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -2843,7 +2846,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								target: "papelera",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -2891,6 +2893,7 @@ scenes: {
 				visible: true,
 				desc: "@vitrina.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -2923,6 +2926,7 @@ scenes: {
 				visible: true,
 				desc: "@vasijas.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -2955,6 +2959,7 @@ scenes: {
 				visible: false,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -2981,7 +2986,7 @@ scenes: {
 			exit: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "exit",
-				bbox: [ -222.5, 0, -222.5, 756, 222.5, 756, 222.5, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 2184.3882,
 					y: 817.01294
@@ -2989,6 +2994,7 @@ scenes: {
 				visible: false,
 				desc: "@scene1.exit.desc____",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					"use.rope": {
 						id: "use",
@@ -3011,7 +3017,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -3130,6 +3135,7 @@ scenes: {
 				visible: true,
 				desc: "@navaja.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					use: {
 						id: "use",
@@ -3207,6 +3213,7 @@ scenes: {
 				visible: true,
 				desc: "@scene1.socket.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -3253,6 +3260,7 @@ scenes: {
 				visible: true,
 				desc: "@cuadro.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -3308,6 +3316,7 @@ scenes: {
 						volume: 0.4
 					}
 				},
+				refPoint: {},
 				verbs: {
 					"use.navaja.CONNECTED": {
 						id: "use",
@@ -3388,7 +3397,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "641.0,413.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -3478,6 +3486,7 @@ scenes: {
 				visible: true,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -3512,6 +3521,7 @@ scenes: {
 				visible: true,
 				desc: "@scene1.player.desc_",
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -3661,6 +3671,7 @@ scenes: {
 				visible: true,
 				desc: "@scene1.placa.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					lookat: {
 						id: "lookat",
@@ -3672,7 +3683,6 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "910.0,100.0",
-								align: "CENTER",
 								wait: true
 							},
 							{
@@ -3827,6 +3837,7 @@ scenes: {
 				visible: true,
 				desc: "@forward.desc",
 				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
@@ -3874,6 +3885,7 @@ scenes: {
 				visible: false,
 				desc: null,
 				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: true,
 				state: null,

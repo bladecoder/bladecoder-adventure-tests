@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.12",
+bladeEngineVersion: "0.9.13-SNAPSHOT",
 scenes: {
 	"01": {
 		id: "01",
@@ -40,7 +40,7 @@ scenes: {
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "char",
+								actor: "$PLAYER",
 								target: "door_right",
 								wait: true
 							},
@@ -61,14 +61,57 @@ scenes: {
 				id: "char",
 				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
 				pos: {
-					x: 536.92737,
-					y: 318.76486
+					x: 751.04297,
+					y: 331.6653
 				},
 				visible: true,
 				desc: null,
 				sounds: null,
-				refPoint: {},
-				verbs: {},
+				refPoint: {
+					x: 105.383484,
+					y: 4.3308105
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "$PLAYER",
+								target: "char",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetPlayerAction",
+								actor: "char"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "$PLAYER",
+								text: "@01.char.pickup.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
+							}
+						]
+					}
+				},
 				interaction: false,
 				state: null,
 				zIndex: 1,
@@ -95,7 +138,8 @@ scenes: {
 					},
 					initAnimation: "stand.right"
 				},
-				scale: 0.18349738,
+				scale: 0.17544998,
+				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
@@ -360,8 +404,196 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
+			},
+			tint: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "tint",
+				bbox: [ -416.72354, -2.1842957, -100, 200, 69.4198, 193.44711, -133.72015, 0 ],
+				pos: {
+					x: 657.4744,
+					y: 255.56323
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {
+					exit: {
+						id: "exit",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "char",
+								caID: "1640548163"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "ffffffff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1640548163"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "ff6666ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1640548163"
+							}
+						]
+					},
+					enter: {
+						id: "enter",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "char",
+								caID: "602572309"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "666666ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "602572309"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "660000ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "602572309"
+							}
+						]
+					}
+				},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "foreground"
+			},
+			char4: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "char4",
+				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
+				pos: {
+					x: 1738.8356,
+					y: 394.27005
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				state: null,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left"
+				},
+				scale: 0.13639663,
+				tint: {
+					r: 0.53333336,
+					g: 0.53333336,
+					b: 1,
+					a: 1
+				},
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 2000,
+				textColor: null
+			},
+			char3: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "char3",
+				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
+				pos: {
+					x: 1688.2659,
+					y: 289.89267
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				state: null,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left"
+				},
+				scale: 0.20150809,
+				tint: {
+					r: 0.53333336,
+					g: 1,
+					b: 0.53333336,
+					a: 1
+				},
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 2000,
+				textColor: null
 			},
 			door_left: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
@@ -376,7 +608,7 @@ scenes: {
 				sounds: null,
 				refPoint: {
 					x: 103.024414,
-					y: -58.068237
+					y: -49.89804
 				},
 				verbs: {
 					leave: {
@@ -387,7 +619,7 @@ scenes: {
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "char",
+								actor: "$PLAYER",
 								target: "door_left",
 								wait: true
 							},
@@ -464,8 +696,104 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
+			},
+			char2: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "char2",
+				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
+				pos: {
+					x: 1298.4912,
+					y: 349.08066
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {
+					x: -118.37598,
+					y: 1.443634
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "$PLAYER",
+								target: "char2",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetPlayerAction",
+								actor: "char2"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "$PLAYER",
+								text: "@01.char2.pickup.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left"
+				},
+				scale: 0.16458614,
+				tint: {
+					r: 1,
+					g: 0.53333336,
+					b: 0.53333336,
+					a: 1
+				},
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 2000,
+				textColor: null
 			}
 		},
 		backgroundAtlas: "scene1",
@@ -477,7 +805,7 @@ scenes: {
 		},
 		polygonalNavGraph: {
 			walkZone: {
-				localVertices: [ 297.42737, 284.14938, 568.29877, 434.68887, 718.6812, 440.14285, 650.82916, 341.34033, 1368.244, 372.9064, 1353.6876, 407.92526, 1922.6555, 410.7885, 1934.324, 311.18817, 1543.7379, 296.05563, 1514.5264, 349.16766, 624.51056, 318.71033, 589.1026, 283.30228 ]
+				localVertices: [ 297.42737, 284.14938, 568.29877, 434.68887, 719.6436, 446.8797, 650.82916, 341.34033, 1368.244, 372.9064, 1353.6876, 407.92526, 1922.6555, 410.7885, 1934.324, 311.18817, 1543.7379, 296.05563, 1514.5264, 349.16766, 624.51056, 318.71033, 589.1026, 283.30228 ]
 			}
 		},
 		verbs: {
@@ -488,12 +816,60 @@ scenes: {
 				icon: null,
 				actions: [
 					{
+						class: "com.bladecoder.engine.actions.RunOnceAction",
+						caID: "930473402"
+					},
+					{
 						class: "com.bladecoder.engine.actions.SayAction",
-						actor: "char",
+						actor: "$PLAYER",
 						text: "@01.init.0.text",
 						type: "SUBTITLE",
 						queue: false,
 						wait: false
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "930473402"
+					},
+					{
+						class: "com.bladecoder.engine.actions.IfPropertyAction",
+						name: "PREVIOUS_SCENE",
+						value: "03",
+						caID: "1891188477"
+					},
+					{
+						class: "com.bladecoder.engine.actions.GotoAction",
+						actor: "$PLAYER",
+						pos: "749.0,330.0",
+						wait: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1891188477"
+					},
+					{
+						class: "com.bladecoder.engine.actions.IfPropertyAction",
+						name: "PREVIOUS_SCENE",
+						value: "parallax",
+						caID: "1421587304"
+					},
+					{
+						class: "com.bladecoder.engine.actions.GotoAction",
+						actor: "$PLAYER",
+						pos: "1517.0,374.0",
+						wait: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1421587304"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1421587304"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1891188477"
 					}
 				]
 			}
@@ -578,7 +954,10 @@ scenes: {
 				visible: true,
 				desc: null,
 				sounds: null,
-				refPoint: {},
+				refPoint: {
+					x: 5.774414,
+					y: -326.25568
+				},
 				verbs: {
 					leave: {
 						id: "leave",
@@ -586,6 +965,49 @@ scenes: {
 						state: null,
 						icon: null,
 						actions: [
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "$PLAYER",
+								target: "exit",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.PositionAction",
+								actor: "$PLAYER",
+								target: "01#door_left"
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "char",
+								caID: "1348253093"
+							},
+							{
+								class: "com.bladecoder.engine.actions.MoveToSceneAction",
+								actor: "$PLAYER",
+								scene: "01"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetPlayerAction",
+								actor: "01#char"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1348253093"
+							},
+							{
+								class: "com.bladecoder.engine.actions.MoveToSceneAction",
+								actor: "$PLAYER",
+								scene: "01"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetPlayerAction",
+								actor: "01#char2"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1348253093"
+							},
 							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
 								scene: "01"
@@ -602,7 +1024,67 @@ scenes: {
 		backgroundAtlas: "scene3",
 		backgroundRegionId: "bg3",
 		musicDesc: null,
-		verbs: {}
+		depthVector: {
+			x: 613.83704,
+			y: -631.38477
+		},
+		polygonalNavGraph: {
+			walkZone: {
+				localVertices: [ 157.48462, 39.371155, 398.08618, 257.5802, 965.618, 80.41797, 1203.7566, 93.22626, 1226.6244, 304.53226, 1530.6631, 318.8243, 1885.0032, 157.48468, 1786.2855, 74.84706 ]
+			}
+		},
+		verbs: {
+			init: {
+				id: "init",
+				target: null,
+				state: null,
+				icon: null,
+				actions: [
+					{
+						class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+						scene: "01",
+						attr: "PLAYER",
+						value: "char",
+						caID: "742759885"
+					},
+					{
+						class: "com.bladecoder.engine.actions.MoveToSceneAction",
+						actor: "01#char"
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetPlayerAction",
+						actor: "char"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "742759885"
+					},
+					{
+						class: "com.bladecoder.engine.actions.MoveToSceneAction",
+						actor: "01#char2"
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetPlayerAction",
+						actor: "char2"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "742759885"
+					},
+					{
+						class: "com.bladecoder.engine.actions.PositionAction",
+						actor: "$PLAYER",
+						target: "exit"
+					},
+					{
+						class: "com.bladecoder.engine.actions.GotoAction",
+						actor: "$PLAYER",
+						pos: "1501.0,251.0",
+						wait: true
+					}
+				]
+			}
+		}
 	},
 	parallax: {
 		id: "parallax",
@@ -688,6 +1170,7 @@ scenes: {
 					initAnimation: "background"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
@@ -722,6 +1205,7 @@ scenes: {
 					initAnimation: "background"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
@@ -765,6 +1249,7 @@ scenes: {
 					initAnimation: "stand.right"
 				},
 				scale: 0.3110584,
+				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
 				dialogs: null,
@@ -802,6 +1287,7 @@ scenes: {
 					initAnimation: "foreground1"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
@@ -836,6 +1322,7 @@ scenes: {
 					initAnimation: "foreground1"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			}
@@ -875,7 +1362,7 @@ scenes: {
 			a02: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a02",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1064.3015,
 					y: 754.9446
@@ -938,13 +1425,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a010: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a010",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 204.34589,
 					y: 493.83582
@@ -1007,13 +1495,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a011: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a011",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1331.0865,
 					y: 752.1062
@@ -1084,13 +1573,14 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a04: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a04",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 777.64966,
 					y: 471.13092
@@ -1153,13 +1643,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a03: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a03",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 780.4877,
 					y: 210.02228
@@ -1222,13 +1713,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a06: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a06",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 508.0266,
 					y: 212.86035
@@ -1291,13 +1783,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a05: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a05",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 797.5166,
 					y: 752.1063
@@ -1360,13 +1853,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a08: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a08",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 508.0266,
 					y: 752.1063
@@ -1429,13 +1923,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a0114: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0114",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1569.49,
 					y: 752.1064
@@ -1506,13 +2001,14 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a07: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a07",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 508.02658,
 					y: 479.64514
@@ -1575,13 +2071,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a0113: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0113",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1316.8959,
 					y: 488.15967
@@ -1652,13 +2149,14 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a09: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a09",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 207.18402,
 					y: 198.66962
@@ -1721,13 +2219,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a0112: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0112",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1575.1663,
 					y: 479.64502
@@ -1798,13 +2297,14 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a0: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a0",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 227.05096,
 					y: 760.6208
@@ -1867,13 +2367,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a01132: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a01132",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1314.0577,
 					y: 227.05109
@@ -1953,13 +2454,14 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a012: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a012",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1064.3018,
 					y: 210.02216
@@ -2022,13 +2524,14 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
 			a013: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "a013",
-				bbox: [ -108, 0, -108, 216, 108, 216, 108, 0 ],
+				bbox: [ -100, 0, -100, 200, 100, 200, 100, 0 ],
 				pos: {
 					x: 1064.3018,
 					y: 476.80713
@@ -2091,6 +2594,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
 			}

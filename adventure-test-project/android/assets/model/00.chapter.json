@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.13-SNAPSHOT",
+bladeEngineVersion: "0.9.13",
 scenes: {
 	"01": {
 		id: "01",
@@ -19,7 +19,7 @@ scenes: {
 			red: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "red",
-				bbox: [ -157.5, 0, -157.5, 1098, 157.5, 1098, 157.5, 0 ],
+				bbox: [ -235.5, 0, -235.5, 1116, 235.5, 1116, 235.5, 0 ],
 				pos: {
 					x: 1298.4912,
 					y: 349.08066
@@ -49,7 +49,8 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "red"
+								actor: "red",
+								inventory: "red"
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -104,6 +105,69 @@ scenes: {
 				dialogs: null,
 				walkingSpeed: 2000,
 				textColor: null
+			},
+			ball: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "ball",
+				bbox: [ -40, 0, -40, 82, 40, 82, 40, 0 ],
+				pos: {
+					x: 1833.4604,
+					y: 317.79987
+				},
+				visible: true,
+				desc: "@01.ball.desc",
+				sounds: null,
+				refPoint: {
+					x: -85.5614,
+					y: 8.148743
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "$PLAYER",
+								target: "ball",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.LookAtAction",
+								direction: "RIGHT",
+								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "ball"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ball: {
+							id: "ball",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ball"
+				},
+				scale: 1,
+				tint: null,
+				depthType: "NONE",
+				bboxFromRenderer: true
 			},
 			door_right: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
@@ -175,7 +239,8 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "green"
+								actor: "green",
+								inventory: "green"
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -261,7 +326,8 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "blue"
+								actor: "blue",
+								inventory: "blue"
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -350,7 +416,8 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "char"
+								actor: "char",
+								inventory: "white"
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -663,6 +730,82 @@ scenes: {
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
+			cube: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "cube",
+				bbox: [ -57.5, 0, -57.5, 107, 57.5, 107, 57.5, 0 ],
+				pos: {
+					x: 521.5177,
+					y: 362.6178
+				},
+				visible: true,
+				desc: "@01.cube.desc",
+				sounds: null,
+				refPoint: {
+					x: 93.710205,
+					y: 20.371826
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "$PLAYER",
+								target: "cube",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.LookAtAction",
+								direction: "LEFT",
+								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.PickUpAction",
+								actor: "cube"
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						ball: {
+							id: "cube",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						cube: {
+							id: "cube",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ball"
+				},
+				scale: 1,
+				tint: {
+					r: 0.4,
+					g: 0.4,
+					b: 0.4,
+					a: 1
+				},
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
 			tint: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "tint",
@@ -950,6 +1093,11 @@ scenes: {
 					{
 						class: "com.bladecoder.engine.actions.RunOnceAction",
 						caID: "930473402"
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetPlayerAction",
+						actor: "char",
+						inventory: "white"
 					},
 					{
 						class: "com.bladecoder.engine.actions.SayAction",

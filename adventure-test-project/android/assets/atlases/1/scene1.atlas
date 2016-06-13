@@ -1,13 +1,27 @@
 
 scene1.png
-size: 1922,1082
+size: 2039,1082
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+ball
+  rotate: false
+  xy: 1923, 890
+  size: 80, 82
+  orig: 80, 82
+  offset: 0, 0
+  index: -1
 bg1
   rotate: false
   xy: 1, 1
   size: 1920, 1080
   orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+cube
+  rotate: false
+  xy: 1923, 974
+  size: 115, 107
+  orig: 115, 107
   offset: 0, 0
   index: -1

@@ -36,7 +36,7 @@ public class Scene0InitAction implements Serializable, Action, ActionCallback {
 		
 		World.getInstance().showInventory(false);
 		
-		World.getInstance().getTextManager().addText(text, TextManager.POS_CENTER, TextManager.POS_CENTER, false, Text.Type.PLAIN, Color.WHITE, null, this);
+		World.getInstance().getTextManager().addText(text, TextManager.POS_CENTER, TextManager.POS_CENTER, false, Text.Type.PLAIN, Color.WHITE, null, null, this);
 		
 		return false;
 	}

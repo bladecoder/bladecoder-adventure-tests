@@ -27,7 +27,7 @@ public class Scene2InitAction implements Action {
 
 		String t = MessageFormat.format(I18N.getString(text.substring(1)), (int)(w.getTimeOfGame() / 60000));
 		
-		World.getInstance().getTextManager().addText(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null, null);
+		World.getInstance().getTextManager().addText(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null, null, null);
 		return false;
 	}
 }

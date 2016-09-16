@@ -213,7 +213,7 @@ throwgoddess2
   size: 199, 397
   orig: 234, 456
   offset: 33, 20
-  index: 10
+  index: 11
 throwgoddess2
   rotate: false
   xy: 1132, 1650
@@ -227,14 +227,14 @@ throwgoddess2
   size: 199, 397
   orig: 234, 456
   offset: 33, 20
-  index: 12
+  index: 10
 throwgoddess2
   rotate: false
   xy: 1132, 1650
   size: 199, 397
   orig: 234, 456
   offset: 33, 20
-  index: 11
+  index: 12
 throwgoddess2
   rotate: false
   xy: 1750, 845
@@ -541,14 +541,14 @@ talk.right
   size: 120, 418
   orig: 120, 424
   offset: 0, 2
-  index: 8
+  index: 12
 talk.right
   rotate: false
   xy: 1107, 421
   size: 120, 418
   orig: 120, 424
   offset: 0, 2
-  index: 12
+  index: 8
 talk.right
   rotate: false
   xy: 1229, 421

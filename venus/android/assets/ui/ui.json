@@ -59,6 +59,12 @@ com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 	back-over: {name:back, color: white-trans},
 
 	delete-over: {name:delete, color: white-trans},
+
+
+	dialog-up-down: {name:dialog_up, color: black},
+	dialog-up-over: {name:dialog_up, color: white-trans},
+	dialog-down-down: {name:dialog_down, color: black},
+	dialog-down-over: {name:dialog_down, color: white-trans},
 },
 
 com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
@@ -75,6 +81,10 @@ com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 	debug: {up:debug, down: debug-down, over: debug-over},
 
 	back: {up:back, down: back-down, over: back-over},
+
+	
+	dialog-up: {up:dialog_up, down: dialog-up-down, over: dialog-up-over},
+	dialog-down: {up:dialog_down, down: dialog-down-down, over: dialog-down-over},
 },
 
 

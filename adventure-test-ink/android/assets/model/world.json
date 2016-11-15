@@ -1,0 +1,85 @@
+{
+width: 1920,
+height: 1080,
+initChapter: "00",
+verbs: {
+	dialog: {
+		id: "dialog",
+		target: null,
+		state: null,
+		icon: null,
+		actions: [
+			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: true
+			},
+			{
+				class: "com.bladecoder.engine.actions.SayDialogAction",
+				wait: true
+			},
+			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: false
+			}
+		]
+	},
+	initNewGame: {
+		id: "initNewGame",
+		target: null,
+		state: null,
+		icon: null,
+		actions: [
+			{
+				class: "com.bladecoder.engine.actions.InkNewStoryAction",
+				storyName: "test-story"
+			}
+		]
+	},
+	use: {
+		id: "use",
+		target: null,
+		state: null,
+		icon: null,
+		actions: [
+			{
+				class: "com.bladecoder.engine.actions.LookAtAction",
+				text: "@default.use.0.text",
+				wait: false
+			}
+		]
+	},
+	lookat: {
+		id: "lookat",
+		target: null,
+		state: null,
+		icon: null,
+		actions: [
+			{
+				class: "com.bladecoder.engine.actions.LookAtAction",
+				text: "@default.lookat.0.text",
+				wait: true
+			}
+		]
+	},
+	pickup: {
+		id: "pickup",
+		target: null,
+		state: null,
+		icon: null,
+		actions: [
+			{
+				class: "com.bladecoder.engine.actions.LookAtAction",
+				text: "@default.pickup.0.text",
+				wait: true
+			}
+		]
+	},
+	initSavedGame: {
+		id: "initSavedGame",
+		target: null,
+		state: null,
+		icon: null,
+		actions: []
+	}
+}
+}

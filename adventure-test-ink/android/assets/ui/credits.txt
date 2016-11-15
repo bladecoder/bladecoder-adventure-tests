@@ -1,0 +1,6 @@
+t#BLADECODER ADVENTURE ENGINE
+RAFAEL GARCÍA
+s#120
+i#libgdx_logo.png
+s#250
+i#blade_logo.png

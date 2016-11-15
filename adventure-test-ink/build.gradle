@@ -51,6 +51,7 @@ project(":core") {
         compile "com.bladecoder.engine:blade-engine:$bladeEngineVersion"
         compile "com.bladecoder.ink:blade-ink:$bladeInkVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        compile "org.minimalcode:minimalcode-beans:0.5.1"
     }
 
     		processResources.finalizedBy(setVersion)

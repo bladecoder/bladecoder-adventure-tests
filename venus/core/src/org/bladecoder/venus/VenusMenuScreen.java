@@ -144,18 +144,19 @@ public class VenusMenuScreen extends MenuScreen {
 	}
 	
 	private void addLeftButtonStack() {
+		
 		if (Gdx.app.getType() == ApplicationType.Desktop) {
 			bonaseraURL = Config.getProperty("bonasera_desktop_url", null);
 		} else if (Gdx.app.getType() == ApplicationType.Android) {
 			bonaseraURL = Config.getProperty("bonasera_android_url", null);
 			
 			// Delete exit button
-			getMenuButtonTable().getCells().removeIndex(getMenuButtonTable().getCells().size - 1);
+			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).clearActor();
 		} else if (Gdx.app.getType() == ApplicationType.iOS) {
 			bonaseraURL = Config.getProperty("bonasera_ios_url", null);
 			
 			// Delete exit button
-			getMenuButtonTable().getCells().removeIndex(getMenuButtonTable().getCells().size - 1);
+			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).clearActor();
 		}
 
 		// Show Johnny Bonasera button

@@ -443,14 +443,14 @@ talk.left
   size: 91, 356
   orig: 91, 386
   offset: 0, 22
-  index: 14
+  index: 10
 talk.left
   rotate: false
   xy: 1518, 1060
   size: 91, 356
   orig: 91, 386
   offset: 0, 22
-  index: 10
+  index: 14
 talk.left
   rotate: false
   xy: 1804, 1056

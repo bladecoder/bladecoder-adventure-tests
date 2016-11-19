@@ -21,3 +21,10 @@ inkscape -w 114 -h 114 --export-area-page --export-png=../../ios/data/Icon@2x.pn
 inkscape -w 72 -h 72 --export-area-page --export-png=../../ios/data/Icon-72.png  icon.svg;
 inkscape -w 144 -h 144 --export-area-page --export-png=../../ios/data/Icon-72@2x.png  icon.svg;
 
+#IOS 7.0
+inkscape -w 76 -h 76 --export-area-page --export-png=../../ios/data/Icon-76.png  icon.svg;
+inkscape -w 152 -h 152 --export-area-page --export-png=../../ios/data/Icon-76@2x.png  icon.svg;
+inkscape -w 120 -h 120 --export-area-page --export-png=../../ios/data/Icon-120.png  icon.svg;
+
+#convert icon*.png icon.ico
+#png2icns icon.icns icon16.png icon32.png icon128.png icon256.png

@@ -59,7 +59,7 @@ public class VenusMenuScreen extends MenuScreen {
 		
 		addLangButton();
 
-		addLeftButtonStack();
+		addLinkButtons();
 	}
 
 	private void saveGameIOSFix() {
@@ -143,7 +143,7 @@ public class VenusMenuScreen extends MenuScreen {
 		}
 	}
 	
-	private void addLeftButtonStack() {
+	private void addLinkButtons() {
 		
 		if (Gdx.app.getType() == ApplicationType.Desktop) {
 			bonaseraURL = Config.getProperty("bonasera_desktop_url", null);
@@ -151,12 +151,12 @@ public class VenusMenuScreen extends MenuScreen {
 			bonaseraURL = Config.getProperty("bonasera_android_url", null);
 			
 			// Delete exit button
-			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).clearActor();
+			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).pad(0).clearActor();
 		} else if (Gdx.app.getType() == ApplicationType.iOS) {
 			bonaseraURL = Config.getProperty("bonasera_ios_url", null);
 			
 			// Delete exit button
-			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).clearActor();
+			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).pad(0).clearActor();
 		}
 
 		// Show Johnny Bonasera button
@@ -170,11 +170,11 @@ public class VenusMenuScreen extends MenuScreen {
 			leftTable.setFillParent(true);
 
 			Table bonaseraButton = new Table();
-			bonaseraButton.defaults().pad(DPIUtils.getMarginSize() / 4);
+			bonaseraButton.defaults().pad(0, DPIUtils.getMarginSize() * .25f, 0, DPIUtils.getMarginSize() * .25f);
 
 			Image image = new Image(getUI().getSkin().getDrawable("bonasera_icon"));
 			image.setScaling(Scaling.fit);
-			bonaseraButton.add(image).size(DPIUtils.getPrefButtonSize() * 1.5f);
+			bonaseraButton.add(image).size(DPIUtils.getPrefButtonSize() * 1.4f);
 			bonaseraButton.add(new Label("[YELLOW] FULL FEATURED ADVENTURE!\nThe Revenge of Johnny Bonasera[]", getUI().getSkin(), "ui-dialog"));
 
 			bonaseraButton.addListener(new ClickListener() {

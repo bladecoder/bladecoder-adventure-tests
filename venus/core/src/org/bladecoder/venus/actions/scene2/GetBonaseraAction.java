@@ -12,18 +12,18 @@ public class GetBonaseraAction implements Action {
 
 	@Override
 	public boolean run(VerbRunner cb) {
-		String fullgameURL = null;
+		String bonaseraURL = null;
 
 		if (Gdx.app.getType() == ApplicationType.Desktop) {
-			fullgameURL = Config.getProperty("fullgame_desktop_url", null);
+			bonaseraURL = Config.getProperty("bonasera_desktop_url", null);
 		} else if (Gdx.app.getType() == ApplicationType.Android) {
-			fullgameURL = Config.getProperty("fullgame_android_url", null);
+			bonaseraURL = Config.getProperty("bonasera_android_url", null);
 		} else if (Gdx.app.getType() == ApplicationType.iOS) {
-			fullgameURL = Config.getProperty("fullgame_ios_url", null);
+			bonaseraURL = Config.getProperty("bonasera_ios_url", null);
 		}
 		
-		if(fullgameURL != null)
-			Gdx.net.openURI(fullgameURL);
+		if(bonaseraURL != null)
+			Gdx.net.openURI(bonaseraURL);
 		
 		return false;
 	}

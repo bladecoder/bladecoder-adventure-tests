@@ -105,6 +105,19 @@ scenes: {
 						text: "@scene2.init.0.text"
 					},
 					{
+						class: "com.bladecoder.engine.actions.IfPropertyAction",
+						name: "EMBEDDED",
+						value: "true",
+						caID: "1418905628"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndGameAction"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1418905628"
+					},
+					{
 						class: "com.bladecoder.engine.actions.SetActorAttrAction",
 						actor: "bonasera",
 						visible: true
@@ -131,6 +144,10 @@ scenes: {
 						class: "com.bladecoder.engine.actions.SetActorAttrAction",
 						actor: "exit",
 						visible: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1418905628"
 					}
 				]
 			}
@@ -687,6 +704,10 @@ scenes: {
 								position: "360.0,0.0"
 							},
 							{
+								class: "com.bladecoder.engine.actions.DisableActionAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.CameraAction,pos:\"960.0,0.0\",duration:0.3,wait:true}"
+							},
+							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "player#runaway",
 								count: 1,
@@ -1170,6 +1191,12 @@ scenes: {
 					{
 						class: "com.bladecoder.engine.actions.SetCutmodeAction",
 						value: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.CameraAction",
+						pos: "880.0,0.0",
+						followActor: "none",
+						wait: true
 					},
 					{
 						class: "com.bladecoder.engine.actions.GotoAction",
@@ -3461,18 +3488,10 @@ scenes: {
 						icon: null,
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "navaja",
 								text: "@navaja.lookat.0.text",
 								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
 							}
 						]
 					},
@@ -4229,8 +4248,8 @@ scenes: {
 					x: 1728,
 					y: 47
 				},
-				visible: true,
-				desc: "@forward.desc",
+				visible: false,
+				desc: "@scene0.forward.desc",
 				sounds: null,
 				refPoint: {},
 				verbs: {
@@ -4292,7 +4311,7 @@ scenes: {
 					fanims: {
 						title: {
 							id: "title",
-							source: "title_en.jpg",
+							source: "@title.jpg",
 							duration: 1,
 							animationType: "REPEAT",
 							count: -1,
@@ -4318,14 +4337,54 @@ scenes: {
 				icon: null,
 				actions: [
 					{
+						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						value: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.PropertyAction",
+						prop: "EMBEDDED",
+						value: "false"
+					},
+					{
+						class: "com.bladecoder.engine.actions.ShowInventoryAction",
+						value: false
+					},
+					{
 						class: "com.bladecoder.engine.actions.ScreenPositionAction",
 						actor: "forward",
 						position: "-40.0,40.0",
 						anchor: "DOWN_RIGHT"
 					},
 					{
-						class: "org.bladecoder.venus.actions.scene0.Scene0InitAction",
-						text: "@scene0.init.0.text"
+						class: "com.bladecoder.engine.actions.TextAction",
+						text: "@scene0.init.0.text",
+						style: "default",
+						color: "ffffffff",
+						pos: "-1.0,-1.0",
+						type: "PLAIN",
+						queue: false,
+						wait: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetActorAttrAction",
+						actor: "title",
+						visible: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.WaitAction",
+						time: 2
+					},
+					{
+						class: "com.bladecoder.engine.actions.ShowInventoryAction",
+						value: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						value: false
+					},
+					{
+						class: "com.bladecoder.engine.actions.LeaveAction",
+						scene: "scene1"
 					}
 				]
 			},

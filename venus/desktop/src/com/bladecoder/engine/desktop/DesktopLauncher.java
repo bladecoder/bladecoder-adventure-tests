@@ -88,7 +88,21 @@ public class DesktopLauncher extends BladeEngine {
 				if (i + 1 < args.length) {
 					i++;
 					forceResolution(args[i]);
-				}					
+				}
+			} else if (s.equals("-aspect")) {
+				if (i + 1 < args.length) {
+					i++;
+					String aspect = args[i];
+					
+					if(aspect.equals("16:9")) {
+						cfg.height = cfg.width * 9/16;
+					} else if(aspect.equals("4:3")) {
+						cfg.height = cfg.width * 3/4;
+					} else if(aspect.equals("16:10") || 
+							aspect.equals("8:5") ) {
+						cfg.height = cfg.width * 10/16;
+					}
+				}								
 			} else if (s.equals("-w")) {
 				fullscreen = false;
 			} else if (s.equals("-l")) {
@@ -118,7 +132,8 @@ public class DesktopLauncher extends BladeEngine {
 			    "-res width\tForce the resolution width\n" +
 			    "-l game_state\tLoad the previusly saved game state\n" + 
 			    "-r\tRun the game from the begining\n" + 
-			    "-h\tShow this screen\n"
+			    "-h\tShow this screen\n" + 
+			    "-aspect aspect_ratio\tSets the specified screen aspect (16:9, 4:3, 16:10)\n"
 				);
 		
 		System.exit(0);

@@ -1,10 +1,5 @@
 [
-{
-	class: com.bladecoder.engine.ui.Recorder$TimeVerb,
-	time: 2.6489992,
-	actorId: forward,
-	verb: leave
-},
+
 {
 	class: com.bladecoder.engine.ui.Recorder$TimeVerb,
 	time: 3.7279983,

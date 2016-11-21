@@ -105,6 +105,19 @@ scenes: {
 						text: "@scene2.init.0.text"
 					},
 					{
+						class: "com.bladecoder.engine.actions.IfPropertyAction",
+						name: "EMBEDDED",
+						value: "true",
+						caID: "1418905628"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndGameAction"
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1418905628"
+					},
+					{
 						class: "com.bladecoder.engine.actions.SetActorAttrAction",
 						actor: "bonasera",
 						visible: true
@@ -131,6 +144,10 @@ scenes: {
 						class: "com.bladecoder.engine.actions.SetActorAttrAction",
 						actor: "exit",
 						visible: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.EndAction",
+						caID: "1418905628"
 					}
 				]
 			}
@@ -248,11 +265,19 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "electricbox",
 								text: "@scene2.electricbox.lookat.0.text",
 								direction: "FRONTRIGHT",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -263,11 +288,19 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "electricbox",
 								text: "@scene2.electricbox.pickup.0.text",
 								direction: "FRONTRIGHT",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -671,6 +704,10 @@ scenes: {
 								position: "360.0,0.0"
 							},
 							{
+								class: "com.bladecoder.engine.actions.DisableActionAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.CameraAction,pos:\"960.0,0.0\",duration:0.3,wait:true}"
+							},
+							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "player#runaway",
 								count: 1,
@@ -711,12 +748,20 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "policeman",
 								text: "@policeman.lookat.0.text",
 								type: "SUBTITLE",
 								queue: false,
 								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -839,10 +884,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "policeman",
 								text: "@scene2.policeman.use.policeman.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -1140,6 +1193,12 @@ scenes: {
 						value: true
 					},
 					{
+						class: "com.bladecoder.engine.actions.CameraAction",
+						pos: "880.0,0.0",
+						followActor: "none",
+						wait: true
+					},
+					{
 						class: "com.bladecoder.engine.actions.GotoAction",
 						actor: "player",
 						pos: "460.0,0.0",
@@ -1295,10 +1354,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "libro",
 								text: "@libro.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -1309,10 +1376,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "libro",
 								text: "@libro.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -1342,10 +1417,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "estatua",
 								text: "@estatua.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -1356,10 +1439,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "estatua",
 								text: "@estatua.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -1476,10 +1567,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "chair",
 								text: "@chair.lookat.BROKEN.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -1490,10 +1589,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "chair",
 								text: "@chair.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -1877,10 +1984,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "rope",
 								text: "@rope.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -1891,10 +2006,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "rope",
 								text: "@rope.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2290,10 +2413,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cutter",
 								text: "@cutter.use.WITH_CABLE.diosa.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2392,12 +2523,20 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.use.0.text",
 								type: "SUBTITLE",
 								queue: false,
 								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2408,10 +2547,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cutter",
 								text: "@cutter.pickup.CHARGING.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2422,12 +2569,20 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cutter",
 								text: "@cutter.lookat.0.text",
 								type: "SUBTITLE",
 								queue: false,
 								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2438,10 +2593,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cutter",
 								text: "@cutter.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2505,10 +2668,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cutter",
 								text: "@cutter.use.policeman.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2519,10 +2690,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cutter",
 								text: "@cutter.use.NO_BATTERY.diosa.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2678,10 +2857,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "diosa",
 								text: "@diosa.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2698,10 +2885,18 @@ scenes: {
 								wait: true
 							},
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "diosa",
 								text: "@diosa.pickup.0.1.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -2861,11 +3056,19 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.SayAction",
 								text: "@scene1.diosa.lookat.FLOOR.0.text",
 								type: "SUBTITLE",
 								queue: false,
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -2954,10 +3157,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "papelera",
 								text: "@papelera.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -2987,10 +3198,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "vitrina",
 								text: "@vitrina.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -3020,10 +3239,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "vasijas",
 								text: "@vasijas.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -3178,12 +3405,20 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "exit",
 								text: "@scene1.exit.lookat.0.text_",
 								type: "SUBTITLE",
 								queue: false,
 								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -3231,10 +3466,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "navaja",
 								text: "@navaja.use.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -3259,10 +3502,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "navaja",
 								text: "@navaja.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -3310,10 +3561,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "socket",
 								text: "@socket.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -3324,10 +3583,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "socket",
 								text: "@socket.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -3357,10 +3624,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cuadro",
 								text: "@cuadro.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -3371,10 +3646,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cuadro",
 								text: "@cuadro.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -3413,10 +3696,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cable",
 								text: "@cable.use.CONNECTED.navaja.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -3427,10 +3718,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "cable",
 								text: "@cable.lookat.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -3462,12 +3761,20 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.SayAction",
 								actor: "cable",
 								text: "@cable.pickup.CUT.text",
 								type: "SUBTITLE",
 								queue: false,
 								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -3777,11 +4084,19 @@ scenes: {
 								wait: true
 							},
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "placa",
 								text: "@placa.lookat.0.1.text",
 								direction: "BACK",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					},
@@ -3792,10 +4107,18 @@ scenes: {
 						icon: null,
 						actions: [
 							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
 								class: "com.bladecoder.engine.actions.LookAtAction",
 								actor: "placa",
 								text: "@placa.pickup.0.text",
 								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
 							}
 						]
 					}
@@ -3925,8 +4248,8 @@ scenes: {
 					x: 1728,
 					y: 47
 				},
-				visible: true,
-				desc: "@forward.desc",
+				visible: false,
+				desc: "@scene0.forward.desc",
 				sounds: null,
 				refPoint: {},
 				verbs: {
@@ -3988,7 +4311,7 @@ scenes: {
 					fanims: {
 						title: {
 							id: "title",
-							source: "title_en.jpg",
+							source: "@title.jpg",
 							duration: 1,
 							animationType: "REPEAT",
 							count: -1,
@@ -4014,14 +4337,54 @@ scenes: {
 				icon: null,
 				actions: [
 					{
+						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						value: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.PropertyAction",
+						prop: "EMBEDDED",
+						value: "false"
+					},
+					{
+						class: "com.bladecoder.engine.actions.ShowInventoryAction",
+						value: false
+					},
+					{
 						class: "com.bladecoder.engine.actions.ScreenPositionAction",
 						actor: "forward",
 						position: "-40.0,40.0",
 						anchor: "DOWN_RIGHT"
 					},
 					{
-						class: "org.bladecoder.venus.actions.scene0.Scene0InitAction",
-						text: "@scene0.init.0.text"
+						class: "com.bladecoder.engine.actions.TextAction",
+						text: "@scene0.init.0.text",
+						style: "default",
+						color: "ffffffff",
+						pos: "-1.0,-1.0",
+						type: "PLAIN",
+						queue: false,
+						wait: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetActorAttrAction",
+						actor: "title",
+						visible: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.WaitAction",
+						time: 2
+					},
+					{
+						class: "com.bladecoder.engine.actions.ShowInventoryAction",
+						value: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						value: false
+					},
+					{
+						class: "com.bladecoder.engine.actions.LeaveAction",
+						scene: "scene1"
 					}
 				]
 			},

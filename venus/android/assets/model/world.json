@@ -30,9 +30,17 @@ verbs: {
 		icon: null,
 		actions: [
 			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: true
+			},
+			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
 				text: "@default.use.0.text",
 				wait: false
+			},
+			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: false
 			}
 		]
 	},
@@ -43,9 +51,17 @@ verbs: {
 		icon: null,
 		actions: [
 			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: true
+			},
+			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
 				text: "@default.lookat.0.text",
 				wait: true
+			},
+			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: false
 			}
 		]
 	},
@@ -56,9 +72,17 @@ verbs: {
 		icon: null,
 		actions: [
 			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: true
+			},
+			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
 				text: "@default.pickup.0.text",
 				wait: true
+			},
+			{
+				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				value: false
 			}
 		]
 	}

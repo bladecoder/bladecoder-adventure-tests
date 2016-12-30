@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "0.9.19",
+bladeEngineVersion: "1.0.3",
 scenes: {
 	"01": {
 		id: "01",
@@ -847,9 +847,17 @@ scenes: {
 								caID: "1070630759"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								class: "com.bladecoder.engine.actions.DisableActionAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:ff6666ff}"
+							},
+							{
+								class: "com.bladecoder.engine.actions.TintAnimAction",
 								actor: "$PLAYER",
-								tint: "ff6666ff"
+								color: "ff6666ff",
+								speed: 0.2,
+								count: 1,
+								wait: true,
+								repeat: "REPEAT"
 							},
 							{
 								class: "com.bladecoder.engine.actions.EndAction",
@@ -860,6 +868,13 @@ scenes: {
 								attr: "PLAYER",
 								value: "green",
 								caID: "1006819085"
+							},
+							{
+								class: "com.bladecoder.engine.actions.CameraAction",
+								zoom: 1,
+								duration: 1,
+								interpolation: "FADE",
+								wait: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
@@ -917,9 +932,17 @@ scenes: {
 								caID: "1331490757"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								class: "com.bladecoder.engine.actions.DisableActionAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:660000ff}"
+							},
+							{
+								class: "com.bladecoder.engine.actions.TintAnimAction",
 								actor: "$PLAYER",
-								tint: "660000ff"
+								color: "660000ff",
+								speed: 0.2,
+								count: 1,
+								wait: true,
+								repeat: "REPEAT"
 							},
 							{
 								class: "com.bladecoder.engine.actions.EndAction",
@@ -935,6 +958,19 @@ scenes: {
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
 								actor: "$PLAYER",
 								tint: "006600ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.CameraAction",
+								pos: "0.0,0.0",
+								interpolation: "FADE",
+								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.CameraAction",
+								zoom: 0.5,
+								duration: 1,
+								interpolation: "FADE",
+								wait: true
 							},
 							{
 								class: "com.bladecoder.engine.actions.EndAction",

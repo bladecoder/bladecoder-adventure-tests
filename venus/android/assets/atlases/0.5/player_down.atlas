@@ -213,14 +213,7 @@ throwgoddess2
   size: 199, 397
   orig: 234, 456
   offset: 33, 20
-  index: 10
-throwgoddess2
-  rotate: false
-  xy: 1132, 1650
-  size: 199, 397
-  orig: 234, 456
-  offset: 33, 20
-  index: 11
+  index: 9
 throwgoddess2
   rotate: false
   xy: 1132, 1650
@@ -234,7 +227,14 @@ throwgoddess2
   size: 199, 397
   orig: 234, 456
   offset: 33, 20
-  index: 9
+  index: 10
+throwgoddess2
+  rotate: false
+  xy: 1132, 1650
+  size: 199, 397
+  orig: 234, 456
+  offset: 33, 20
+  index: 11
 throwgoddess2
   rotate: false
   xy: 1750, 845

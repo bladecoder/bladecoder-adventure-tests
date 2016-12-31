@@ -2,7 +2,7 @@
 ui.png
 size: 332,269
 format: RGBA8888
-filter: Linear,Nearest
+filter: Linear,Linear
 repeat: none
 back
   rotate: false

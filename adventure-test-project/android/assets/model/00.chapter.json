@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.0.3",
+bladeEngineVersion: "1.1.0",
 scenes: {
 	"01": {
 		id: "01",
@@ -766,6 +766,49 @@ scenes: {
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
 								actor: "cube"
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.AddValueToProperty",
+								prop: "COUNTER",
+								value: 1
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfPropertyAction",
+								name: "COUNTER",
+								value: "3",
+								caID: "1198688830"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "$PLAYER",
+								text: "@01.cube.lookat.2.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1198688830"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "$PLAYER",
+								text: "@01.cube.lookat.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1198688830"
 							}
 						]
 					}

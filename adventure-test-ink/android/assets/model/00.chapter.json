@@ -179,6 +179,195 @@ scenes: {
 			}
 		},
 		player: "red"
+	},
+	"01": {
+		id: "01",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			green: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "green",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1111.4404,
+					y: 84.653625
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {
+					x: -2.887146
+				},
+				verbs: {
+					talkto: {
+						id: "talkto",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.InkRunAction",
+								path: "d1",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left"
+				},
+				scale: 0.6300766,
+				tint: {
+					g: 1,
+					a: 1
+				},
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 1000,
+				textColor: null
+			},
+			target: {
+				class: "com.bladecoder.engine.model.AnchorActor",
+				id: "target",
+				bbox: [],
+				pos: {
+					x: 734.9283,
+					y: 104.98978
+				},
+				visible: true
+			},
+			player: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "player",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 720.8208,
+					y: 90.79294
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right"
+				},
+				scale: 0.6228006,
+				tint: null,
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 1000,
+				textColor: null
+			}
+		},
+		musicDesc: null,
+		depthVector: {
+			x: 616.2952,
+			y: -227.47778
+		},
+		polygonalNavGraph: {
+			walkZone: {
+				localVertices: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ]
+			}
+		},
+		verbs: {
+			init: {
+				id: "init",
+				target: null,
+				state: null,
+				icon: null,
+				actions: [
+					{
+						class: "com.bladecoder.engine.actions.InkNewStoryAction",
+						storyName: "test2"
+					}
+				]
+			}
+		},
+		player: "player"
 	}
 },
 initScene: "00"

@@ -41,8 +41,8 @@ scenes: {
 				id: "bonasera",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 964.3465,
-					y: 260.60117
+					x: 972.8609,
+					y: 235.05795
 				},
 				visible: false,
 				desc: "@endSCN.bonasera.desc_",
@@ -131,7 +131,7 @@ scenes: {
 						text: "@endSCN.init.2.text",
 						style: "default",
 						color: "ffffffff",
-						pos: "-1.0,750.0",
+						pos: "-1.0,800.0",
 						type: "PLAIN",
 						queue: false,
 						wait: false

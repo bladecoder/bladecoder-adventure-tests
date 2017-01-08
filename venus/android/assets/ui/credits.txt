@@ -10,9 +10,14 @@ t#PROGRAMMING
 RAFAEL GARCÍA
 t#ITALIAN TRANSLATION
 RuM Corp.se
+t#FRENCH TRANSLATION
+RuM Corp.se
+t#UKRAINIAN TRANSLATION
+MAKSYM MYNA
 t#MUSIC
 Moonlight Sonata Op. 27 No. 2
-Performed by Paul Pitman - musopen.org
+Performed by Paul Pitman
+musopen.org
 t#SOUND FX
 freesound.org
 s#120

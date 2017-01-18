@@ -86,7 +86,7 @@ scenes: {
 			}
 		},
 		musicDesc: {
-			filename: "scn1.ogg",
+			filename: "scn1.mp3",
 			repeatDelay: 0
 		},
 		verbs: {
@@ -523,11 +523,11 @@ scenes: {
 				desc: "@policeman.desc",
 				sounds: {
 					hit: {
-						filename: "hit.ogg",
+						filename: "hit.mp3",
 						volume: 0.3
 					},
 					fall: {
-						filename: "fall.ogg",
+						filename: "fall.mp3",
 						volume: 0.5
 					}
 				},
@@ -1170,7 +1170,7 @@ scenes: {
 		backgroundAtlas: "scene2",
 		backgroundRegionId: "bg2",
 		musicDesc: {
-			filename: "scn2.ogg"
+			filename: "scn2.mp3"
 		},
 		depthVector: {
 			x: 616.38446,
@@ -1472,14 +1472,14 @@ scenes: {
 				desc: "@chair.desc",
 				sounds: {
 					chair_broken: {
-						filename: "chair_broken.ogg"
+						filename: "chair_broken.mp3"
 					},
 					chair_squeek: {
-						filename: "chair_squeek.ogg",
+						filename: "chair_squeek.mp3",
 						volume: 0.1
 					},
 					click: {
-						filename: "click1.ogg",
+						filename: "click1.mp3",
 						volume: 0.2
 					}
 				},
@@ -1896,11 +1896,11 @@ scenes: {
 				desc: "@rope.desc",
 				sounds: {
 					slide: {
-						filename: "slide.ogg",
+						filename: "slide.mp3",
 						volume: 0.05
 					},
 					click: {
-						filename: "click1.ogg",
+						filename: "click1.mp3",
 						volume: 0.2
 					}
 				},
@@ -2323,11 +2323,11 @@ scenes: {
 				desc: "@cutter.desc",
 				sounds: {
 					drill: {
-						filename: "drill.ogg",
+						filename: "drill.mp3",
 						volume: 0.5
 					},
 					click: {
-						filename: "click1.ogg",
+						filename: "click1.mp3",
 						volume: 0.2
 					}
 				},
@@ -2828,7 +2828,7 @@ scenes: {
 				desc: "@scene1.diosa.desc",
 				sounds: {
 					chords: {
-						filename: "chords.ogg",
+						filename: "chords.mp3",
 						volume: 0.5
 					}
 				},
@@ -3679,11 +3679,11 @@ scenes: {
 				desc: "@scene1.cable.desc",
 				sounds: {
 					click: {
-						filename: "click1.ogg",
+						filename: "click1.mp3",
 						volume: 0.2
 					},
 					switch: {
-						filename: "switch.ogg",
+						filename: "switch.mp3",
 						volume: 0.4
 					}
 				},
@@ -4132,7 +4132,7 @@ scenes: {
 		backgroundAtlas: "scene1",
 		backgroundRegionId: "bg1",
 		musicDesc: {
-			filename: "scn1.ogg",
+			filename: "scn1.mp3",
 			initialDelay: 30,
 			repeatDelay: 90
 		},
@@ -4327,7 +4327,7 @@ scenes: {
 			}
 		},
 		musicDesc: {
-			filename: "scn0.ogg"
+			filename: "scn0.mp3"
 		},
 		verbs: {
 			init: {

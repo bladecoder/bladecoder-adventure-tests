@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.1.0",
+bladeEngineVersion: "1.1.1-SNAPSHOT",
 scenes: {
 	"01": {
 		id: "01",
@@ -16,6 +16,289 @@ scenes: {
 			}
 		],
 		actors: {
+			green: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "green",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1688.2659,
+					y: 308.31876
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetPlayerAction",
+								actor: "green",
+								inventory: "green"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SayAction",
+								actor: "$PLAYER",
+								text: "@01.char3.pickup.3.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left"
+				},
+				scale: 0.19001375,
+				rot: 0,
+				tint: {
+					r: 0.53333336,
+					g: 1,
+					b: 0.53333336,
+					a: 1
+				},
+				depthType: "VECTOR",
+				bboxFromRenderer: true,
+				dialogs: null,
+				walkingSpeed: 2000,
+				textColor: null
+			},
+			tint: {
+				class: "com.bladecoder.engine.model.InteractiveActor",
+				id: "tint",
+				bbox: [ -416.72354, -2.1842957, -100, 200, 69.4198, 193.44711, -133.72015, 0 ],
+				pos: {
+					x: 657.4744,
+					y: 255.56323
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {
+					exit: {
+						id: "exit",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "char",
+								caID: "1640548163"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "ffffffff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1640548163"
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "red",
+								caID: "1070630759"
+							},
+							{
+								class: "com.bladecoder.engine.actions.DisableActionAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:ff6666ff}"
+							},
+							{
+								class: "com.bladecoder.engine.actions.TintAnimAction",
+								actor: "$PLAYER",
+								color: "ff6666ff",
+								speed: 0.2,
+								count: 1,
+								wait: true,
+								repeat: "REPEAT"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1070630759"
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "green",
+								caID: "1006819085"
+							},
+							{
+								class: "com.bladecoder.engine.actions.CameraAction",
+								zoom: 1,
+								duration: 1,
+								interpolation: "FADE",
+								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "66ff66ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1006819085"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "6666ffff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1006819085"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1070630759"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1640548163"
+							}
+						]
+					},
+					enter: {
+						id: "enter",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "char",
+								caID: "602572309"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "666666ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "602572309"
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "red",
+								caID: "1331490757"
+							},
+							{
+								class: "com.bladecoder.engine.actions.DisableActionAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:660000ff}"
+							},
+							{
+								class: "com.bladecoder.engine.actions.TintAnimAction",
+								actor: "$PLAYER",
+								color: "660000ff",
+								speed: 0.2,
+								count: 1,
+								wait: true,
+								repeat: "REPEAT"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1331490757"
+							},
+							{
+								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
+								attr: "PLAYER",
+								value: "green",
+								caID: "1522226691"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "006600ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.CameraAction",
+								pos: "0.0,0.0",
+								interpolation: "FADE",
+								wait: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.CameraAction",
+								zoom: 0.5,
+								duration: 1,
+								interpolation: "FADE",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1522226691"
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								actor: "$PLAYER",
+								tint: "000066ff"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1522226691"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "1331490757"
+							},
+							{
+								class: "com.bladecoder.engine.actions.EndAction",
+								caID: "602572309"
+							}
+						]
+					}
+				},
+				interaction: false,
+				state: null,
+				zIndex: 0,
+				layer: "foreground"
+			},
 			red: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "red",
@@ -94,6 +377,7 @@ scenes: {
 					initAnimation: "stand.left"
 				},
 				scale: 0.16458614,
+				rot: 0,
 				tint: {
 					r: 1,
 					g: 0.53333336,
@@ -115,7 +399,7 @@ scenes: {
 					y: 317.79987
 				},
 				visible: true,
-				desc: "@01.ball.desc",
+				desc: "@01.ball.desc_",
 				sounds: null,
 				refPoint: {
 					x: -85.5614,
@@ -165,6 +449,7 @@ scenes: {
 					initAnimation: "ball"
 				},
 				scale: 1,
+				rot: 45,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -208,93 +493,6 @@ scenes: {
 				state: null,
 				zIndex: 0,
 				layer: "background"
-			},
-			green: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "green",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1688.2659,
-					y: 308.31876
-				},
-				visible: true,
-				desc: null,
-				sounds: null,
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						target: null,
-						state: null,
-						icon: null,
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								interaction: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "green",
-								inventory: "green"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@01.char3.pickup.3.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							id: "walk.right",
-							source: "char",
-							duration: 0.5,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.left"
-				},
-				scale: 0.19001375,
-				tint: {
-					r: 0.53333336,
-					g: 1,
-					b: 0.53333336,
-					a: 1
-				},
-				depthType: "VECTOR",
-				bboxFromRenderer: true,
-				dialogs: null,
-				walkingSpeed: 2000,
-				textColor: null
 			},
 			blue: {
 				class: "com.bladecoder.engine.model.CharacterActor",
@@ -371,6 +569,7 @@ scenes: {
 					initAnimation: "stand.left"
 				},
 				scale: 0.13639663,
+				rot: 0,
 				tint: {
 					r: 0.53333336,
 					g: 0.53333336,
@@ -461,6 +660,7 @@ scenes: {
 					initAnimation: "stand.right"
 				},
 				scale: 0.17544998,
+				rot: 0,
 				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
@@ -726,6 +926,35 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				rot: 0,
+				tint: null,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			particle: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "particle",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1038.0648,
+					y: 336.98224
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.ParticleRenderer",
+					atlasName: "particles",
+					particleName: "bigFire"
+				},
+				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -840,6 +1069,7 @@ scenes: {
 					initAnimation: "ball"
 				},
 				scale: 1,
+				rot: 0,
 				tint: {
 					r: 0.4,
 					g: 0.4,
@@ -849,200 +1079,72 @@ scenes: {
 				depthType: "NONE",
 				bboxFromRenderer: true
 			},
-			tint: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "tint",
-				bbox: [ -416.72354, -2.1842957, -100, 200, 69.4198, 193.44711, -133.72015, 0 ],
+			text: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "text",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 657.4744,
-					y: 255.56323
+					x: 768.62244,
+					y: 792.22437
 				},
 				visible: true,
 				desc: null,
 				sounds: null,
 				refPoint: {},
-				verbs: {
-					exit: {
-						id: "exit",
-						target: null,
-						state: null,
-						icon: null,
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "char",
-								caID: "1640548163"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "ffffffff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1640548163"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "red",
-								caID: "1070630759"
-							},
-							{
-								class: "com.bladecoder.engine.actions.DisableActionAction",
-								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:ff6666ff}"
-							},
-							{
-								class: "com.bladecoder.engine.actions.TintAnimAction",
-								actor: "$PLAYER",
-								color: "ff6666ff",
-								speed: 0.2,
-								count: 1,
-								wait: true,
-								repeat: "REPEAT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1070630759"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "green",
-								caID: "1006819085"
-							},
-							{
-								class: "com.bladecoder.engine.actions.CameraAction",
-								zoom: 1,
-								duration: 1,
-								interpolation: "FADE",
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "66ff66ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1006819085"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "6666ffff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1006819085"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1070630759"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1640548163"
-							}
-						]
-					},
-					enter: {
-						id: "enter",
-						target: null,
-						state: null,
-						icon: null,
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "char",
-								caID: "602572309"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "666666ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "602572309"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "red",
-								caID: "1331490757"
-							},
-							{
-								class: "com.bladecoder.engine.actions.DisableActionAction",
-								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:660000ff}"
-							},
-							{
-								class: "com.bladecoder.engine.actions.TintAnimAction",
-								actor: "$PLAYER",
-								color: "660000ff",
-								speed: 0.2,
-								count: 1,
-								wait: true,
-								repeat: "REPEAT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1331490757"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "green",
-								caID: "1522226691"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "006600ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.CameraAction",
-								pos: "0.0,0.0",
-								interpolation: "FADE",
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.CameraAction",
-								zoom: 0.5,
-								duration: 1,
-								interpolation: "FADE",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1522226691"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "000066ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1522226691"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1331490757"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "602572309"
-							}
-						]
-					}
-				},
-				interaction: false,
+				verbs: {},
+				interaction: true,
 				state: null,
 				zIndex: 0,
-				layer: "foreground"
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.TextRenderer",
+					text: "text",
+					fontName: "ArchitectsDaughter",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					}
+				},
+				scale: 2,
+				rot: 45,
+				tint: null,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			particle2: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "particle2",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1654.8639,
+					y: 40.490112
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				state: null,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.ParticleRenderer",
+					atlasName: "particles",
+					particleName: "firefly"
+				},
+				scale: 2,
+				rot: 0,
+				tint: null,
+				depthType: "NONE",
+				bboxFromRenderer: true
 			},
 			door_left: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
@@ -1145,6 +1247,7 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1313,6 +1416,7 @@ scenes: {
 					initAnimation: "text"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1565,6 +1669,7 @@ scenes: {
 					initAnimation: "background"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1600,6 +1705,7 @@ scenes: {
 					initAnimation: "background"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1644,6 +1750,7 @@ scenes: {
 					initAnimation: "stand.right"
 				},
 				scale: 0.3110584,
+				rot: 0,
 				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
@@ -1682,6 +1789,7 @@ scenes: {
 					initAnimation: "foreground1"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1717,6 +1825,35 @@ scenes: {
 					initAnimation: "foreground1"
 				},
 				scale: 1,
+				rot: 0,
+				tint: null,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			particle3: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "particle3",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1157.9656,
+					y: 1153.7235
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				state: null,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.ParticleRenderer",
+					atlasName: "particles",
+					particleName: "rain"
+				},
+				scale: 10,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1820,6 +1957,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1890,6 +2028,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1968,6 +2107,7 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2038,6 +2178,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2108,6 +2249,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2178,6 +2320,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2248,6 +2391,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2318,6 +2462,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2396,6 +2541,7 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2466,6 +2612,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2544,6 +2691,7 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2614,6 +2762,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2692,6 +2841,7 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2762,6 +2912,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2849,6 +3000,7 @@ scenes: {
 					initAnimation: "go"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2919,6 +3071,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2989,6 +3142,7 @@ scenes: {
 					initAnimation: "ok"
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true

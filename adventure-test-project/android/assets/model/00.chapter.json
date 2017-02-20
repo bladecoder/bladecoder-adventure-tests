@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.1.1-SNAPSHOT",
+bladeEngineVersion: "1.1.2-SNAPSHOT",
 scenes: {
 	"01": {
 		id: "01",
@@ -936,8 +936,8 @@ scenes: {
 				id: "particle",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 1038.0648,
-					y: 336.98224
+					x: 1016.0442,
+					y: 333.25787
 				},
 				visible: true,
 				desc: null,
@@ -1123,8 +1123,8 @@ scenes: {
 				id: "particle2",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 1654.8639,
-					y: 40.490112
+					x: 1551.1857,
+					y: 19.144714
 				},
 				visible: true,
 				desc: null,
@@ -1835,8 +1835,8 @@ scenes: {
 				id: "particle3",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 1157.9656,
-					y: 1153.7235
+					x: -26.70813,
+					y: 1129.6176
 				},
 				visible: true,
 				desc: null,
@@ -1850,9 +1850,9 @@ scenes: {
 				renderer: {
 					class: "com.bladecoder.engine.model.ParticleRenderer",
 					atlasName: "particles",
-					particleName: "rain"
+					particleName: "rain2"
 				},
-				scale: 10,
+				scale: 1,
 				rot: 0,
 				tint: null,
 				depthType: "NONE",

@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.1.0-SNAPSHOT",
+bladeEngineVersion: "1.1.2-SNAPSHOT",
 scenes: {
 	"00": {
 		id: "00",
@@ -64,6 +64,7 @@ scenes: {
 					initAnimation: "stand.right"
 				},
 				scale: 0.3066198,
+				rot: 0,
 				tint: {
 					r: 1,
 					a: 1
@@ -124,6 +125,7 @@ scenes: {
 					initAnimation: "stand.right"
 				},
 				scale: 0.6267129,
+				rot: 0,
 				tint: {
 					g: 1,
 					a: 1
@@ -267,6 +269,7 @@ scenes: {
 					initAnimation: "stand.left"
 				},
 				scale: 0.6300766,
+				rot: 0,
 				tint: {
 					g: 1,
 					a: 1
@@ -335,6 +338,7 @@ scenes: {
 					initAnimation: "stand.right"
 				},
 				scale: 0.6228006,
+				rot: 0,
 				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,

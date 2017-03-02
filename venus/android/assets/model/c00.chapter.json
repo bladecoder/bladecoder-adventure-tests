@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.1.0",
+bladeEngineVersion: "1.1.1-SNAPSHOT",
 scenes: {
 	endSCN: {
 		id: "endSCN",

@@ -2,22 +2,22 @@
 
 === d1 ===
 
-Hi!
-How are you?
+Hi! #actor:player
+How are you? #actor:player
 
 Fine, thanks! #actor: green
 
 Are you hungry? #actor:green
 
-* No[], I don't
+* player: No[], I don't.
 	Ok, let me know when you want some food. #actor:green
-* Yes
+* Yes #actor:player
 	Would you like a hamburger? #actor:green
-	** Yes
+	** Yes #actor:player
 		Maybe you are too fat, here you have a banana. #actor:green
-	** No
+	** No #actor:player
 		Well, here you have a banana. #actor:green
 
-- Bye  
+- Bye   #actor:player
 
 -> END

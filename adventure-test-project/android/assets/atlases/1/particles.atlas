@@ -1,0 +1,27 @@
+
+particles.png
+size: 311,254
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fire
+  rotate: false
+  xy: 1, 1
+  size: 265, 252
+  orig: 265, 252
+  offset: 0, 0
+  index: -1
+glow
+  rotate: false
+  xy: 268, 211
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+rainDrop
+  rotate: false
+  xy: 268, 181
+  size: 13, 28
+  orig: 13, 28
+  offset: 0, 0
+  index: -1

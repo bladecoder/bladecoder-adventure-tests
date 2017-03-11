@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.1.1-SNAPSHOT",
+bladeEngineVersion: "1.2.2-SNAPSHOT",
 scenes: {
 	endSCN: {
 		id: "endSCN",
@@ -69,6 +69,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.ImageRenderer",
 					fanims: {
 						bonasera_icon: {
+							class: "com.bladecoder.engine.anim.AnimationDesc",
 							id: "bonasera_icon",
 							source: "bonasera_icon.png",
 							duration: 1,
@@ -77,9 +78,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "bonasera_icon"
+					initAnimation: "bonasera_icon",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -330,6 +333,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						fence: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "fence",
 							source: "scene2",
 							duration: 1,
@@ -338,9 +342,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "fence"
+					initAnimation: "fence",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -445,6 +451,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						throwgoddess2: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "throwgoddess2",
 							source: "player_down",
 							duration: 0.5,
@@ -453,6 +460,7 @@ scenes: {
 							preload: true
 						},
 						runaway: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "runaway",
 							source: "player_down",
 							duration: 1,
@@ -461,6 +469,7 @@ scenes: {
 							preload: true
 						},
 						"crouch.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "crouch.right",
 							source: "player_down",
 							duration: 0.3,
@@ -469,6 +478,7 @@ scenes: {
 							preload: true
 						},
 						"walk.frontright": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.frontright",
 							source: "player_down",
 							duration: 1,
@@ -477,6 +487,7 @@ scenes: {
 							preload: true
 						},
 						"stand.frontright": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.frontright",
 							source: "player_down",
 							duration: 1,
@@ -485,6 +496,7 @@ scenes: {
 							preload: true
 						},
 						throwgoddess: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "throwgoddess",
 							source: "player_down",
 							duration: 1,
@@ -493,6 +505,7 @@ scenes: {
 							preload: true
 						},
 						"talk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "talk.right",
 							source: "player_down",
 							duration: 1,
@@ -501,9 +514,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.frontright"
+					initAnimation: "stand.frontright",
+					orgAlign: 4
 				},
 				scale: 0.84536266,
+				rot: 0,
 				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
@@ -961,6 +976,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"stand.frontleft": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.frontleft",
 							source: "policeman",
 							duration: 1,
@@ -969,6 +985,7 @@ scenes: {
 							preload: true
 						},
 						fall: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "fall",
 							source: "policeman",
 							duration: 1,
@@ -980,6 +997,7 @@ scenes: {
 							preload: true
 						},
 						"turn.left": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "turn.left",
 							source: "policeman",
 							duration: 0.3,
@@ -988,6 +1006,7 @@ scenes: {
 							preload: true
 						},
 						"talk.left": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "talk.left",
 							source: "policeman",
 							duration: 1,
@@ -996,9 +1015,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.frontleft"
+					initAnimation: "stand.frontleft",
+					orgAlign: 4
 				},
 				scale: 1.0046208,
+				rot: 0,
 				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
@@ -1319,6 +1340,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						cabinet_off: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cabinet_off",
 							source: "scene1",
 							duration: 1,
@@ -1327,9 +1349,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "cabinet_off"
+					initAnimation: "cabinet_off",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1816,6 +1840,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"chair.inventory": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "chair.inventory",
 							source: "scene1",
 							duration: 1,
@@ -1825,6 +1850,7 @@ scenes: {
 							preload: true
 						},
 						"chair.broken": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "chair.broken",
 							source: "scene1",
 							duration: 1,
@@ -1833,6 +1859,7 @@ scenes: {
 							preload: true
 						},
 						chair2: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "chair2",
 							source: "scene1",
 							duration: 1,
@@ -1841,9 +1868,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "chair2"
+					initAnimation: "chair2",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1869,6 +1898,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						head_fg: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "head_fg",
 							source: "scene1",
 							duration: 1,
@@ -1877,9 +1907,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "head_fg"
+					initAnimation: "head_fg",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2227,6 +2259,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"rope.fall": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope.fall",
 							source: "scene1_rope",
 							duration: 2,
@@ -2236,6 +2269,7 @@ scenes: {
 							disposeWhenPlayed: true
 						},
 						"rope.throw": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope.throw",
 							source: "scene1_rope_throw",
 							duration: 1.5,
@@ -2244,6 +2278,7 @@ scenes: {
 							disposeWhenPlayed: true
 						},
 						rope: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope",
 							source: "scene1",
 							duration: 1,
@@ -2252,6 +2287,7 @@ scenes: {
 							preload: true
 						},
 						"rope.down": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope.down",
 							source: "scene1_rope",
 							duration: 2,
@@ -2262,6 +2298,7 @@ scenes: {
 							disposeWhenPlayed: true
 						},
 						"rope.floor": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope.floor",
 							source: "scene1",
 							duration: 1,
@@ -2270,6 +2307,7 @@ scenes: {
 							preload: true
 						},
 						"rope.inventory": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope.inventory",
 							source: "scene1",
 							duration: 1,
@@ -2279,6 +2317,7 @@ scenes: {
 							preload: true
 						},
 						rope2: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope2",
 							source: "scene1",
 							duration: 1,
@@ -2287,6 +2326,7 @@ scenes: {
 							preload: true
 						},
 						"rope.up": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope.up",
 							source: "scene1_rope_up",
 							duration: 2,
@@ -2295,6 +2335,7 @@ scenes: {
 							disposeWhenPlayed: true
 						},
 						"rope.withanchor": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "rope.withanchor",
 							source: "scene1",
 							duration: 1,
@@ -2304,9 +2345,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "rope"
+					initAnimation: "rope",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -2784,6 +2827,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"cutter.inventory": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cutter.inventory",
 							source: "common",
 							duration: 1,
@@ -2792,6 +2836,7 @@ scenes: {
 							preload: true
 						},
 						"cutter.charging": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cutter.charging",
 							source: "common",
 							duration: 2,
@@ -2800,6 +2845,7 @@ scenes: {
 							preload: true
 						},
 						"cutter.withcable": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cutter.withcable",
 							source: "common",
 							duration: 1,
@@ -2809,9 +2855,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "cutter.inventory"
+					initAnimation: "cutter.inventory",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -3081,6 +3129,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"diosa.inventory": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "diosa.inventory",
 							source: "common",
 							duration: 1,
@@ -3089,6 +3138,7 @@ scenes: {
 							preload: true
 						},
 						diosa: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "diosa",
 							source: "common",
 							duration: 1,
@@ -3097,9 +3147,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "diosa"
+					initAnimation: "diosa",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -3281,6 +3333,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						hole: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "hole",
 							source: "scene1",
 							duration: 1,
@@ -3289,9 +3342,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "hole"
+					initAnimation: "hole",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -3431,6 +3486,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						exit: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "exit",
 							source: "scene1",
 							duration: 1,
@@ -3439,9 +3495,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "exit"
+					initAnimation: "exit",
+					orgAlign: 4
 				},
 				scale: 0.7,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -3526,6 +3584,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"navaja.inventory": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "navaja.inventory",
 							source: "common",
 							duration: 1,
@@ -3534,9 +3593,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "navaja.inventory"
+					initAnimation: "navaja.inventory",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -3840,6 +3901,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"cable.inventory": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cable.inventory",
 							source: "scene1",
 							duration: 1,
@@ -3849,6 +3911,7 @@ scenes: {
 							preload: true
 						},
 						"cable.disconnected": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cable.disconnected",
 							source: "scene1",
 							duration: 1,
@@ -3857,6 +3920,7 @@ scenes: {
 							preload: true
 						},
 						"cable.connected": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cable.connected",
 							source: "scene1",
 							duration: 1,
@@ -3865,9 +3929,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "cable.connected"
+					initAnimation: "cable.connected",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -3892,6 +3958,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						column_fg: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "column_fg",
 							source: "scene1",
 							duration: 1,
@@ -3900,9 +3967,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "column_fg"
+					initAnimation: "column_fg",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -3928,6 +3997,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"stand.left": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.left",
 							source: "player",
 							duration: 1,
@@ -3936,6 +4006,7 @@ scenes: {
 							preload: true
 						},
 						"stand.backleft": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.backleft",
 							source: "player",
 							duration: 1,
@@ -3944,6 +4015,7 @@ scenes: {
 							preload: true
 						},
 						"stand.front": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.front",
 							source: "player",
 							duration: 1,
@@ -3952,6 +4024,7 @@ scenes: {
 							preload: true
 						},
 						"stand.frontleft": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.frontleft",
 							source: "player",
 							duration: 1,
@@ -3960,6 +4033,7 @@ scenes: {
 							preload: true
 						},
 						"walk.back": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.back",
 							source: "player",
 							duration: 1,
@@ -3968,6 +4042,7 @@ scenes: {
 							preload: true
 						},
 						"stand.back": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.back",
 							source: "player",
 							duration: 1,
@@ -3976,6 +4051,7 @@ scenes: {
 							preload: true
 						},
 						"walk.frontleft": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.frontleft",
 							source: "player",
 							duration: 1,
@@ -3984,6 +4060,7 @@ scenes: {
 							preload: true
 						},
 						"use.back": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "use.back",
 							source: "player",
 							duration: 0.2,
@@ -3992,6 +4069,7 @@ scenes: {
 							preload: true
 						},
 						sitdown: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "sitdown",
 							source: "scene1",
 							duration: 0.3,
@@ -4000,6 +4078,7 @@ scenes: {
 							preload: true
 						},
 						"crouch.left": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "crouch.left",
 							source: "player",
 							duration: 0.3,
@@ -4008,6 +4087,7 @@ scenes: {
 							preload: true
 						},
 						"player.chairbroke": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "player.chairbroke",
 							source: "scene1",
 							duration: 0.3,
@@ -4016,6 +4096,7 @@ scenes: {
 							preload: true
 						},
 						"use.back2": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "use.back2",
 							source: "player",
 							duration: 0.3,
@@ -4024,6 +4105,7 @@ scenes: {
 							preload: true
 						},
 						"walk.backleft": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.backleft",
 							source: "player",
 							duration: 1,
@@ -4032,6 +4114,7 @@ scenes: {
 							preload: true
 						},
 						"walk.front": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.front",
 							source: "player",
 							duration: 1,
@@ -4040,6 +4123,7 @@ scenes: {
 							preload: true
 						},
 						"walk.left": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.left",
 							source: "player",
 							duration: 1,
@@ -4048,9 +4132,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.left"
+					initAnimation: "stand.left",
+					orgAlign: 4
 				},
 				scale: 0.9683697,
+				rot: 0,
 				tint: null,
 				depthType: "VECTOR",
 				bboxFromRenderer: true,
@@ -4275,6 +4361,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						forward: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "forward",
 							source: "scene0",
 							duration: 1,
@@ -4283,9 +4370,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "forward"
+					initAnimation: "forward",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -4310,6 +4399,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.ImageRenderer",
 					fanims: {
 						title: {
+							class: "com.bladecoder.engine.anim.AnimationDesc",
 							id: "title",
 							source: "@title.jpg",
 							duration: 1,
@@ -4318,9 +4408,11 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "title"
+					initAnimation: "title",
+					orgAlign: 4
 				},
 				scale: 1,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -4353,7 +4445,7 @@ scenes: {
 						class: "com.bladecoder.engine.actions.ScreenPositionAction",
 						actor: "forward",
 						position: "-40.0,40.0",
-						anchor: "DOWN_RIGHT"
+						anchor: "BOTTOM_RIGHT"
 					},
 					{
 						class: "com.bladecoder.engine.actions.TextAction",

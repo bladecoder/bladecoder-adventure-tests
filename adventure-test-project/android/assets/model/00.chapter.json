@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.1.2-SNAPSHOT",
+bladeEngineVersion: "1.2.3-SNAPSHOT",
 scenes: {
 	"01": {
 		id: "01",
@@ -72,6 +72,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"walk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.right",
 							source: "char",
 							duration: 0.5,
@@ -80,6 +81,7 @@ scenes: {
 							preload: true
 						},
 						"stand.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.right",
 							source: "char",
 							duration: 1,
@@ -88,7 +90,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.left"
+					initAnimation: "stand.left",
+					orgAlign: 4
 				},
 				scale: 0.19001375,
 				rot: 0,
@@ -358,6 +361,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"walk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.right",
 							source: "char",
 							duration: 0.5,
@@ -366,6 +370,7 @@ scenes: {
 							preload: true
 						},
 						"stand.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.right",
 							source: "char",
 							duration: 1,
@@ -374,7 +379,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.left"
+					initAnimation: "stand.left",
+					orgAlign: 4
 				},
 				scale: 0.16458614,
 				rot: 0,
@@ -416,6 +422,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "$PLAYER",
 								target: "ball",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -438,6 +445,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ball: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ball",
 							source: "scene1",
 							duration: 1,
@@ -446,7 +454,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ball"
+					initAnimation: "ball",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 45,
@@ -480,6 +489,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "$PLAYER",
 								target: "door_right",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -550,6 +560,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"walk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.right",
 							source: "char",
 							duration: 0.5,
@@ -558,6 +569,7 @@ scenes: {
 							preload: true
 						},
 						"stand.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.right",
 							source: "char",
 							duration: 1,
@@ -566,7 +578,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.left"
+					initAnimation: "stand.left",
+					orgAlign: 4
 				},
 				scale: 0.13639663,
 				rot: 0,
@@ -641,6 +654,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"walk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.right",
 							source: "char",
 							duration: 0.5,
@@ -649,6 +663,7 @@ scenes: {
 							preload: true
 						},
 						"stand.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.right",
 							source: "char",
 							duration: 1,
@@ -657,7 +672,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.right"
+					initAnimation: "stand.right",
+					orgAlign: 4
 				},
 				scale: 0.17544998,
 				rot: 0,
@@ -899,6 +915,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -907,6 +924,7 @@ scenes: {
 							preload: true
 						},
 						error: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "error",
 							source: "testbutton",
 							duration: 1,
@@ -915,6 +933,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -923,7 +942,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "go"
+					initAnimation: "go",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -951,7 +971,8 @@ scenes: {
 				renderer: {
 					class: "com.bladecoder.engine.model.ParticleRenderer",
 					atlasName: "particles",
-					particleName: "bigFire"
+					particleName: "bigFire",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -985,6 +1006,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "$PLAYER",
 								target: "cube",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1050,6 +1072,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ball: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cube",
 							source: "scene1",
 							duration: 1,
@@ -1058,6 +1081,7 @@ scenes: {
 							preload: true
 						},
 						cube: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "cube",
 							source: "scene1",
 							duration: 1,
@@ -1066,7 +1090,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ball"
+					initAnimation: "ball",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -1091,7 +1116,34 @@ scenes: {
 				desc: null,
 				sounds: null,
 				refPoint: {},
-				verbs: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.AlphaAnimAction",
+								actor: "text",
+								alpha: 0,
+								speed: 0.5,
+								count: 1,
+								wait: true,
+								repeat: "NO_REPEAT"
+							},
+							{
+								class: "com.bladecoder.engine.actions.AlphaAnimAction",
+								actor: "text",
+								alpha: 1,
+								speed: 0.5,
+								count: 1,
+								wait: true,
+								repeat: "NO_REPEAT"
+							}
+						]
+					}
+				},
 				interaction: true,
 				state: null,
 				zIndex: 0,
@@ -1110,7 +1162,9 @@ scenes: {
 					shadowOffsetY: 0,
 					shadowColor: {
 						a: 1
-					}
+					},
+					align: 8,
+					orgAlign: 4
 				},
 				scale: 2,
 				rot: 45,
@@ -1138,7 +1192,8 @@ scenes: {
 				renderer: {
 					class: "com.bladecoder.engine.model.ParticleRenderer",
 					atlasName: "particles",
-					particleName: "firefly"
+					particleName: "firefly",
+					orgAlign: 4
 				},
 				scale: 2,
 				rot: 0,
@@ -1172,6 +1227,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "$PLAYER",
 								target: "door_left",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1220,6 +1276,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -1228,6 +1285,7 @@ scenes: {
 							preload: true
 						},
 						error: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "error",
 							source: "testbutton",
 							duration: 1,
@@ -1236,6 +1294,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -1244,7 +1303,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "go"
+					initAnimation: "go",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -1303,6 +1363,7 @@ scenes: {
 						class: "com.bladecoder.engine.actions.GotoAction",
 						actor: "$PLAYER",
 						pos: "749.0,330.0",
+						ignoreWalkZone: false,
 						wait: true
 					},
 					{
@@ -1319,6 +1380,7 @@ scenes: {
 						class: "com.bladecoder.engine.actions.GotoAction",
 						actor: "$PLAYER",
 						pos: "1517.0,374.0",
+						ignoreWalkZone: false,
 						wait: true
 					},
 					{
@@ -1405,6 +1467,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.ImageRenderer",
 					fanims: {
 						text: {
+							class: "com.bladecoder.engine.anim.AnimationDesc",
 							id: "text",
 							source: "@text.png",
 							duration: 1,
@@ -1413,7 +1476,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "text"
+					initAnimation: "text",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -1468,6 +1532,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "$PLAYER",
 								target: "exit",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1579,6 +1644,7 @@ scenes: {
 						class: "com.bladecoder.engine.actions.GotoAction",
 						actor: "$PLAYER",
 						pos: "1501.0,251.0",
+						ignoreWalkZone: false,
 						wait: true
 					}
 				]
@@ -1624,6 +1690,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "char",
 								target: "goto01",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1658,6 +1725,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						background: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "middleground",
 							source: "parallax",
 							duration: 1,
@@ -1666,7 +1734,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "background"
+					initAnimation: "background",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -1694,6 +1763,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						background: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "background",
 							source: "parallax",
 							duration: 1,
@@ -1702,7 +1772,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "background"
+					initAnimation: "background",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -1731,6 +1802,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"walk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "walk.right",
 							source: "char",
 							duration: 0.5,
@@ -1739,6 +1811,7 @@ scenes: {
 							preload: true
 						},
 						"stand.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "stand.right",
 							source: "char",
 							duration: 1,
@@ -1747,7 +1820,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.right"
+					initAnimation: "stand.right",
+					orgAlign: 4
 				},
 				scale: 0.3110584,
 				rot: 0,
@@ -1778,6 +1852,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						foreground1: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "foreground1",
 							source: "parallax",
 							duration: 1,
@@ -1786,7 +1861,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "foreground1"
+					initAnimation: "foreground1",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -1814,6 +1890,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						foreground1: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "foreground2",
 							source: "parallax",
 							duration: 1,
@@ -1822,7 +1899,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "foreground1"
+					initAnimation: "foreground1",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -1850,7 +1928,8 @@ scenes: {
 				renderer: {
 					class: "com.bladecoder.engine.model.ParticleRenderer",
 					atlasName: "particles",
-					particleName: "rain2"
+					particleName: "rain",
+					orgAlign: 0
 				},
 				scale: 1,
 				rot: 0,
@@ -1946,6 +2025,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -1954,7 +2034,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2017,6 +2098,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2025,7 +2107,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2088,6 +2171,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -2096,6 +2180,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2104,7 +2189,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "go"
+					initAnimation: "go",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2167,6 +2253,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2175,7 +2262,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2238,6 +2326,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2246,7 +2335,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2309,6 +2399,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2317,7 +2408,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2380,6 +2472,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2388,7 +2481,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2451,6 +2545,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2459,7 +2554,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2522,6 +2618,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -2530,6 +2627,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2538,7 +2636,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "go"
+					initAnimation: "go",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2601,6 +2700,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2609,7 +2709,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2672,6 +2773,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -2680,6 +2782,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2688,7 +2791,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "go"
+					initAnimation: "go",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2751,6 +2855,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2759,7 +2864,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2822,6 +2928,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -2830,6 +2937,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2838,7 +2946,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "go"
+					initAnimation: "go",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2901,6 +3010,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2909,7 +3019,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -2973,6 +3084,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -2981,6 +3093,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2989,6 +3102,7 @@ scenes: {
 							preload: true
 						},
 						error: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "error",
 							source: "testbutton",
 							duration: 1,
@@ -2997,7 +3111,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "go"
+					initAnimation: "go",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -3060,6 +3175,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -3068,7 +3184,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,
@@ -3131,6 +3248,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -3139,7 +3257,8 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok"
+					initAnimation: "ok",
+					orgAlign: 4
 				},
 				scale: 1,
 				rot: 0,

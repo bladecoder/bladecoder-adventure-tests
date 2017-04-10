@@ -40,7 +40,7 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 		CharacterActor player = World.getInstance().getCurrentScene().getPlayer();
 
 		goTo = false;
-		player.goTo(new Vector2(actor.getX() + actor.getWidth(), actor.getY()), this);
+		player.goTo(new Vector2(actor.getX() + actor.getWidth(), actor.getY()), this, false);
 		
 		return false;
 	}

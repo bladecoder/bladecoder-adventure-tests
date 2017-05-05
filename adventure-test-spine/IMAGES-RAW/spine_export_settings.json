@@ -1,0 +1,9 @@
+{
+class: binary
+project: "/home/rgarcia/Dropbox/prj/"
+output: "../android/assets/spine/"
+extension: .skel
+nonessential: false
+createAtlas: false
+texturePacker: null
+}

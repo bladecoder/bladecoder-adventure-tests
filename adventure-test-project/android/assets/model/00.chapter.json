@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.2.3-SNAPSHOT",
+bladeEngineVersion: "1.2.4",
 scenes: {
 	"01": {
 		id: "01",
@@ -433,6 +433,16 @@ scenes: {
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
 								actor: "ball"
+							},
+							{
+								class: "com.bladecoder.engine.actions.AlphaAnimAction",
+								actor: "ball",
+								alpha: 0,
+								speed: 1,
+								count: -1,
+								wait: true,
+								repeat: "YOYO",
+								interpolation: "FADE"
 							}
 						]
 					}
@@ -689,8 +699,8 @@ scenes: {
 				id: "test_actions",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 213.08972,
-					y: 778.28467
+					x: 621.7815,
+					y: 772.6084
 				},
 				visible: true,
 				desc: "@01.test_actions.desc",
@@ -1109,8 +1119,8 @@ scenes: {
 				id: "text",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 768.62244,
-					y: 792.22437
+					x: 1126.2278,
+					y: 820.6056
 				},
 				visible: true,
 				desc: null,
@@ -1168,6 +1178,88 @@ scenes: {
 				},
 				scale: 2,
 				rot: 45,
+				tint: null,
+				depthType: "NONE",
+				bboxFromRenderer: true
+			},
+			"ui-actor": {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "ui-actor",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 73.79169,
+					y: 945.10004
+				},
+				visible: true,
+				desc: null,
+				sounds: null,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						target: null,
+						state: null,
+						icon: null,
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.TextAction",
+								text: "@01.ui-actor.leave.0.text",
+								style: "default",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.TextAction",
+								text: "@01.ui-actor.leave.1.text",
+								style: "default",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				state: null,
+				zIndex: 100,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						go: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						error: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "error",
+					orgAlign: 0
+				},
+				scale: 0.5,
+				rot: 0,
 				tint: null,
 				depthType: "NONE",
 				bboxFromRenderer: true
@@ -1247,8 +1339,8 @@ scenes: {
 				id: "test_inventory",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 1745.6846,
-					y: 796.58093
+					x: 372.02625,
+					y: 768.19934
 				},
 				visible: true,
 				desc: "@01.test_inventory.desc_",
@@ -1335,6 +1427,11 @@ scenes: {
 					{
 						class: "com.bladecoder.engine.actions.RunOnceAction",
 						caID: "930473402"
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetActorAttrAction",
+						actor: "ui-actor",
+						uiActor: true
 					},
 					{
 						class: "com.bladecoder.engine.actions.SetPlayerAction",

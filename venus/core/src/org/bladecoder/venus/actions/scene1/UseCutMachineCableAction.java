@@ -34,7 +34,7 @@ public class UseCutMachineCableAction implements Action {
 					TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, null, null, null, null, null);
 			a.setState("WITH_CABLE");
 			a.startAnimation("cutter.withcable", null);
-			a.playSound("click");
+			World.getInstance().getCurrentScene().getSoundManager().playSound(a.getId() + "_" +  "click");
 			World.getInstance().getInventory().removeItem((SpriteActor) target);
 		} else {
 			World.getInstance().getTextManager().addText(defaultCableText, TextManager.POS_SUBTITLE,

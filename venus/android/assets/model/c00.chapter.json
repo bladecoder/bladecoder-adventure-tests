@@ -1,5 +1,68 @@
 {
-bladeEngineVersion: "1.2.2-SNAPSHOT",
+bladeEngineVersion: "1.2.8-SNAPSHOT",
+sounds: {
+	rope_click: {
+		id: "rope_click",
+		filename: "click1.mp3",
+		volume: 0.2
+	},
+	chair_chair_broken: {
+		id: "chair_chair_broken",
+		filename: "chair_broken.mp3"
+	},
+	chair_click: {
+		id: "chair_click",
+		filename: "click1.mp3",
+		volume: 0.2
+	},
+	policeman_fall: {
+		id: "policeman_fall",
+		filename: "fall.mp3",
+		volume: 0.5,
+		preload: true
+	},
+	rope_slide: {
+		id: "rope_slide",
+		filename: "slide.mp3",
+		volume: 0.05
+	},
+	cutter_drill: {
+		id: "cutter_drill",
+		filename: "drill.mp3",
+		volume: 0.5
+	},
+	cutter_click: {
+		id: "cutter_click",
+		filename: "click1.mp3",
+		volume: 0.2
+	},
+	diosa_chords: {
+		id: "diosa_chords",
+		filename: "chords.mp3",
+		volume: 0.5
+	},
+	policeman_hit: {
+		id: "policeman_hit",
+		filename: "hit.mp3",
+		volume: 0.3,
+		preload: true
+	},
+	cable_click: {
+		id: "cable_click",
+		filename: "click1.mp3",
+		volume: 0.2
+	},
+	chair_chair_squeek: {
+		id: "chair_chair_squeek",
+		filename: "chair_squeek.mp3",
+		volume: 0.1
+	},
+	cable_switch: {
+		id: "cable_switch",
+		filename: "switch.mp3",
+		volume: 0.4
+	}
+},
 scenes: {
 	endSCN: {
 		id: "endSCN",
@@ -16,7 +79,6 @@ scenes: {
 				pos: {},
 				visible: false,
 				desc: "@endSCN.exit.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					leave: {
@@ -46,7 +108,6 @@ scenes: {
 				},
 				visible: false,
 				desc: "@endSCN.bonasera.desc_",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					leave: {
@@ -181,7 +242,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@door.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					leave: {
@@ -258,7 +318,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@electricbox.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -322,7 +381,6 @@ scenes: {
 				},
 				visible: true,
 				desc: null,
-				sounds: null,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
@@ -361,7 +419,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@player.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					goto: {
@@ -409,7 +466,8 @@ scenes: {
 								animation: "player#stand.frontright",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -423,6 +481,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "460.0,0.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -430,7 +489,8 @@ scenes: {
 								animation: "player#stand.frontright",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -536,16 +596,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@policeman.desc",
-				sounds: {
-					hit: {
-						filename: "hit.mp3",
-						volume: 0.3
-					},
-					fall: {
-						filename: "fall.mp3",
-						volume: 0.5
-					}
-				},
 				refPoint: {},
 				verbs: {
 					dialog1_turn: {
@@ -600,7 +650,8 @@ scenes: {
 								animation: "policeman#turn.left",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -656,14 +707,16 @@ scenes: {
 								animation: "player#throwgoddess",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "player#throwgoddess2",
 								count: 1,
 								wait: false,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.DropItemAction",
@@ -689,16 +742,16 @@ scenes: {
 								repeat: "NO_REPEAT"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "policeman",
-								play: "hit"
+								class: "com.bladecoder.engine.actions.DisableActionAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.SoundAction,actor:policeman,play:hit}"
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "policeman#fall",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
@@ -727,7 +780,8 @@ scenes: {
 								animation: "player#runaway",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
@@ -795,14 +849,16 @@ scenes: {
 								animation: "policeman#turn.left",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "policeman#stand.frontleft",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.IfAttrAction",
@@ -832,7 +888,8 @@ scenes: {
 								animation: "player#crouch.right",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.DropItemAction",
@@ -849,14 +906,16 @@ scenes: {
 								animation: "player#crouch.right",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "player#stand.frontright",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.EndAction",
@@ -994,6 +1053,7 @@ scenes: {
 							},
 							animationType: "NO_REPEAT",
 							count: 1,
+							sound: "hit",
 							preload: true
 						},
 						"turn.left": {
@@ -1033,6 +1093,8 @@ scenes: {
 								verbId: null,
 								next: "dialog2",
 								once: false,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							},
 							{
@@ -1041,6 +1103,8 @@ scenes: {
 								verbId: null,
 								next: "this",
 								once: false,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							},
 							{
@@ -1049,6 +1113,8 @@ scenes: {
 								verbId: "dialog1_turn",
 								next: null,
 								once: false,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							},
 							{
@@ -1057,6 +1123,8 @@ scenes: {
 								verbId: null,
 								next: "this",
 								once: false,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							},
 							{
@@ -1065,6 +1133,8 @@ scenes: {
 								verbId: null,
 								next: null,
 								once: false,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							}
 						]
@@ -1078,6 +1148,8 @@ scenes: {
 								verbId: null,
 								next: "this",
 								once: true,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							},
 							{
@@ -1086,6 +1158,8 @@ scenes: {
 								verbId: null,
 								next: "this",
 								once: true,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							},
 							{
@@ -1094,6 +1168,8 @@ scenes: {
 								verbId: null,
 								next: "this",
 								once: false,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							},
 							{
@@ -1102,6 +1178,8 @@ scenes: {
 								verbId: null,
 								next: "dialog1",
 								once: false,
+								soundId: null,
+								responseSoundId: null,
 								visible: true
 							}
 						]
@@ -1120,7 +1198,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@out.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					leave: {
@@ -1223,6 +1300,7 @@ scenes: {
 						class: "com.bladecoder.engine.actions.GotoAction",
 						actor: "player",
 						pos: "460.0,0.0",
+						ignoreWalkZone: false,
 						wait: true
 					},
 					{
@@ -1230,7 +1308,8 @@ scenes: {
 						animation: "player#stand.frontright",
 						count: 1,
 						wait: true,
-						repeat: "SPRITE_DEFINED"
+						repeat: "SPRITE_DEFINED",
+						keepDirection: false
 					},
 					{
 						class: "com.bladecoder.engine.actions.SayAction",
@@ -1253,7 +1332,8 @@ scenes: {
 						animation: "player#crouch.right",
 						count: 1,
 						wait: true,
-						repeat: "SPRITE_DEFINED"
+						repeat: "SPRITE_DEFINED",
+						keepDirection: false
 					},
 					{
 						class: "com.bladecoder.engine.actions.DropItemAction",
@@ -1270,14 +1350,16 @@ scenes: {
 						animation: "player#crouch.right",
 						count: 1,
 						wait: true,
-						repeat: "REVERSE"
+						repeat: "REVERSE",
+						keepDirection: false
 					},
 					{
 						class: "com.bladecoder.engine.actions.AnimationAction",
 						animation: "player#stand.frontright",
 						count: 1,
 						wait: true,
-						repeat: "SPRITE_DEFINED"
+						repeat: "SPRITE_DEFINED",
+						keepDirection: false
 					},
 					{
 						class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -1329,7 +1411,6 @@ scenes: {
 				},
 				visible: false,
 				desc: null,
-				sounds: null,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
@@ -1368,7 +1449,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@libro.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -1431,7 +1511,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@estatua.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -1494,19 +1573,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@chair.desc",
-				sounds: {
-					chair_broken: {
-						filename: "chair_broken.mp3"
-					},
-					chair_squeek: {
-						filename: "chair_squeek.mp3",
-						volume: 0.1
-					},
-					click: {
-						filename: "click1.mp3",
-						volume: 0.2
-					}
-				},
 				refPoint: {},
 				verbs: {
 					"pickup.BROKEN": {
@@ -1523,6 +1589,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2400.0,450.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1536,7 +1603,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -1547,7 +1615,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -1642,6 +1711,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2330.0,410.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1655,7 +1725,8 @@ scenes: {
 								animation: "player#sitdown",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
@@ -1679,7 +1750,8 @@ scenes: {
 								animation: "player#sitdown",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -1706,6 +1778,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2330.0,410.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1719,7 +1792,8 @@ scenes: {
 								animation: "player#sitdown",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
@@ -1743,7 +1817,8 @@ scenes: {
 								animation: "player#sitdown",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -1770,6 +1845,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2330.0,410.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1783,7 +1859,8 @@ scenes: {
 								animation: "player#sitdown",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.WaitAction",
@@ -1799,14 +1876,16 @@ scenes: {
 								animation: "chair#chair.broken",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "player#player.chairbroke",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.WaitAction",
@@ -1887,7 +1966,6 @@ scenes: {
 				},
 				visible: true,
 				desc: null,
-				sounds: null,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
@@ -1926,16 +2004,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@rope.desc",
-				sounds: {
-					slide: {
-						filename: "slide.mp3",
-						volume: 0.05
-					},
-					click: {
-						filename: "click1.mp3",
-						volume: 0.2
-					}
-				},
 				refPoint: {},
 				verbs: {
 					"pickup.ANCHORED": {
@@ -1952,6 +2020,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -1964,7 +2033,8 @@ scenes: {
 								animation: "rope#rope.up",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -2000,7 +2070,8 @@ scenes: {
 								animation: "rope#rope.withanchor",
 								count: 1,
 								wait: false,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -2067,6 +2138,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2084,7 +2156,8 @@ scenes: {
 								animation: "rope#rope.throw",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
@@ -2096,7 +2169,8 @@ scenes: {
 								animation: "rope#rope2",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -2149,6 +2223,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2156,7 +2231,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -2167,7 +2243,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -2202,6 +2279,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2214,7 +2292,8 @@ scenes: {
 								animation: "rope#rope.fall",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
@@ -2226,7 +2305,8 @@ scenes: {
 								animation: "rope#rope.floor",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -2364,16 +2444,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@cutter.desc",
-				sounds: {
-					drill: {
-						filename: "drill.mp3",
-						volume: 0.5
-					},
-					click: {
-						filename: "click1.mp3",
-						volume: 0.2
-					}
-				},
 				refPoint: {},
 				verbs: {
 					"use.diosa.WITH_LOW_BATTERY": {
@@ -2390,6 +2460,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2405,7 +2476,8 @@ scenes: {
 								animation: "player#use.back",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
@@ -2417,7 +2489,8 @@ scenes: {
 								animation: "player#use.back2",
 								count: 3,
 								wait: true,
-								repeat: "REPEAT"
+								repeat: "REPEAT",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
@@ -2436,7 +2509,8 @@ scenes: {
 								animation: "player#use.back",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetStateAction",
@@ -2485,6 +2559,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2492,7 +2567,8 @@ scenes: {
 								animation: "player#use.back",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
@@ -2504,7 +2580,8 @@ scenes: {
 								animation: "player#use.back2",
 								count: 12,
 								wait: true,
-								repeat: "REPEAT"
+								repeat: "REPEAT",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SoundAction",
@@ -2515,7 +2592,8 @@ scenes: {
 								animation: "player#use.back",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2665,6 +2743,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "682.0,434.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2672,7 +2751,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -2688,7 +2768,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2762,6 +2843,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "641.0,413.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2769,7 +2851,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.DropItemAction",
@@ -2781,14 +2864,16 @@ scenes: {
 								animation: "cutter#cutter.charging",
 								count: 1,
 								wait: false,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2874,12 +2959,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@scene1.diosa.desc",
-				sounds: {
-					chords: {
-						filename: "chords.mp3",
-						volume: 0.5
-					}
-				},
 				refPoint: {},
 				verbs: {
 					"lookat.INVENTORY": {
@@ -2930,6 +3009,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2962,6 +3042,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "890.0,76.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -2969,14 +3050,16 @@ scenes: {
 								animation: "player#use.back",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
 								animation: "player#use.back",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -3049,7 +3132,8 @@ scenes: {
 								animation: "player#crouch.right",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -3065,7 +3149,8 @@ scenes: {
 								animation: "player#crouch.right",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.EndAction",
@@ -3166,7 +3251,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@papelera.desc",
-				sounds: null,
 				refPoint: {
 					x: 43.14612,
 					y: -77.303406
@@ -3186,6 +3270,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								target: "papelera",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -3240,7 +3325,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@vitrina.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -3281,7 +3365,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@vasijas.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -3322,7 +3405,6 @@ scenes: {
 				},
 				visible: false,
 				desc: null,
-				sounds: null,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
@@ -3361,7 +3443,6 @@ scenes: {
 				},
 				visible: false,
 				desc: "@scene1.exit.desc____",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					"use.rope": {
@@ -3385,6 +3466,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -3402,7 +3484,8 @@ scenes: {
 								animation: "rope#rope.throw",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
@@ -3414,7 +3497,8 @@ scenes: {
 								animation: "rope#rope2",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetActorAttrAction",
@@ -3514,7 +3598,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@navaja.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					use: {
@@ -3612,7 +3695,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@scene1.socket.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -3675,7 +3757,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@cuadro.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -3738,16 +3819,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@scene1.cable.desc",
-				sounds: {
-					click: {
-						filename: "click1.mp3",
-						volume: 0.2
-					},
-					switch: {
-						filename: "switch.mp3",
-						volume: 0.4
-					}
-				},
 				refPoint: {},
 				verbs: {
 					"use.navaja.CONNECTED": {
@@ -3853,6 +3924,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "641.0,413.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -3860,7 +3932,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "SPRITE_DEFINED"
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.PickUpAction",
@@ -3871,7 +3944,8 @@ scenes: {
 								animation: "player#crouch.left",
 								count: 1,
 								wait: true,
-								repeat: "REVERSE"
+								repeat: "REVERSE",
+								keepDirection: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -3947,7 +4021,6 @@ scenes: {
 				},
 				visible: true,
 				desc: null,
-				sounds: null,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
@@ -3986,7 +4059,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@scene1.player.desc_",
-				sounds: null,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
@@ -4154,7 +4226,6 @@ scenes: {
 				},
 				visible: true,
 				desc: "@scene1.placa.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					lookat: {
@@ -4167,6 +4238,7 @@ scenes: {
 								class: "com.bladecoder.engine.actions.GotoAction",
 								actor: "player",
 								pos: "910.0,100.0",
+								ignoreWalkZone: false,
 								wait: true
 							},
 							{
@@ -4267,7 +4339,8 @@ scenes: {
 						animation: "rope#rope.down",
 						count: 1,
 						wait: true,
-						repeat: "SPRITE_DEFINED"
+						repeat: "SPRITE_DEFINED",
+						keepDirection: false
 					},
 					{
 						class: "com.bladecoder.engine.actions.SetActorAttrAction",
@@ -4279,7 +4352,8 @@ scenes: {
 						animation: "player#stand.left",
 						count: 1,
 						wait: false,
-						repeat: "REPEAT"
+						repeat: "REPEAT",
+						keepDirection: false
 					},
 					{
 						class: "com.bladecoder.engine.actions.PositionAction",
@@ -4291,7 +4365,8 @@ scenes: {
 						animation: "rope#rope",
 						count: 1,
 						wait: true,
-						repeat: "SPRITE_DEFINED"
+						repeat: "SPRITE_DEFINED",
+						keepDirection: false
 					},
 					{
 						class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -4336,7 +4411,6 @@ scenes: {
 				},
 				visible: false,
 				desc: "@scene0.forward.desc",
-				sounds: null,
 				refPoint: {},
 				verbs: {
 					leave: {
@@ -4388,7 +4462,6 @@ scenes: {
 				},
 				visible: false,
 				desc: null,
-				sounds: null,
 				refPoint: {},
 				verbs: {},
 				interaction: true,

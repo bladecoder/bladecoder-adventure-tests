@@ -23,18 +23,6 @@ verbs: {
 			}
 		]
 	},
-	initNewGame: {
-		id: "initNewGame",
-		target: null,
-		state: null,
-		icon: null,
-		actions: [
-			{
-				class: "com.bladecoder.engine.actions.InkNewStoryAction",
-				storyName: "test-story"
-			}
-		]
-	},
 	use: {
 		id: "use",
 		target: null,
@@ -73,13 +61,6 @@ verbs: {
 				wait: true
 			}
 		]
-	},
-	initSavedGame: {
-		id: "initSavedGame",
-		target: null,
-		state: null,
-		icon: null,
-		actions: []
 	}
 }
 }

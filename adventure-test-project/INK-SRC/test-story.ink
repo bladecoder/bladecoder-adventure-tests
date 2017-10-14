@@ -5,7 +5,8 @@
 > Goto:  actor=RED, target=target
 > Animation:  animation= GREEN.stand.left, wait=false
 
-GREEN> Hi! This is a graphic adventure written with Ink!
+GREEN> Hi! This is a scene written with Ink!
+GREEN> Ink is a narrative language developed by Inkle.
 
 GREEN> Can you drive your game and story throught the Ink language?
 

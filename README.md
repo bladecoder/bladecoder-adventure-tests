@@ -5,7 +5,7 @@ These are the Tests Games for the Bladecoder Adventure Engine.
 
 ### adventure-test-project
 
-This is a simple test project with 3 scenes.
+This is a test project to show and testing the engine features.
 
 ![adventure-test-project](https://raw.githubusercontent.com/bladecoder/bladecoder-adventure-tests/master/adventure-test-project/screenshots/screenshots.scene0.png)
 

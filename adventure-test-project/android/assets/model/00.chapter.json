@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.2.8-SNAPSHOT",
+bladeEngineVersion: "1.3.1",
 sounds: {},
 scenes: {
 	basic3: {
@@ -48,7 +48,12 @@ scenes: {
 							{
 								class: "com.bladecoder.engine.actions.PositionAction",
 								actor: "$PLAYER",
-								target: "01#door_left"
+								target: "basic1#door_left"
+							},
+							{
+								class: "com.bladecoder.engine.actions.MoveToSceneAction",
+								actor: "$PLAYER",
+								scene: "basic1"
 							},
 							{
 								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
@@ -57,22 +62,12 @@ scenes: {
 								caID: "1348253093"
 							},
 							{
-								class: "com.bladecoder.engine.actions.MoveToSceneAction",
-								actor: "$PLAYER",
-								scene: "basic1"
-							},
-							{
 								class: "com.bladecoder.engine.actions.SetPlayerAction",
 								actor: "basic1#char"
 							},
 							{
 								class: "com.bladecoder.engine.actions.EndAction",
 								caID: "1348253093"
-							},
-							{
-								class: "com.bladecoder.engine.actions.MoveToSceneAction",
-								actor: "$PLAYER",
-								scene: "01"
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetPlayerAction",
@@ -116,14 +111,14 @@ scenes: {
 				actions: [
 					{
 						class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-						scene: "01",
+						scene: "basic1",
 						attr: "PLAYER",
 						value: "char",
 						caID: "742759885"
 					},
 					{
 						class: "com.bladecoder.engine.actions.MoveToSceneAction",
-						actor: "01#char"
+						actor: "basic1#char"
 					},
 					{
 						class: "com.bladecoder.engine.actions.SetPlayerAction",
@@ -135,7 +130,7 @@ scenes: {
 					},
 					{
 						class: "com.bladecoder.engine.actions.MoveToSceneAction",
-						actor: "01#red"
+						actor: "basic1#red"
 					},
 					{
 						class: "com.bladecoder.engine.actions.SetPlayerAction",
@@ -748,7 +743,7 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "parallax"
+								scene: "basic2"
 							}
 						]
 					}
@@ -1691,7 +1686,7 @@ scenes: {
 					{
 						class: "com.bladecoder.engine.actions.IfPropertyAction",
 						name: "PREVIOUS_SCENE",
-						value: "03",
+						value: "basic3",
 						caID: "1891188477"
 					},
 					{
@@ -1708,7 +1703,7 @@ scenes: {
 					{
 						class: "com.bladecoder.engine.actions.IfPropertyAction",
 						name: "PREVIOUS_SCENE",
-						value: "parallax",
+						value: "basic2",
 						caID: "1421587304"
 					},
 					{

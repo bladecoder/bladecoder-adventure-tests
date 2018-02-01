@@ -175,7 +175,7 @@ public class VenusMenuScreen extends MenuScreen {
 			Image image = new Image(getUI().getSkin().getDrawable("bonasera_icon"));
 			image.setScaling(Scaling.fit);
 			bonaseraButton.add(image).size(DPIUtils.getPrefButtonSize() * 1.4f);
-			bonaseraButton.add(new Label("[YELLOW] FULL FEATURED ADVENTURE!\nThe Revenge of Johnny Bonasera[]", getUI().getSkin(), "ui-dialog"));
+			bonaseraButton.add(new Label("[YELLOW] " + I18N.getString("ui.bonaseraLink") + "[]", getUI().getSkin(), "ui-dialog"));
 
 			bonaseraButton.addListener(new ClickListener() {
 				public void clicked(InputEvent event, float x, float y) {

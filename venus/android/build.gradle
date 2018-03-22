@@ -83,6 +83,10 @@ android {
     		noCompress "png", "jpg"
     		ignoreAssetsPattern "1"
      	}
+    } else {
+     	aaptOptions {
+    		noCompress "png", "jpg"
+     	}    
     }
 
     println "Version: $version Version Code: $defaultConfig.versionCode"

@@ -24,9 +24,7 @@ else
 fi
 
 if [ "$RELEASE_MODE" == "amazon" ]  || [ "$RELEASE_MODE" == "android" ]  || [ "$RELEASE_MODE" == "underground" ]; then
-  echo -n "Version Code: "
-  read VERSION_CODE
-  echo
+
   echo -n "Keystore Password: "
   read -s KEYSTORE_PASSWD
   echo
@@ -41,7 +39,7 @@ if [ "$RELEASE_MODE" == "amazon" ]  || [ "$RELEASE_MODE" == "android" ]  || [ "$
     RELFILENAME="$DIST_DIR"/$PROJECT_NAME-$VERSION.apk
   fi
 
-  ./gradlew -Pkeystore=$HOME/Dropbox/docs/ids/rgarcia_android.keystore -PstorePassword=$KEYSTORE_PASSWD -Palias=bladecoder -PkeyPassword=$KEY_PASSWD android:assembleFullRelease -Pversion=$VERSION  -PversionCode=$VERSION_CODE
+  ./gradlew -Pkeystore=$HOME/Dropbox/docs/ids/rgarcia_android.keystore -PstorePassword=$KEYSTORE_PASSWD -Palias=bladecoder -PkeyPassword=$KEY_PASSWD android:assembleFullRelease -Pversion=$VERSION --stacktrace
 
   cp android/build/outputs/apk/android-full-release.apk "$RELFILENAME"
 

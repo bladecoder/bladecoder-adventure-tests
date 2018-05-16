@@ -1,13 +1,13 @@
 apply plugin: 'android'
 
 android {
-    buildToolsVersion latestBuildToolsAvailable("26.0.2")
-    compileSdkVersion highestSdkAvailable(26)
+buildToolsVersion latestBuildToolsAvailable("27.0.3")
+compileSdkVersion highestSdkAvailable(27)
 
     defaultConfig {
         applicationId "com.bladecoder.advtest"
         minSdkVersion 15
-        targetSdkVersion 26 
+        targetSdkVersion 26
         versionName version
 
         if(project.hasProperty('versionCode'))
@@ -17,6 +17,8 @@ android {
 
 	    buildConfigField "int", "EXPANSION_FILE_VERSION", "0"
     }
+
+    flavorDimensions "default"
 
     productFlavors {
 	    full {
@@ -40,9 +42,8 @@ android {
 	full.assets.srcDirs = ['../assets']
  	expansion.assets.srcDirs = ['../base-assets']
 
-        instrumentTest.setRoot('tests')
     }
-    
+
   packagingOptions {
     // Preventing from license violations (more or less):
     pickFirst 'META-INF/LICENSE.txt'
@@ -57,7 +58,7 @@ android {
     exclude 'META-INF/DEPENDENCIES.txt'
     exclude 'META-INF/DEPENDENCIES'
     exclude 'META-INF/dependencies.txt'
-  }    
+  }
 
     if(project.hasProperty('keystore')) {
           signingConfigs {

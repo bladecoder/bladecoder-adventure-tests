@@ -44,20 +44,22 @@ android {
 		(major * 1000000) + (minor * 10000) + (patch * 100) + candidate;
 	}
 
-    buildToolsVersion latestBuildToolsAvailable("27.0.0")
+    buildToolsVersion latestBuildToolsAvailable("27.0.3")
     compileSdkVersion highestSdkAvailable(27)
 
     defaultConfig {
         versionCode buildVersionCode()
         versionName version
-		
+
 		applicationId "org.bladecoder.engine"
         minSdkVersion 15
         targetSdkVersion 23
-		
+
 		buildConfigField "int", "EXPANSION_FILE_VERSION", "0"
     }
-	
+
+  flavorDimensions "default"
+
 	productFlavors {
 	    full {
 	    }
@@ -86,7 +88,7 @@ android {
     } else {
      	aaptOptions {
     		noCompress "png", "jpg"
-     	}    
+     	}
     }
 
     println "Version: $version Version Code: $defaultConfig.versionCode"
@@ -98,7 +100,7 @@ android {
     		} else {
             	manifest.srcFile 'AndroidManifest.xml'
             }
-			
+
             java.srcDirs = ['src/main/java']
             aidl.srcDirs = ['src/main/java']
             renderscript.srcDirs = ['src/main/java']
@@ -109,9 +111,8 @@ android {
 		full.assets.srcDirs = ['../assets']
 		expansion.assets.srcDirs = ['../base-assets']
 
-        instrumentTest.setRoot('tests')
     }
-    
+
   packagingOptions {
     // Preventing from license violations (more or less):
     pickFirst 'META-INF/LICENSE.txt'
@@ -126,7 +127,7 @@ android {
     exclude 'META-INF/DEPENDENCIES.txt'
     exclude 'META-INF/DEPENDENCIES'
     exclude 'META-INF/dependencies.txt'
-  }    
+  }
 
     if(project.hasProperty('keystore')) {
           signingConfigs {

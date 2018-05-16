@@ -1,9 +1,10 @@
 buildscript {
     repositories {
         mavenCentral()
+        google()
     }
     dependencies {
-        
+
         classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
         classpath "com.mobidevelop.robovm:robovm-gradle-plugin:$roboVMGradlePluginVersion"
     }
@@ -16,6 +17,7 @@ allprojects {
     repositories {
         mavenLocal()
         mavenCentral()
+        google()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
@@ -32,11 +34,11 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         compile "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion"
     }
-    
-    
+
+
     task setVersion << {
     	println "Set version $project.version in BladeEngine.properties"
-    	
+
     	def props = new Properties()
 		def propFile = project.file("../android/assets/BladeEngine.properties");
 		props.load(new FileReader(propFile))
@@ -44,7 +46,7 @@ project(":core") {
 		props."bladeEngineVersion" = bladeEngineVersion
 		props."gdxVersion" = gdxVersion
 		props."roboVMVersion" = roboVMVersion
-		
+
 		def writer = new FileWriter(propFile)
    		try {
       		props.store(writer, null)
@@ -53,8 +55,8 @@ project(":core") {
       		writer.close()
    		}
 	}
-	
-	processResources.finalizedBy(setVersion)    
+
+	processResources.finalizedBy(setVersion)
 }
 
 project(":desktop") {

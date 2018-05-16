@@ -1,6 +1,6 @@
 android {
-    buildToolsVersion "23.0.3"
-    compileSdkVersion 23
+buildToolsVersion latestBuildToolsAvailable("27.0.3")
+compileSdkVersion highestSdkAvailable(27)
      sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -12,19 +12,17 @@ android {
             jniLibs.srcDirs = ['libs']
         }
 
-        instrumentTest.setRoot('tests')
-        
-        
+
     }
-    
-       
+
+
     defaultConfig {
         applicationId "com.bladecoder.advtestspine"
         minSdkVersion 15
         targetSdkVersion 23
     }
 
-	if(project.hasProperty('keystore')) {   
+	if(project.hasProperty('keystore')) {
           signingConfigs {
             release {
             storeFile file(project.keystore)
@@ -33,7 +31,7 @@ android {
             keyPassword project.keyPassword
             }
           }
-          
+
 		  buildTypes {
            	release {
             	signingConfig signingConfigs.release
@@ -45,7 +43,7 @@ android {
 // called every time gradle gets executed, takes the native dependencies of
 // the natives configuration, and extracts them to the proper libs/ folders
 // so they get packed with the APK.
-task copyAndroidNatives() { 
+task copyAndroidNatives() {
     file("libs/armeabi/").mkdirs();
     file("libs/armeabi-v7a/").mkdirs();
     file("libs/x86/").mkdirs();
@@ -103,8 +101,8 @@ eclipse {
     }
 
     classpath {
-        plusConfigurations += [ project.configurations.compile ]        
-        containers 'com.android.ide.eclipse.adt.ANDROID_FRAMEWORK', 'com.android.ide.eclipse.adt.LIBRARIES'       
+        plusConfigurations += [ project.configurations.compile ]
+        containers 'com.android.ide.eclipse.adt.ANDROID_FRAMEWORK', 'com.android.ide.eclipse.adt.LIBRARIES'
     }
 
     project {
@@ -122,7 +120,7 @@ eclipse {
 idea {
     module {
         sourceDirs += file("src");
-        scopes = [ COMPILE: [plus:[project.configurations.compile]]]        
+        scopes = [ COMPILE: [plus:[project.configurations.compile]]]
 
         iml {
             withXml {
@@ -139,4 +137,46 @@ idea {
             }
         }
     }
+}
+
+
+
+
+int highestSdkAvailable(int defaultSdk) {
+  try {
+      def buildToolsDir = new File(android.getSdkDirectory().toString(), "platforms")
+      def sdks = buildToolsDir.list([accept:{ d, f-> f.startsWith("android-") && new File(d, f).isDirectory() }] as FilenameFilter).sort { a, b -> b <=> a }
+      def highestSdk = sdks[0]
+      if (highestSdk != null) {
+          println "Using highest found SDK " + highestSdk.substring(8)
+          highestSdk.substring(8).toInteger()
+      } else {
+          println "No installed SDKs found. Using default SDK " + defaultSdk
+          defaultSdk
+      }
+  } catch (any) {
+      println "Exception while determining highest SDK. Using default SDK " +
+              defaultSdk
+      defaultSdk
+  }
+}
+
+String latestBuildToolsAvailable(String defaultBuildTools) {
+  try {
+      def buildToolsDir = new File(android.getSdkDirectory().toString(), "build-tools")
+      def buildToolsVersions = buildToolsDir.list([accept:{ d, f-> new File(d, f).isDirectory() }] as FilenameFilter).sort { a, b -> b <=> a }
+      def latestBuildTools = buildToolsVersions[0]
+      if (latestBuildTools != null) {
+          println "Using latest found build tools " + latestBuildTools
+          latestBuildTools
+      } else {
+          println "No installed build tools found. Using default build tools " +
+                  defaultBuildTools
+          defaultBuildTools
+      }
+  } catch (any) {
+      println "Exception while determining latest build tools. Using default build tools " +
+              defaultBuildTools
+      defaultBuildTools
+  }
 }

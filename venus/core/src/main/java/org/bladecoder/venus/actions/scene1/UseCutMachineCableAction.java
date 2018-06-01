@@ -21,6 +21,14 @@ public class UseCutMachineCableAction implements Action {
 	@ActionProperty
 	@ActionPropertyDescription("Text to show when the cable can not be attached to the cut_machine")
 	private String defaultCableText;
+	
+	
+	private World w;
+	
+	@Override
+	public void setWorld(World w) {
+		this.w = w;
+	}
 
 	@Override
 	public boolean run(VerbRunner cb) {
@@ -30,14 +38,14 @@ public class UseCutMachineCableAction implements Action {
 //		EngineLogger.debug("USING " + actor.getDesc() + " IN " + target.getDesc());
 
 		if (target.getState().equals("CUT") && a.getState().equals("NO_BATTERY")) {
-			World.getInstance().getTextManager().addText(cutCableText, TextManager.POS_SUBTITLE,
+			w.getCurrentScene().getTextManager().addText(cutCableText, TextManager.POS_SUBTITLE,
 					TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, null, null, null, null, null);
 			a.setState("WITH_CABLE");
 			a.startAnimation("cutter.withcable", null);
-			World.getInstance().getCurrentScene().getSoundManager().playSound(a.getId() + "_" +  "click");
-			World.getInstance().getInventory().removeItem((SpriteActor) target);
+			w.getCurrentScene().getSoundManager().playSound(a.getId() + "_" +  "click");
+			w.getInventory().removeItem((SpriteActor) target);
 		} else {
-			World.getInstance().getTextManager().addText(defaultCableText, TextManager.POS_SUBTITLE,
+			w.getCurrentScene().getTextManager().addText(defaultCableText, TextManager.POS_SUBTITLE,
 					TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, null, null, null, null, null);
 		}
 		

@@ -5,10 +5,15 @@ import com.badlogic.gdx.Gdx;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.model.VerbRunner;
+import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.util.Config;
 
 @ActionDescription("Open the Bonasera Store Page")
 public class GetBonaseraAction implements Action {
+	
+	@Override
+	public void setWorld(World w) {
+	}
 
 	@Override
 	public boolean run(VerbRunner cb) {

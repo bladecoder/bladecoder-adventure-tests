@@ -18,16 +18,23 @@ public class Scene2InitAction implements Action {
 	@ActionProperty
 	@ActionPropertyDescription("text to show with the credits")
 	String text;
+	
+	
+	private World w;
+	
+	@Override
+	public void setWorld(World w) {
+		this.w = w;
+	}
 
 	@Override
 	public boolean run(VerbRunner cb) {
-		World w = World.getInstance();
 		//w.setCutMode(true);
 		w.showInventory(false);
 
 		String t = MessageFormat.format(I18N.getString(text.substring(1)), (int)(w.getTimeOfGame() / 60000));
 		
-		World.getInstance().getTextManager().addText(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null, null, null, cb);
+		w.getCurrentScene().getTextManager().addText(t, TextManager.POS_CENTER, TextManager.POS_CENTER,false, Text.Type.PLAIN, Color.WHITE, null, null, null, cb);
 		return true;
 	}
 }

@@ -30,14 +30,22 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 	private String disconnectText;
 	
 	private boolean goTo = false;
+	
+	
+	private World w;
+	
+	@Override
+	public void setWorld(World w) {
+		this.w = w;
+	}
 
 	@Override
 	public boolean run(VerbRunner cb) {
-		SpriteActor actor = (SpriteActor)World.getInstance().getCurrentScene().getActor("cable", false);
+		SpriteActor actor = (SpriteActor)w.getCurrentScene().getActor("cable", false);
 
 		EngineLogger.debug("PICKUP " + actor.getDesc());
 
-		CharacterActor player = World.getInstance().getCurrentScene().getPlayer();
+		CharacterActor player = w.getCurrentScene().getPlayer();
 
 		goTo = false;
 		player.goTo(new Vector2(actor.getX() + actor.getWidth(), actor.getY()), this, false);
@@ -47,8 +55,8 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 
 	@Override
 	public void resume() {
-		SpriteActor player = World.getInstance().getCurrentScene().getPlayer();
-		SpriteActor actor = (SpriteActor) World.getInstance().getCurrentScene().getActor("cable", false);
+		SpriteActor player = w.getCurrentScene().getPlayer();
+		SpriteActor actor = (SpriteActor) w.getCurrentScene().getActor("cable", false);
 
 		if (!goTo) { // 1. GO TO THE CABLE
 			goTo = true;
@@ -65,18 +73,18 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 					.getActor("cabinet_off", false);
 
 			if (actor.getState().equals("CONNECTED")) {
-				World.getInstance().getTextManager().addText(disconnectText, TextManager.POS_SUBTITLE,
+				w.getCurrentScene().getTextManager().addText(disconnectText, TextManager.POS_SUBTITLE,
 						TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, Color.BLACK, null, null, null, null);
 				actor.setState("DISCONNECTED");
-				World.getInstance().getCurrentScene().getSoundManager().playSound(actor.getId() + "_" +  "switch");
+				w.getCurrentScene().getSoundManager().playSound(actor.getId() + "_" +  "switch");
 				actor.startAnimation("cable.disconnected", null);
 				player.startAnimation("crouch.left", Tween.Type.REVERSE, 1, null);
 				cabinet_off.setVisible(true);
 			} else if (actor.getState().equals("DISCONNECTED")) {
-				World.getInstance().getTextManager().addText(connectText, TextManager.POS_SUBTITLE,
+				w.getCurrentScene().getTextManager().addText(connectText, TextManager.POS_SUBTITLE,
 						TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, Color.BLACK, null, null, null, null);
 				actor.setState("CONNECTED");
-				World.getInstance().getCurrentScene().getSoundManager().playSound(actor.getId() + "_" +  "switch");
+				w.getCurrentScene().getSoundManager().playSound(actor.getId() + "_" +  "switch");
 				actor.startAnimation("cable.connected", null);
 				player.startAnimation("crouch.left", Tween.Type.REVERSE, 1, null);
 				cabinet_off.setVisible(false);

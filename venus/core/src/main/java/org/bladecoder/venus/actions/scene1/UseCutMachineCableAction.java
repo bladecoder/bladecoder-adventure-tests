@@ -26,14 +26,14 @@ public class UseCutMachineCableAction implements Action {
 	private World w;
 	
 	@Override
-	public void setWorld(World w) {
+	public void init(World w) {
 		this.w = w;
 	}
 
 	@Override
 	public boolean run(VerbRunner cb) {
-		SpriteActor a = (SpriteActor)World.getInstance().getCurrentScene().getActor("cutter", true);
-		InteractiveActor target = (InteractiveActor)World.getInstance().getCurrentScene().getActor("cable", true);
+		SpriteActor a = (SpriteActor)w.getCurrentScene().getActor("cutter", true);
+		InteractiveActor target = (InteractiveActor)w.getCurrentScene().getActor("cable", true);
 
 //		EngineLogger.debug("USING " + actor.getDesc() + " IN " + target.getDesc());
 

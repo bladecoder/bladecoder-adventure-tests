@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "1.0.7",
+bladeEngineVersion: "2.1.0-SNAPSHOT",
 sounds: {
 	rope_click: {
 		id: "rope_click",
@@ -731,9 +731,9 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "policeman",
-								play: "fall"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "policeman_fall",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -783,7 +783,8 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "endSCN"
+								scene: "endSCN",
+								init: true
 							}
 						]
 					},
@@ -1662,9 +1663,9 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "chair",
-								play: "chair_squeek"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "chair_chair_squeek",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.WaitAction",
@@ -1727,9 +1728,9 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "chair",
-								play: "chair_squeek"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "chair_chair_squeek",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.WaitAction",
@@ -1796,9 +1797,9 @@ scenes: {
 								time: 1
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "chair",
-								play: "chair_broken"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "chair_chair_broken",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
@@ -1969,7 +1970,8 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "scene2"
+								scene: "scene2",
+								init: true
 							}
 						]
 					},
@@ -2391,9 +2393,9 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "cutter",
-								play: "drill"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "cutter_drill",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
@@ -2404,8 +2406,9 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "cutter"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "cutter_drill",
+								stop: true
 							},
 							{
 								class: "com.bladecoder.engine.actions.SayAction",
@@ -2480,9 +2483,9 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "cutter",
-								play: "drill"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "cutter_drill",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
@@ -2493,8 +2496,9 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "cutter"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "cutter_drill",
+								stop: true
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
@@ -2653,9 +2657,9 @@ scenes: {
 								actor: "cutter"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "cutter",
-								play: "click"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "cutter_click",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.AnimationAction",
@@ -2964,9 +2968,9 @@ scenes: {
 								state: "WITH_GODDESS"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SoundAction",
-								actor: "diosa",
-								play: "chords"
+								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								sound: "diosa_chords",
+								stop: false
 							},
 							{
 								class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -4358,7 +4362,8 @@ scenes: {
 					},
 					{
 						class: "com.bladecoder.engine.actions.LeaveAction",
-						scene: "scene1"
+						scene: "scene1",
+						init: true
 					}
 				]
 			},
@@ -4371,7 +4376,8 @@ scenes: {
 					},
 					{
 						class: "com.bladecoder.engine.actions.LeaveAction",
-						scene: "scene1"
+						scene: "scene1",
+						init: true
 					}
 				]
 			}

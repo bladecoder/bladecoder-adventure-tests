@@ -35,7 +35,7 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 	private World w;
 	
 	@Override
-	public void setWorld(World w) {
+	public void init(World w) {
 		this.w = w;
 	}
 
@@ -69,7 +69,7 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 			
 		} else {  // 2. PICKUP THE CABLE
 
-			SpriteActor cabinet_off = (SpriteActor) World.getInstance().getCurrentScene()
+			SpriteActor cabinet_off = (SpriteActor) w.getCurrentScene()
 					.getActor("cabinet_off", false);
 
 			if (actor.getState().equals("CONNECTED")) {

@@ -12,7 +12,7 @@ import com.bladecoder.engine.util.Config;
 public class GetBonaseraAction implements Action {
 	
 	@Override
-	public void setWorld(World w) {
+	public void init(World w) {
 	}
 
 	@Override

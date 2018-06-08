@@ -30,7 +30,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Scaling;
 import com.bladecoder.engine.assets.EngineAssetManager;
 import com.bladecoder.engine.i18n.I18N;
-import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.ui.MenuScreen;
 import com.bladecoder.engine.ui.UI;
 import com.bladecoder.engine.util.Config;
@@ -54,24 +53,10 @@ public class VenusMenuScreen extends MenuScreen {
 		setPrefLang();
 
 		super.show();
-
-		saveGameIOSFix();
 		
 		addLangButton();
 
 		addLinkButtons();
-	}
-
-	private void saveGameIOSFix() {
-		if (Gdx.app.getType() == ApplicationType.iOS && World.getInstance().getCurrentScene() != null) {
-
-			try {
-				World.getInstance().saveGameState();
-			} catch (IOException e) {
-				EngineLogger.error(e.getMessage());
-			}
-
-		}
 	}
 
 	private void setPrefLang() {

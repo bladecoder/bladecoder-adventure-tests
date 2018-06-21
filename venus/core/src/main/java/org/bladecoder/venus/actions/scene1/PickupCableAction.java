@@ -74,7 +74,7 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 
 			if (actor.getState().equals("CONNECTED")) {
 				w.getCurrentScene().getTextManager().addText(disconnectText, TextManager.POS_SUBTITLE,
-						TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, Color.BLACK, null, null, null, null);
+						TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, Color.BLACK, null, null, null, null, null);
 				actor.setState("DISCONNECTED");
 				w.getCurrentScene().getSoundManager().playSound(actor.getId() + "_" +  "switch");
 				actor.startAnimation("cable.disconnected", null);
@@ -82,7 +82,7 @@ public class PickupCableAction implements Action, ActionCallback, Serializable {
 				cabinet_off.setVisible(true);
 			} else if (actor.getState().equals("DISCONNECTED")) {
 				w.getCurrentScene().getTextManager().addText(connectText, TextManager.POS_SUBTITLE,
-						TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, Color.BLACK, null, null, null, null);
+						TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, Color.BLACK, null, null, null, null, null);
 				actor.setState("CONNECTED");
 				w.getCurrentScene().getSoundManager().playSound(actor.getId() + "_" +  "switch");
 				actor.startAnimation("cable.connected", null);

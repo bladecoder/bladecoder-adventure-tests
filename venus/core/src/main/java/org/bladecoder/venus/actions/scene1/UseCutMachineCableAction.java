@@ -39,14 +39,14 @@ public class UseCutMachineCableAction implements Action {
 
 		if (target.getState().equals("CUT") && a.getState().equals("NO_BATTERY")) {
 			w.getCurrentScene().getTextManager().addText(cutCableText, TextManager.POS_SUBTITLE,
-					TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, null, null, null, null, null);
+					TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, null, null, null, null, null,  null);
 			a.setState("WITH_CABLE");
 			a.startAnimation("cutter.withcable", null);
 			w.getCurrentScene().getSoundManager().playSound(a.getId() + "_" +  "click");
 			w.getInventory().removeItem((SpriteActor) target);
 		} else {
 			w.getCurrentScene().getTextManager().addText(defaultCableText, TextManager.POS_SUBTITLE,
-					TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, null, null, null, null, null);
+					TextManager.POS_SUBTITLE, true, Text.Type.SUBTITLE, null, null, null, null, null, null);
 		}
 		
 		return false;

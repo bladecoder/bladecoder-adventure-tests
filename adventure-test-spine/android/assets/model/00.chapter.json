@@ -1,5 +1,6 @@
 {
-bladeEngineVersion: "0.9.7-SNAPSHOT",
+bladeEngineVersion: "2.1.0",
+sounds: {},
 scenes: {
 	morgue: {
 		id: "morgue",
@@ -30,23 +31,23 @@ scenes: {
 				class: "com.bladecoder.engine.model.ObstacleActor",
 				id: "obstacle2",
 				bbox: [ -9.2977295, 37.966125, -6.1984863, 141.11366, 615.3026, 144.21307, 708.2809, 29.4431 ],
-				visible: true,
 				pos: {
 					x: 1376.0775,
 					y: 92.97821
-				}
+				},
+				visible: true
 			},
 			fg1: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "fg1",
-				bbox: [ -293, 0, -293, 784, 293, 784, 293, 0 ],
-				visible: true,
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
 					x: 2531.217,
 					y: 421.93298
 				},
+				visible: true,
 				desc: null,
-				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: true,
 				state: null,
@@ -56,6 +57,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						"morgue.fg": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "morgue.fg",
 							source: "morgue",
 							duration: 1,
@@ -64,38 +66,39 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "morgue.fg"
+					initAnimation: "morgue.fg",
+					orgAlign: 4
 				},
 				scale: 1,
-				depthType: "NONE",
+				rot: 0,
+				tint: null,
+				fakeDepth: false,
 				bboxFromRenderer: true
 			},
 			obstacle1: {
 				class: "com.bladecoder.engine.model.ObstacleActor",
 				id: "obstacle1",
 				bbox: [ -95.30267, -90.653656, 73.70465, 123.29321, 603.2153, 129.7377, 561.06506, -89.878876 ],
-				visible: true,
 				pos: {
 					x: 743.82574,
 					y: 139.46733
-				}
+				},
+				visible: true
 			},
 			door_right: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "door_right",
 				bbox: [ 30.992676, -429.24933, 24.30371, 5.56958, 270.8321, 5.432312, 263.98608, -424.169 ],
-				visible: true,
 				pos: {
 					x: 1840.4836,
 					y: 723.28284
 				},
+				visible: true,
 				desc: null,
-				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
-						target: null,
-						state: null,
 						actions: []
 					}
 				},
@@ -107,14 +110,14 @@ scenes: {
 			litter: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "litter",
-				bbox: [ -294, 0, -294, 305, 294, 305, 294, 0 ],
-				visible: true,
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
 					x: 1712.9275,
 					y: 141.98845
 				},
+				visible: true,
 				desc: "litter",
-				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: true,
 				state: null,
@@ -124,6 +127,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						litter: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "litter",
 							source: "morgue",
 							duration: 1,
@@ -132,23 +136,26 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "litter"
+					initAnimation: "litter",
+					orgAlign: 4
 				},
 				scale: 1,
-				depthType: "NONE",
+				rot: 0,
+				tint: null,
+				fakeDepth: false,
 				bboxFromRenderer: true
 			},
 			john: {
 				class: "com.bladecoder.engine.model.CharacterActor",
 				id: "john",
-				bbox: [ -190.76294, -7.8964844, -190.76294, 1145.1714, 179.08897, 1145.1714, 179.08897, -7.8964844 ],
-				visible: true,
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
 					x: 1720.7924,
 					y: 66.586426
 				},
+				visible: true,
 				desc: null,
-				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -212,26 +219,31 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "stand.front"
+					initAnimation: "stand.front",
+					orgAlign: 4,
+					skin: null
 				},
 				scale: 0.5496068,
-				depthType: "VECTOR",
+				rot: 0,
+				tint: null,
+				fakeDepth: true,
 				bboxFromRenderer: true,
 				dialogs: null,
+				textStyle: null,
 				walkingSpeed: 1200,
 				textColor: null
 			},
 			table: {
 				class: "com.bladecoder.engine.model.SpriteActor",
 				id: "table",
-				bbox: [ -227.5, 0, -227.5, 410, 227.5, 410, 227.5, 0 ],
-				visible: true,
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
 					x: 970.46027,
 					y: 68.57152
 				},
+				visible: true,
 				desc: null,
-				sounds: null,
+				refPoint: {},
 				verbs: {},
 				interaction: false,
 				state: null,
@@ -241,6 +253,7 @@ scenes: {
 					class: "com.bladecoder.engine.model.AtlasRenderer",
 					fanims: {
 						table: {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
 							id: "table",
 							source: "morgue",
 							duration: 1,
@@ -249,28 +262,29 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "table"
+					initAnimation: "table",
+					orgAlign: 4
 				},
 				scale: 1,
-				depthType: "NONE",
+				rot: 0,
+				tint: null,
+				fakeDepth: false,
 				bboxFromRenderer: true
 			},
 			door_left: {
 				class: "com.bladecoder.engine.model.InteractiveActor",
 				id: "door_left",
 				bbox: [ 23.244507, -543.9225, 0, 200, 255.78693, 167.4577, 279.0315, -413.7531 ],
-				visible: true,
 				pos: {
-					x: 246.53314,
-					y: 612.811
+					x: 240.43439,
+					y: 609.7616
 				},
+				visible: true,
 				desc: null,
-				sounds: null,
+				refPoint: {},
 				verbs: {
 					leave: {
 						id: "leave",
-						target: null,
-						state: null,
 						actions: []
 					}
 				},
@@ -282,6 +296,7 @@ scenes: {
 		},
 		backgroundAtlas: "morgue",
 		backgroundRegionId: "morgue",
+		musicDesc: null,
 		depthVector: {
 			x: 705.31244,
 			y: -456.8384

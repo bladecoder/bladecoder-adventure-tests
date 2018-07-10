@@ -15,12 +15,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.bladecoder.engine.BladeEngine;
+import com.bladecoder.engine.ui.SceneScreen;
+import com.bladecoder.engine.ui.UI.Screens;
 import com.bladecoder.engine.util.Config;
 
 public class DesktopLauncher extends BladeEngine {
 
 	private boolean fullscreen = true;
 	private LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
+	private float speed = 1.0f;
 
 	DesktopLauncher() {
 		Properties p = new Properties();
@@ -82,6 +85,11 @@ public class DesktopLauncher extends BladeEngine {
 				//cfg.fullscreen = true;
 			} else if (s.equals("-d")) {
 				setDebugMode();
+			} else if (s.equals("-s")) {
+				if (i + 1 < args.length) {
+					i++;
+					speed = Float.parseFloat(args[i]);
+				}				
 			} else if (s.equals("-r")) {
 				setRestart();				
 			} else if (s.equals("-res")) {
@@ -131,8 +139,8 @@ public class DesktopLauncher extends BladeEngine {
 			    "-d\tShow debug messages\n" +
 			    "-res width\tForce the resolution width\n" +
 			    "-l game_state\tLoad the previusly saved game state\n" + 
-			    "-r\tRun the game from the begining\n" + 
-			    "-h\tShow this screen\n" + 
+			    "-r\tRun the game from the begining\n" +
+			    "-s speed\tSets the game speed\n" +
 			    "-aspect aspect_ratio\tSets the specified screen aspect (16:9, 4:3, 16:10)\n"
 				);
 		
@@ -148,6 +156,9 @@ public class DesktopLauncher extends BladeEngine {
 		hideCursor();
 		
 		super.create();
+		
+		if(getUI().getScreen(Screens.SCENE_SCREEN) instanceof SceneScreen)
+			((SceneScreen) getUI().getScreen(Screens.SCENE_SCREEN)).setSpeed(speed);
 	}
 
 	private void hideCursor() {

@@ -16,11 +16,6 @@ allprojects {
   apply plugin: 'idea'
 }
 
-configure(subprojects - project(':android')) {
-  apply plugin: 'java'
-  sourceCompatibility = 1.7
-}
-
 subprojects {
     repositories {
         mavenCentral()

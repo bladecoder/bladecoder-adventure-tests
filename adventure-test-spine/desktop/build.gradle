@@ -1,17 +1,32 @@
-apply plugin: "java"
+apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'application'
 
-sourceCompatibility = 1.6
-sourceSets.main.java.srcDirs = [ "src/" ]
-sourceSets.main.resources.srcDirs = [ "src/" ]
+sourceCompatibility = 1.7
+targetCompatibility=1.7
 
-project.ext.mainClassName = "com.bladecoder.advtestspine.desktop.DesktopLauncher"
-project.ext.assetsDir = new File("../android/assets");
+sourceSets.main.resources.srcDirs += [ rootProject.file('assets').absolutePath ]
+mainClassName = "com.bladecoder.advtestspine.desktop.DesktopLauncher"
+eclipse.project.name = appName + '-desktop'
 
-task run(dependsOn: classes, type: JavaExec) {
-    main = project.mainClassName
-    classpath = sourceSets.main.runtimeClasspath
+dependencies {
+    api project(":core")
+    api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    api "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+}
+
+jar {
+  archiveName "${appName}-${version}.jar"
+  from { configurations.compile.collect { zipTree(it) } }
+  manifest {
+    attributes 'Main-Class': project.mainClassName
+  }
+}
+
+
+run {
     standardInput = System.in
-    workingDir = project.assetsDir
     ignoreExitValue = true
     
     if (project.hasProperty("appArgs") ) {  
@@ -19,13 +34,13 @@ task run(dependsOn: classes, type: JavaExec) {
     }     
 }
 
+
 task dist(type: Jar) {
     baseName =  appName + "-desktop"
     
-    from files(sourceSets.main.output.classesDir)
+    from files(sourceSets.main.output.classesDirs)
     from files(sourceSets.main.output.resourcesDir)
-    from {configurations.compile.collect {zipTree(it)}}
-    from files(project.assetsDir);
+    from {configurations.runtimeClasspath.collect {zipTree(it)}}
  
     manifest {
         attributes 'Main-Class': project.mainClassName
@@ -33,21 +48,3 @@ task dist(type: Jar) {
 }
 
 dist.dependsOn classes
-
-eclipse {
-    project {
-        name = appName + "-desktop"
-        linkedResource name: 'assets', type: '2', location: 'PARENT-1-PROJECT_LOC/android/assets'
-    }
-}
-
-task afterEclipseImport(description: "Post processing after project generation", group: "IDE") {
-  doLast {
-    def classpath = new XmlParser().parse(file(".classpath"))
-    new Node(classpath, "classpathentry", [ kind: 'src', path: 'assets' ]);
-    def writer = new FileWriter(file(".classpath"))
-    def printer = new XmlNodePrinter(new PrintWriter(writer))
-    printer.setPreserveWhitespace(true)
-    printer.print(classpath)
-  }
-}

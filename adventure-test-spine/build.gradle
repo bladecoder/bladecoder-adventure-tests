@@ -1,113 +1,53 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
         google()
     }
+    
     dependencies {
-
-        classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
+        classpath "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
         classpath "com.mobidevelop.robovm:robovm-gradle-plugin:$roboVMGradlePluginVersion"
+    	classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"      
     }
 }
 
 allprojects {
-    apply plugin: "eclipse"
-    apply plugin: "idea"
+  apply plugin: 'eclipse'
+  apply plugin: 'idea'
+}
 
+subprojects {
     repositories {
-        mavenLocal()
-        mavenCentral()
-        google()
+    	mavenCentral()
+	
+		jcenter()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
-    }
-}
-
-project(":core") {
-    apply plugin: "java"
-
-
-    dependencies {
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile fileTree(dir: '../libs', include: '*.jar')
-        compile "com.bladecoder.engine:blade-engine:$bladeEngineVersion"
-        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        compile "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion"
-    }
-
-
-    task setVersion << {
-    	println "Set version $project.version in BladeEngine.properties"
-
-    	def props = new Properties()
-		def propFile = project.file("../android/assets/BladeEngine.properties");
-		props.load(new FileReader(propFile))
-		props."version" = version
-		props."bladeEngineVersion" = bladeEngineVersion
-		props."gdxVersion" = gdxVersion
-		props."roboVMVersion" = roboVMVersion
-
-		def writer = new FileWriter(propFile)
-   		try {
-      		props.store(writer, null)
-      		writer.flush()
-   		} finally {
-      		writer.close()
-   		}
-	}
-
-	processResources.finalizedBy(setVersion)
-}
-
-project(":desktop") {
-    apply plugin: "java"
-
-
-    dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
-    }
-}
-
-project(":android") {
-    apply plugin: "android"
-
-    configurations { natives }
-
-    dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
-        compile fileTree(dir: '../libs', include: '*.jar')
-        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
-        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
-        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
-        compile "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion"
-        compile "com.bladecoder.engine:blade-engine:$bladeEngineVersion"
-    }
-}
-
-project(":ios") {
-    apply plugin: "java"
-    apply plugin: "robovm"
-
-    configurations { natives }
-
-    dependencies {
-        compile project(":core")
-        compile "com.mobidevelop.robovm:robovm-rt:${roboVMVersion}"
-        compile "com.mobidevelop.robovm:robovm-cocoatouch:${roboVMVersion}"
-        compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
-        compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
-    }
+      	
+      	google()
+   }
 }
 
 tasks.eclipse.doLast {
     delete ".project"
+    delete '.classpath'
+    delete '.settings/'
 }
+
+// Run `gradle pack` task to generate skin.atlas file at assets/ui.
+import com.badlogic.gdx.tools.texturepacker.TexturePacker
+task pack {
+	doLast {
+
+	  // Note that if you need multiple atlases, you can duplicate the
+	  // TexturePacker.process invocation and change paths to generate
+	  // additional atlases with this task.
+	  TexturePacker.process(
+	    'images-raw/ui',           // Raw assets path.
+	    'assets/ui/1/',        // Output directory.
+	    'ui'              // Name of the generated atlas (without extension).
+	  )
+  }
+}
+

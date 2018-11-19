@@ -1,13 +1,12 @@
 apply plugin: 'android'
 
 android {
-    buildToolsVersion latestBuildToolsAvailable("27.0.3")
     compileSdkVersion highestSdkAvailable("android-27")
 
     defaultConfig {
         applicationId "com.bladecoder.advtestspine"
         minSdkVersion 15
-        targetSdkVersion '27' 
+        targetSdkVersion '27'
         versionName version
 
         if(project.hasProperty('versionCode'))
@@ -42,7 +41,7 @@ android {
 	full.assets.srcDirs = ['../assets']
  	expansion.assets.srcDirs = ['../base-assets']
     }
-    
+
   packagingOptions {
     // Preventing from license violations (more or less):
     pickFirst 'META-INF/LICENSE.txt'
@@ -57,7 +56,7 @@ android {
     exclude 'META-INF/DEPENDENCIES.txt'
     exclude 'META-INF/DEPENDENCIES'
     exclude 'META-INF/dependencies.txt'
-  }    
+  }
 
     if(project.hasProperty('keystore')) {
           signingConfigs {
@@ -99,7 +98,7 @@ dependencies {
     natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
     natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
     natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
-    
+
     // TO QUERY PERMISSIONS
     implementation "com.android.support:support-v4:23.0.0"
 }
@@ -241,33 +240,12 @@ String highestSdkAvailable(String defaultSdk) {
           highestSdk
       } else {
           println "No installed SDKs found. Using default SDK: " + defaultSdk
-          
+
           defaultSdk
       }
   } catch (any) {
       println "Exception while determining highest SDK. Using default SDK: " + defaultSdk
-      
-      defaultSdk
-  }
-}
 
-String latestBuildToolsAvailable(String defaultBuildTools) {
-  try {
-      def buildToolsDir = new File(android.getSdkDirectory().toString(), "build-tools")
-      def buildToolsVersions = buildToolsDir.list([accept:{ d, f-> new File(d, f).isDirectory() }] as FilenameFilter).sort { a, b -> b <=> a }
-      def latestBuildTools = buildToolsVersions[0]
-      if (latestBuildTools != null) {
-          println "Using latest found build tools " + latestBuildTools
-          
-          latestBuildTools
-      } else {
-          println "No installed build tools found. Using default build tools: " + latestBuildTools
-          
-          defaultBuildTools
-      }
-  } catch (any) {
-      println "Exception while determining latest build tools. Using default build tools: " + defaultBuildTools
-      
-      defaultBuildTools
+      defaultSdk
   }
 }

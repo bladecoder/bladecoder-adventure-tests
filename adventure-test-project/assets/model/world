@@ -5,9 +5,6 @@ initChapter: "00",
 verbs: {
 	dialog: {
 		id: "dialog",
-		target: null,
-		state: null,
-		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.SetCutmodeAction",
@@ -25,9 +22,6 @@ verbs: {
 	},
 	use: {
 		id: "use",
-		target: null,
-		state: null,
-		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
@@ -38,9 +32,6 @@ verbs: {
 	},
 	lookat: {
 		id: "lookat",
-		target: null,
-		state: null,
-		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.LookAtAction",
@@ -51,9 +42,6 @@ verbs: {
 	},
 	pickup: {
 		id: "pickup",
-		target: null,
-		state: null,
-		icon: null,
 		actions: [
 			{
 				class: "com.bladecoder.engine.actions.LookAtAction",

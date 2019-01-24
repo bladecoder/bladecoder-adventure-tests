@@ -3960,10 +3960,6 @@ scenes: {
 				id: "init",
 				actions: [
 					{
-						class: "com.bladecoder.engine.actions.InkNewStoryAction",
-						storyName: "test-story"
-					},
-					{
 						class: "com.bladecoder.engine.actions.SetCutmodeAction",
 						value: true
 					},
@@ -4558,5 +4554,8 @@ scenes: {
 		walkZone: null
 	}
 },
-initScene: "menu"
+initScene: "menu",
+inkManager: {
+	storyName: "test-story"
+}
 }

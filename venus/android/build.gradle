@@ -51,7 +51,7 @@ android {
 
 		applicationId "org.bladecoder.engine"
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 27
 
 		buildConfigField "int", "EXPANSION_FILE_VERSION", "0"
     }

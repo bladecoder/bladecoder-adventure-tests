@@ -36,6 +36,7 @@ if [ "$RELEASE_MODE" == "amazon" ]  || [ "$RELEASE_MODE" == "android" ]  || [ "$
     sed -i 's/bonasera_android_url=.*/bonasera_android_url=amzn:\/\/apps\/android?asin=B01MU6RADE/' assets/BladeEngine.properties
     RELFILENAME="$DIST_DIR"/$PROJECT_NAME-amazon-$VERSION.apk
   else
+  	sed -i 's/bonasera_android_url=.*/bonasera_android_url=https\://play.google.com/store/apps/details?id\=com.bladecoder.lj' assets/BladeEngine.properties
     RELFILENAME="$DIST_DIR"/$PROJECT_NAME-$VERSION.apk
   fi
 

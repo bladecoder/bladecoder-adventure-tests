@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "2.2.1-SNAPSHOT",
+bladeEngineVersion: "3.1.0-SNAPSHOT",
 sounds: {},
 scenes: {
 	basic3: {
@@ -2135,6 +2135,330 @@ scenes: {
 		player: "player",
 		walkZone: "walkzone"
 	},
+	ink1: {
+		id: "ink1",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			RED: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "RED",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 360.37726,
+					y: 357.57773
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 0
+				},
+				scaleX: 0.3066198,
+				scaleY: 0.3066198,
+				rot: 0,
+				tint: {
+					r: 1,
+					a: 1
+				},
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
+			example2: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "example2",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 453.8628,
+					y: 787.1653
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						icon: "right",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.LeaveAction",
+								scene: "ink2",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.TextRenderer",
+					text: "@ink1.example2.text",
+					fontName: "Ubuntu-M",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				tint: {
+					r: 1,
+					g: 1,
+					a: 1
+				},
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			walkzone: {
+				class: "com.bladecoder.engine.model.WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
+				pos: {},
+				visible: true
+			},
+			link: {
+				class: "com.bladecoder.engine.model.SpriteActor",
+				id: "link",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 607.2718,
+					y: 912.16516
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						icon: "right",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.OpenURLAction",
+								url: "https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "com.bladecoder.engine.model.TextRenderer",
+					text: "@ink1.link.text",
+					fontName: "Ubuntu-M",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				tint: {
+					r: 1,
+					g: 1,
+					a: 1
+				},
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			GREEN: {
+				class: "com.bladecoder.engine.model.CharacterActor",
+				id: "GREEN",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1386.7396,
+					y: 87.49176
+				},
+				visible: true,
+				refPoint: {
+					x: 8.069885
+				},
+				verbs: {
+					talkto: {
+						id: "talkto",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.GotoAction",
+								actor: "$PLAYER",
+								target: "target",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.AnimationAction",
+								animation: "$PLAYER#stand.right",
+								count: -1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "com.bladecoder.engine.actions.InkRunAction",
+								path: "scene1.green",
+								wait: true
+							},
+							{
+								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "com.bladecoder.engine.model.AtlasRenderer",
+					fanims: {
+						"walk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 0
+				},
+				scaleX: 0.6267129,
+				scaleY: 0.6267129,
+				rot: 0,
+				tint: {
+					g: 1,
+					a: 1
+				},
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
+			target: {
+				class: "com.bladecoder.engine.model.AnchorActor",
+				id: "target",
+				bbox: [],
+				pos: {
+					x: 734.9283,
+					y: 104.98978
+				},
+				visible: true
+			}
+		},
+		musicDesc: null,
+		depthVector: {
+			x: 616.2952,
+			y: -227.47778
+		},
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						value: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.InkRunAction",
+						path: "scene1.init",
+						wait: true
+					},
+					{
+						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						value: false
+					}
+				]
+			}
+		},
+		player: "RED",
+		walkZone: "walkzone"
+	},
 	inventory: {
 		id: "inventory",
 		layers: [
@@ -3688,296 +4012,6 @@ scenes: {
 		},
 		walkZone: null
 	},
-	ink1: {
-		id: "ink1",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "dynamic",
-				dynamic: true
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			RED: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "RED",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 360.37726,
-					y: 357.57773
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.7,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						"talk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "talk.right",
-							source: "char",
-							duration: 0.4,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.right",
-					orgAlign: 0
-				},
-				scaleX: 0.3066198,
-				scaleY: 0.3066198,
-				rot: 0,
-				tint: {
-					r: 1,
-					a: 1
-				},
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 1000
-			},
-			example2: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "example2",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 453.8628,
-					y: 787.1653
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						icon: "right",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "ink2",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@ink1.example2.text",
-					fontName: "Ubuntu-M",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				tint: {
-					r: 1,
-					g: 1,
-					a: 1
-				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			walkzone: {
-				class: "com.bladecoder.engine.model.WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
-				pos: {},
-				visible: true
-			},
-			link: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "link",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 607.2718,
-					y: 912.16516
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						icon: "right",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.OpenURLAction",
-								url: "https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md"
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@ink1.link.text",
-					fontName: "Ubuntu-M",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				tint: {
-					r: 1,
-					g: 1,
-					a: 1
-				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			GREEN: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "GREEN",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1386.7396,
-					y: 87.49176
-				},
-				visible: true,
-				refPoint: {
-					x: -2.887146
-				},
-				verbs: {},
-				interaction: true,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.7,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						"talk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "talk.right",
-							source: "char",
-							duration: 0.4,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.right",
-					orgAlign: 0
-				},
-				scaleX: 0.6267129,
-				scaleY: 0.6267129,
-				rot: 0,
-				tint: {
-					g: 1,
-					a: 1
-				},
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 1000
-			},
-			target: {
-				class: "com.bladecoder.engine.model.AnchorActor",
-				id: "target",
-				bbox: [],
-				pos: {
-					x: 734.9283,
-					y: 104.98978
-				},
-				visible: true
-			}
-		},
-		musicDesc: null,
-		depthVector: {
-			x: 616.2952,
-			y: -227.47778
-		},
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
-						value: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.InkRunAction",
-						path: "init",
-						wait: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
-						value: false
-					}
-				]
-			}
-		},
-		player: "RED",
-		walkZone: "walkzone"
-	},
 	ink2: {
 		id: "ink2",
 		layers: [
@@ -4093,7 +4127,7 @@ scenes: {
 							},
 							{
 								class: "com.bladecoder.engine.actions.InkRunAction",
-								path: "d1",
+								path: "scene2.d1",
 								wait: true
 							},
 							{
@@ -4167,17 +4201,7 @@ scenes: {
 			x: 616.2952,
 			y: -227.47778
 		},
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.InkNewStoryAction",
-						storyName: "test2"
-					}
-				]
-			}
-		},
+		verbs: {},
 		player: "PLAYER",
 		walkZone: "walkzone"
 	},

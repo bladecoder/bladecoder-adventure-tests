@@ -1,4 +1,6 @@
-=== d1 ===
+=== scene2 ===
+
+= d1
 
 PLAYER> Hi!
 PLAYER> How are you?

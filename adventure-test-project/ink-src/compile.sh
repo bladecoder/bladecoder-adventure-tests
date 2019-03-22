@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INKLECATE_PATH=/home/rgarcia/programs/inklecate/inklecate.exe
+INKLECATE_PATH=$HOME/programs/ink/inklecate.exe
 INK_FILE=test-story.ink
 
-$INKLECATE_PATH -o ../android/assets/model/$INK_FILE.json $INK_FILE
+$INKLECATE_PATH -o ../assets/model/$INK_FILE.json $INK_FILE

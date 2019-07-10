@@ -12,7 +12,6 @@ com.badlogic.gdx.graphics.g2d.BitmapFont: {
 	credits: {file: fonts/Ubuntu-M.ttf, size: 30}
 },
 
-
 com.badlogic.gdx.graphics.Color: {
 	white: { a: 1, b: 1, g: 1, r: 1 },
 	black: { a: 1, b: 0, g: 0, r: 0 },
@@ -23,6 +22,10 @@ com.badlogic.gdx.graphics.Color: {
 	black-trans:  { r: 0.6, g: 0.6, b: 0.6, a: 1 },
 	white-trans:  {  r: 1, g: 1, b: 1, a: 0.8 },
 	yellow:  { r: 1, g: 1, b: 0.13, a: 1 }
+},
+
+AnimationDrawable: {
+    hotspotpointer: {name:hotspotpointer, duration: 0.3},
 },
 
 com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {

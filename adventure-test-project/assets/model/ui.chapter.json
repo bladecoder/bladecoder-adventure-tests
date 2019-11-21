@@ -1,0 +1,225 @@
+{
+bladeEngineVersion: "3.2.2-SNAPSHOT",
+sounds: {},
+scenes: {
+	menu: {
+		id: "menu",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			continue: {
+				class: "SpriteActor",
+				id: "continue",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 945.0436,
+					y: 624.5507
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.ui.UIContinue"
+							}
+						]
+					}
+				},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@scene-1.continue.text",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 0.09803922
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			exit: {
+				class: "SpriteActor",
+				id: "exit",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 930.4168,
+					y: 366.80206
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.ui.UIExit"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@scene-1.exit.text",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			new: {
+				class: "SpriteActor",
+				id: "new",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 942.3043,
+					y: 501.28418
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.ui.UINewGame"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@scene-1.new.text1",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			}
+		},
+		musicDesc: null,
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "RunOnce",
+						caID: "2071282574"
+					},
+					{
+						class: "ShowInventory",
+						value: false
+					},
+					{
+						class: "End",
+						caID: "2071282574"
+					},
+					{
+						class: "com.bladecoder.engine.actions.ui.UIIfShowContinue",
+						caID: "1018946114"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "continue",
+						interaction: true,
+						tint: "00fff2ff"
+					},
+					{
+						class: "End",
+						caID: "1018946114"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "continue",
+						interaction: false,
+						tint: "00fff21b"
+					},
+					{
+						class: "End",
+						caID: "1018946114"
+					}
+				]
+			}
+		},
+		walkZone: null
+	}
+},
+initScene: "menu"
+}

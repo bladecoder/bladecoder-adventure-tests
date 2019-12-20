@@ -1,7 +1,245 @@
 {
-bladeEngineVersion: "3.2.2-SNAPSHOT",
+bladeEngineVersion: "3.2.3-SNAPSHOT",
 sounds: {},
 scenes: {
+	config: {
+		id: "config",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			back: {
+				class: "SpriteActor",
+				id: "back",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 221.87976,
+					y: 961.4791
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "Leave",
+								scene: "menu",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@config.back.text",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			}
+		},
+		musicDesc: null,
+		verbs: {},
+		walkZone: null
+	},
+	credits: {
+		id: "credits",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			text: {
+				class: "SpriteActor",
+				id: "text",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 982.0786,
+					y: -976.0521
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@credits.text.text",
+					fontName: "PaytoneOne",
+					fontSize: 120,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 1,
+					orgAlign: 0
+				},
+				tint: {
+					r: 1,
+					g: 1,
+					b: 1,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			}
+		},
+		musicDesc: null,
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "Cutmode",
+						value: true
+					},
+					{
+						class: "PositionAnim",
+						actor: "text",
+						target: "text",
+						pos: "0.0,2000.0",
+						speed: 5,
+						mode: "DURATION",
+						count: -1,
+						wait: true,
+						repeat: "NO_REPEAT"
+					},
+					{
+						class: "Leave",
+						scene: "menu",
+						init: true
+					}
+				]
+			}
+		},
+		walkZone: null
+	},
+	help: {
+		id: "help",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			back: {
+				class: "SpriteActor",
+				id: "back",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 221.87976,
+					y: 961.4791
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "Leave",
+								scene: "menu",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@help.back.text",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			}
+		},
+		musicDesc: null,
+		verbs: {},
+		walkZone: null
+	},
 	menu: {
 		id: "menu",
 		layers: [
@@ -17,13 +255,67 @@ scenes: {
 			}
 		],
 		actors: {
+			config: {
+				class: "SpriteActor",
+				id: "config",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 964.2184,
+					y: 583.46185
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "Leave",
+								scene: "config",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.config.text1",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
 			continue: {
 				class: "SpriteActor",
 				id: "continue",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 945.0436,
-					y: 624.5507
+					x: 964.2184,
+					y: 816.29877
 				},
 				visible: true,
 				refPoint: {},
@@ -69,13 +361,67 @@ scenes: {
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
+			credits: {
+				class: "SpriteActor",
+				id: "credits",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 961.47906,
+					y: 361.58194
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "Leave",
+								scene: "credits",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.credits.text1",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
 			exit: {
 				class: "SpriteActor",
 				id: "exit",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 930.4168,
-					y: 366.80206
+					x: 968.7663,
+					y: 229.83932
 				},
 				visible: true,
 				refPoint: {},
@@ -121,13 +467,67 @@ scenes: {
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
+			help: {
+				class: "SpriteActor",
+				id: "help",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 961.4791,
+					y: 465.67365
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "Leave",
+								scene: "help",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.help.text1",
+					fontName: "PaytoneOne",
+					fontSize: 80,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
 			new: {
 				class: "SpriteActor",
 				id: "new",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 942.3043,
-					y: 501.28418
+					x: 953.26135,
+					y: 701.25
 				},
 				visible: true,
 				refPoint: {},

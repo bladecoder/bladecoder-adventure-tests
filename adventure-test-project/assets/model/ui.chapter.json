@@ -266,6 +266,21 @@ scenes: {
 				visible: true,
 				refPoint: {},
 				verbs: {
+					"pointer-exit": {
+						id: "pointer-exit",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "config",
+								scale: 1,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
+							}
+						]
+					},
 					action: {
 						id: "action",
 						actions: [
@@ -273,6 +288,21 @@ scenes: {
 								class: "Leave",
 								scene: "config",
 								init: true
+							}
+						]
+					},
+					"pointer-enter": {
+						id: "pointer-enter",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "config",
+								scale: 1.3,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
 							}
 						]
 					}
@@ -320,11 +350,41 @@ scenes: {
 				visible: true,
 				refPoint: {},
 				verbs: {
+					"pointer-exit": {
+						id: "pointer-exit",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "continue",
+								scale: 1,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
+							}
+						]
+					},
 					action: {
 						id: "action",
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.ui.UIContinue"
+							}
+						]
+					},
+					"pointer-enter": {
+						id: "pointer-enter",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "continue",
+								scale: 1.3,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
 							}
 						]
 					}
@@ -372,6 +432,21 @@ scenes: {
 				visible: true,
 				refPoint: {},
 				verbs: {
+					"pointer-exit": {
+						id: "pointer-exit",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "credits",
+								scale: 1,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
+							}
+						]
+					},
 					action: {
 						id: "action",
 						actions: [
@@ -379,6 +454,21 @@ scenes: {
 								class: "Leave",
 								scene: "credits",
 								init: true
+							}
+						]
+					},
+					"pointer-enter": {
+						id: "pointer-enter",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "credits",
+								scale: 1.3,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
 							}
 						]
 					}
@@ -478,6 +568,21 @@ scenes: {
 				visible: true,
 				refPoint: {},
 				verbs: {
+					"pointer-exit": {
+						id: "pointer-exit",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "help",
+								scale: 1,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
+							}
+						]
+					},
 					action: {
 						id: "action",
 						actions: [
@@ -485,6 +590,21 @@ scenes: {
 								class: "Leave",
 								scene: "help",
 								init: true
+							}
+						]
+					},
+					"pointer-enter": {
+						id: "pointer-enter",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "help",
+								scale: 1.3,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
 							}
 						]
 					}
@@ -532,11 +652,41 @@ scenes: {
 				visible: true,
 				refPoint: {},
 				verbs: {
+					"pointer-exit": {
+						id: "pointer-exit",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "new",
+								scale: 1,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
+							}
+						]
+					},
 					action: {
 						id: "action",
 						actions: [
 							{
 								class: "com.bladecoder.engine.actions.ui.UINewGame"
+							}
+						]
+					},
+					"pointer-enter": {
+						id: "pointer-enter",
+						actions: [
+							{
+								class: "ScaleAnim",
+								actor: "new",
+								scale: 1.3,
+								speed: 0.3,
+								count: -1,
+								wait: true,
+								repeat: "NO_REPEAT",
+								interpolation: "FADE"
 							}
 						]
 					}

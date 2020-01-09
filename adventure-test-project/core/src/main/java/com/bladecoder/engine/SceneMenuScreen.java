@@ -16,7 +16,9 @@
 package com.bladecoder.engine;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Peripheral;
 import com.bladecoder.engine.assets.EngineAssetManager;
+import com.bladecoder.engine.model.InteractiveActor;
 import com.bladecoder.engine.model.World;
 import com.bladecoder.engine.model.World.AssetState;
 import com.bladecoder.engine.ui.UI;
@@ -24,8 +26,12 @@ import com.bladecoder.engine.ui.defaults.DefaultSceneScreen;
 import com.bladecoder.engine.util.EngineLogger;
 
 public class SceneMenuScreen extends DefaultSceneScreen {
+	private static final String POINTER_ENTER_VERB = "pointer-enter";
+	private static final String POINTER_EXIT_VERB = "pointer-exit";
 
 	private World uiWorld;
+
+	private InteractiveActor pointerInActor = null;
 
 	@Override
 	public void setUI(final UI ui) {
@@ -60,6 +66,26 @@ public class SceneMenuScreen extends DefaultSceneScreen {
 		}
 
 		super.render(delta);
+
+		// call pointer-enter/pointer-exit
+		if (world.getAssetState() != AssetState.LOADED || Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen)
+				|| world.inCutMode() || world.hasDialogOptions() || world.isPaused()) {
+			return;
+		}
+
+		InteractiveActor newPointerInActor = getWorld().getInteractiveActorAtInput(getViewport(), 0);
+
+		if (newPointerInActor != pointerInActor) {
+			if (pointerInActor != null && pointerInActor.getVerb(POINTER_EXIT_VERB) != null) {
+				pointerInActor.runVerb(POINTER_EXIT_VERB, null);
+			}
+
+			pointerInActor = newPointerInActor;
+
+			if (pointerInActor != null && pointerInActor.getVerb(POINTER_ENTER_VERB) != null) {
+				pointerInActor.runVerb(POINTER_ENTER_VERB, null);
+			}
+		}
 	}
 
 }

@@ -29,7 +29,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Scaling;
 import com.bladecoder.engine.assets.EngineAssetManager;
-import com.bladecoder.engine.i18n.I18N;
 import com.bladecoder.engine.ui.MenuScreen;
 import com.bladecoder.engine.ui.UI;
 import com.bladecoder.engine.util.Config;
@@ -53,7 +52,7 @@ public class VenusMenuScreen extends MenuScreen {
 		setPrefLang();
 
 		super.show();
-		
+
 		addLangButton();
 
 		addLinkButtons();
@@ -77,7 +76,7 @@ public class VenusMenuScreen extends MenuScreen {
 				languages = languageProp.split(",");
 
 			// show the current language
-			String current = prefs.getProperty("lang", I18N.getCurrentLocale().getLanguage());
+			String current = prefs.getProperty("lang", getUI().getWorld().getI18N().getCurrentLocale().getLanguage());
 
 			for (int i = 0; i < languages.length; i++) {
 				if (languages[i].trim().equals(current)) {
@@ -91,7 +90,7 @@ public class VenusMenuScreen extends MenuScreen {
 			if (currentLanguage != 0)
 				l = new Locale(languages[currentLanguage].trim());
 
-			I18N.setLocale(l);
+			getUI().getWorld().getI18N().setLocale(l);
 		}
 
 	}
@@ -103,6 +102,7 @@ public class VenusMenuScreen extends MenuScreen {
 					getUI().getSkin().getDrawable("lang_" + languages[currentLanguage].trim()), null);
 
 			languageButton.addListener(new ClickListener() {
+				@Override
 				public void clicked(InputEvent event, float x, float y) {
 
 					currentLanguage = (currentLanguage + 1) % languages.length;
@@ -127,19 +127,19 @@ public class VenusMenuScreen extends MenuScreen {
 			getIconStackTable().add(languageButton);
 		}
 	}
-	
+
 	private void addLinkButtons() {
-		
+
 		if (Gdx.app.getType() == ApplicationType.Desktop) {
 			bonaseraURL = Config.getProperty("bonasera_desktop_url", null);
 		} else if (Gdx.app.getType() == ApplicationType.Android) {
 			bonaseraURL = Config.getProperty("bonasera_android_url", null);
-			
+
 			// Delete exit button
 			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).pad(0).clearActor();
 		} else if (Gdx.app.getType() == ApplicationType.iOS) {
 			bonaseraURL = Config.getProperty("bonasera_ios_url", null);
-			
+
 			// Delete exit button
 			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).pad(0).clearActor();
 		}
@@ -160,9 +160,11 @@ public class VenusMenuScreen extends MenuScreen {
 			Image image = new Image(getUI().getSkin().getDrawable("bonasera_icon"));
 			image.setScaling(Scaling.fit);
 			bonaseraButton.add(image).size(DPIUtils.getPrefButtonSize() * 1.4f);
-			bonaseraButton.add(new Label("[YELLOW] " + I18N.getString("ui.bonaseraLink") + "[]", getUI().getSkin(), "ui-dialog"));
+			bonaseraButton.add(new Label("[YELLOW] " + getUI().getWorld().getI18N().getString("ui.bonaseraLink") + "[]",
+					getUI().getSkin(), "ui-dialog"));
 
 			bonaseraButton.addListener(new ClickListener() {
+				@Override
 				public void clicked(InputEvent event, float x, float y) {
 					Gdx.net.openURI(bonaseraURL);
 				}
@@ -174,6 +176,6 @@ public class VenusMenuScreen extends MenuScreen {
 			leftTable.pack();
 			getMenuButtonTable().getStage().addActor(leftTable);
 		}
-		
+
 	}
 }

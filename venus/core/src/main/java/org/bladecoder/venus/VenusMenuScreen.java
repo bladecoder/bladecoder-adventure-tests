@@ -61,7 +61,7 @@ public class VenusMenuScreen extends MenuScreen {
 	private void setPrefLang() {
 
 		// Parse languages
-		String languageProp = Config.getProperty("languages", null);
+		String languageProp = Config.getInstance().getProperty("languages", null);
 
 		if (EngineAssetManager.getInstance().getUserFile(PREFS_FILENAME).exists()) {
 			try {
@@ -131,14 +131,14 @@ public class VenusMenuScreen extends MenuScreen {
 	private void addLinkButtons() {
 
 		if (Gdx.app.getType() == ApplicationType.Desktop) {
-			bonaseraURL = Config.getProperty("bonasera_desktop_url", null);
+			bonaseraURL = Config.getInstance().getProperty("bonasera_desktop_url", null);
 		} else if (Gdx.app.getType() == ApplicationType.Android) {
-			bonaseraURL = Config.getProperty("bonasera_android_url", null);
+			bonaseraURL = Config.getInstance().getProperty("bonasera_android_url", null);
 
 			// Delete exit button
 			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).pad(0).clearActor();
 		} else if (Gdx.app.getType() == ApplicationType.iOS) {
-			bonaseraURL = Config.getProperty("bonasera_ios_url", null);
+			bonaseraURL = Config.getInstance().getProperty("bonasera_ios_url", null);
 
 			// Delete exit button
 			getMenuButtonTable().getCells().get(getMenuButtonTable().getCells().size - 1).pad(0).clearActor();

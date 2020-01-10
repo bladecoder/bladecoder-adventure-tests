@@ -10,7 +10,7 @@ import com.bladecoder.engine.util.Config;
 
 @ActionDescription("Open the Bonasera Store Page")
 public class GetBonaseraAction implements Action {
-	
+
 	@Override
 	public void init(World w) {
 	}
@@ -20,16 +20,16 @@ public class GetBonaseraAction implements Action {
 		String bonaseraURL = null;
 
 		if (Gdx.app.getType() == ApplicationType.Desktop) {
-			bonaseraURL = Config.getProperty("bonasera_desktop_url", null);
+			bonaseraURL = Config.getInstance().getProperty("bonasera_desktop_url", null);
 		} else if (Gdx.app.getType() == ApplicationType.Android) {
-			bonaseraURL = Config.getProperty("bonasera_android_url", null);
+			bonaseraURL = Config.getInstance().getProperty("bonasera_android_url", null);
 		} else if (Gdx.app.getType() == ApplicationType.iOS) {
-			bonaseraURL = Config.getProperty("bonasera_ios_url", null);
+			bonaseraURL = Config.getInstance().getProperty("bonasera_ios_url", null);
 		}
-		
-		if(bonaseraURL != null)
+
+		if (bonaseraURL != null)
 			Gdx.net.openURI(bonaseraURL);
-		
+
 		return false;
 	}
 }

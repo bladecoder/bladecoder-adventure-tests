@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "3.2.3-SNAPSHOT",
+bladeEngineVersion: "3.2.3",
 sounds: {},
 scenes: {
 	config: {
@@ -732,6 +732,9 @@ scenes: {
 					{
 						class: "RunOnce",
 						caID: "2071282574"
+					},
+					{
+						class: "com.bladecoder.engine.actions.ui.UIInitPrefs"
 					},
 					{
 						class: "ShowInventory",

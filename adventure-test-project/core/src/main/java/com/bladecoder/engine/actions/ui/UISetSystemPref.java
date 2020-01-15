@@ -15,6 +15,7 @@
  ******************************************************************************/
 package com.bladecoder.engine.actions.ui;
 
+import com.bladecoder.engine.BladeEngine;
 import com.bladecoder.engine.actions.Action;
 import com.bladecoder.engine.actions.ActionDescription;
 import com.bladecoder.engine.actions.ActionProperty;
@@ -24,6 +25,7 @@ import com.bladecoder.engine.model.SceneSoundManager;
 import com.bladecoder.engine.model.VerbRunner;
 import com.bladecoder.engine.model.VoiceManager;
 import com.bladecoder.engine.model.World;
+import com.bladecoder.engine.ui.UI;
 import com.bladecoder.engine.util.Config;
 
 @ActionDescription("Sets some preference value for a system.")
@@ -40,19 +42,34 @@ public class UISetSystemPref implements Action {
 	@ActionPropertyDescription("The value.")
 	private String value;
 
+	World uiWorld;
+
 	@Override
 	public void init(World w) {
+		uiWorld = w;
 	}
 
 	@Override
 	public boolean run(VerbRunner cb) {
 
+		UI ui = BladeEngine.getAppUI();
+		World gameWorld = ui.getWorld();
+
 		if (system == System.MUSIC_VOLUME) {
 			MusicManager.VOLUME_MULTIPLIER = Float.parseFloat(value);
+
+			uiWorld.getMusicManager().setVolume(uiWorld.getMusicManager().getVolume());
+			gameWorld.getMusicManager().setVolume(gameWorld.getMusicManager().getVolume());
+
 		} else if (system == System.EFFECTS_VOLUME) {
 			SceneSoundManager.VOLUME_MULTIPLIER = Float.parseFloat(value);
 		} else if (system == System.VOICES_VOLUME) {
 			VoiceManager.VOLUME_MULTIPLIER = Float.parseFloat(value);
+
+			uiWorld.getCurrentScene().getTextManager().getVoiceManager()
+					.setVolume(uiWorld.getCurrentScene().getTextManager().getVoiceManager().getVolume());
+			gameWorld.getCurrentScene().getTextManager().getVoiceManager()
+					.setVolume(gameWorld.getCurrentScene().getTextManager().getVoiceManager().getVolume());
 		}
 
 		Config.getInstance().setPref(system.name(), value);

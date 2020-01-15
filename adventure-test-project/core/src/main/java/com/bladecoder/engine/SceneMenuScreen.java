@@ -49,6 +49,8 @@ public class SceneMenuScreen extends DefaultSceneScreen {
 		super.setUI(ui);
 
 		getMenuButton().setVisible(false);
+
+		setShowHotspotsFeature(false);
 	}
 
 	@Override

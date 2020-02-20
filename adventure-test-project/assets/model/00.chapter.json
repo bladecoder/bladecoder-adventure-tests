@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "3.2.3-SNAPSHOT",
+bladeEngineVersion: "3.2.5-SNAPSHOT",
 sounds: {},
 scenes: {
 	actor3d: {
@@ -4576,6 +4576,124 @@ scenes: {
 		verbs: {},
 		player: "char",
 		walkZone: "walkzone"
+	},
+	testwalk: {
+		id: "testwalk",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			char: {
+				class: "CharacterActor",
+				id: "char",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 845.57306,
+					y: 90.765656
+				},
+				visible: true,
+				refPoint: {
+					x: 105.383484,
+					y: 4.3308105
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "SetPlayer",
+								actor: "char",
+								inventory: "white"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@basic22.char.pickup.3.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: false,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 4
+				},
+				scaleX: 0.28517538,
+				scaleY: 0.28517538,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 2000
+			},
+			wz1: {
+				class: "WalkZoneActor",
+				id: "wz1",
+				bbox: [ -100, 0, 108.85559, 786.97614, 1356.5956, 741.85614, 1414.2749, -15.246765 ],
+				pos: {
+					x: 198.2085,
+					y: 67.08597
+				},
+				visible: true
+			}
+		},
+		backgroundAtlas: "scene2",
+		backgroundRegionId: "bg2",
+		musicDesc: null,
+		depthVector: {
+			x: 948.18896,
+			y: -2058.4639
+		},
+		verbs: {},
+		player: "char",
+		walkZone: "wz1"
 	}
 },
 initScene: "menu",

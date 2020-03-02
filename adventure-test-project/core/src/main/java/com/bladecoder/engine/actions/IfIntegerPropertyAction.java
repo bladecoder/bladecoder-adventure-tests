@@ -69,10 +69,10 @@ public class IfIntegerPropertyAction extends AbstractIfAction {
 		}
 
 		if ((comparison == ComparisonType.EQUALS && iValue != currentVal)
-				|| (comparison == ComparisonType.GREATER && iValue <= currentVal)
-				|| (comparison == ComparisonType.LESS && iValue >= currentVal)
-				|| (comparison == ComparisonType.GREATER_EQUALS && iValue < currentVal)
-				|| (comparison == ComparisonType.LESS_EQUALS && iValue > currentVal)) {
+				|| (comparison == ComparisonType.GREATER && iValue >= currentVal)
+				|| (comparison == ComparisonType.LESS && iValue <= currentVal)
+				|| (comparison == ComparisonType.GREATER_EQUALS && iValue > currentVal)
+				|| (comparison == ComparisonType.LESS_EQUALS && iValue < currentVal)) {
 			gotoElse(cb);
 		}
 

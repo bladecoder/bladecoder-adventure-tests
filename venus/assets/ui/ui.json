@@ -129,6 +129,7 @@ com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 	debug: { font: debug, fontColor: white},
 	title: { font: big-font, fontColor: white},
 	ui-dialog: { font: message-font, fontColor: white},
+	ui-text: { font: message-font, fontColor: white, background: black08},
 },
 
 

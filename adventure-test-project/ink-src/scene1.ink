@@ -23,7 +23,7 @@ GREEN> Can you drive your game and story throught the Ink language?
 $PLAYER> Hi!
 GREEN> I don't want to speak with you.
 
-*$PLAYER > Why?
+*$PLAYER > [Why?] You selected why.
 GREEN> Because.
 $PLAYER> Well. I don't understand, but ok.
 -> END

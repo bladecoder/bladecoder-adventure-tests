@@ -1,19 +1,44 @@
 {
-bladeEngineVersion: "2.1.0-SNAPSHOT",
+bladeEngineVersion: "4.0.0",
 sounds: {
-	rope_click: {
-		id: "rope_click",
+	cable_click: {
+		id: "cable_click",
 		filename: "click1.mp3",
 		volume: 0.2
+	},
+	cable_switch: {
+		id: "cable_switch",
+		filename: "switch.mp3",
+		volume: 0.4
 	},
 	chair_chair_broken: {
 		id: "chair_chair_broken",
 		filename: "chair_broken.mp3"
 	},
+	chair_chair_squeek: {
+		id: "chair_chair_squeek",
+		filename: "chair_squeek.mp3",
+		volume: 0.1
+	},
 	chair_click: {
 		id: "chair_click",
 		filename: "click1.mp3",
 		volume: 0.2
+	},
+	cutter_click: {
+		id: "cutter_click",
+		filename: "click1.mp3",
+		volume: 0.2
+	},
+	cutter_drill: {
+		id: "cutter_drill",
+		filename: "drill.mp3",
+		volume: 0.5
+	},
+	diosa_chords: {
+		id: "diosa_chords",
+		filename: "chords.mp3",
+		volume: 0.5
 	},
 	policeman_fall: {
 		id: "policeman_fall",
@@ -21,46 +46,21 @@ sounds: {
 		volume: 0.5,
 		preload: true
 	},
-	rope_slide: {
-		id: "rope_slide",
-		filename: "slide.mp3",
-		volume: 0.05
-	},
-	cutter_drill: {
-		id: "cutter_drill",
-		filename: "drill.mp3",
-		volume: 0.5
-	},
-	cutter_click: {
-		id: "cutter_click",
-		filename: "click1.mp3",
-		volume: 0.2
-	},
-	diosa_chords: {
-		id: "diosa_chords",
-		filename: "chords.mp3",
-		volume: 0.5
-	},
 	policeman_hit: {
 		id: "policeman_hit",
 		filename: "hit.mp3",
 		volume: 0.3,
 		preload: true
 	},
-	cable_click: {
-		id: "cable_click",
+	rope_click: {
+		id: "rope_click",
 		filename: "click1.mp3",
 		volume: 0.2
 	},
-	chair_chair_squeek: {
-		id: "chair_chair_squeek",
-		filename: "chair_squeek.mp3",
-		volume: 0.1
-	},
-	cable_switch: {
-		id: "cable_switch",
-		filename: "switch.mp3",
-		volume: 0.4
+	rope_slide: {
+		id: "rope_slide",
+		filename: "slide.mp3",
+		volume: 0.05
 	}
 },
 scenes: {
@@ -72,32 +72,8 @@ scenes: {
 			}
 		],
 		actors: {
-			exit: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "exit",
-				bbox: [ 0, 0, -4.824341, 1074.5214, 1913.9606, 1079.3456, 1918.7849, 0 ],
-				pos: {},
-				visible: false,
-				desc: "@endSCN.exit.desc",
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						icon: "right",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.EndGameAction"
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "foreground"
-			},
 			bonasera: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "bonasera",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -119,11 +95,10 @@ scenes: {
 					}
 				},
 				interaction: true,
-				state: null,
 				zIndex: 1,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.ImageRenderer",
+					class: "ImageRenderer",
 					fanims: {
 						bonasera_icon: {
 							class: "com.bladecoder.engine.anim.AnimationDesc",
@@ -138,11 +113,34 @@ scenes: {
 					initAnimation: "bonasera_icon",
 					orgAlign: 4
 				},
-				scale: 1,
+				scaleX: 1,
+				scaleY: 1,
 				rot: 0,
-				tint: null,
 				fakeDepth: false,
 				bboxFromRenderer: true
+			},
+			exit: {
+				class: "InteractiveActor",
+				id: "exit",
+				bbox: [ 0, 0, -4.824341, 1074.5214, 1913.9606, 1079.3456, 1918.7849, 0 ],
+				pos: {},
+				visible: false,
+				desc: "@endSCN.exit.desc",
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						icon: "right",
+						actions: [
+							{
+								class: "EndGame"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground"
 			}
 		},
 		musicDesc: {
@@ -154,7 +152,7 @@ scenes: {
 				id: "init",
 				actions: [
 					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						class: "Cutmode",
 						value: true
 					},
 					{
@@ -162,29 +160,29 @@ scenes: {
 						text: "@scene2.init.0.text"
 					},
 					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
+						class: "IfProperty",
 						name: "EMBEDDED",
 						value: "true",
 						caID: "1418905628"
 					},
 					{
-						class: "com.bladecoder.engine.actions.EndGameAction"
+						class: "EndGame"
 					},
 					{
-						class: "com.bladecoder.engine.actions.EndAction",
+						class: "End",
 						caID: "1418905628"
 					},
 					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
+						class: "SetActorAttr",
 						actor: "bonasera",
 						visible: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						class: "Cutmode",
 						value: false
 					},
 					{
-						class: "com.bladecoder.engine.actions.TextAction",
+						class: "Text",
 						text: "@endSCN.init.2.text",
 						style: "default",
 						color: "ffffffff",
@@ -194,21 +192,3048 @@ scenes: {
 						wait: false
 					},
 					{
-						class: "com.bladecoder.engine.actions.WaitAction",
+						class: "Wait",
 						time: 4
 					},
 					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
+						class: "SetActorAttr",
 						actor: "exit",
 						visible: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.EndAction",
+						class: "End",
 						caID: "1418905628"
 					}
 				]
 			}
-		}
+		},
+		walkZone: null
+	},
+	limbo: {
+		id: "limbo",
+		layers: [],
+		actors: {},
+		musicDesc: null,
+		verbs: {},
+		walkZone: null
+	},
+	scene0: {
+		id: "scene0",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			forward: {
+				class: "SpriteActor",
+				id: "forward",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1728,
+					y: 47
+				},
+				visible: false,
+				desc: "@scene0.forward.desc",
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "RunVerb",
+								verb: "leave",
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "background",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						forward: {
+							class: "AtlasAnimationDesc",
+							id: "forward",
+							source: "scene0",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "forward",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			title: {
+				class: "SpriteActor",
+				id: "title",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 960
+				},
+				visible: false,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "ImageRenderer",
+					fanims: {
+						title: {
+							class: "com.bladecoder.engine.anim.AnimationDesc",
+							id: "title",
+							source: "@title.jpg",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "title",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			}
+		},
+		musicDesc: {
+			filename: "scn0.mp3"
+		},
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "Cutmode",
+						value: true
+					},
+					{
+						class: "Property",
+						prop: "EMBEDDED",
+						value: "false"
+					},
+					{
+						class: "ShowInventory",
+						value: false
+					},
+					{
+						class: "ScreenPosition",
+						actor: "forward",
+						position: "-40.0,40.0",
+						anchor: "BOTTOM_RIGHT"
+					},
+					{
+						class: "Text",
+						text: "@scene0.init.0.text",
+						style: "default",
+						color: "ffffffff",
+						pos: "-1.0,-1.0",
+						type: "PLAIN",
+						queue: false,
+						wait: true
+					},
+					{
+						class: "SetActorAttr",
+						actor: "title",
+						visible: true
+					},
+					{
+						class: "Wait",
+						time: 2
+					},
+					{
+						class: "ShowInventory",
+						value: true
+					},
+					{
+						class: "Cutmode",
+						value: false
+					},
+					{
+						class: "Leave",
+						scene: "scene1",
+						init: true
+					}
+				]
+			},
+			leave: {
+				id: "leave",
+				actions: [
+					{
+						class: "ShowInventory",
+						value: true
+					},
+					{
+						class: "Leave",
+						scene: "scene1",
+						init: true
+					}
+				]
+			}
+		},
+		walkZone: null
+	},
+	scene1: {
+		id: "scene1",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			cabinet_off: {
+				class: "SpriteActor",
+				id: "cabinet_off",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 384.79813,
+					y: 467.20212
+				},
+				visible: false,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						cabinet_off: {
+							class: "AtlasAnimationDesc",
+							id: "cabinet_off",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "cabinet_off",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			cable: {
+				class: "SpriteActor",
+				id: "cable",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 582.39404,
+					y: 532.6405
+				},
+				visible: true,
+				desc: "@scene1.cable.desc",
+				state: "CONNECTED",
+				refPoint: {},
+				verbs: {
+					"use.navaja.CONNECTED": {
+						id: "use",
+						target: "navaja",
+						state: "CONNECTED",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cable",
+								text: "@cable.use.CONNECTED.navaja.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cable",
+								text: "@cable.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "org.bladecoder.venus.actions.scene1.PickupCableAction",
+								connectText: "@cable.pickup.0.connect_text",
+								disconnectText: "@cable.pickup.0.disconnect_text"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.CUT": {
+						id: "pickup",
+						state: "CUT",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cable.pickup.CUT.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"use.navaja.DISCONNECTED": {
+						id: "use",
+						target: "navaja",
+						state: "DISCONNECTED",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "641.0,413.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PickUp",
+								actor: "cable"
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cable.use.DISCONNECTED.navaja.0.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "ActorState",
+								actor: "cable",
+								state: "CUT"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 4,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"cable.connected": {
+							class: "AtlasAnimationDesc",
+							id: "cable.connected",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"cable.disconnected": {
+							class: "AtlasAnimationDesc",
+							id: "cable.disconnected",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"cable.inventory": {
+							class: "AtlasAnimationDesc",
+							id: "cable.inventory",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							sound: "click",
+							preload: true
+						}
+					},
+					initAnimation: "cable.connected",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			chair: {
+				class: "SpriteActor",
+				id: "chair",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 2330,
+					y: 510
+				},
+				visible: true,
+				desc: "@chair.desc",
+				state: "SIT0",
+				refPoint: {},
+				verbs: {
+					"pickup.BROKEN": {
+						id: "pickup",
+						state: "BROKEN",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2400.0,450.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "LookAt",
+								actor: "chair",
+								direction: "FRONT",
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PickUp",
+								actor: "chair"
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@chair.pickup.BROKEN.0.5.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "ActorState",
+								actor: "chair",
+								state: "INVENTORY"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"lookat.INVENTORY": {
+						id: "lookat",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "player",
+								text: "@chair.lookat.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							}
+						]
+					},
+					"lookat.BROKEN": {
+						id: "lookat",
+						state: "BROKEN",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "chair",
+								text: "@chair.lookat.BROKEN.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "chair",
+								text: "@chair.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.SIT1": {
+						id: "pickup",
+						state: "SIT1",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2330.0,410.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "LookAt",
+								actor: "chair",
+								direction: "FRONT",
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#sitdown",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PlaySound",
+								sound: "chair_chair_squeek",
+								stop: false
+							},
+							{
+								class: "Wait",
+								time: 1
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@chair.pickup.SIT1.0.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#sitdown",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "ActorState",
+								actor: "chair",
+								state: "SIT2"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.SIT0": {
+						id: "pickup",
+						state: "SIT0",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2330.0,410.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "LookAt",
+								actor: "chair",
+								direction: "FRONT",
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#sitdown",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PlaySound",
+								sound: "chair_chair_squeek",
+								stop: false
+							},
+							{
+								class: "Wait",
+								time: 1
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@chair.pickup.SIT0.0.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#sitdown",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "ActorState",
+								actor: "chair",
+								state: "SIT1"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.SIT2": {
+						id: "pickup",
+						state: "SIT2",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2330.0,410.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "LookAt",
+								actor: "chair",
+								direction: "FRONT",
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#sitdown",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "Wait",
+								time: 1
+							},
+							{
+								class: "PlaySound",
+								sound: "chair_chair_broken",
+								stop: false
+							},
+							{
+								class: "Animation",
+								animation: "chair#chair.broken",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "Animation",
+								animation: "player#player.chairbroke",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "Wait",
+								time: 1
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@chair.pickup.SIT2.0.7.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "ActorState",
+								actor: "chair",
+								state: "BROKEN"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"chair.broken": {
+							class: "AtlasAnimationDesc",
+							id: "chair.broken",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"chair.inventory": {
+							class: "AtlasAnimationDesc",
+							id: "chair.inventory",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							sound: "click",
+							preload: true
+						},
+						chair2: {
+							class: "AtlasAnimationDesc",
+							id: "chair2",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "chair2",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			column_fg: {
+				class: "SpriteActor",
+				id: "column_fg",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 160
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						column_fg: {
+							class: "AtlasAnimationDesc",
+							id: "column_fg",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "column_fg",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			cuadro: {
+				class: "InteractiveActor",
+				id: "cuadro",
+				bbox: [ 0, -172.36902, 0, 100, 269.97504, 88.02991, 248.42896, -155.61108 ],
+				pos: {
+					x: 629.62585,
+					y: 924.0898
+				},
+				visible: true,
+				desc: "@cuadro.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cuadro",
+								text: "@cuadro.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cuadro",
+								text: "@cuadro.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			cutter: {
+				class: "SpriteActor",
+				id: "cutter",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 66.548096,
+					y: 1199.0973
+				},
+				visible: true,
+				desc: "@cutter.desc",
+				state: "WITH_LOW_BATTERY",
+				refPoint: {},
+				verbs: {
+					"use.diosa.WITH_LOW_BATTERY": {
+						id: "use",
+						target: "diosa",
+						state: "WITH_LOW_BATTERY",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "890.0,76.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cutter.use.WITH_LOW_BATTERY.diosa.0.1.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PlaySound",
+								sound: "cutter_drill",
+								stop: false
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back2",
+								count: 3,
+								wait: true,
+								repeat: "REPEAT",
+								keepDirection: false
+							},
+							{
+								class: "PlaySound",
+								sound: "cutter_drill",
+								stop: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cutter.use.WITH_LOW_BATTERY.diosa.0.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "ActorState",
+								actor: "cutter",
+								state: "NO_BATTERY"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"use.diosa.WITH_CABLE": {
+						id: "use",
+						target: "diosa",
+						state: "WITH_CABLE",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cutter",
+								text: "@cutter.use.WITH_CABLE.diosa.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"use.diosa.WITH_BATTERY": {
+						id: "use",
+						target: "diosa",
+						state: "WITH_BATTERY",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "890.0,76.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PlaySound",
+								sound: "cutter_drill",
+								stop: false
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back2",
+								count: 12,
+								wait: true,
+								repeat: "REPEAT",
+								keepDirection: false
+							},
+							{
+								class: "PlaySound",
+								sound: "cutter_drill",
+								stop: true
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cutter.use.WITH_BATTERY.diosa.0.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "ActorState",
+								actor: "cutter",
+								state: "CUT"
+							},
+							{
+								class: "ActorState",
+								actor: "diosa",
+								state: "CUT"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "hole",
+								visible: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"use.cable": {
+						id: "use",
+						target: "cable",
+						actions: [
+							{
+								class: "org.bladecoder.venus.actions.scene1.UseCutMachineCableAction",
+								cutCableText: "@cutter.use.cable.0.cut_cable_text",
+								defaultCableText: "@cutter.use.cable.0.default_cable_text"
+							}
+						]
+					},
+					use: {
+						id: "use",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cutter.use.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.CHARGING": {
+						id: "pickup",
+						state: "CHARGING",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cutter",
+								text: "@cutter.pickup.CHARGING.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cutter.lookat.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cutter",
+								text: "@cutter.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.WITH_BATTERY": {
+						id: "pickup",
+						state: "WITH_BATTERY",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "682.0,434.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PickUp",
+								actor: "cutter"
+							},
+							{
+								class: "PlaySound",
+								sound: "cutter_click",
+								stop: false
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cutter.pickup.WITH_BATTERY.0.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"use.policeman": {
+						id: "use",
+						target: "policeman",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cutter",
+								text: "@cutter.use.policeman.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"use.diosa.NO_BATTERY": {
+						id: "use",
+						target: "diosa",
+						state: "NO_BATTERY",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "cutter",
+								text: "@cutter.use.NO_BATTERY.diosa.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"use.socket.WITH_CABLE": {
+						id: "use",
+						target: "socket",
+						state: "WITH_CABLE",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "641.0,413.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "DropItem",
+								actor: "cutter",
+								pos: "648.0,520.0"
+							},
+							{
+								class: "Animation",
+								animation: "cutter#cutter.charging",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@cutter.use.WITH_CABLE.socket.0.5.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "ActorState",
+								actor: "cutter",
+								state: "CHARGING"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							},
+							{
+								class: "Wait",
+								time: 20
+							},
+							{
+								class: "ActorState",
+								actor: "cutter",
+								state: "WITH_BATTERY"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"cutter.charging": {
+							class: "AtlasAnimationDesc",
+							id: "cutter.charging",
+							source: "common",
+							duration: 2,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"cutter.inventory": {
+							class: "AtlasAnimationDesc",
+							id: "cutter.inventory",
+							source: "common",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"cutter.withcable": {
+							class: "AtlasAnimationDesc",
+							id: "cutter.withcable",
+							source: "common",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							sound: "click",
+							preload: true
+						}
+					},
+					initAnimation: "cutter.inventory",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			diosa: {
+				class: "SpriteActor",
+				id: "diosa",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 905,
+					y: 594.5609
+				},
+				visible: true,
+				desc: "@scene1.diosa.desc",
+				refPoint: {},
+				verbs: {
+					"lookat.INVENTORY": {
+						id: "lookat",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "player",
+								text: "@diosa.lookat.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "diosa",
+								text: "@diosa.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "890.0,76.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "diosa",
+								text: "@diosa.pickup.0.1.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.CUT": {
+						id: "pickup",
+						state: "CUT",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "890.0,76.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "Animation",
+								animation: "player#use.back",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@diosa.pickup.CUT.0.3.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "PickUp",
+								actor: "diosa"
+							},
+							{
+								class: "ActorState",
+								actor: "diosa",
+								state: "INVENTORY"
+							},
+							{
+								class: "ActorState",
+								actor: "rope",
+								state: "WITH_GODDESS"
+							},
+							{
+								class: "PlaySound",
+								sound: "diosa_chords",
+								stop: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "player",
+								text: "@diosa.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							}
+						]
+					},
+					"pickup.FLOOR": {
+						id: "pickup",
+						state: "FLOOR",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "IfActorAttr",
+								actor: "scene2#policeman",
+								attr: "STATE",
+								value: "POLICEMAN_TURN",
+								caID: "else123"
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.right",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PickUp",
+								actor: "diosa"
+							},
+							{
+								class: "ActorState",
+								actor: "diosa",
+								state: "INVENTORY"
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.right",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "End",
+								caID: "else123"
+							},
+							{
+								class: "Say",
+								actor: "policeman",
+								text: "@scene2.diosa.pickup.FLOOR.0.text",
+								type: "TALK",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@scene2.diosa.pickup.FLOOR.1.text",
+								type: "TALK",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "else123"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"lookat.FLOOR": {
+						id: "lookat",
+						state: "FLOOR",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								text: "@scene1.diosa.lookat.FLOOR.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						diosa: {
+							class: "AtlasAnimationDesc",
+							id: "diosa",
+							source: "common",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"diosa.inventory": {
+							class: "AtlasAnimationDesc",
+							id: "diosa.inventory",
+							source: "common",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "diosa",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			estatua: {
+				class: "InteractiveActor",
+				id: "estatua",
+				bbox: [ -15.960083, -422.94275, 16.572266, -337.66803, 24.84021, -315.99585, -12.12384, -135.72235, -1.6645508, -28.39038, 27.268433, 14.341614, 30.324219, 98.40405, 125.53613, 92.0199, 115.960205, -427.7307 ],
+				pos: {
+					x: 1029.4265,
+					y: 948.03
+				},
+				visible: true,
+				desc: "@estatua.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "estatua",
+								text: "@estatua.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "estatua",
+								text: "@estatua.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			exit: {
+				class: "SpriteActor",
+				id: "exit",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 2184.3882,
+					y: 817.01294
+				},
+				visible: false,
+				desc: "@scene1.exit.desc____",
+				refPoint: {},
+				verbs: {
+					"use.rope": {
+						id: "use",
+						target: "rope",
+						actions: [
+							{
+								class: "IfActorAttr",
+								actor: "rope",
+								attr: "STATE",
+								value: "ARMED",
+								caID: "else123"
+							},
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "player",
+								visible: false
+							},
+							{
+								class: "DropItem",
+								actor: "rope",
+								pos: "2150.0,102.0"
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope.throw",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "SetActorAttr",
+								actor: "player",
+								visible: true
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope2",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "SetActorAttr",
+								actor: "exit",
+								interaction: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							},
+							{
+								class: "ActorState",
+								actor: "rope",
+								state: "ANCHORED"
+							},
+							{
+								class: "LookAt",
+								actor: "rope",
+								text: "@scene1.exit.pickup.9.text",
+								direction: "FRONT",
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "else123"
+							},
+							{
+								class: "LookAt",
+								actor: "exit",
+								text: "@scene1.exit.use.rope.12.text_",
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "else123"
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@scene1.exit.lookat.0.text_",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						exit: {
+							class: "AtlasAnimationDesc",
+							id: "exit",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "exit",
+					orgAlign: 4
+				},
+				scaleX: 0.7,
+				scaleY: 0.7,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			head_fg: {
+				class: "SpriteActor",
+				id: "head_fg",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 2727.276,
+					y: -0.62638855
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						head_fg: {
+							class: "AtlasAnimationDesc",
+							id: "head_fg",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "head_fg",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			hole: {
+				class: "SpriteActor",
+				id: "hole",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 887,
+					y: 587
+				},
+				visible: false,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						hole: {
+							class: "AtlasAnimationDesc",
+							id: "hole",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "hole",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			libro: {
+				class: "InteractiveActor",
+				id: "libro",
+				bbox: [ -9.57605, 14.364075, 0, 100, 145.4862, 92.81799, 143.09229, 9.57605 ],
+				pos: {
+					x: 1867.3315,
+					y: 806.7831
+				},
+				visible: true,
+				desc: "@libro.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "libro",
+								text: "@libro.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "libro",
+								text: "@libro.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			navaja: {
+				class: "SpriteActor",
+				id: "navaja",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 274.7083,
+					y: 1183.3589
+				},
+				visible: true,
+				desc: "@navaja.desc",
+				refPoint: {},
+				verbs: {
+					use: {
+						id: "use",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "navaja",
+								text: "@navaja.use.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "LookAt",
+								actor: "navaja",
+								text: "@navaja.lookat.0.text",
+								wait: true
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "navaja",
+								text: "@navaja.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"navaja.inventory": {
+							class: "AtlasAnimationDesc",
+							id: "navaja.inventory",
+							source: "common",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "navaja.inventory",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			papelera: {
+				class: "InteractiveActor",
+				id: "papelera",
+				bbox: [ 2.394165, -67.03241, 0, 100, 83.2417, 83.24176, 83.60376, -21.738464, 66.48364, -47.88031 ],
+				pos: {
+					x: 1769.9749,
+					y: 608.0798
+				},
+				visible: true,
+				desc: "@papelera.desc",
+				refPoint: {
+					x: 43.14612,
+					y: -77.303406
+				},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								target: "papelera",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@papelera.lookat.0.2.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "papelera",
+								text: "@papelera.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			placa: {
+				class: "InteractiveActor",
+				id: "placa",
+				bbox: [ 11.970032, 35.910156, 0, 100, 100, 100, 107.18201, 43.092316 ],
+				pos: {
+					x: 844.2892,
+					y: 466.03485
+				},
+				visible: true,
+				desc: "@scene1.placa.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "910.0,100.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "placa",
+								text: "@placa.lookat.0.1.text",
+								direction: "BACK",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "placa",
+								text: "@placa.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			player: {
+				class: "CharacterActor",
+				id: "player",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 2312.8765,
+					y: 61.886017
+				},
+				visible: true,
+				desc: "@scene1.player.desc_",
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"crouch.left": {
+							class: "AtlasAnimationDesc",
+							id: "crouch.left",
+							source: "player",
+							duration: 0.3,
+							animationType: "NO_REPEAT",
+							count: 1,
+							preload: true
+						},
+						"player.chairbroke": {
+							class: "AtlasAnimationDesc",
+							id: "player.chairbroke",
+							source: "scene1",
+							duration: 0.3,
+							animationType: "NO_REPEAT",
+							count: 1,
+							preload: true
+						},
+						sitdown: {
+							class: "AtlasAnimationDesc",
+							id: "sitdown",
+							source: "scene1",
+							duration: 0.3,
+							animationType: "NO_REPEAT",
+							count: 1,
+							preload: true
+						},
+						"stand.back": {
+							class: "AtlasAnimationDesc",
+							id: "stand.back",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.backleft": {
+							class: "AtlasAnimationDesc",
+							id: "stand.backleft",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.front": {
+							class: "AtlasAnimationDesc",
+							id: "stand.front",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.frontleft": {
+							class: "AtlasAnimationDesc",
+							id: "stand.frontleft",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"stand.left": {
+							class: "AtlasAnimationDesc",
+							id: "stand.left",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"use.back": {
+							class: "AtlasAnimationDesc",
+							id: "use.back",
+							source: "player",
+							duration: 0.2,
+							animationType: "NO_REPEAT",
+							count: 1,
+							preload: true
+						},
+						"use.back2": {
+							class: "AtlasAnimationDesc",
+							id: "use.back2",
+							source: "player",
+							duration: 0.3,
+							animationType: "NO_REPEAT",
+							count: 1,
+							preload: true
+						},
+						"walk.back": {
+							class: "AtlasAnimationDesc",
+							id: "walk.back",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.backleft": {
+							class: "AtlasAnimationDesc",
+							id: "walk.backleft",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.front": {
+							class: "AtlasAnimationDesc",
+							id: "walk.front",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.frontleft": {
+							class: "AtlasAnimationDesc",
+							id: "walk.frontleft",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.left": {
+							class: "AtlasAnimationDesc",
+							id: "walk.left",
+							source: "player",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left",
+					orgAlign: 4
+				},
+				scaleX: 0.9683697,
+				scaleY: 0.9683697,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1200
+			},
+			rope: {
+				class: "SpriteActor",
+				id: "rope",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 2150,
+					y: 102
+				},
+				visible: true,
+				desc: "@rope.desc",
+				refPoint: {},
+				verbs: {
+					"pickup.ANCHORED": {
+						id: "pickup",
+						state: "ANCHORED",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "player",
+								visible: false
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope.up",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							},
+							{
+								class: "Leave",
+								scene: "scene2",
+								init: true
+							}
+						]
+					},
+					"use.chair.INVENTORY": {
+						id: "use",
+						target: "chair",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "player",
+								text: "@rope.use.INVENTORY.chair.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "RemoveInventoryItem",
+								id: "chair",
+								scene: "limbo"
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope.withanchor",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "ActorState",
+								actor: "rope",
+								state: "ARMED"
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "rope",
+								text: "@rope.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "rope",
+								text: "@rope.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.ARMED": {
+						id: "pickup",
+						state: "ARMED",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "player",
+								visible: false
+							},
+							{
+								class: "DropItem",
+								actor: "rope",
+								pos: "2150.0,102.0"
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope.throw",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "SetActorAttr",
+								actor: "player",
+								visible: true
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope2",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "ActorState",
+								actor: "rope",
+								state: "ANCHORED"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "exit",
+								visible: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							},
+							{
+								class: "LookAt",
+								actor: "rope",
+								text: "@rope.pickup.ARMED.0.9.text",
+								direction: "FRONT",
+								wait: true
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "LookAt",
+								actor: "rope",
+								text: "@rope.pickup.INVENTORY.0.text",
+								wait: true
+							}
+						]
+					},
+					"pickup.FALL": {
+						id: "pickup",
+						state: "FALL",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "PickUp",
+								actor: "rope"
+							},
+							{
+								class: "Animation",
+								animation: "player#crouch.left",
+								count: 1,
+								wait: true,
+								repeat: "REVERSE",
+								keepDirection: false
+							},
+							{
+								class: "ActorState",
+								actor: "rope",
+								state: "INVENTORY"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					"pickup.WITH_GODDESS": {
+						id: "pickup",
+						state: "WITH_GODDESS",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@rope.pickup.WITH_GODDESS.0.1.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "Goto",
+								actor: "player",
+								pos: "2270.0,12.0",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "player",
+								visible: false
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope.fall",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "SetActorAttr",
+								actor: "player",
+								visible: true
+							},
+							{
+								class: "Animation",
+								animation: "rope#rope.floor",
+								count: 1,
+								wait: true,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "ActorState",
+								actor: "rope",
+								state: "FALL"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "exit",
+								visible: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							},
+							{
+								class: "LookAt",
+								actor: "rope",
+								text: "@rope.pickup.WITH_GODDESS.0.9.text",
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						rope: {
+							class: "AtlasAnimationDesc",
+							id: "rope",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"rope.down": {
+							class: "AtlasAnimationDesc",
+							id: "rope.down",
+							source: "scene1_rope",
+							duration: 2,
+							animationType: "NO_REPEAT",
+							count: -1,
+							sound: "slide",
+							preload: true,
+							disposeWhenPlayed: true
+						},
+						"rope.fall": {
+							class: "AtlasAnimationDesc",
+							id: "rope.fall",
+							source: "scene1_rope",
+							duration: 2,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true,
+							disposeWhenPlayed: true
+						},
+						"rope.floor": {
+							class: "AtlasAnimationDesc",
+							id: "rope.floor",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"rope.inventory": {
+							class: "AtlasAnimationDesc",
+							id: "rope.inventory",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							sound: "click",
+							preload: true
+						},
+						"rope.throw": {
+							class: "AtlasAnimationDesc",
+							id: "rope.throw",
+							source: "scene1_rope_throw",
+							duration: 1.5,
+							animationType: "NO_REPEAT",
+							count: -1,
+							disposeWhenPlayed: true
+						},
+						"rope.up": {
+							class: "AtlasAnimationDesc",
+							id: "rope.up",
+							source: "scene1_rope_up",
+							duration: 2,
+							animationType: "NO_REPEAT",
+							count: -1,
+							disposeWhenPlayed: true
+						},
+						"rope.withanchor": {
+							class: "AtlasAnimationDesc",
+							id: "rope.withanchor",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							sound: "click",
+							preload: true
+						},
+						rope2: {
+							class: "AtlasAnimationDesc",
+							id: "rope2",
+							source: "scene1",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "rope",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			socket: {
+				class: "InteractiveActor",
+				id: "socket",
+				bbox: [ 1.5959473, 74.21448, 0, 100, 40.149597, 100, 40.94763, 75.810425 ],
+				pos: {
+					x: 589.7257,
+					y: 550.6234
+				},
+				visible: true,
+				desc: "@scene1.socket.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "socket",
+								text: "@socket.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "socket",
+								text: "@socket.pickup.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 3,
+				layer: "dynamic"
+			},
+			vasijas: {
+				class: "InteractiveActor",
+				id: "vasijas",
+				bbox: [ 14.364136, -452.4688, 10.901123, -319.27582, 0, 100, 516.5586, 104.787964, 504.5885, -457.25696 ],
+				pos: {
+					x: 1260.3755,
+					y: 976.75775
+				},
+				visible: true,
+				desc: "@vasijas.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "vasijas",
+								text: "@vasijas.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			vitrina: {
+				class: "InteractiveActor",
+				id: "vitrina",
+				bbox: [ -119.700745, -26.334167, -165.35144, 490.99487, 11.835449, 539.9816, 123.30301, 138.14728 ],
+				pos: {
+					x: 406.98236,
+					y: 314.41382
+				},
+				visible: true,
+				desc: "@vitrina.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "LookAt",
+								actor: "vitrina",
+								text: "@vitrina.lookat.0.text",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 192.69849, -3.0716553, 727.3014, 460.72607, 705.0456, 399.51163, 625.80536, 225.32869, 880.963, 59.99568, 1222.0059, 209.4747, 1145.7484, 381.48593, 1386.9921, 381.94098, 1820.9706, 374.1726, 1882.3246, 474.4625, 2558.048, 479.26852, 3023, 0 ],
+				pos: {
+					x: 5.2458496,
+					y: -5.245926
+				},
+				visible: true
+			}
+		},
+		backgroundAtlas: "scene1",
+		backgroundRegionId: "bg1",
+		musicDesc: {
+			filename: "scn1.mp3",
+			initialDelay: 30,
+			repeatDelay: 90
+		},
+		depthVector: {
+			x: 1941.2345,
+			y: 0.5
+		},
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "PickUp",
+						actor: "navaja"
+					},
+					{
+						class: "PickUp",
+						actor: "cutter"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "player",
+						visible: false
+					},
+					{
+						class: "Cutmode",
+						value: true
+					},
+					{
+						class: "Position",
+						actor: "rope",
+						position: "2294.0,83.0"
+					},
+					{
+						class: "Animation",
+						animation: "rope#rope.down",
+						count: 1,
+						wait: true,
+						repeat: "SPRITE_DEFINED",
+						keepDirection: false
+					},
+					{
+						class: "SetActorAttr",
+						actor: "player",
+						visible: true
+					},
+					{
+						class: "Animation",
+						animation: "player#stand.left",
+						count: 1,
+						wait: false,
+						repeat: "REPEAT",
+						keepDirection: false
+					},
+					{
+						class: "Position",
+						actor: "rope",
+						position: "2115.0,83.0"
+					},
+					{
+						class: "Animation",
+						animation: "rope#rope",
+						count: 1,
+						wait: true,
+						repeat: "SPRITE_DEFINED",
+						keepDirection: false
+					},
+					{
+						class: "Cutmode",
+						value: false
+					}
+				]
+			},
+			test: {
+				id: "test",
+				actions: [
+					{
+						class: "ActorState",
+						actor: "rope",
+						state: "WITH_GODDESS"
+					}
+				]
+			}
+		},
+		player: "player",
+		walkZone: "walkzone"
 	},
 	scene2: {
 		id: "scene2",
@@ -226,7 +3251,7 @@ scenes: {
 		],
 		actors: {
 			door: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
+				class: "InteractiveActor",
 				id: "door",
 				bbox: [ 0, -567.16724, 0, 100, 272.00964, 127.893616, 262.71185, -585.7631 ],
 				pos: {
@@ -241,33 +3266,33 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
+								class: "IfActorAttr",
 								actor: "policeman",
 								attr: "STATE",
 								value: "POLICEMAN_TURN",
 								caID: "else123"
 							},
 							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
+								class: "CancelVerb",
 								actor: "policeman",
 								verb: "dialog1_turn"
 							},
 							{
-								class: "com.bladecoder.engine.actions.RunVerbAction",
+								class: "RunVerb",
 								actor: "policeman",
 								verb: "turn_back",
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.EndAction",
+								class: "End",
 								caID: "else123"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "policeman",
 								text: "@door.leave.0.1.text",
 								type: "TALK",
@@ -275,7 +3300,7 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "player",
 								text: "@door.leave.0.2.text",
 								type: "TALK",
@@ -283,23 +3308,22 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.EndAction",
+								class: "End",
 								caID: "else123"
 							}
 						]
 					}
 				},
 				interaction: true,
-				state: null,
 				zIndex: 0,
 				layer: "dynamic"
 			},
 			electricbox: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
+				class: "InteractiveActor",
 				id: "electricbox",
 				bbox: [ 106.924866, 74.38257, 102.27606, 299.9031, 253.414, 290.60538, 248.7652, 88.32922 ],
 				pos: {
@@ -314,18 +3338,18 @@ scenes: {
 						id: "lookat",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
+								class: "LookAt",
 								actor: "electricbox",
 								text: "@scene2.electricbox.lookat.0.text",
 								direction: "FRONTRIGHT",
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							}
 						]
@@ -334,48 +3358,45 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
+								class: "LookAt",
 								actor: "electricbox",
 								text: "@scene2.electricbox.pickup.0.text",
 								direction: "FRONTRIGHT",
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							}
 						]
 					}
 				},
 				interaction: true,
-				state: null,
 				zIndex: 0,
 				layer: "foreground"
 			},
 			fence: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "fence",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
 					x: 1750.5
 				},
 				visible: true,
-				desc: null,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
-				state: null,
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						fence: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "fence",
 							source: "scene2",
 							duration: 1,
@@ -387,14 +3408,86 @@ scenes: {
 					initAnimation: "fence",
 					orgAlign: 4
 				},
-				scale: 1,
+				scaleX: 1,
+				scaleY: 1,
 				rot: 0,
-				tint: null,
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
+			out: {
+				class: "InteractiveActor",
+				id: "out",
+				bbox: [ 4.6488647, -353.31723, 23.24451, 183.68054, 299.90314, 160.43591, 295.2542, -353.31723 ],
+				pos: {
+					x: -5.722046E-5,
+					y: 474.1889
+				},
+				visible: true,
+				desc: "@out.desc",
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "IfActorAttr",
+								actor: "policeman",
+								attr: "STATE",
+								value: "POLICEMAN_TURN",
+								caID: "else123"
+							},
+							{
+								class: "CancelVerb",
+								actor: "policeman",
+								verb: "dialog1_turn"
+							},
+							{
+								class: "RunVerb",
+								actor: "policeman",
+								verb: "turn_back",
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "else123"
+							},
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "policeman",
+								text: "@out.leave.0.1.text",
+								type: "TALK",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "player",
+								text: "@out.leave.0.2.text",
+								type: "TALK",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							},
+							{
+								class: "End",
+								caID: "else123"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic"
+			},
 			player: {
-				class: "com.bladecoder.engine.model.CharacterActor",
+				class: "CharacterActor",
 				id: "player",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -409,33 +3502,33 @@ scenes: {
 						id: "goto",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
+								class: "IfActorAttr",
 								actor: "policeman",
 								attr: "STATE",
 								value: "POLICEMAN_TURN",
 								caID: "else123"
 							},
 							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
+								class: "CancelVerb",
 								actor: "policeman",
 								verb: "dialog1_turn"
 							},
 							{
-								class: "com.bladecoder.engine.actions.RunVerbAction",
+								class: "RunVerb",
 								actor: "policeman",
 								verb: "turn_back",
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.EndAction",
+								class: "End",
 								caID: "else123"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "policeman",
 								text: "@player.goto.0.1.text",
 								type: "TALK",
@@ -443,7 +3536,7 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#stand.frontright",
 								count: 1,
 								wait: true,
@@ -451,7 +3544,7 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "player",
 								text: "@player.goto.0.3.text",
 								type: "TALK",
@@ -459,14 +3552,14 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.GotoAction",
+								class: "Goto",
 								actor: "player",
 								pos: "460.0,0.0",
 								ignoreWalkZone: false,
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#stand.frontright",
 								count: 1,
 								wait: true,
@@ -474,43 +3567,24 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.EndAction",
+								class: "End",
 								caID: "else123"
 							}
 						]
 					}
 				},
 				interaction: false,
-				state: null,
 				zIndex: 0,
 				layer: "dynamic",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
-						throwgoddess2: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "throwgoddess2",
-							source: "player_down",
-							duration: 0.5,
-							animationType: "NO_REPEAT",
-							count: 1,
-							preload: true
-						},
-						runaway: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "runaway",
-							source: "player_down",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: 1,
-							preload: true
-						},
 						"crouch.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "crouch.right",
 							source: "player_down",
 							duration: 0.3,
@@ -518,17 +3592,17 @@ scenes: {
 							count: 1,
 							preload: true
 						},
-						"walk.frontright": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.frontright",
+						runaway: {
+							class: "AtlasAnimationDesc",
+							id: "runaway",
 							source: "player_down",
 							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
+							animationType: "NO_REPEAT",
+							count: 1,
 							preload: true
 						},
 						"stand.frontright": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "stand.frontright",
 							source: "player_down",
 							duration: 1,
@@ -536,8 +3610,17 @@ scenes: {
 							count: -1,
 							preload: true
 						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "player_down",
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
 						throwgoddess: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "throwgoddess",
 							source: "player_down",
 							duration: 1,
@@ -545,9 +3628,18 @@ scenes: {
 							count: 1,
 							preload: true
 						},
-						"talk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "talk.right",
+						throwgoddess2: {
+							class: "AtlasAnimationDesc",
+							id: "throwgoddess2",
+							source: "player_down",
+							duration: 0.5,
+							animationType: "NO_REPEAT",
+							count: 1,
+							preload: true
+						},
+						"walk.frontright": {
+							class: "AtlasAnimationDesc",
+							id: "walk.frontright",
 							source: "player_down",
 							duration: 1,
 							animationType: "REPEAT",
@@ -558,18 +3650,15 @@ scenes: {
 					initAnimation: "stand.frontright",
 					orgAlign: 4
 				},
-				scale: 0.84536266,
+				scaleX: 0.84536266,
+				scaleY: 0.84536266,
 				rot: 0,
-				tint: null,
 				fakeDepth: true,
 				bboxFromRenderer: true,
-				dialogs: null,
-				textStyle: null,
-				walkingSpeed: 700,
-				textColor: null
+				walkingSpeed: 700
 			},
 			policeman: {
-				class: "com.bladecoder.engine.model.CharacterActor",
+				class: "CharacterActor",
 				id: "policeman",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -584,20 +3673,20 @@ scenes: {
 						id: "dialog1_turn",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayDialogAction",
+								class: "SayDialog",
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.ChooseAction",
+								class: "Choose",
 								chooseCriteria: "RANDOM",
 								caID: "2075346474"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "player",
 								text: "@scene2.policeman.dialog1_turn.5.text",
 								type: "TALK",
@@ -605,7 +3694,7 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "player",
 								text: "@scene2.policeman.dialog1_turn.3.text",
 								type: "TALK",
@@ -613,7 +3702,7 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "player",
 								text: "@scene2.policeman.dialog1_turn.4.text",
 								type: "TALK",
@@ -621,11 +3710,11 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.EndAction",
+								class: "End",
 								caID: "2075346474"
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "policeman#turn.left",
 								count: 1,
 								wait: true,
@@ -633,20 +3722,20 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "policeman",
 								state: "POLICEMAN_TURN"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.WaitAction",
+								class: "Wait",
 								time: 6
 							},
 							{
-								class: "com.bladecoder.engine.actions.RunVerbAction",
+								class: "RunVerb",
 								actor: "policeman",
 								verb: "turn_back",
 								wait: true
@@ -658,7 +3747,7 @@ scenes: {
 						target: "diosa",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.MusicAction",
+								class: "Music",
 								loop: false,
 								initialDelay: 0,
 								repeatDelay: -1,
@@ -666,21 +3755,21 @@ scenes: {
 								volume: 1
 							},
 							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
+								class: "CancelVerb",
 								actor: "policeman",
 								verb: "dialog1_turn"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "diosa",
 								state: "END"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#throwgoddess",
 								count: 1,
 								wait: true,
@@ -688,7 +3777,7 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#throwgoddess2",
 								count: 1,
 								wait: false,
@@ -696,12 +3785,12 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.DropItemAction",
+								class: "DropItem",
 								actor: "diosa",
 								pos: "680.0,744.0"
 							},
 							{
-								class: "com.bladecoder.engine.actions.PositionAnimAction",
+								class: "PositionAnim",
 								actor: "diosa",
 								pos: "1370.0,846.0",
 								speed: 0.2,
@@ -710,7 +3799,7 @@ scenes: {
 								repeat: "NO_REPEAT"
 							},
 							{
-								class: "com.bladecoder.engine.actions.PositionAnimAction",
+								class: "PositionAnim",
 								actor: "diosa",
 								pos: "1600.0,1100.0",
 								speed: 0.3,
@@ -719,11 +3808,11 @@ scenes: {
 								repeat: "NO_REPEAT"
 							},
 							{
-								class: "com.bladecoder.engine.actions.DisableActionAction",
+								class: "DisableAction",
 								serializedAction: "{class:com.bladecoder.engine.actions.SoundAction,actor:policeman,play:hit}"
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "policeman#fall",
 								count: 1,
 								wait: true,
@@ -731,12 +3820,12 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
+								class: "PlaySound",
 								sound: "policeman_fall",
 								stop: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "policeman",
 								text: "@diosa.use.INVENTORY.policeman.0.9.text",
 								type: "SUBTITLE",
@@ -744,16 +3833,16 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.PositionAction",
+								class: "Position",
 								actor: "player",
 								position: "360.0,0.0"
 							},
 							{
-								class: "com.bladecoder.engine.actions.DisableActionAction",
+								class: "DisableAction",
 								serializedAction: "{class:com.bladecoder.engine.actions.CameraAction,pos:\"960.0,0.0\",duration:0.3,wait:true}"
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#runaway",
 								count: 1,
 								wait: true,
@@ -761,12 +3850,12 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
+								class: "SetActorAttr",
 								actor: "player",
 								visible: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "policeman",
 								text: "@diosa.use.INVENTORY.policeman.0.12.text",
 								type: "SUBTITLE",
@@ -774,15 +3863,15 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.WaitAction",
+								class: "Wait",
 								time: 2
 							},
 							{
-								class: "com.bladecoder.engine.actions.RemoveInventoryItemAction",
+								class: "RemoveInventoryItem",
 								scene: "limbo"
 							},
 							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
+								class: "Leave",
 								scene: "endSCN",
 								init: true
 							}
@@ -792,11 +3881,11 @@ scenes: {
 						id: "lookat",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "policeman",
 								text: "@policeman.lookat.0.text",
 								type: "SUBTITLE",
@@ -804,7 +3893,7 @@ scenes: {
 								wait: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							}
 						]
@@ -813,11 +3902,11 @@ scenes: {
 						id: "turn_back",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "policeman#turn.left",
 								count: 1,
 								wait: true,
@@ -825,7 +3914,7 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "policeman#stand.frontleft",
 								count: 1,
 								wait: true,
@@ -833,14 +3922,14 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
+								class: "IfActorAttr",
 								actor: "diosa",
 								attr: "STATE",
 								value: "INVENTORY",
 								caID: "else123"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "policeman",
 								text: "@scene2.diosa.policeman_turn.INVENTORY.0.text",
 								type: "TALK",
@@ -848,7 +3937,7 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "player",
 								text: "@scene2.diosa.policeman_turn.INVENTORY.1.text",
 								type: "TALK",
@@ -856,7 +3945,7 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#crouch.right",
 								count: 1,
 								wait: true,
@@ -864,17 +3953,17 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.DropItemAction",
+								class: "DropItem",
 								actor: "diosa",
 								pos: "600.0,30.0"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "diosa",
 								state: "FLOOR"
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#crouch.right",
 								count: 1,
 								wait: true,
@@ -882,7 +3971,7 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
+								class: "Animation",
 								animation: "player#stand.frontright",
 								count: 1,
 								wait: true,
@@ -890,11 +3979,11 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "com.bladecoder.engine.actions.EndAction",
+								class: "End",
 								caID: "else123"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "policeman",
 								text: "@scene2.diosa.policeman_turn.POLICEMAN_TURN.0.text",
 								type: "TALK",
@@ -902,7 +3991,7 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "player",
 								text: "@scene2.diosa.policeman_turn.POLICEMAN_TURN.1.text",
 								type: "TALK",
@@ -910,15 +3999,15 @@ scenes: {
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.EndAction",
+								class: "End",
 								caID: "else123"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "policeman"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							}
 						]
@@ -928,17 +4017,17 @@ scenes: {
 						target: "navaja",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
+								class: "LookAt",
 								actor: "policeman",
 								text: "@scene2.policeman.use.policeman.0.text",
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							}
 						]
@@ -947,16 +4036,16 @@ scenes: {
 						id: "talkto",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.TalktoAction",
+								class: "Talkto",
 								actor: "policeman",
 								dialog: "dialog1"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							}
 						]
@@ -966,50 +4055,40 @@ scenes: {
 						state: "POLICEMAN_TURN",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
+								class: "CancelVerb",
 								actor: "policeman",
 								verb: "dialog1_turn"
 							},
 							{
-								class: "com.bladecoder.engine.actions.RunVerbAction",
+								class: "RunVerb",
 								actor: "policeman",
 								verb: "turn_back",
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.TalktoAction",
+								class: "Talkto",
 								actor: "policeman",
 								dialog: "dialog1"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
+								class: "Cutmode",
 								value: false
 							}
 						]
 					}
 				},
 				interaction: true,
-				state: null,
 				zIndex: 0,
 				layer: "dynamic",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
-						"stand.frontleft": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.frontleft",
-							source: "policeman",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
 						fall: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "fall",
 							source: "policeman",
 							duration: 1,
@@ -1021,31 +4100,40 @@ scenes: {
 							sound: "hit",
 							preload: true
 						},
-						"turn.left": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "turn.left",
+						"stand.frontleft": {
+							class: "AtlasAnimationDesc",
+							id: "stand.frontleft",
 							source: "policeman",
-							duration: 0.3,
-							animationType: "NO_REPEAT",
-							count: 1,
+							duration: 1,
+							animationType: "REPEAT",
+							count: -1,
 							preload: true
 						},
 						"talk.left": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "talk.left",
 							source: "policeman",
 							duration: 1,
 							animationType: "REPEAT",
 							count: -1,
 							preload: true
+						},
+						"turn.left": {
+							class: "AtlasAnimationDesc",
+							id: "turn.left",
+							source: "policeman",
+							duration: 0.3,
+							animationType: "NO_REPEAT",
+							count: 1,
+							preload: true
 						}
 					},
 					initAnimation: "stand.frontleft",
 					orgAlign: 4
 				},
-				scale: 1.0046208,
+				scaleX: 1.0046208,
+				scaleY: 1.0046208,
 				rot: 0,
-				tint: null,
 				fakeDepth: true,
 				bboxFromRenderer: true,
 				dialogs: {
@@ -1150,82 +4238,14 @@ scenes: {
 						]
 					}
 				},
-				textStyle: null,
-				walkingSpeed: 700,
-				textColor: null
+				walkingSpeed: 700
 			},
-			out: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "out",
-				bbox: [ 4.6488647, -353.31723, 23.24451, 183.68054, 299.90314, 160.43591, 295.2542, -353.31723 ],
-				pos: {
-					x: -5.722046E-5,
-					y: 474.1889
-				},
-				visible: true,
-				desc: "@out.desc",
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "policeman",
-								attr: "STATE",
-								value: "POLICEMAN_TURN",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
-								actor: "policeman",
-								verb: "dialog1_turn"
-							},
-							{
-								class: "com.bladecoder.engine.actions.RunVerbAction",
-								actor: "policeman",
-								verb: "turn_back",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "policeman",
-								text: "@out.leave.0.1.text",
-								type: "TALK",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@out.leave.0.2.text",
-								type: "TALK",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 0, 0, 117.039185, 68.44714, 528.3438, 118.41487, 932.00696, 58.22943, 1067.1172, 0 ],
+				pos: {},
+				visible: true
 			}
 		},
 		backgroundAtlas: "scene2",
@@ -1237,34 +4257,29 @@ scenes: {
 			x: 616.38446,
 			y: 0.01
 		},
-		polygonalNavGraph: {
-			walkZone: {
-				localVertices: [ 0, 0, 117.039185, 68.44714, 528.3438, 118.41487, 932.00696, 58.22943, 1067.1172, 0 ]
-			}
-		},
 		verbs: {
 			init: {
 				id: "init",
 				actions: [
 					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						class: "Cutmode",
 						value: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.CameraAction",
+						class: "Camera",
 						pos: "880.0,0.0",
 						followActor: "none",
 						wait: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.GotoAction",
+						class: "Goto",
 						actor: "player",
 						pos: "460.0,0.0",
 						ignoreWalkZone: false,
 						wait: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.AnimationAction",
+						class: "Animation",
 						animation: "player#stand.frontright",
 						count: 1,
 						wait: true,
@@ -1272,7 +4287,7 @@ scenes: {
 						keepDirection: false
 					},
 					{
-						class: "com.bladecoder.engine.actions.SayAction",
+						class: "Say",
 						actor: "policeman",
 						text: "@scene2.init.0.3.text",
 						type: "TALK",
@@ -1280,7 +4295,7 @@ scenes: {
 						wait: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.SayAction",
+						class: "Say",
 						actor: "player",
 						text: "@scene2.init.0.4.text",
 						type: "TALK",
@@ -1288,7 +4303,7 @@ scenes: {
 						wait: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.AnimationAction",
+						class: "Animation",
 						animation: "player#crouch.right",
 						count: 1,
 						wait: true,
@@ -1296,17 +4311,17 @@ scenes: {
 						keepDirection: false
 					},
 					{
-						class: "com.bladecoder.engine.actions.DropItemAction",
+						class: "DropItem",
 						actor: "diosa",
 						pos: "600.0,30.0"
 					},
 					{
-						class: "com.bladecoder.engine.actions.SetStateAction",
+						class: "ActorState",
 						actor: "diosa",
 						state: "FLOOR"
 					},
 					{
-						class: "com.bladecoder.engine.actions.AnimationAction",
+						class: "Animation",
 						animation: "player#crouch.right",
 						count: 1,
 						wait: true,
@@ -1314,7 +4329,7 @@ scenes: {
 						keepDirection: false
 					},
 					{
-						class: "com.bladecoder.engine.actions.AnimationAction",
+						class: "Animation",
 						animation: "player#stand.frontright",
 						count: 1,
 						wait: true,
@@ -1322,7 +4337,7 @@ scenes: {
 						keepDirection: false
 					},
 					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						class: "Cutmode",
 						value: false
 					}
 				]
@@ -1331,3064 +4346,23 @@ scenes: {
 				id: "test",
 				actions: [
 					{
-						class: "com.bladecoder.engine.actions.PickUpAction",
+						class: "PickUp",
 						actor: "scene1#diosa"
 					},
 					{
-						class: "com.bladecoder.engine.actions.PickUpAction",
+						class: "PickUp",
 						actor: "scene1#navaja"
-					}
-				]
-			}
-		},
-		player: "player"
-	},
-	scene1: {
-		id: "scene1",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "dynamic",
-				dynamic: true
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			cabinet_off: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "cabinet_off",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 384.79813,
-					y: 467.20212
-				},
-				visible: false,
-				desc: null,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						cabinet_off: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cabinet_off",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "cabinet_off",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			libro: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "libro",
-				bbox: [ -9.57605, 14.364075, 0, 100, 145.4862, 92.81799, 143.09229, 9.57605 ],
-				pos: {
-					x: 1867.3315,
-					y: 806.7831
-				},
-				visible: true,
-				desc: "@libro.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "libro",
-								text: "@libro.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "libro",
-								text: "@libro.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
-			},
-			estatua: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "estatua",
-				bbox: [ -15.960083, -422.94275, 16.572266, -337.66803, 24.84021, -315.99585, -12.12384, -135.72235, -1.6645508, -28.39038, 27.268433, 14.341614, 30.324219, 98.40405, 125.53613, 92.0199, 115.960205, -427.7307 ],
-				pos: {
-					x: 1029.4265,
-					y: 948.03
-				},
-				visible: true,
-				desc: "@estatua.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "estatua",
-								text: "@estatua.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "estatua",
-								text: "@estatua.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
-			},
-			chair: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "chair",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2330,
-					y: 510
-				},
-				visible: true,
-				desc: "@chair.desc",
-				refPoint: {},
-				verbs: {
-					"pickup.BROKEN": {
-						id: "pickup",
-						state: "BROKEN",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2400.0,450.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "chair",
-								direction: "FRONT",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "chair"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@chair.pickup.BROKEN.0.5.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "chair",
-								state: "INVENTORY"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"lookat.INVENTORY": {
-						id: "lookat",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@chair.lookat.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							}
-						]
-					},
-					"lookat.BROKEN": {
-						id: "lookat",
-						state: "BROKEN",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "chair",
-								text: "@chair.lookat.BROKEN.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "chair",
-								text: "@chair.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.SIT1": {
-						id: "pickup",
-						state: "SIT1",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2330.0,410.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "chair",
-								direction: "FRONT",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#sitdown",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "chair_chair_squeek",
-								stop: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.WaitAction",
-								time: 1
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@chair.pickup.SIT1.0.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#sitdown",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "chair",
-								state: "SIT2"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.SIT0": {
-						id: "pickup",
-						state: "SIT0",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2330.0,410.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "chair",
-								direction: "FRONT",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#sitdown",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "chair_chair_squeek",
-								stop: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.WaitAction",
-								time: 1
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@chair.pickup.SIT0.0.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#sitdown",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "chair",
-								state: "SIT1"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.SIT2": {
-						id: "pickup",
-						state: "SIT2",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2330.0,410.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "chair",
-								direction: "FRONT",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#sitdown",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.WaitAction",
-								time: 1
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "chair_chair_broken",
-								stop: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "chair#chair.broken",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#player.chairbroke",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.WaitAction",
-								time: 1
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@chair.pickup.SIT2.0.7.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "chair",
-								state: "BROKEN"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: "SIT0",
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"chair.inventory": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "chair.inventory",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							sound: "click",
-							preload: true
-						},
-						"chair.broken": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "chair.broken",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						chair2: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "chair2",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "chair2",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			head_fg: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "head_fg",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2727.276,
-					y: -0.62638855
-				},
-				visible: true,
-				desc: null,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				state: null,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						head_fg: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "head_fg",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "head_fg",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			rope: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "rope",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2150,
-					y: 102
-				},
-				visible: true,
-				desc: "@rope.desc",
-				refPoint: {},
-				verbs: {
-					"pickup.ANCHORED": {
-						id: "pickup",
-						state: "ANCHORED",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2270.0,12.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "player",
-								visible: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope.up",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "scene2",
-								init: true
-							}
-						]
-					},
-					"use.chair.INVENTORY": {
-						id: "use",
-						target: "chair",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@rope.use.INVENTORY.chair.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.RemoveInventoryItemAction",
-								id: "chair",
-								scene: "limbo"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope.withanchor",
-								count: 1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "rope",
-								state: "ARMED"
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "rope",
-								text: "@rope.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "rope",
-								text: "@rope.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.ARMED": {
-						id: "pickup",
-						state: "ARMED",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2270.0,12.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "player",
-								visible: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.DropItemAction",
-								actor: "rope",
-								pos: "2150.0,102.0"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope.throw",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "player",
-								visible: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope2",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "rope",
-								state: "ANCHORED"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "exit",
-								visible: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "rope",
-								text: "@rope.pickup.ARMED.0.9.text",
-								direction: "FRONT",
-								wait: true
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "rope",
-								text: "@rope.pickup.INVENTORY.0.text",
-								wait: true
-							}
-						]
-					},
-					"pickup.FALL": {
-						id: "pickup",
-						state: "FALL",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2270.0,12.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "rope"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "rope",
-								state: "INVENTORY"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.WITH_GODDESS": {
-						id: "pickup",
-						state: "WITH_GODDESS",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@rope.pickup.WITH_GODDESS.0.1.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2270.0,12.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "player",
-								visible: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope.fall",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "player",
-								visible: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope.floor",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "rope",
-								state: "FALL"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "exit",
-								visible: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "rope",
-								text: "@rope.pickup.WITH_GODDESS.0.9.text",
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"rope.fall": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope.fall",
-							source: "scene1_rope",
-							duration: 2,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true,
-							disposeWhenPlayed: true
-						},
-						"rope.throw": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope.throw",
-							source: "scene1_rope_throw",
-							duration: 1.5,
-							animationType: "NO_REPEAT",
-							count: -1,
-							disposeWhenPlayed: true
-						},
-						rope: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"rope.down": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope.down",
-							source: "scene1_rope",
-							duration: 2,
-							animationType: "NO_REPEAT",
-							count: -1,
-							sound: "slide",
-							preload: true,
-							disposeWhenPlayed: true
-						},
-						"rope.floor": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope.floor",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"rope.inventory": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope.inventory",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							sound: "click",
-							preload: true
-						},
-						rope2: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope2",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"rope.up": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope.up",
-							source: "scene1_rope_up",
-							duration: 2,
-							animationType: "NO_REPEAT",
-							count: -1,
-							disposeWhenPlayed: true
-						},
-						"rope.withanchor": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "rope.withanchor",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							sound: "click",
-							preload: true
-						}
-					},
-					initAnimation: "rope",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			cutter: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "cutter",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 66.548096,
-					y: 1199.0973
-				},
-				visible: true,
-				desc: "@cutter.desc",
-				refPoint: {},
-				verbs: {
-					"use.diosa.WITH_LOW_BATTERY": {
-						id: "use",
-						target: "diosa",
-						state: "WITH_LOW_BATTERY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "890.0,76.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cutter.use.WITH_LOW_BATTERY.diosa.0.1.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "cutter_drill",
-								stop: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back2",
-								count: 3,
-								wait: true,
-								repeat: "REPEAT",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "cutter_drill",
-								stop: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cutter.use.WITH_LOW_BATTERY.diosa.0.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "cutter",
-								state: "NO_BATTERY"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"use.diosa.WITH_CABLE": {
-						id: "use",
-						target: "diosa",
-						state: "WITH_CABLE",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cutter",
-								text: "@cutter.use.WITH_CABLE.diosa.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"use.diosa.WITH_BATTERY": {
-						id: "use",
-						target: "diosa",
-						state: "WITH_BATTERY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "890.0,76.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "cutter_drill",
-								stop: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back2",
-								count: 12,
-								wait: true,
-								repeat: "REPEAT",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "cutter_drill",
-								stop: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cutter.use.WITH_BATTERY.diosa.0.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "cutter",
-								state: "CUT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "diosa",
-								state: "CUT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "hole",
-								visible: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"use.cable": {
-						id: "use",
-						target: "cable",
-						actions: [
-							{
-								class: "org.bladecoder.venus.actions.scene1.UseCutMachineCableAction",
-								cutCableText: "@cutter.use.cable.0.cut_cable_text",
-								defaultCableText: "@cutter.use.cable.0.default_cable_text"
-							}
-						]
-					},
-					use: {
-						id: "use",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cutter.use.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.CHARGING": {
-						id: "pickup",
-						state: "CHARGING",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cutter",
-								text: "@cutter.pickup.CHARGING.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cutter.lookat.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cutter",
-								text: "@cutter.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.WITH_BATTERY": {
-						id: "pickup",
-						state: "WITH_BATTERY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "682.0,434.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "cutter"
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "cutter_click",
-								stop: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cutter.pickup.WITH_BATTERY.0.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"use.policeman": {
-						id: "use",
-						target: "policeman",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cutter",
-								text: "@cutter.use.policeman.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"use.diosa.NO_BATTERY": {
-						id: "use",
-						target: "diosa",
-						state: "NO_BATTERY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cutter",
-								text: "@cutter.use.NO_BATTERY.diosa.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"use.socket.WITH_CABLE": {
-						id: "use",
-						target: "socket",
-						state: "WITH_CABLE",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "641.0,413.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.DropItemAction",
-								actor: "cutter",
-								pos: "648.0,520.0"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "cutter#cutter.charging",
-								count: 1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cutter.use.WITH_CABLE.socket.0.5.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "cutter",
-								state: "CHARGING"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.WaitAction",
-								time: 20
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "cutter",
-								state: "WITH_BATTERY"
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: "WITH_LOW_BATTERY",
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"cutter.inventory": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cutter.inventory",
-							source: "common",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"cutter.charging": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cutter.charging",
-							source: "common",
-							duration: 2,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"cutter.withcable": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cutter.withcable",
-							source: "common",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							sound: "click",
-							preload: true
-						}
-					},
-					initAnimation: "cutter.inventory",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			diosa: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "diosa",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 905,
-					y: 594.5609
-				},
-				visible: true,
-				desc: "@scene1.diosa.desc",
-				refPoint: {},
-				verbs: {
-					"lookat.INVENTORY": {
-						id: "lookat",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@diosa.lookat.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "diosa",
-								text: "@diosa.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "890.0,76.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "diosa",
-								text: "@diosa.pickup.0.1.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.CUT": {
-						id: "pickup",
-						state: "CUT",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "890.0,76.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#use.back",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@diosa.pickup.CUT.0.3.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "diosa"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "diosa",
-								state: "INVENTORY"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "rope",
-								state: "WITH_GODDESS"
-							},
-							{
-								class: "com.bladecoder.engine.actions.PlaySoundAction",
-								sound: "diosa_chords",
-								stop: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@diosa.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							}
-						]
-					},
-					"pickup.FLOOR": {
-						id: "pickup",
-						state: "FLOOR",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "scene2#policeman",
-								attr: "STATE",
-								value: "POLICEMAN_TURN",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.right",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "diosa"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "diosa",
-								state: "INVENTORY"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.right",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "policeman",
-								text: "@scene2.diosa.pickup.FLOOR.0.text",
-								type: "TALK",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@scene2.diosa.pickup.FLOOR.1.text",
-								type: "TALK",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"lookat.FLOOR": {
-						id: "lookat",
-						state: "FLOOR",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								text: "@scene1.diosa.lookat.FLOOR.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"diosa.inventory": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "diosa.inventory",
-							source: "common",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						diosa: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "diosa",
-							source: "common",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "diosa",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			papelera: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "papelera",
-				bbox: [ 2.394165, -67.03241, 0, 100, 83.2417, 83.24176, 83.60376, -21.738464, 66.48364, -47.88031 ],
-				pos: {
-					x: 1769.9749,
-					y: 608.0798
-				},
-				visible: true,
-				desc: "@papelera.desc",
-				refPoint: {
-					x: 43.14612,
-					y: -77.303406
-				},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								target: "papelera",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@papelera.lookat.0.2.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "papelera",
-								text: "@papelera.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
-			},
-			vitrina: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "vitrina",
-				bbox: [ -119.700745, -26.334167, -165.35144, 490.99487, 11.835449, 539.9816, 123.30301, 138.14728 ],
-				pos: {
-					x: 406.98236,
-					y: 314.41382
-				},
-				visible: true,
-				desc: "@vitrina.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "vitrina",
-								text: "@vitrina.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
-			},
-			vasijas: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "vasijas",
-				bbox: [ 14.364136, -452.4688, 10.901123, -319.27582, 0, 100, 516.5586, 104.787964, 504.5885, -457.25696 ],
-				pos: {
-					x: 1260.3755,
-					y: 976.75775
-				},
-				visible: true,
-				desc: "@vasijas.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "vasijas",
-								text: "@vasijas.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
-			},
-			hole: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "hole",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 887,
-					y: 587
-				},
-				visible: false,
-				desc: null,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						hole: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "hole",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "hole",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			exit: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "exit",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2184.3882,
-					y: 817.01294
-				},
-				visible: false,
-				desc: "@scene1.exit.desc____",
-				refPoint: {},
-				verbs: {
-					"use.rope": {
-						id: "use",
-						target: "rope",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "rope",
-								attr: "STATE",
-								value: "ARMED",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "2270.0,12.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "player",
-								visible: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.DropItemAction",
-								actor: "rope",
-								pos: "2150.0,102.0"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope.throw",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "player",
-								visible: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "rope#rope2",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "exit",
-								interaction: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "rope",
-								state: "ANCHORED"
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "rope",
-								text: "@scene1.exit.pickup.9.text",
-								direction: "FRONT",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "exit",
-								text: "@scene1.exit.use.rope.12.text_",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@scene1.exit.lookat.0.text_",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						exit: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "exit",
-							source: "scene1",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "exit",
-					orgAlign: 4
-				},
-				scale: 0.7,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			navaja: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "navaja",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 274.7083,
-					y: 1183.3589
-				},
-				visible: true,
-				desc: "@navaja.desc",
-				refPoint: {},
-				verbs: {
-					use: {
-						id: "use",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "navaja",
-								text: "@navaja.use.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "navaja",
-								text: "@navaja.lookat.0.text",
-								wait: true
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "navaja",
-								text: "@navaja.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"navaja.inventory": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "navaja.inventory",
-							source: "common",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "navaja.inventory",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			socket: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "socket",
-				bbox: [ 1.5959473, 74.21448, 0, 100, 40.149597, 100, 40.94763, 75.810425 ],
-				pos: {
-					x: 589.7257,
-					y: 550.6234
-				},
-				visible: true,
-				desc: "@scene1.socket.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "socket",
-								text: "@socket.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "socket",
-								text: "@socket.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 3,
-				layer: "dynamic"
-			},
-			cuadro: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "cuadro",
-				bbox: [ 0, -172.36902, 0, 100, 269.97504, 88.02991, 248.42896, -155.61108 ],
-				pos: {
-					x: 629.62585,
-					y: 924.0898
-				},
-				visible: true,
-				desc: "@cuadro.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cuadro",
-								text: "@cuadro.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cuadro",
-								text: "@cuadro.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
-			},
-			cable: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "cable",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 582.39404,
-					y: 532.6405
-				},
-				visible: true,
-				desc: "@scene1.cable.desc",
-				refPoint: {},
-				verbs: {
-					"use.navaja.CONNECTED": {
-						id: "use",
-						target: "navaja",
-						state: "CONNECTED",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cable",
-								text: "@cable.use.CONNECTED.navaja.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "cable",
-								text: "@cable.lookat.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "org.bladecoder.venus.actions.scene1.PickupCableAction",
-								connectText: "@cable.pickup.0.connect_text",
-								disconnectText: "@cable.pickup.0.disconnect_text"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"pickup.CUT": {
-						id: "pickup",
-						state: "CUT",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cable.pickup.CUT.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					"use.navaja.DISCONNECTED": {
-						id: "use",
-						target: "navaja",
-						state: "DISCONNECTED",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "641.0,413.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "cable"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "player#crouch.left",
-								count: 1,
-								wait: true,
-								repeat: "REVERSE",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "player",
-								text: "@cable.use.DISCONNECTED.navaja.0.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "cable",
-								state: "CUT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: "CONNECTED",
-				zIndex: 4,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"cable.inventory": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cable.inventory",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							sound: "click",
-							preload: true
-						},
-						"cable.disconnected": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cable.disconnected",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"cable.connected": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cable.connected",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "cable.connected",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			column_fg: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "column_fg",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 160
-				},
-				visible: true,
-				desc: null,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				state: null,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						column_fg: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "column_fg",
-							source: "scene1",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "column_fg",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			player: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "player",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2312.8765,
-					y: 61.886017
-				},
-				visible: true,
-				desc: "@scene1.player.desc_",
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"stand.left": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.left",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.backleft": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.backleft",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.front": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.front",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.frontleft": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.frontleft",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"walk.back": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.back",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.back": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.back",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"walk.frontleft": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.frontleft",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"use.back": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "use.back",
-							source: "player",
-							duration: 0.2,
-							animationType: "NO_REPEAT",
-							count: 1,
-							preload: true
-						},
-						sitdown: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "sitdown",
-							source: "scene1",
-							duration: 0.3,
-							animationType: "NO_REPEAT",
-							count: 1,
-							preload: true
-						},
-						"crouch.left": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "crouch.left",
-							source: "player",
-							duration: 0.3,
-							animationType: "NO_REPEAT",
-							count: 1,
-							preload: true
-						},
-						"player.chairbroke": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "player.chairbroke",
-							source: "scene1",
-							duration: 0.3,
-							animationType: "NO_REPEAT",
-							count: 1,
-							preload: true
-						},
-						"use.back2": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "use.back2",
-							source: "player",
-							duration: 0.3,
-							animationType: "NO_REPEAT",
-							count: 1,
-							preload: true
-						},
-						"walk.backleft": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.backleft",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"walk.front": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.front",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"walk.left": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.left",
-							source: "player",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.left",
-					orgAlign: 4
-				},
-				scale: 0.9683697,
-				rot: 0,
-				tint: null,
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				dialogs: null,
-				textStyle: null,
-				walkingSpeed: 1200,
-				textColor: null
-			},
-			placa: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "placa",
-				bbox: [ 11.970032, 35.910156, 0, 100, 100, 100, 107.18201, 43.092316 ],
-				pos: {
-					x: 844.2892,
-					y: 466.03485
-				},
-				visible: true,
-				desc: "@scene1.placa.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "player",
-								pos: "910.0,100.0",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "placa",
-								text: "@placa.lookat.0.1.text",
-								direction: "BACK",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								actor: "placa",
-								text: "@placa.pickup.0.text",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "dynamic"
-			}
-		},
-		backgroundAtlas: "scene1",
-		backgroundRegionId: "bg1",
-		musicDesc: {
-			filename: "scn1.mp3",
-			initialDelay: 30,
-			repeatDelay: 90
-		},
-		depthVector: {
-			x: 1941.2345,
-			y: 0.5
-		},
-		polygonalNavGraph: {
-			walkZone: {
-				localVertices: [ 192.69849, -3.0716553, 727.3014, 460.72607, 705.0456, 399.51163, 625.80536, 225.32869, 880.963, 59.99568, 1222.0059, 209.4747, 1145.7484, 381.48593, 1386.9921, 381.94098, 1820.9706, 374.1726, 1882.3246, 474.4625, 2558.048, 479.26852, 3023, 0 ],
-				x: 5.2458496,
-				y: -5.245926
-			}
-		},
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.PickUpAction",
-						actor: "navaja"
 					},
 					{
-						class: "com.bladecoder.engine.actions.PickUpAction",
-						actor: "cutter"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
-						actor: "player",
-						visible: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
-						value: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.PositionAction",
-						actor: "rope",
-						position: "2294.0,83.0"
-					},
-					{
-						class: "com.bladecoder.engine.actions.AnimationAction",
-						animation: "rope#rope.down",
-						count: 1,
-						wait: true,
-						repeat: "SPRITE_DEFINED",
-						keepDirection: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
-						actor: "player",
-						visible: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.AnimationAction",
-						animation: "player#stand.left",
-						count: 1,
-						wait: false,
-						repeat: "REPEAT",
-						keepDirection: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.PositionAction",
-						actor: "rope",
-						position: "2115.0,83.0"
-					},
-					{
-						class: "com.bladecoder.engine.actions.AnimationAction",
-						animation: "rope#rope",
-						count: 1,
-						wait: true,
-						repeat: "SPRITE_DEFINED",
-						keepDirection: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
-						value: false
-					}
-				]
-			},
-			test: {
-				id: "test",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.SetStateAction",
-						actor: "rope",
-						state: "WITH_GODDESS"
-					}
-				]
-			}
-		},
-		player: "player"
-	},
-	scene0: {
-		id: "scene0",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			forward: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "forward",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1728,
-					y: 47
-				},
-				visible: false,
-				desc: "@scene0.forward.desc",
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.RunVerbAction",
-								verb: "leave",
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "background",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						forward: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "forward",
-							source: "scene0",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "forward",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			title: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "title",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 960
-				},
-				visible: false,
-				desc: null,
-				refPoint: {},
-				verbs: {},
-				interaction: true,
-				state: null,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.ImageRenderer",
-					fanims: {
-						title: {
-							class: "com.bladecoder.engine.anim.AnimationDesc",
-							id: "title",
-							source: "@title.jpg",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "title",
-					orgAlign: 4
-				},
-				scale: 1,
-				rot: 0,
-				tint: null,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			}
-		},
-		musicDesc: {
-			filename: "scn0.mp3"
-		},
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
-						value: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.PropertyAction",
-						prop: "EMBEDDED",
-						value: "false"
-					},
-					{
-						class: "com.bladecoder.engine.actions.ShowInventoryAction",
-						value: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.ScreenPositionAction",
-						actor: "forward",
-						position: "-40.0,40.0",
-						anchor: "BOTTOM_RIGHT"
-					},
-					{
-						class: "com.bladecoder.engine.actions.TextAction",
-						text: "@scene0.init.0.text",
-						style: "default",
-						color: "ffffffff",
-						pos: "-1.0,-1.0",
-						type: "PLAIN",
-						queue: false,
+						class: "RunVerb",
+						verb: "init",
 						wait: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
-						actor: "title",
-						visible: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.WaitAction",
-						time: 2
-					},
-					{
-						class: "com.bladecoder.engine.actions.ShowInventoryAction",
-						value: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
-						value: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.LeaveAction",
-						scene: "scene1",
-						init: true
-					}
-				]
-			},
-			leave: {
-				id: "leave",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.ShowInventoryAction",
-						value: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.LeaveAction",
-						scene: "scene1",
-						init: true
 					}
 				]
 			}
-		}
-	},
-	limbo: {
-		id: "limbo",
-		layers: [],
-		actors: {},
-		musicDesc: null,
-		verbs: {}
+		},
+		player: "player",
+		walkZone: "walkzone"
 	}
 },
 initScene: "scene0"

@@ -62,9 +62,14 @@ public class SceneMenuScreen extends DefaultSceneScreen {
 	public void render(float delta) {
 		final World world = getWorld();
 
-		if (world.getAssetState() != AssetState.LOADED) {
+		if (world.getAssetState() == AssetState.LOAD_ASSETS
+				|| world.getAssetState() == AssetState.LOAD_ASSETS_AND_INIT_SCENE) {
 			// Load assets to avoid change to the LOADING_SCREEN
-			EngineAssetManager.getInstance().finishLoading();
+			world.update(delta);
+
+			if (world.getAssetState() != AssetState.LOADED) {
+				EngineAssetManager.getInstance().finishLoading();
+			}
 		}
 
 		super.render(delta);

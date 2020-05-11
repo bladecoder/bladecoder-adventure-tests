@@ -37,19 +37,8 @@ public class SceneMenuScreen extends DefaultSceneScreen {
 	public void setUI(final UI ui) {
 		uiWorld = new World();
 
-		try {
-			uiWorld.loadWorldDesc();
-			uiWorld.loadChapter("ui", null, false);
-		} catch (Exception e) {
-			// dispose();
-			EngineLogger.error("EXITING: " + e.getMessage());
-			Gdx.app.exit();
-		}
-
 		super.setUI(ui);
-
 		getMenuButton().setVisible(false);
-
 		setShowHotspotsFeature(false);
 	}
 
@@ -83,7 +72,8 @@ public class SceneMenuScreen extends DefaultSceneScreen {
 		InteractiveActor newPointerInActor = getWorld().getInteractiveActorAtInput(getViewport(), 0);
 
 		if (newPointerInActor != pointerInActor) {
-			if (pointerInActor != null && pointerInActor.getVerb(POINTER_EXIT_VERB) != null) {
+			if (pointerInActor != null && world.getCurrentScene().getActor(pointerInActor.getId(), true) != null
+					&& pointerInActor.getVerb(POINTER_EXIT_VERB) != null) {
 				pointerInActor.runVerb(POINTER_EXIT_VERB, null);
 			}
 
@@ -95,4 +85,22 @@ public class SceneMenuScreen extends DefaultSceneScreen {
 		}
 	}
 
+	@Override
+	public void hide() {
+		getWorld().dispose();
+	}
+
+	@Override
+	public void show() {
+		try {
+			uiWorld.loadWorldDesc();
+			uiWorld.loadChapter("ui", null, false);
+		} catch (Exception e) {
+			// dispose();
+			EngineLogger.error("EXITING: " + e.getMessage());
+			Gdx.app.exit();
+		}
+
+		super.show();
+	}
 }

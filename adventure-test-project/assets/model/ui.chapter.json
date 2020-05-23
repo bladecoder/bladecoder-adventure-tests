@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "3.2.3",
+bladeEngineVersion: "4.0.1-SNAPSHOT",
 sounds: {},
 scenes: {
 	config: {
@@ -505,6 +505,124 @@ scenes: {
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
+			eng: {
+				class: "SpriteActor",
+				id: "eng",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1610.993,
+					y: 285.3479
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.ui.UISetConfigProperty",
+								name: "lang",
+								value: "en"
+							},
+							{
+								class: "RunVerb",
+								verb: "set-lang",
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.eng.text1",
+					fontName: "PaytoneOne",
+					fontSize: 50,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 4
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			esp: {
+				class: "SpriteActor",
+				id: "esp",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1623.1903,
+					y: 285.3479
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					action: {
+						id: "action",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.ui.UISetConfigProperty",
+								name: "lang",
+								value: "es"
+							},
+							{
+								class: "RunVerb",
+								verb: "set-lang",
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.esp.text1",
+					fontName: "PaytoneOne",
+					fontSize: 50,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 4
+				},
+				tint: {
+					g: 1,
+					b: 0.9490196,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
 			exit: {
 				class: "SpriteActor",
 				id: "exit",
@@ -767,6 +885,63 @@ scenes: {
 					{
 						class: "End",
 						caID: "1018946114"
+					},
+					{
+						class: "RunVerb",
+						verb: "set-lang",
+						wait: true
+					}
+				]
+			},
+			"set-lang": {
+				id: "set-lang",
+				actions: [
+					{
+						class: "com.bladecoder.engine.actions.ui.UISetLang"
+					},
+					{
+						class: "Comment",
+						comment: "Ocultar todos los idiomas",
+						debug: false
+					},
+					{
+						class: "SetActorAttr",
+						actor: "eng",
+						visible: false
+					},
+					{
+						class: "SetActorAttr",
+						actor: "esp",
+						visible: false
+					},
+					{
+						class: "Comment",
+						comment: "Mostrar el seleccionado",
+						debug: false
+					},
+					{
+						class: "IfProperty",
+						name: "lang",
+						value: "en",
+						caID: "853594509"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "esp",
+						visible: true
+					},
+					{
+						class: "End",
+						caID: "853594509"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "eng",
+						visible: true
+					},
+					{
+						class: "End",
+						caID: "853594509"
 					}
 				]
 			}

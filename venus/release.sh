@@ -7,7 +7,7 @@ IOS_PROVISIONING_PROFILE=Venus
 
 if [ "$#" -eq 0 ]
 then
-  echo "Release type param needed: amazon, android, ios, macos or steam"
+  echo "Release type param needed: amazon, android, ios, macos, itchio or steam"
   exit 0
 else
   RELEASE_MODE=$1
@@ -59,6 +59,12 @@ elif [[ "$RELEASE_MODE" == "mac" ]]; then
 
   ./gradlew desktop:dist -Pversion=$VERSION -Psteam=false
   cp desktop/build/libs/$PROJECT_NAME-desktop-$VERSION.jar "$RELFILENAME"
+elif [[ "$RELEASE_MODE" == "itchio" ]]; then
+  sed -i 's/bonasera_desktop_url=.*/bonasera_desktop_url=https:\/\/bladecoder.itch.io\/johnny-bonasera/' assets/BladeEngine.properties
+  RELFILENAME="$DIST_DIR"/$PROJECT_NAME-itchio-$VERSION.jar
+
+  ./gradlew desktop:dist -Pversion=$VERSION -Psteam=false
+  cp desktop/build/libs/$PROJECT_NAME-desktop-$VERSION.jar "$RELFILENAME"  
 elif [[ "$RELEASE_MODE" == "ios" ]]; then
   RELFILENAME="$DIST_DIR"/$PROJECT_NAME-$VERSION.ipa
 

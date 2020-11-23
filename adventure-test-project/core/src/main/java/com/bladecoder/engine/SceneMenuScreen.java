@@ -28,10 +28,13 @@ import com.bladecoder.engine.util.EngineLogger;
 public class SceneMenuScreen extends DefaultSceneScreen {
 	private static final String POINTER_ENTER_VERB = "pointer-enter";
 	private static final String POINTER_EXIT_VERB = "pointer-exit";
+	private static final String START_VERB = "start";
 
 	private World uiWorld;
 
 	private InteractiveActor pointerInActor = null;
+
+	private boolean startVerbLaunched = false;
 
 	@Override
 	public void setUI(final UI ui) {
@@ -61,9 +64,22 @@ public class SceneMenuScreen extends DefaultSceneScreen {
 			}
 		}
 
+		if (!startVerbLaunched) {
+			startVerbLaunched = true;
+			if (world.getCurrentScene().getVerb(START_VERB) != null
+					|| world.getVerbManager().getVerb(START_VERB, null, null) != null) {
+				world.getCurrentScene().runVerb(START_VERB);
+
+				return;
+			}
+		}
+
 		super.render(delta);
 
-		// call pointer-enter/pointer-exit
+		runPointerEnterExitVerb(world);
+	}
+
+	private void runPointerEnterExitVerb(final World world) {
 		if (world.getAssetState() != AssetState.LOADED || Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen)
 				|| world.inCutMode() || world.hasDialogOptions() || world.isPaused()) {
 			return;

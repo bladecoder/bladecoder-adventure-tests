@@ -1,0 +1,152 @@
+
+target.png
+size: 2658,241
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+00/level.09
+  rotate: false
+  xy: 1942, 3
+  size: 180, 236
+  orig: 711, 315
+  offset: 270, 39
+  index: -1
+00/level.1
+  rotate: false
+  xy: 1578, 2
+  size: 180, 237
+  orig: 711, 315
+  offset: 270, 39
+  index: -1
+00/level.10
+  rotate: false
+  xy: 2480, 12
+  size: 176, 227
+  orig: 711, 315
+  offset: 281, 39
+  index: -1
+00/level.2
+  rotate: false
+  xy: 1204, 2
+  size: 185, 237
+  orig: 711, 315
+  offset: 287, 39
+  index: -1
+00/level.3
+  rotate: false
+  xy: 2124, 12
+  size: 176, 227
+  orig: 711, 315
+  offset: 281, 39
+  index: -1
+00/level.4
+  rotate: false
+  xy: 2, 2
+  size: 599, 237
+  orig: 711, 315
+  offset: 56, 39
+  index: -1
+00/level.5
+  rotate: false
+  xy: 1391, 2
+  size: 185, 237
+  orig: 711, 315
+  offset: 287, 39
+  index: -1
+00/level.6
+  rotate: false
+  xy: 1760, 3
+  size: 180, 236
+  orig: 711, 315
+  offset: 270, 39
+  index: -1
+00/level.7
+  rotate: false
+  xy: 603, 2
+  size: 599, 237
+  orig: 711, 315
+  offset: 56, 39
+  index: -1
+00/level.8
+  rotate: false
+  xy: 2302, 12
+  size: 176, 227
+  orig: 711, 315
+  offset: 281, 39
+  index: -1
+
+target2.png
+size: 2271,243
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01/level.1
+  rotate: false
+  xy: 1552, 4
+  size: 179, 237
+  orig: 711, 315
+  offset: 271, 39
+  index: -1
+01/level.10
+  rotate: false
+  xy: 2, 4
+  size: 599, 237
+  orig: 711, 315
+  offset: 56, 39
+  index: -1
+01/level.2
+  rotate: false
+  xy: 2093, 14
+  size: 176, 227
+  orig: 711, 315
+  offset: 281, 39
+  index: -1
+01/level.3
+  rotate: false
+  xy: 1733, 5
+  size: 180, 236
+  orig: 711, 315
+  offset: 270, 39
+  index: -1
+01/level.4
+  rotate: false
+  xy: 1915, 13
+  size: 176, 228
+  orig: 711, 315
+  offset: 281, 37
+  index: -1
+01/level.7
+  rotate: false
+  xy: 1915, 13
+  size: 176, 228
+  orig: 711, 315
+  offset: 281, 37
+  index: -1
+01/level.5
+  rotate: false
+  xy: 603, 5
+  size: 385, 236
+  orig: 711, 315
+  offset: 169, 39
+  index: -1
+01/level.09
+  rotate: false
+  xy: 603, 5
+  size: 385, 236
+  orig: 711, 315
+  offset: 169, 39
+  index: -1
+01/level.6
+  rotate: false
+  xy: 990, 4
+  size: 372, 237
+  orig: 711, 315
+  offset: 202, 39
+  index: -1
+01/level.8
+  rotate: false
+  xy: 1364, 2
+  size: 186, 239
+  orig: 711, 315
+  offset: 286, 37
+  index: -1

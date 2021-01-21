@@ -7,15 +7,15 @@ verbs: {
 		id: "dialog",
 		actions: [
 			{
-				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				class: "Cutmode",
 				value: true
 			},
 			{
-				class: "com.bladecoder.engine.actions.SayDialogAction",
+				class: "SayDialog",
 				wait: true
 			},
 			{
-				class: "com.bladecoder.engine.actions.SetCutmodeAction",
+				class: "Cutmode",
 				value: false
 			}
 		]
@@ -24,7 +24,7 @@ verbs: {
 		id: "use",
 		actions: [
 			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
+				class: "LookAt",
 				text: "@default.use.0.text",
 				wait: false
 			}
@@ -34,7 +34,7 @@ verbs: {
 		id: "lookat",
 		actions: [
 			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
+				class: "LookAt",
 				text: "@default.lookat.0.text",
 				wait: true
 			}
@@ -44,7 +44,7 @@ verbs: {
 		id: "pickup",
 		actions: [
 			{
-				class: "com.bladecoder.engine.actions.LookAtAction",
+				class: "LookAt",
 				text: "@default.pickup.0.text",
 				wait: true
 			}

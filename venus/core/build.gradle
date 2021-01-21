@@ -14,6 +14,8 @@ dependencies {
         api "com.bladecoder.ink:blade-ink:$bladeInkVersion"
         api "org.minimalcode:minimalcode-beans:0.5.1"
         api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+		implementation "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"
+
         
         if(project.hasProperty("spinePlugin") && project.spinePlugin.equals("true")) {
         	println "Using Spine Plugin..."

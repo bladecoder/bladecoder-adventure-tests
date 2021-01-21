@@ -14,6 +14,8 @@ dependencies {
     api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
     api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
     api "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx-controllers:gdx-controllers-desktop:$gdxControllersVersion"
+
 }
 
 jar {

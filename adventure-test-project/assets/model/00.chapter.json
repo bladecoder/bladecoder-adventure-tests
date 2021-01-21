@@ -1,1948 +1,7 @@
 {
-bladeEngineVersion: "3.1.0-SNAPSHOT",
+bladeEngineVersion: "4.0.2-SNAPSHOT",
 sounds: {},
 scenes: {
-	basic3: {
-		id: "basic3",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "dynamic",
-				dynamic: true
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			exit: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "exit",
-				bbox: [ 38.740845, -302.1791, 37.191406, 172.10663, 237.19135, 160.69553, 225.35773, -344.01953 ],
-				pos: {
-					x: 1644.7837,
-					y: 578.7209
-				},
-				visible: true,
-				refPoint: {
-					x: 5.774414,
-					y: -326.25568
-				},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "$PLAYER",
-								target: "exit",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.PositionAction",
-								actor: "$PLAYER",
-								target: "basic1#door_left"
-							},
-							{
-								class: "com.bladecoder.engine.actions.MoveToSceneAction",
-								actor: "$PLAYER",
-								scene: "basic1"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "char",
-								caID: "1348253093"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "basic1#char"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1348253093"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "basic1#red"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1348253093"
-							},
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "basic1",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "background"
-			},
-			walkzone: {
-				class: "com.bladecoder.engine.model.WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 157.48462, 39.371155, 398.08618, 257.5802, 965.618, 80.41797, 1203.7566, 93.22626, 1226.6244, 304.53226, 1530.6631, 318.8243, 1885.0032, 157.48468, 1786.2855, 74.84706 ],
-				pos: {},
-				visible: true
-			}
-		},
-		backgroundAtlas: "scene3",
-		backgroundRegionId: "bg3",
-		musicDesc: null,
-		depthVector: {
-			x: 613.83704,
-			y: -631.38477
-		},
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-						scene: "basic1",
-						attr: "PLAYER",
-						value: "char",
-						caID: "742759885"
-					},
-					{
-						class: "com.bladecoder.engine.actions.MoveToSceneAction",
-						actor: "basic1#char"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetPlayerAction",
-						actor: "char"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "742759885"
-					},
-					{
-						class: "com.bladecoder.engine.actions.MoveToSceneAction",
-						actor: "basic1#red"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetPlayerAction",
-						actor: "red"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "742759885"
-					},
-					{
-						class: "com.bladecoder.engine.actions.PositionAction",
-						actor: "$PLAYER",
-						target: "exit"
-					},
-					{
-						class: "com.bladecoder.engine.actions.GotoAction",
-						actor: "$PLAYER",
-						pos: "1501.0,251.0",
-						ignoreWalkZone: false,
-						wait: true
-					}
-				]
-			}
-		},
-		walkZone: "walkzone"
-	},
-	basic2: {
-		id: "basic2",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "dynamic",
-				dynamic: true
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			exit: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "exit",
-				bbox: [ -570.5481, -21.131287, -408.54053, 171.8248, 1172.0449, 214.08759, 1263.6143, -14.0876465 ],
-				pos: {
-					x: 405.07428,
-					y: -48.177734
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "basic1",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "background"
-			},
-			i18ntext: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "i18ntext",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 451.26367,
-					y: 448.4259
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.ImageRenderer",
-					fanims: {
-						text: {
-							class: "com.bladecoder.engine.anim.AnimationDesc",
-							id: "text",
-							source: "@text.png",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "text",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			}
-		},
-		backgroundAtlas: "scene2",
-		backgroundRegionId: "bg2",
-		musicDesc: null,
-		verbs: {},
-		walkZone: null
-	},
-	basic1: {
-		id: "basic1",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "dynamic",
-				dynamic: true
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			green: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "green",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1688.2659,
-					y: 308.31876
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								interaction: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "green",
-								inventory: "green"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@01.char3.pickup.3.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.5,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.left",
-					orgAlign: 4
-				},
-				scaleX: 0.19001375,
-				scaleY: 0.19001375,
-				rot: 0,
-				tint: {
-					r: 0.53333336,
-					g: 1,
-					b: 0.53333336,
-					a: 1
-				},
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 2000
-			},
-			walkzone: {
-				class: "com.bladecoder.engine.model.WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 297.42737, 284.14938, 568.29877, 434.68887, 719.6436, 446.8797, 650.82916, 341.34033, 1368.244, 372.9064, 1353.6876, 407.92526, 1922.6555, 410.7885, 1934.324, 311.18817, 1543.7379, 296.05563, 1514.5264, 349.16766, 624.51056, 318.71033, 589.1026, 283.30228 ],
-				pos: {},
-				visible: true
-			},
-			tint: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "tint",
-				bbox: [ -416.72354, -2.1842957, -100, 200, 69.4198, 193.44711, -133.72015, 0 ],
-				pos: {
-					x: 657.4744,
-					y: 255.56323
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					exit: {
-						id: "exit",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "char",
-								caID: "1640548163"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "ffffffff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1640548163"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "red",
-								caID: "1070630759"
-							},
-							{
-								class: "com.bladecoder.engine.actions.DisableActionAction",
-								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:ff6666ff}"
-							},
-							{
-								class: "com.bladecoder.engine.actions.TintAnimAction",
-								actor: "$PLAYER",
-								color: "ff6666ff",
-								speed: 0.2,
-								count: 1,
-								wait: true,
-								repeat: "REPEAT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1070630759"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "green",
-								caID: "1006819085"
-							},
-							{
-								class: "com.bladecoder.engine.actions.CameraAction",
-								zoom: 1,
-								duration: 1,
-								interpolation: "FADE",
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "66ff66ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1006819085"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "6666ffff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1006819085"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1070630759"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1640548163"
-							}
-						]
-					},
-					enter: {
-						id: "enter",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "char",
-								caID: "602572309"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "666666ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "602572309"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "red",
-								caID: "1331490757"
-							},
-							{
-								class: "com.bladecoder.engine.actions.DisableActionAction",
-								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:660000ff}"
-							},
-							{
-								class: "com.bladecoder.engine.actions.TintAnimAction",
-								actor: "$PLAYER",
-								color: "660000ff",
-								speed: 0.2,
-								count: 1,
-								wait: true,
-								repeat: "REPEAT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1331490757"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfSceneAttrAction",
-								attr: "PLAYER",
-								value: "green",
-								caID: "1522226691"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "006600ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.CameraAction",
-								pos: "0.0,0.0",
-								interpolation: "FADE",
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.CameraAction",
-								zoom: 0.5,
-								duration: 1,
-								interpolation: "FADE",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1522226691"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								tint: "000066ff"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1522226691"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1331490757"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "602572309"
-							}
-						]
-					}
-				},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground"
-			},
-			red: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "red",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1298.4912,
-					y: 349.08066
-				},
-				visible: true,
-				refPoint: {
-					x: -118.37598,
-					y: 1.443634
-				},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								interaction: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "red",
-								inventory: "red"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@01.char2.pickup.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.5,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.left",
-					orgAlign: 4
-				},
-				scaleX: 0.16458614,
-				scaleY: 0.16458614,
-				rot: 0,
-				tint: {
-					r: 1,
-					g: 0.53333336,
-					b: 0.53333336,
-					a: 1
-				},
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 2000
-			},
-			ball: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "ball",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1833.4604,
-					y: 317.79987
-				},
-				visible: true,
-				desc: "@01.ball.desc_",
-				refPoint: {
-					x: -85.5614,
-					y: 8.148743
-				},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "$PLAYER",
-								target: "ball",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								direction: "RIGHT",
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "ball"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AlphaAnimAction",
-								actor: "ball",
-								alpha: 0,
-								speed: 1,
-								count: -1,
-								wait: true,
-								repeat: "YOYO",
-								interpolation: "FADE"
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.AlphaAnimAction",
-								actor: "ball",
-								alpha: 0,
-								speed: 1,
-								count: 2,
-								wait: true,
-								repeat: "YOYO"
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ball: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ball",
-							source: "scene1",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ball",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 45,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			door_right: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "door_right",
-				bbox: [ 1.1622314, 20.920135, 0, 200, 98.88623, 203.48676, 102.3728, 18.595642 ],
-				pos: {
-					x: 1455.109,
-					y: 395.15738
-				},
-				visible: true,
-				refPoint: {
-					x: 50.575684,
-					y: 7.4927063
-				},
-				verbs: {
-					leave: {
-						id: "leave",
-						icon: "up",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "$PLAYER",
-								target: "door_right",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "basic2",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "background"
-			},
-			blue: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "blue",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1738.8356,
-					y: 394.27005
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								interaction: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "blue",
-								inventory: "blue"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@01.char4.pickup.3.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.5,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.left",
-					orgAlign: 4
-				},
-				scaleX: 0.13639663,
-				scaleY: 0.13639663,
-				rot: 0,
-				tint: {
-					r: 0.53333336,
-					g: 0.53333336,
-					b: 1,
-					a: 1
-				},
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 2000
-			},
-			char: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "char",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 751.04297,
-					y: 331.6653
-				},
-				visible: true,
-				refPoint: {
-					x: 105.383484,
-					y: 4.3308105
-				},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "$PLAYER",
-								interaction: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetPlayerAction",
-								actor: "char",
-								inventory: "white"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@01.char.pickup.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: false,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.5,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.right",
-					orgAlign: 4
-				},
-				scaleX: 0.17544998,
-				scaleY: 0.17544998,
-				rot: 0,
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 2000
-			},
-			test_actions: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "test_actions",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 621.7815,
-					y: 772.6084
-				},
-				visible: true,
-				desc: "@01.test_actions.desc",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.lookat.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "test_actions",
-								state: "1"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "test_actions",
-								attr: "STATE",
-								value: "1",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.2.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.5.text_",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "test_actions#error",
-								count: 1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
-								actor: "test_actions"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "test_actions",
-								attr: "STATE",
-								value: "2",
-								caID: "else1234"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.10.text_",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "test_actions#error",
-								count: 1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
-								actor: "test_actions"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else1234"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.11.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else1234"
-							},
-							{
-								class: "com.bladecoder.engine.actions.RepeatAction",
-								repeat: 3,
-								caID: "repeat123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.ChooseAction",
-								chooseCriteria: "CYCLE",
-								caID: "choose123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.18.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.16.text_",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "test_actions",
-								state: "3"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "choose123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "repeat123"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "test_actions",
-								attr: "STATE",
-								value: "3",
-								caID: "else12345"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.21.text_",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else12345"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "test_actions",
-								text: "@01.test_actions.pickup.24.text__",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "test_actions#error",
-								count: 1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.CancelVerbAction",
-								actor: "test_actions"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "else12345"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "test_actions#ok",
-								count: 1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "go",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						error: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "error",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "go",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			particle: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "particle",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1016.0442,
-					y: 333.25787
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.ParticleRenderer",
-					atlasName: "particles",
-					particleName: "bigFire",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			cube: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "cube",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 521.5177,
-					y: 362.6178
-				},
-				visible: true,
-				desc: "@01.cube.desc",
-				refPoint: {
-					x: 93.710205,
-					y: 20.371826
-				},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "$PLAYER",
-								target: "cube",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LookAtAction",
-								direction: "LEFT",
-								wait: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "cube"
-							}
-						]
-					},
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.AddValueToProperty",
-								prop: "COUNTER",
-								value: 1
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfPropertyAction",
-								name: "COUNTER",
-								value: "3",
-								caID: "1198688830"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@01.cube.lookat.2.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1198688830"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@01.cube.lookat.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "1198688830"
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ball: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cube",
-							source: "scene1",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						cube: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "cube",
-							source: "scene1",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ball",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				tint: {
-					r: 0.4,
-					g: 0.4,
-					b: 0.4,
-					a: 1
-				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			text: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "text",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1126.2278,
-					y: 820.6056
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.AlphaAnimAction",
-								actor: "text",
-								alpha: 0,
-								speed: 0.5,
-								count: 1,
-								wait: true,
-								repeat: "NO_REPEAT"
-							},
-							{
-								class: "com.bladecoder.engine.actions.AlphaAnimAction",
-								actor: "text",
-								alpha: 1,
-								speed: 0.5,
-								count: 1,
-								wait: true,
-								repeat: "NO_REPEAT"
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "text",
-					fontName: "ArchitectsDaughter",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 4
-				},
-				scaleX: 2,
-				scaleY: 2,
-				rot: 45,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			"ui-actor": {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "ui-actor",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 73.79169,
-					y: 945.10004
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.TextAction",
-								text: "@01.ui-actor.leave.0.text",
-								style: "default",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.TextAction",
-								text: "@01.ui-actor.leave.1.text",
-								style: "default",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 100,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "go",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						error: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "error",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "error",
-					orgAlign: 0
-				},
-				scaleX: 0.5,
-				scaleY: 0.5,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			particle2: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "particle2",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1551.1857,
-					y: 19.144714
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.ParticleRenderer",
-					atlasName: "particles",
-					particleName: "firefly",
-					orgAlign: 4
-				},
-				scaleX: 2,
-				scaleY: 2,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			door_left: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "door_left",
-				bbox: [ 6.1985474, -71.283264, 0, 200, 72.92984, 215.49634, 93.07495, -27.893463 ],
-				pos: {
-					x: 251.04129,
-					y: 339.37048
-				},
-				visible: true,
-				refPoint: {
-					x: 103.024414,
-					y: -49.89804
-				},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "$PLAYER",
-								target: "door_left",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "basic3",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "background"
-			},
-			test_inventory: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "test_inventory",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 372.02625,
-					y: 768.19934
-				},
-				visible: true,
-				desc: "@01.test_inventory.desc_",
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "inventory",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "go",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						error: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "error",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "go",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			}
-		},
-		backgroundAtlas: "scene1",
-		backgroundRegionId: "bg1",
-		musicDesc: null,
-		depthVector: {
-			x: 612.92163,
-			y: -990.1354
-		},
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.RunOnceAction",
-						caID: "930473402"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
-						actor: "ui-actor",
-						uiActor: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetPlayerAction",
-						actor: "char",
-						inventory: "white"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SayAction",
-						actor: "$PLAYER",
-						text: "@01.init.0.text",
-						type: "SUBTITLE",
-						queue: false,
-						wait: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "930473402"
-					},
-					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
-						name: "PREVIOUS_SCENE",
-						value: "basic3",
-						caID: "1891188477"
-					},
-					{
-						class: "com.bladecoder.engine.actions.GotoAction",
-						actor: "$PLAYER",
-						pos: "749.0,330.0",
-						ignoreWalkZone: false,
-						wait: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1891188477"
-					},
-					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
-						name: "PREVIOUS_SCENE",
-						value: "basic2",
-						caID: "1421587304"
-					},
-					{
-						class: "com.bladecoder.engine.actions.GotoAction",
-						actor: "$PLAYER",
-						pos: "1517.0,374.0",
-						ignoreWalkZone: false,
-						wait: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1421587304"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1421587304"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1891188477"
-					}
-				]
-			}
-		},
-		player: "char",
-		walkZone: "walkzone"
-	},
-	parallax: {
-		id: "parallax",
-		layers: [
-			{
-				name: "foreground",
-				parallax: 3.5
-			},
-			{
-				name: "dynamic"
-			},
-			{
-				name: "background",
-				parallax: 0
-			}
-		],
-		actors: {
-			goto01: {
-				class: "com.bladecoder.engine.model.InteractiveActor",
-				id: "goto01",
-				bbox: [ -69.81134, 53.333344, -68.80505, 182.89307, 34.591248, 181.88678, 46.666687, 58.364746 ],
-				pos: {
-					x: 801.9821,
-					y: 207.3566
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "char",
-								target: "goto01",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "basic1",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground"
-			},
-			middleground: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "middleground",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1554
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: -1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						background: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "middleground",
-							source: "parallax",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "background",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			walkzone: {
-				class: "com.bladecoder.engine.model.WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 18.73169, 37.46341, 37.46338, 209.79524, 3008.312, 247.25824, 3064.5073, 52.448776 ],
-				pos: {},
-				visible: true
-			},
-			background: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "background",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1551
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "background",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						background: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "background",
-							source: "parallax",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "background",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			char: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "char",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1793.2177,
-					y: 65.78964
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.5,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.right",
-					orgAlign: 4
-				},
-				scaleX: 0.3110584,
-				scaleY: 0.3110584,
-				rot: 0,
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 2000
-			},
-			foreground: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "foreground",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 177.10706
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						foreground1: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "foreground1",
-							source: "parallax",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "foreground1",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			foreground2: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "foreground2",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 3084.321
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						foreground1: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "foreground2",
-							source: "parallax",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "foreground1",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			particle3: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "particle3",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: -26.70813,
-					y: 1129.6176
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: true,
-				zIndex: 1,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.ParticleRenderer",
-					atlasName: "particles",
-					particleName: "rain",
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			}
-		},
-		musicDesc: null,
-		depthVector: {
-			x: 344.45578,
-			y: -551.40857
-		},
-		sceneSize: {
-			x: 3103,
-			y: 1080
-		},
-		verbs: {},
-		player: "char",
-		walkZone: "walkzone"
-	},
 	actor3d: {
 		id: "actor3d",
 		layers: [
@@ -1958,43 +17,8 @@ scenes: {
 			}
 		],
 		actors: {
-			fg2: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "fg2",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2727.407
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						head_fg: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "head_fg",
-							source: "00",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "head_fg",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
 			fg1: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "fg1",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -2007,10 +31,10 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						column_fg: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "column_fg",
 							source: "00",
 							duration: 1,
@@ -2028,18 +52,43 @@ scenes: {
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
-			walkzone: {
-				class: "com.bladecoder.engine.model.WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 108.911804, -40.125336, 627.953, 441.84213, 668.9139, 407.532, 533.09656, 221.31633, 907.7121, 111.8475, 1196.9875, 214.7468, 1176.444, 387.23248, 1793.0767, 449.25903, 1853.1136, 514.7108, 2497.128, 520.0789, 2869.7212, -0.8026047 ],
+			fg2: {
+				class: "SpriteActor",
+				id: "fg2",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 18.916138,
-					y: 3.7832947
+					x: 2727.407
 				},
-				visible: true
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						head_fg: {
+							class: "AtlasAnimationDesc",
+							id: "head_fg",
+							source: "00",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "head_fg",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
 			},
 			player: {
-				class: "com.bladecoder.engine.model.CharacterActor",
+				class: "CharacterActor",
 				id: "player",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -2053,23 +102,23 @@ scenes: {
 				zIndex: 0,
 				layer: "dynamic",
 				renderer: {
-					class: "com.bladecoder.engine.model.Sprite3DRenderer",
+					class: "Sprite3DRenderer",
 					fanims: {
-						talk: {
-							class: "com.bladecoder.engine.anim.AnimationDesc",
-							id: "talk",
-							source: "Robie",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
 						stand: {
 							class: "com.bladecoder.engine.anim.AnimationDesc",
 							id: "stand",
 							source: "Robie",
 							duration: 1,
 							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						talk: {
+							class: "com.bladecoder.engine.anim.AnimationDesc",
+							id: "talk",
+							source: "Robie",
+							duration: 1,
+							animationType: "REPEAT",
 							count: -1,
 							preload: true
 						},
@@ -2108,6 +157,16 @@ scenes: {
 				fakeDepth: true,
 				bboxFromRenderer: true,
 				walkingSpeed: 700
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 108.911804, -40.125336, 627.953, 441.84213, 668.9139, 407.532, 533.09656, 221.31633, 907.7121, 111.8475, 1196.9875, 214.7468, 1176.444, 387.23248, 1793.0767, 449.25903, 1853.1136, 514.7108, 2497.128, 520.0789, 2869.7212, -0.8026047 ],
+				pos: {
+					x: 18.916138,
+					y: 3.7832947
+				},
+				visible: true
 			}
 		},
 		backgroundAtlas: "00",
@@ -2122,7 +181,7 @@ scenes: {
 				id: "init",
 				actions: [
 					{
-						class: "com.bladecoder.engine.actions.SayAction",
+						class: "Say",
 						actor: "$PLAYER",
 						text: "@actor3d.init.0.text",
 						type: "SUBTITLE",
@@ -2133,6 +192,2037 @@ scenes: {
 			}
 		},
 		player: "player",
+		walkZone: "walkzone"
+	},
+	"basic-prop-states": {
+		id: "basic-prop-states",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			ko: {
+				class: "SpriteActor",
+				id: "ko",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 956.2496,
+					y: 477.18317
+				},
+				visible: false,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@basic-prop-states.ko.text",
+					fontName: "PaytoneOne",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					r: 1,
+					b: 0.015686275,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			ok: {
+				class: "SpriteActor",
+				id: "ok",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 956.2496,
+					y: 477.18317
+				},
+				visible: false,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@basic-prop-states.ok.text__",
+					fontName: "PaytoneOne",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					r: 0.28235295,
+					g: 1,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			state: {
+				class: "SpriteActor",
+				id: "state",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 978.9769,
+					y: 198.59222
+				},
+				visible: true,
+				desc: "@basic-prop-states.state.desc_",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "IfActorAttr",
+								actor: "state",
+								attr: "STATE",
+								value: "BLUE",
+								caID: "301582167"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@basic-prop-states.state.lookat.1.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "301582167"
+							},
+							{
+								class: "IfActorAttr",
+								actor: "state",
+								attr: "STATE",
+								value: "YELLOW",
+								caID: "602667286"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@basic-prop-states.state.lookat.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "602667286"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@basic-prop-states.state.lookat.6.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "602667286"
+							},
+							{
+								class: "End",
+								caID: "301582167"
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "ActorState",
+								actor: "state",
+								state: "YELLOW"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "state",
+								tint: "ffee00ff"
+							}
+						]
+					},
+					"pickup.YELLOW": {
+						id: "pickup",
+						state: "YELLOW",
+						actions: [
+							{
+								class: "ActorState",
+								actor: "state",
+								state: "BLUE"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "state",
+								tint: "00f7ffff"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@basic-prop-states.state.text_",
+					fontName: "PaytoneOne",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			}
+		},
+		musicDesc: null,
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "Property",
+						prop: "TEST-PROP",
+						value: "test"
+					},
+					{
+						class: "IfProperty",
+						name: "TEST-PROP",
+						value: "test",
+						caID: "1751840606"
+					},
+					{
+						class: "End",
+						caID: "1751840606"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "ko",
+						visible: true
+					},
+					{
+						class: "CancelVerb"
+					},
+					{
+						class: "End",
+						caID: "1751840606"
+					},
+					{
+						class: "Comment",
+						comment: "Property from the BladeEngine.properties file.",
+						debug: false
+					},
+					{
+						class: "IfProperty",
+						name: "title",
+						value: "Blade Engine Adventure",
+						caID: "1094711013"
+					},
+					{
+						class: "End",
+						caID: "1094711013"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "ko",
+						visible: true
+					},
+					{
+						class: "CancelVerb"
+					},
+					{
+						class: "End",
+						caID: "1094711013"
+					},
+					{
+						class: "Comment",
+						comment: "PLATFORM property.",
+						debug: false
+					},
+					{
+						class: "IfProperty",
+						name: "PLATFORM",
+						value: "Desktop",
+						caID: "1143890192"
+					},
+					{
+						class: "Say",
+						actor: "$PLAYER",
+						text: "@basic-prop-states.init.18.text",
+						type: "SUBTITLE",
+						queue: false,
+						wait: true
+					},
+					{
+						class: "End",
+						caID: "1143890192"
+					},
+					{
+						class: "IfProperty",
+						name: "PLATFORM",
+						value: "Android",
+						caID: "1726514584"
+					},
+					{
+						class: "Say",
+						actor: "$PLAYER",
+						text: "@basic-prop-states.init.20.text",
+						type: "SUBTITLE",
+						queue: false,
+						wait: true
+					},
+					{
+						class: "End",
+						caID: "1726514584"
+					},
+					{
+						class: "IfProperty",
+						name: "PLATFORM",
+						value: "iOS",
+						caID: "363902178"
+					},
+					{
+						class: "Say",
+						actor: "$PLAYER",
+						text: "@basic-prop-states.init.23.text",
+						type: "SUBTITLE",
+						queue: false,
+						wait: true
+					},
+					{
+						class: "End",
+						caID: "363902178"
+					},
+					{
+						class: "End",
+						caID: "363902178"
+					},
+					{
+						class: "End",
+						caID: "1726514584"
+					},
+					{
+						class: "End",
+						caID: "1143890192"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "ok",
+						visible: true
+					}
+				]
+			}
+		},
+		walkZone: null
+	},
+	basic1: {
+		id: "basic1",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			ball: {
+				class: "SpriteActor",
+				id: "ball",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1833.4604,
+					y: 317.79987
+				},
+				visible: true,
+				desc: "@01.ball.desc_",
+				refPoint: {
+					x: -85.5614,
+					y: 8.148743
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "ball",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "LookAt",
+								direction: "RIGHT",
+								wait: false
+							},
+							{
+								class: "PickUp",
+								actor: "ball"
+							},
+							{
+								class: "AlphaAnim",
+								actor: "ball",
+								alpha: 0,
+								speed: 1,
+								count: -1,
+								wait: true,
+								repeat: "YOYO",
+								interpolation: "FADE"
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "AlphaAnim",
+								actor: "ball",
+								alpha: 0,
+								speed: 1,
+								count: 2,
+								wait: true,
+								repeat: "YOYO"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ball: {
+							class: "AtlasAnimationDesc",
+							id: "ball",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ball",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 45,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			blue: {
+				class: "CharacterActor",
+				id: "blue",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1738.8356,
+					y: 394.27005
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "SetPlayer",
+								actor: "blue",
+								inventory: "blue"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.char4.pickup.3.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left",
+					orgAlign: 4
+				},
+				tint: {
+					r: 0.53333336,
+					g: 0.53333336,
+					b: 1,
+					a: 1
+				},
+				scaleX: 0.13639663,
+				scaleY: 0.13639663,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 2000
+			},
+			char: {
+				class: "CharacterActor",
+				id: "char",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 751.04297,
+					y: 331.6653
+				},
+				visible: true,
+				refPoint: {
+					x: 105.383484,
+					y: 4.3308105
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "SetPlayer",
+								actor: "char",
+								inventory: "white"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.char.pickup.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: false,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 4
+				},
+				scaleX: 0.17544998,
+				scaleY: 0.17544998,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 2000
+			},
+			cube: {
+				class: "SpriteActor",
+				id: "cube",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 521.5177,
+					y: 362.6178
+				},
+				visible: true,
+				desc: "@01.cube.desc",
+				refPoint: {
+					x: 93.710205,
+					y: 20.371826
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "cube",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "LookAt",
+								direction: "LEFT",
+								wait: false
+							},
+							{
+								class: "PickUp",
+								actor: "cube"
+							}
+						]
+					},
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "com.bladecoder.engine.actions.AddValueToProperty",
+								prop: "COUNTER",
+								value: 1
+							},
+							{
+								class: "IfProperty",
+								name: "COUNTER",
+								value: "3",
+								caID: "1198688830"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.cube.lookat.2.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "1198688830"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.cube.lookat.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "1198688830"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ball: {
+							class: "AtlasAnimationDesc",
+							id: "cube",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						cube: {
+							class: "AtlasAnimationDesc",
+							id: "cube",
+							source: "scene1",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ball",
+					orgAlign: 4
+				},
+				tint: {
+					r: 0.4,
+					g: 0.4,
+					b: 0.4,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			door_left: {
+				class: "InteractiveActor",
+				id: "door_left",
+				bbox: [ 6.1985474, -71.283264, 0, 200, 72.92984, 215.49634, 93.07495, -27.893463 ],
+				pos: {
+					x: 251.04129,
+					y: 339.37048
+				},
+				visible: true,
+				refPoint: {
+					x: 103.024414,
+					y: -49.89804
+				},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "door_left",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Leave",
+								scene: "basic3",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "background"
+			},
+			door_right: {
+				class: "InteractiveActor",
+				id: "door_right",
+				bbox: [ 1.1622314, 20.920135, 0, 200, 98.88623, 203.48676, 102.3728, 18.595642 ],
+				pos: {
+					x: 1455.109,
+					y: 395.15738
+				},
+				visible: true,
+				refPoint: {
+					x: 50.575684,
+					y: 7.4927063
+				},
+				verbs: {
+					leave: {
+						id: "leave",
+						icon: "up",
+						actions: [
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "door_right",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Leave",
+								scene: "basic2",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "background"
+			},
+			green: {
+				class: "CharacterActor",
+				id: "green",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1688.2659,
+					y: 308.31876
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "SetPlayer",
+								actor: "green",
+								inventory: "green"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.char3.pickup.3.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left",
+					orgAlign: 4
+				},
+				tint: {
+					r: 0.53333336,
+					g: 1,
+					b: 0.53333336,
+					a: 1
+				},
+				scaleX: 0.19001375,
+				scaleY: 0.19001375,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 2000
+			},
+			particle: {
+				class: "SpriteActor",
+				id: "particle",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1016.0442,
+					y: 333.25787
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "ParticleRenderer",
+					atlasName: "particles",
+					particleName: "bigFire",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			particle2: {
+				class: "SpriteActor",
+				id: "particle2",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1551.1857,
+					y: 19.144714
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "ParticleRenderer",
+					atlasName: "particles",
+					particleName: "firefly",
+					orgAlign: 4
+				},
+				scaleX: 2,
+				scaleY: 2,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			red: {
+				class: "CharacterActor",
+				id: "red",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1298.4912,
+					y: 349.08066
+				},
+				visible: true,
+				refPoint: {
+					x: -118.37598,
+					y: 1.443634
+				},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								interaction: true
+							},
+							{
+								class: "SetPlayer",
+								actor: "red",
+								inventory: "red"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.char2.pickup.4.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.5,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left",
+					orgAlign: 4
+				},
+				tint: {
+					r: 1,
+					g: 0.53333336,
+					b: 0.53333336,
+					a: 1
+				},
+				scaleX: 0.16458614,
+				scaleY: 0.16458614,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 2000
+			},
+			test_actions: {
+				class: "SpriteActor",
+				id: "test_actions",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 621.7815,
+					y: 772.6084
+				},
+				visible: true,
+				desc: "@01.test_actions.desc",
+				refPoint: {},
+				verbs: {
+					lookat: {
+						id: "lookat",
+						actions: [
+							{
+								class: "Say",
+								actor: "test_actions",
+								text: "@01.test_actions.lookat.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					},
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "ActorState",
+								actor: "test_actions",
+								state: "1"
+							},
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "IfActorAttr",
+								actor: "test_actions",
+								attr: "STATE",
+								value: "1",
+								caID: "else123"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.2.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "else123"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.5.text_",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "test_actions#error",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "CancelVerb",
+								actor: "test_actions"
+							},
+							{
+								class: "End",
+								caID: "else123"
+							},
+							{
+								class: "IfActorAttr",
+								actor: "test_actions",
+								attr: "STATE",
+								value: "2",
+								caID: "else1234"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.10.text_",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "test_actions#error",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "CancelVerb",
+								actor: "test_actions"
+							},
+							{
+								class: "End",
+								caID: "else1234"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.11.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "else1234"
+							},
+							{
+								class: "Repeat",
+								repeat: 3,
+								caID: "repeat123"
+							},
+							{
+								class: "Choose",
+								chooseCriteria: "CYCLE",
+								caID: "choose123"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.18.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.16.text_",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "ActorState",
+								actor: "test_actions",
+								state: "3"
+							},
+							{
+								class: "End",
+								caID: "choose123"
+							},
+							{
+								class: "End",
+								caID: "repeat123"
+							},
+							{
+								class: "IfActorAttr",
+								actor: "test_actions",
+								attr: "STATE",
+								value: "3",
+								caID: "else12345"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.21.text_",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "else12345"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@01.test_actions.pickup.24.text__",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "test_actions#error",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "CancelVerb",
+								actor: "test_actions"
+							},
+							{
+								class: "End",
+								caID: "else12345"
+							},
+							{
+								class: "Animation",
+								animation: "test_actions#ok",
+								count: 1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						error: {
+							class: "AtlasAnimationDesc",
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						go: {
+							class: "AtlasAnimationDesc",
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			test_inventory: {
+				class: "SpriteActor",
+				id: "test_inventory",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 372.02625,
+					y: 768.19934
+				},
+				visible: true,
+				desc: "@01.test_inventory.desc_",
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Leave",
+								scene: "inventory",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						error: {
+							class: "AtlasAnimationDesc",
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						go: {
+							class: "AtlasAnimationDesc",
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "go",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			text: {
+				class: "SpriteActor",
+				id: "text",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1126.2278,
+					y: 820.6056
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "AlphaAnim",
+								actor: "text",
+								alpha: 0,
+								speed: 0.5,
+								count: 1,
+								wait: true,
+								repeat: "NO_REPEAT"
+							},
+							{
+								class: "AlphaAnim",
+								actor: "text",
+								alpha: 1,
+								speed: 0.5,
+								count: 1,
+								wait: true,
+								repeat: "NO_REPEAT"
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "text",
+					fontName: "ArchitectsDaughter",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 4
+				},
+				scaleX: 2,
+				scaleY: 2,
+				rot: 45,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			tint: {
+				class: "InteractiveActor",
+				id: "tint",
+				bbox: [ -416.72354, -2.1842957, -100, 200, 69.4198, 193.44711, -133.72015, 0 ],
+				pos: {
+					x: 657.4744,
+					y: 255.56323
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					exit: {
+						id: "exit",
+						actions: [
+							{
+								class: "IfSceneAttr",
+								attr: "PLAYER",
+								value: "char",
+								caID: "1640548163"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								tint: "ffffffff"
+							},
+							{
+								class: "End",
+								caID: "1640548163"
+							},
+							{
+								class: "IfSceneAttr",
+								attr: "PLAYER",
+								value: "red",
+								caID: "1070630759"
+							},
+							{
+								class: "DisableAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:ff6666ff}"
+							},
+							{
+								class: "TintAnim",
+								actor: "$PLAYER",
+								color: "ff6666ff",
+								speed: 0.2,
+								count: 1,
+								wait: true,
+								repeat: "REPEAT"
+							},
+							{
+								class: "End",
+								caID: "1070630759"
+							},
+							{
+								class: "IfSceneAttr",
+								attr: "PLAYER",
+								value: "green",
+								caID: "1006819085"
+							},
+							{
+								class: "Camera",
+								zoom: 1,
+								duration: 1,
+								interpolation: "FADE",
+								wait: false
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								tint: "66ff66ff"
+							},
+							{
+								class: "End",
+								caID: "1006819085"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								tint: "6666ffff"
+							},
+							{
+								class: "End",
+								caID: "1006819085"
+							},
+							{
+								class: "End",
+								caID: "1070630759"
+							},
+							{
+								class: "End",
+								caID: "1640548163"
+							}
+						]
+					},
+					enter: {
+						id: "enter",
+						actions: [
+							{
+								class: "IfSceneAttr",
+								attr: "PLAYER",
+								value: "char",
+								caID: "602572309"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								tint: "666666ff"
+							},
+							{
+								class: "End",
+								caID: "602572309"
+							},
+							{
+								class: "IfSceneAttr",
+								attr: "PLAYER",
+								value: "red",
+								caID: "1331490757"
+							},
+							{
+								class: "DisableAction",
+								serializedAction: "{class:com.bladecoder.engine.actions.SetActorAttrAction,actor:$PLAYER,tint:660000ff}"
+							},
+							{
+								class: "TintAnim",
+								actor: "$PLAYER",
+								color: "660000ff",
+								speed: 0.2,
+								count: 1,
+								wait: true,
+								repeat: "REPEAT"
+							},
+							{
+								class: "End",
+								caID: "1331490757"
+							},
+							{
+								class: "IfSceneAttr",
+								attr: "PLAYER",
+								value: "green",
+								caID: "1522226691"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								tint: "006600ff"
+							},
+							{
+								class: "Camera",
+								pos: "0.0,0.0",
+								interpolation: "FADE",
+								wait: false
+							},
+							{
+								class: "Camera",
+								zoom: 0.5,
+								duration: 1,
+								interpolation: "FADE",
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "1522226691"
+							},
+							{
+								class: "SetActorAttr",
+								actor: "$PLAYER",
+								tint: "000066ff"
+							},
+							{
+								class: "End",
+								caID: "1522226691"
+							},
+							{
+								class: "End",
+								caID: "1331490757"
+							},
+							{
+								class: "End",
+								caID: "602572309"
+							}
+						]
+					}
+				},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground"
+			},
+			"ui-actor": {
+				class: "SpriteActor",
+				id: "ui-actor",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 73.79169,
+					y: 945.10004
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Text",
+								text: "@01.ui-actor.leave.0.text",
+								style: "default",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Text",
+								text: "@01.ui-actor.leave.1.text",
+								style: "default",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 100,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						error: {
+							class: "AtlasAnimationDesc",
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						go: {
+							class: "AtlasAnimationDesc",
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "error",
+					orgAlign: 0
+				},
+				scaleX: 0.5,
+				scaleY: 0.5,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 297.42737, 284.14938, 568.29877, 434.68887, 719.6436, 446.8797, 650.82916, 341.34033, 1368.244, 372.9064, 1353.6876, 407.92526, 1922.6555, 410.7885, 1934.324, 311.18817, 1543.7379, 296.05563, 1514.5264, 349.16766, 624.51056, 318.71033, 589.1026, 283.30228 ],
+				pos: {},
+				visible: true
+			}
+		},
+		backgroundAtlas: "scene1",
+		backgroundRegionId: "bg1",
+		musicDesc: null,
+		depthVector: {
+			x: 612.92163,
+			y: -990.1354
+		},
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "RunOnce",
+						caID: "930473402"
+					},
+					{
+						class: "SetActorAttr",
+						actor: "ui-actor",
+						uiActor: true
+					},
+					{
+						class: "SetPlayer",
+						actor: "char",
+						inventory: "white"
+					},
+					{
+						class: "Say",
+						actor: "$PLAYER",
+						text: "@01.init.0.text",
+						type: "SUBTITLE",
+						queue: false,
+						wait: false
+					},
+					{
+						class: "End",
+						caID: "930473402"
+					},
+					{
+						class: "IfProperty",
+						name: "PREVIOUS_SCENE",
+						value: "basic3",
+						caID: "1891188477"
+					},
+					{
+						class: "Goto",
+						actor: "$PLAYER",
+						pos: "749.0,330.0",
+						ignoreWalkZone: false,
+						wait: true
+					},
+					{
+						class: "End",
+						caID: "1891188477"
+					},
+					{
+						class: "IfProperty",
+						name: "PREVIOUS_SCENE",
+						value: "basic2",
+						caID: "1421587304"
+					},
+					{
+						class: "Goto",
+						actor: "$PLAYER",
+						pos: "1517.0,374.0",
+						ignoreWalkZone: false,
+						wait: true
+					},
+					{
+						class: "End",
+						caID: "1421587304"
+					},
+					{
+						class: "End",
+						caID: "1421587304"
+					},
+					{
+						class: "End",
+						caID: "1891188477"
+					}
+				]
+			}
+		},
+		player: "char",
+		walkZone: "walkzone"
+	},
+	basic2: {
+		id: "basic2",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			exit: {
+				class: "InteractiveActor",
+				id: "exit",
+				bbox: [ -570.5481, -21.131287, -408.54053, 171.8248, 1172.0449, 214.08759, 1263.6143, -14.0876465 ],
+				pos: {
+					x: 405.07428,
+					y: -48.177734
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Leave",
+								scene: "basic1",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "background"
+			},
+			i18ntext: {
+				class: "SpriteActor",
+				id: "i18ntext",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 451.26367,
+					y: 448.4259
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "ImageRenderer",
+					fanims: {
+						text: {
+							class: "com.bladecoder.engine.anim.AnimationDesc",
+							id: "text",
+							source: "@text.png",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "text",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			}
+		},
+		backgroundAtlas: "scene2",
+		backgroundRegionId: "bg2",
+		musicDesc: null,
+		verbs: {},
+		walkZone: null
+	},
+	basic3: {
+		id: "basic3",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			exit: {
+				class: "InteractiveActor",
+				id: "exit",
+				bbox: [ 38.740845, -302.1791, 37.191406, 172.10663, 237.19135, 160.69553, 225.35773, -344.01953 ],
+				pos: {
+					x: 1644.7837,
+					y: 578.7209
+				},
+				visible: true,
+				refPoint: {
+					x: 5.774414,
+					y: -326.25568
+				},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "exit",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Position",
+								actor: "$PLAYER",
+								target: "basic1#door_left"
+							},
+							{
+								class: "MoveToScene",
+								actor: "$PLAYER",
+								scene: "basic1"
+							},
+							{
+								class: "IfSceneAttr",
+								attr: "PLAYER",
+								value: "char",
+								caID: "1348253093"
+							},
+							{
+								class: "SetPlayer",
+								actor: "basic1#char"
+							},
+							{
+								class: "End",
+								caID: "1348253093"
+							},
+							{
+								class: "SetPlayer",
+								actor: "basic1#red"
+							},
+							{
+								class: "End",
+								caID: "1348253093"
+							},
+							{
+								class: "Leave",
+								scene: "basic1",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "background"
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 157.48462, 39.371155, 398.08618, 257.5802, 965.618, 80.41797, 1203.7566, 93.22626, 1226.6244, 304.53226, 1530.6631, 318.8243, 1885.0032, 157.48468, 1786.2855, 74.84706 ],
+				pos: {},
+				visible: true
+			}
+		},
+		backgroundAtlas: "scene3",
+		backgroundRegionId: "bg3",
+		musicDesc: null,
+		depthVector: {
+			x: 613.83704,
+			y: -631.38477
+		},
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "IfSceneAttr",
+						scene: "basic1",
+						attr: "PLAYER",
+						value: "char",
+						caID: "742759885"
+					},
+					{
+						class: "MoveToScene",
+						actor: "basic1#char"
+					},
+					{
+						class: "SetPlayer",
+						actor: "char"
+					},
+					{
+						class: "End",
+						caID: "742759885"
+					},
+					{
+						class: "MoveToScene",
+						actor: "basic1#red"
+					},
+					{
+						class: "SetPlayer",
+						actor: "red"
+					},
+					{
+						class: "End",
+						caID: "742759885"
+					},
+					{
+						class: "Position",
+						actor: "$PLAYER",
+						target: "exit"
+					},
+					{
+						class: "Goto",
+						actor: "$PLAYER",
+						pos: "1501.0,251.0",
+						ignoreWalkZone: false,
+						wait: true
+					}
+				]
+			}
+		},
 		walkZone: "walkzone"
 	},
 	ink1: {
@@ -2150,8 +2240,103 @@ scenes: {
 			}
 		],
 		actors: {
+			GREEN: {
+				class: "CharacterActor",
+				id: "GREEN",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1386.7396,
+					y: 87.49176
+				},
+				visible: true,
+				refPoint: {
+					x: 8.069885
+				},
+				verbs: {
+					talkto: {
+						id: "talkto",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "target",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "$PLAYER#stand.right",
+								count: -1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "InkRun",
+								path: "scene1.green",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					a: 1
+				},
+				scaleX: 0.6267129,
+				scaleY: 0.6267129,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
 			RED: {
-				class: "com.bladecoder.engine.model.CharacterActor",
+				class: "CharacterActor",
 				id: "RED",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -2165,19 +2350,10 @@ scenes: {
 				zIndex: 0,
 				layer: "dynamic",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.7,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
 						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "stand.right",
 							source: "char",
 							duration: 1,
@@ -2186,10 +2362,19 @@ scenes: {
 							preload: true
 						},
 						"talk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "talk.right",
 							source: "char",
 							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
 							animationType: "REPEAT",
 							count: -1,
 							preload: true
@@ -2198,19 +2383,19 @@ scenes: {
 					initAnimation: "stand.right",
 					orgAlign: 0
 				},
-				scaleX: 0.3066198,
-				scaleY: 0.3066198,
-				rot: 0,
 				tint: {
 					r: 1,
 					a: 1
 				},
+				scaleX: 0.3066198,
+				scaleY: 0.3066198,
+				rot: 0,
 				fakeDepth: true,
 				bboxFromRenderer: true,
 				walkingSpeed: 1000
 			},
 			example2: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "example2",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -2225,7 +2410,7 @@ scenes: {
 						icon: "right",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
+								class: "Leave",
 								scene: "ink2",
 								init: true
 							}
@@ -2236,7 +2421,7 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
+					class: "TextRenderer",
 					text: "@ink1.example2.text",
 					fontName: "Ubuntu-M",
 					fontSize: 100,
@@ -2253,26 +2438,19 @@ scenes: {
 					align: 8,
 					orgAlign: 0
 				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
 				tint: {
 					r: 1,
 					g: 1,
 					a: 1
 				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
-			walkzone: {
-				class: "com.bladecoder.engine.model.WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
-				pos: {},
-				visible: true
-			},
 			link: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "link",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -2287,7 +2465,7 @@ scenes: {
 						icon: "right",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.OpenURLAction",
+								class: "OpenURL",
 								url: "https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md"
 							}
 						]
@@ -2297,7 +2475,7 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
+					class: "TextRenderer",
 					text: "@ink1.link.text",
 					fontName: "Ubuntu-M",
 					fontSize: 100,
@@ -2314,120 +2492,32 @@ scenes: {
 					align: 8,
 					orgAlign: 0
 				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
 				tint: {
 					r: 1,
 					g: 1,
 					a: 1
 				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
-			GREEN: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "GREEN",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1386.7396,
-					y: 87.49176
-				},
-				visible: true,
-				refPoint: {
-					x: 8.069885
-				},
-				verbs: {
-					talkto: {
-						id: "talkto",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "$PLAYER",
-								target: "target",
-								ignoreWalkZone: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "$PLAYER#stand.right",
-								count: -1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.InkRunAction",
-								path: "scene1.green",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.7,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						"talk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "talk.right",
-							source: "char",
-							duration: 0.4,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand.right",
-					orgAlign: 0
-				},
-				scaleX: 0.6267129,
-				scaleY: 0.6267129,
-				rot: 0,
-				tint: {
-					g: 1,
-					a: 1
-				},
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 1000
-			},
 			target: {
-				class: "com.bladecoder.engine.model.AnchorActor",
+				class: "AnchorActor",
 				id: "target",
 				bbox: [],
 				pos: {
 					x: 734.9283,
 					y: 104.98978
 				},
+				visible: true
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
+				pos: {},
 				visible: true
 			}
 		},
@@ -2441,22 +2531,215 @@ scenes: {
 				id: "init",
 				actions: [
 					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						class: "Cutmode",
 						value: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.InkRunAction",
+						class: "InkRun",
 						path: "scene1.init",
 						wait: true
 					},
 					{
-						class: "com.bladecoder.engine.actions.SetCutmodeAction",
+						class: "Cutmode",
 						value: false
 					}
 				]
 			}
 		},
 		player: "RED",
+		walkZone: "walkzone"
+	},
+	ink2: {
+		id: "ink2",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			GREEN: {
+				class: "CharacterActor",
+				id: "GREEN",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1222.1278,
+					y: 90.329895
+				},
+				visible: true,
+				refPoint: {
+					x: -493.8849,
+					y: 8.514374
+				},
+				verbs: {
+					talkto: {
+						id: "talkto",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "GREEN",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Animation",
+								animation: "$PLAYER#stand.right",
+								count: -1,
+								wait: false,
+								repeat: "SPRITE_DEFINED",
+								keepDirection: false
+							},
+							{
+								class: "InkRun",
+								path: "scene2.d1",
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left",
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					a: 1
+				},
+				scaleX: 0.6233493,
+				scaleY: 0.6233493,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
+			PLAYER: {
+				class: "CharacterActor",
+				id: "PLAYER",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 720.8208,
+					y: 90.79294
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 0
+				},
+				scaleX: 0.6228006,
+				scaleY: 0.6228006,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
+			target: {
+				class: "AnchorActor",
+				id: "target",
+				bbox: [],
+				pos: {
+					x: 734.9283,
+					y: 104.98978
+				},
+				visible: true
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
+				pos: {},
+				visible: true
+			}
+		},
+		musicDesc: null,
+		depthVector: {
+			x: 616.2952,
+			y: -227.47778
+		},
+		verbs: {},
+		player: "PLAYER",
 		walkZone: "walkzone"
 	},
 	inventory: {
@@ -2474,28 +2757,28 @@ scenes: {
 			}
 		],
 		actors: {
-			a02: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a02",
+			a0: {
+				class: "SpriteActor",
+				id: "a0",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 1064.3015,
-					y: 754.9446
+					x: 227.05096,
+					y: 760.6208
 				},
 				visible: true,
-				desc: "@inventory.a02.desc",
+				desc: "@inventory.a0.desc_",
 				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a02"
+								class: "PickUp",
+								actor: "a0"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a02",
+								class: "ActorState",
+								actor: "a0",
 								state: "INVENTORY"
 							}
 						]
@@ -2505,9 +2788,9 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
-								text: "@inventory.a02.pickup.INVENTORY.0.text",
+								text: "@inventory.a0.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
 								queue: false,
 								wait: true
@@ -2519,10 +2802,10 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2541,7 +2824,7 @@ scenes: {
 				bboxFromRenderer: true
 			},
 			a010: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "a010",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -2556,11 +2839,11 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
+								class: "PickUp",
 								actor: "a010"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "a010",
 								state: "INVENTORY"
 							}
@@ -2571,7 +2854,7 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
 								text: "@inventory.a010.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
@@ -2585,10 +2868,10 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2607,7 +2890,7 @@ scenes: {
 				bboxFromRenderer: true
 			},
 			a011: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "a011",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -2622,11 +2905,11 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
+								class: "PickUp",
 								actor: "a011"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "a011",
 								state: "INVENTORY"
 							}
@@ -2637,7 +2920,7 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
 								text: "@inventory.a011.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
@@ -2651,10 +2934,10 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -2663,7 +2946,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -2673,618 +2956,6 @@ scenes: {
 						}
 					},
 					initAnimation: "go",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a04: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a04",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 777.64966,
-					y: 471.13092
-				},
-				visible: true,
-				desc: "@inventory.a04.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a04"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a04",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a04.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ok",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a03: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a03",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 780.4877,
-					y: 210.02228
-				},
-				visible: true,
-				desc: "@inventory.a03.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a03"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a03",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a03.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ok",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a06: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a06",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 508.0266,
-					y: 212.86035
-				},
-				visible: true,
-				desc: "@inventory.a06.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a06"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a06",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a06.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ok",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a05: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a05",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 797.5166,
-					y: 752.1063
-				},
-				visible: true,
-				desc: "@inventory.a05.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a05"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a05",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a05.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ok",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a08: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a08",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 508.0266,
-					y: 752.1063
-				},
-				visible: true,
-				desc: "@inventory.a08.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a08"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a08",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a08.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ok",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a0114: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a0114",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1569.49,
-					y: 752.1064
-				},
-				visible: true,
-				desc: "@inventory.a0114.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a0114"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a0114",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a0114.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "go",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "go",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a07: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a07",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 508.02658,
-					y: 479.64514
-				},
-				visible: true,
-				desc: "@inventory.a07.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a07"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a07",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a07.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ok",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a0113: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a0113",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 1316.8959,
-					y: 488.15967
-				},
-				visible: true,
-				desc: "@inventory.a0113.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a0113"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a0113",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a0113.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "go",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "go",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			a09: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a09",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 207.18402,
-					y: 198.66962
-				},
-				visible: true,
-				desc: "@inventory.a09.desc",
-				refPoint: {},
-				verbs: {
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a09"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a09",
-								state: "INVENTORY"
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "a0",
-								text: "@inventory.a09.pickup.INVENTORY.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
-					fanims: {
-						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "ok",
-							source: "testbutton",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "ok",
 					orgAlign: 4
 				},
 				scaleX: 1,
@@ -3294,7 +2965,7 @@ scenes: {
 				bboxFromRenderer: true
 			},
 			a0112: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "a0112",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -3309,11 +2980,11 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
+								class: "PickUp",
 								actor: "a0112"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "a0112",
 								state: "INVENTORY"
 							}
@@ -3324,7 +2995,7 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
 								text: "@inventory.a0112.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
@@ -3338,10 +3009,10 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -3350,7 +3021,7 @@ scenes: {
 							preload: true
 						},
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -3368,28 +3039,28 @@ scenes: {
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
-			a0: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "a0",
+			a0113: {
+				class: "SpriteActor",
+				id: "a0113",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 227.05096,
-					y: 760.6208
+					x: 1316.8959,
+					y: 488.15967
 				},
 				visible: true,
-				desc: "@inventory.a0.desc_",
+				desc: "@inventory.a0113.desc",
 				refPoint: {},
 				verbs: {
 					pickup: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
-								actor: "a0"
+								class: "PickUp",
+								actor: "a0113"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "a0",
+								class: "ActorState",
+								actor: "a0113",
 								state: "INVENTORY"
 							}
 						]
@@ -3399,9 +3070,9 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
-								text: "@inventory.a0.pickup.INVENTORY.0.text",
+								text: "@inventory.a0113.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
 								queue: false,
 								wait: true
@@ -3413,10 +3084,19 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
+						go: {
+							class: "AtlasAnimationDesc",
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -3425,7 +3105,7 @@ scenes: {
 							preload: true
 						}
 					},
-					initAnimation: "ok",
+					initAnimation: "go",
 					orgAlign: 4
 				},
 				scaleX: 1,
@@ -3435,7 +3115,7 @@ scenes: {
 				bboxFromRenderer: true
 			},
 			a01132: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "a01132",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -3450,12 +3130,12 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
+								class: "PickUp",
 								actor: "a01132",
 								animation: "error"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "a01132",
 								state: "INVENTORY"
 							}
@@ -3466,7 +3146,7 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
 								text: "@inventory.a01132.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
@@ -3480,10 +3160,19 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
+						error: {
+							class: "AtlasAnimationDesc",
+							id: "error",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
 						go: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "go",
 							source: "testbutton",
 							duration: 1,
@@ -3492,17 +3181,83 @@ scenes: {
 							preload: true
 						},
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
 							animationType: "NO_REPEAT",
 							count: -1,
 							preload: true
+						}
+					},
+					initAnimation: "go",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a0114: {
+				class: "SpriteActor",
+				id: "a0114",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1569.49,
+					y: 752.1064
+				},
+				visible: true,
+				desc: "@inventory.a0114.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a0114"
+							},
+							{
+								class: "ActorState",
+								actor: "a0114",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a0114.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						go: {
+							class: "AtlasAnimationDesc",
+							id: "go",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
 						},
-						error: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "error",
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
 							source: "testbutton",
 							duration: 1,
 							animationType: "NO_REPEAT",
@@ -3520,7 +3275,7 @@ scenes: {
 				bboxFromRenderer: true
 			},
 			a012: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "a012",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -3535,11 +3290,11 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
+								class: "PickUp",
 								actor: "a012"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "a012",
 								state: "INVENTORY"
 							}
@@ -3550,7 +3305,7 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
 								text: "@inventory.a012.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
@@ -3564,10 +3319,10 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -3586,7 +3341,7 @@ scenes: {
 				bboxFromRenderer: true
 			},
 			a013: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "a013",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -3601,11 +3356,11 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.PickUpAction",
+								class: "PickUp",
 								actor: "a013"
 							},
 							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
+								class: "ActorState",
 								actor: "a013",
 								state: "INVENTORY"
 							}
@@ -3616,7 +3371,7 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SayAction",
+								class: "Say",
 								actor: "a0",
 								text: "@inventory.a013.pickup.INVENTORY.0.text",
 								type: "SUBTITLE",
@@ -3630,10 +3385,538 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
 						ok: {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a02: {
+				class: "SpriteActor",
+				id: "a02",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1064.3015,
+					y: 754.9446
+				},
+				visible: true,
+				desc: "@inventory.a02.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a02"
+							},
+							{
+								class: "ActorState",
+								actor: "a02",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a02.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a03: {
+				class: "SpriteActor",
+				id: "a03",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 780.4877,
+					y: 210.02228
+				},
+				visible: true,
+				desc: "@inventory.a03.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a03"
+							},
+							{
+								class: "ActorState",
+								actor: "a03",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a03.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a04: {
+				class: "SpriteActor",
+				id: "a04",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 777.64966,
+					y: 471.13092
+				},
+				visible: true,
+				desc: "@inventory.a04.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a04"
+							},
+							{
+								class: "ActorState",
+								actor: "a04",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a04.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a05: {
+				class: "SpriteActor",
+				id: "a05",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 797.5166,
+					y: 752.1063
+				},
+				visible: true,
+				desc: "@inventory.a05.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a05"
+							},
+							{
+								class: "ActorState",
+								actor: "a05",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a05.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a06: {
+				class: "SpriteActor",
+				id: "a06",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 508.0266,
+					y: 212.86035
+				},
+				visible: true,
+				desc: "@inventory.a06.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a06"
+							},
+							{
+								class: "ActorState",
+								actor: "a06",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a06.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a07: {
+				class: "SpriteActor",
+				id: "a07",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 508.02658,
+					y: 479.64514
+				},
+				visible: true,
+				desc: "@inventory.a07.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a07"
+							},
+							{
+								class: "ActorState",
+								actor: "a07",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a07.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a08: {
+				class: "SpriteActor",
+				id: "a08",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 508.0266,
+					y: 752.1063
+				},
+				visible: true,
+				desc: "@inventory.a08.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a08"
+							},
+							{
+								class: "ActorState",
+								actor: "a08",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a08.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
+							id: "ok",
+							source: "testbutton",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "ok",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			a09: {
+				class: "SpriteActor",
+				id: "a09",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 207.18402,
+					y: 198.66962
+				},
+				visible: true,
+				desc: "@inventory.a09.desc",
+				refPoint: {},
+				verbs: {
+					pickup: {
+						id: "pickup",
+						actions: [
+							{
+								class: "PickUp",
+								actor: "a09"
+							},
+							{
+								class: "ActorState",
+								actor: "a09",
+								state: "INVENTORY"
+							}
+						]
+					},
+					"pickup.INVENTORY": {
+						id: "pickup",
+						state: "INVENTORY",
+						actions: [
+							{
+								class: "Say",
+								actor: "a0",
+								text: "@inventory.a09.pickup.INVENTORY.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						ok: {
+							class: "AtlasAnimationDesc",
 							id: "ok",
 							source: "testbutton",
 							duration: 1,
@@ -3671,62 +3954,8 @@ scenes: {
 			}
 		],
 		actors: {
-			parallax: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "parallax",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 357.49203,
-					y: 523.80634
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "parallax",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@menu.parallax.text",
-					fontName: "Ubuntu-M",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				tint: {
-					r: 1,
-					g: 1,
-					a: 1
-				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
 			actor3d: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "actor3d",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -3740,7 +3969,7 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
+								class: "Leave",
 								scene: "actor3d",
 								init: true
 							}
@@ -3751,7 +3980,7 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
+					class: "TextRenderer",
 					text: "@menu.actor3d.text",
 					fontName: "Ubuntu-M",
 					fontSize: 100,
@@ -3768,127 +3997,19 @@ scenes: {
 					align: 8,
 					orgAlign: 0
 				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
 				tint: {
 					r: 1,
 					g: 1,
 					a: 1
 				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			ink: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "ink",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 243.34207,
-					y: 288.75183
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "ink1",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@menu.ink.text_",
-					fontName: "Ubuntu-M",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
 				scaleX: 1,
 				scaleY: 1,
 				rot: 0,
-				tint: {
-					r: 1,
-					g: 1,
-					a: 1
-				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			title: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "title",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 291.47675,
-					y: 906.1603
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {
-					leave: {
-						id: "leave",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
-								scene: "inventory",
-								init: true
-							}
-						]
-					}
-				},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@menu.title.text_",
-					fontName: "PaytoneOne",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				tint: {
-					g: 1,
-					b: 0.2,
-					a: 1
-				},
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
 			basic: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "basic",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -3902,7 +4023,7 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
+								class: "Leave",
 								scene: "basic1",
 								init: true
 							}
@@ -3913,7 +4034,7 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
+					class: "TextRenderer",
 					text: "@menu.basic.text_",
 					fontName: "Ubuntu-M",
 					fontSize: 100,
@@ -3930,19 +4051,73 @@ scenes: {
 					align: 8,
 					orgAlign: 0
 				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
 				tint: {
 					r: 1,
 					g: 1,
 					a: 1
 				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			ink: {
+				class: "SpriteActor",
+				id: "ink",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 243.34207,
+					y: 288.75183
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Leave",
+								scene: "ink1",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.ink.text_",
+					fontName: "Ubuntu-M",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					r: 1,
+					g: 1,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
 				fakeDepth: false,
 				bboxFromRenderer: true
 			},
 			inventory: {
-				class: "com.bladecoder.engine.model.SpriteActor",
+				class: "SpriteActor",
 				id: "inventory",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
@@ -3956,7 +4131,7 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.LeaveAction",
+								class: "Leave",
 								scene: "inventory",
 								init: true
 							}
@@ -3967,7 +4142,7 @@ scenes: {
 				zIndex: 0,
 				layer: "foreground",
 				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
+					class: "TextRenderer",
 					text: "@menu.inventory.text_",
 					fontName: "Ubuntu-M",
 					fontSize: 100,
@@ -3984,14 +4159,122 @@ scenes: {
 					align: 8,
 					orgAlign: 0
 				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
 				tint: {
 					r: 1,
 					g: 1,
 					a: 1
 				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			parallax: {
+				class: "SpriteActor",
+				id: "parallax",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 357.49203,
+					y: 523.80634
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Leave",
+								scene: "parallax",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.parallax.text",
+					fontName: "Ubuntu-M",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					r: 1,
+					g: 1,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			title: {
+				class: "SpriteActor",
+				id: "title",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 291.47675,
+					y: 906.1603
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {
+					leave: {
+						id: "leave",
+						actions: [
+							{
+								class: "Leave",
+								scene: "inventory",
+								init: true
+							}
+						]
+					}
+				},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "TextRenderer",
+					text: "@menu.title.text_",
+					fontName: "PaytoneOne",
+					fontSize: 100,
+					borderWidth: 0,
+					borderColor: {
+						a: 1
+					},
+					borderStraight: true,
+					shadowOffsetX: 0,
+					shadowOffsetY: 0,
+					shadowColor: {
+						a: 1
+					},
+					align: 8,
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					b: 0.2,
+					a: 1
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
 				fakeDepth: false,
 				bboxFromRenderer: true
 			}
@@ -4002,7 +4285,7 @@ scenes: {
 				id: "init",
 				actions: [
 					{
-						class: "com.bladecoder.engine.actions.ScreenPositionAction",
+						class: "ScreenPosition",
 						actor: "title",
 						position: "0.0,-200.0",
 						anchor: "TOP"
@@ -4012,49 +4295,76 @@ scenes: {
 		},
 		walkZone: null
 	},
-	ink2: {
-		id: "ink2",
+	parallax: {
+		id: "parallax",
 		layers: [
 			{
-				name: "foreground"
+				name: "foreground",
+				parallax: 3.5
 			},
 			{
-				name: "dynamic",
-				dynamic: true
+				name: "dynamic"
 			},
 			{
-				name: "background"
+				name: "background",
+				parallax: 0
 			}
 		],
 		actors: {
-			PLAYER: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "PLAYER",
+			background: {
+				class: "SpriteActor",
+				id: "background",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 720.8208,
-					y: 90.79294
+					x: 1551
 				},
 				visible: true,
 				refPoint: {},
 				verbs: {},
 				interaction: false,
 				zIndex: 0,
-				layer: "dynamic",
+				layer: "background",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.7,
-							animationType: "REPEAT",
+						background: {
+							class: "AtlasAnimationDesc",
+							id: "background",
+							source: "parallax",
+							duration: 1,
+							animationType: "NO_REPEAT",
 							count: -1,
 							preload: true
-						},
+						}
+					},
+					initAnimation: "background",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			char: {
+				class: "CharacterActor",
+				id: "char",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1793.2177,
+					y: 65.78964
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
 						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
+							class: "AtlasAnimationDesc",
 							id: "stand.right",
 							source: "char",
 							duration: 1,
@@ -4062,520 +4372,210 @@ scenes: {
 							count: -1,
 							preload: true
 						},
-						"talk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "talk.right",
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
 							source: "char",
-							duration: 0.4,
+							duration: 0.5,
 							animationType: "REPEAT",
 							count: -1,
 							preload: true
 						}
 					},
 					initAnimation: "stand.right",
-					orgAlign: 0
+					orgAlign: 4
 				},
-				scaleX: 0.6228006,
-				scaleY: 0.6228006,
+				scaleX: 0.3110584,
+				scaleY: 0.3110584,
 				rot: 0,
 				fakeDepth: true,
 				bboxFromRenderer: true,
-				walkingSpeed: 1000
+				walkingSpeed: 2000
 			},
-			walkzone: {
-				class: "com.bladecoder.engine.model.WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
-				pos: {},
-				visible: true
-			},
-			GREEN: {
-				class: "com.bladecoder.engine.model.CharacterActor",
-				id: "GREEN",
+			foreground: {
+				class: "SpriteActor",
+				id: "foreground",
 				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
 				pos: {
-					x: 1222.1278,
-					y: 90.329895
+					x: 177.10706
 				},
 				visible: true,
-				refPoint: {
-					x: -493.8849,
-					y: 8.514374
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						foreground1: {
+							class: "AtlasAnimationDesc",
+							id: "foreground1",
+							source: "parallax",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "foreground1",
+					orgAlign: 4
 				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			foreground2: {
+				class: "SpriteActor",
+				id: "foreground2",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 3084.321
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "foreground",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						foreground1: {
+							class: "AtlasAnimationDesc",
+							id: "foreground2",
+							source: "parallax",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "foreground1",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			goto01: {
+				class: "InteractiveActor",
+				id: "goto01",
+				bbox: [ -69.81134, 53.333344, -68.80505, 182.89307, 34.591248, 181.88678, 46.666687, 58.364746 ],
+				pos: {
+					x: 801.9821,
+					y: 207.3566
+				},
+				visible: true,
+				refPoint: {},
 				verbs: {
-					talkto: {
-						id: "talkto",
+					leave: {
+						id: "leave",
 						actions: [
 							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.GotoAction",
-								actor: "$PLAYER",
-								target: "GREEN",
+								class: "Goto",
+								actor: "char",
+								target: "goto01",
 								ignoreWalkZone: false,
 								wait: true
 							},
 							{
-								class: "com.bladecoder.engine.actions.AnimationAction",
-								animation: "$PLAYER#stand.right",
-								count: -1,
-								wait: false,
-								repeat: "SPRITE_DEFINED",
-								keepDirection: false
-							},
-							{
-								class: "com.bladecoder.engine.actions.InkRunAction",
-								path: "scene2.d1",
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetCutmodeAction",
-								value: false
+								class: "Leave",
+								scene: "basic1",
+								init: true
 							}
 						]
 					}
 				},
 				interaction: true,
 				zIndex: 0,
+				layer: "foreground"
+			},
+			middleground: {
+				class: "SpriteActor",
+				id: "middleground",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1554
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: -1,
 				layer: "dynamic",
 				renderer: {
-					class: "com.bladecoder.engine.model.AtlasRenderer",
+					class: "AtlasRenderer",
 					fanims: {
-						"walk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "walk.right",
-							source: "char",
-							duration: 0.7,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						"stand.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "stand.right",
-							source: "char",
+						background: {
+							class: "AtlasAnimationDesc",
+							id: "middleground",
+							source: "parallax",
 							duration: 1,
 							animationType: "NO_REPEAT",
 							count: -1,
 							preload: true
-						},
-						"talk.right": {
-							class: "com.bladecoder.engine.anim.AtlasAnimationDesc",
-							id: "talk.right",
-							source: "char",
-							duration: 0.4,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
 						}
 					},
-					initAnimation: "stand.left",
+					initAnimation: "background",
+					orgAlign: 4
+				},
+				scaleX: 1,
+				scaleY: 1,
+				rot: 0,
+				fakeDepth: false,
+				bboxFromRenderer: true
+			},
+			particle3: {
+				class: "SpriteActor",
+				id: "particle3",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: -26.70813,
+					y: 1129.6176
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: true,
+				zIndex: 1,
+				layer: "dynamic",
+				renderer: {
+					class: "ParticleRenderer",
+					atlasName: "particles",
+					particleName: "rain",
 					orgAlign: 0
 				},
-				scaleX: 0.6233493,
-				scaleY: 0.6233493,
+				scaleX: 1,
+				scaleY: 1,
 				rot: 0,
-				tint: {
-					g: 1,
-					a: 1
-				},
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 1000
+				fakeDepth: false,
+				bboxFromRenderer: true
 			},
-			target: {
-				class: "com.bladecoder.engine.model.AnchorActor",
-				id: "target",
-				bbox: [],
-				pos: {
-					x: 734.9283,
-					y: 104.98978
-				},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 18.73169, 37.46341, 37.46338, 209.79524, 3008.312, 247.25824, 3064.5073, 52.448776 ],
+				pos: {},
 				visible: true
 			}
 		},
 		musicDesc: null,
 		depthVector: {
-			x: 616.2952,
-			y: -227.47778
+			x: 344.45578,
+			y: -551.40857
+		},
+		sceneSize: {
+			x: 3103,
+			y: 1080
 		},
 		verbs: {},
-		player: "PLAYER",
+		player: "char",
 		walkZone: "walkzone"
-	},
-	"basic-prop-states": {
-		id: "basic-prop-states",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "dynamic",
-				dynamic: true
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			ko: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "ko",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 956.2496,
-					y: 477.18317
-				},
-				visible: false,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@basic-prop-states.ko.text",
-					fontName: "PaytoneOne",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				tint: {
-					r: 1,
-					b: 0.015686275,
-					a: 1
-				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			state: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "state",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 978.9769,
-					y: 198.59222
-				},
-				visible: true,
-				desc: "@basic-prop-states.state.desc_",
-				refPoint: {},
-				verbs: {
-					lookat: {
-						id: "lookat",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "state",
-								attr: "STATE",
-								value: "BLUE",
-								caID: "301582167"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@basic-prop-states.state.lookat.1.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "301582167"
-							},
-							{
-								class: "com.bladecoder.engine.actions.IfAttrAction",
-								actor: "state",
-								attr: "STATE",
-								value: "YELLOW",
-								caID: "602667286"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@basic-prop-states.state.lookat.4.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "602667286"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SayAction",
-								actor: "$PLAYER",
-								text: "@basic-prop-states.state.lookat.6.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: true
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "602667286"
-							},
-							{
-								class: "com.bladecoder.engine.actions.EndAction",
-								caID: "301582167"
-							}
-						]
-					},
-					pickup: {
-						id: "pickup",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "state",
-								state: "YELLOW"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "state",
-								tint: "ffee00ff"
-							}
-						]
-					},
-					"pickup.YELLOW": {
-						id: "pickup",
-						state: "YELLOW",
-						actions: [
-							{
-								class: "com.bladecoder.engine.actions.SetStateAction",
-								actor: "state",
-								state: "BLUE"
-							},
-							{
-								class: "com.bladecoder.engine.actions.SetActorAttrAction",
-								actor: "state",
-								tint: "00f7ffff"
-							}
-						]
-					}
-				},
-				interaction: true,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@basic-prop-states.state.text_",
-					fontName: "PaytoneOne",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			ok: {
-				class: "com.bladecoder.engine.model.SpriteActor",
-				id: "ok",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 956.2496,
-					y: 477.18317
-				},
-				visible: false,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "com.bladecoder.engine.model.TextRenderer",
-					text: "@basic-prop-states.ok.text__",
-					fontName: "PaytoneOne",
-					fontSize: 100,
-					borderWidth: 0,
-					borderColor: {
-						a: 1
-					},
-					borderStraight: true,
-					shadowOffsetX: 0,
-					shadowOffsetY: 0,
-					shadowColor: {
-						a: 1
-					},
-					align: 8,
-					orgAlign: 0
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				tint: {
-					r: 0.28235295,
-					g: 1,
-					a: 1
-				},
-				fakeDepth: false,
-				bboxFromRenderer: true
-			}
-		},
-		musicDesc: null,
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "com.bladecoder.engine.actions.PropertyAction",
-						prop: "TEST-PROP",
-						value: "test"
-					},
-					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
-						name: "TEST-PROP",
-						value: "test",
-						caID: "1751840606"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1751840606"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
-						actor: "ko",
-						visible: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.CancelVerbAction"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1751840606"
-					},
-					{
-						class: "com.bladecoder.engine.actions.CommentAction",
-						comment: "Property from the BladeEngine.properties file.",
-						debug: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
-						name: "title",
-						value: "Blade Engine Adventure",
-						caID: "1094711013"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1094711013"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
-						actor: "ko",
-						visible: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.CancelVerbAction"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1094711013"
-					},
-					{
-						class: "com.bladecoder.engine.actions.CommentAction",
-						comment: "PLATFORM property.",
-						debug: false
-					},
-					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
-						name: "PLATFORM",
-						value: "Desktop",
-						caID: "1143890192"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SayAction",
-						actor: "$PLAYER",
-						text: "@basic-prop-states.init.18.text",
-						type: "SUBTITLE",
-						queue: false,
-						wait: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1143890192"
-					},
-					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
-						name: "PLATFORM",
-						value: "Android",
-						caID: "1726514584"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SayAction",
-						actor: "$PLAYER",
-						text: "@basic-prop-states.init.20.text",
-						type: "SUBTITLE",
-						queue: false,
-						wait: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1726514584"
-					},
-					{
-						class: "com.bladecoder.engine.actions.IfPropertyAction",
-						name: "PLATFORM",
-						value: "iOS",
-						caID: "363902178"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SayAction",
-						actor: "$PLAYER",
-						text: "@basic-prop-states.init.23.text",
-						type: "SUBTITLE",
-						queue: false,
-						wait: true
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "363902178"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "363902178"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1726514584"
-					},
-					{
-						class: "com.bladecoder.engine.actions.EndAction",
-						caID: "1143890192"
-					},
-					{
-						class: "com.bladecoder.engine.actions.SetActorAttrAction",
-						actor: "ok",
-						visible: true
-					}
-				]
-			}
-		},
-		walkZone: null
 	}
 },
 initScene: "menu",

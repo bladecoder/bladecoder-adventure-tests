@@ -34,13 +34,16 @@ tasks.eclipse.doLast {
 
 // Run `gradle pack` task to generate skin.atlas file at assets/ui.
 import com.badlogic.gdx.tools.texturepacker.TexturePacker
-task pack << {
+task pack {
+	doLast {
+
   // Note that if you need multiple atlases, you can duplicate the
   // TexturePacker.process invocation and change paths to generate
   // additional atlases with this task.
   TexturePacker.process(
-    'raw/ui',           // Raw assets path.
+    'images-raw/ui',           // Raw assets path.
     'assets/ui/1/',        // Output directory.
     'ui'              // Name of the generated atlas (without extension).
   )
+  }
 }

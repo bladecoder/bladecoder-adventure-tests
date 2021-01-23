@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "4.0.2-SNAPSHOT",
+bladeEngineVersion: "4.0.2",
 sounds: {},
 scenes: {
 	actor3d: {
@@ -596,9 +596,28 @@ scenes: {
 					y: 8.148743
 				},
 				verbs: {
+					"pickup.PICKED": {
+						id: "pickup",
+						state: "PICKED",
+						actions: [
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@basic1.ball.pickup.PICKED.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							}
+						]
+					},
 					pickup: {
 						id: "pickup",
 						actions: [
+							{
+								class: "ActorState",
+								actor: "ball",
+								state: "PICKED"
+							},
 							{
 								class: "Goto",
 								actor: "$PLAYER",
@@ -851,6 +870,25 @@ scenes: {
 						id: "pickup",
 						actions: [
 							{
+								class: "IfActorAttr",
+								actor: "cube",
+								attr: "IN_INVENTORY",
+								value: "true",
+								caID: "619527093"
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@basic1.cube.pickup.1.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "619527093"
+							},
+							{
 								class: "Goto",
 								actor: "$PLAYER",
 								target: "cube",
@@ -865,6 +903,10 @@ scenes: {
 							{
 								class: "PickUp",
 								actor: "cube"
+							},
+							{
+								class: "End",
+								caID: "619527093"
 							}
 						]
 					},
@@ -1262,7 +1304,7 @@ scenes: {
 						actions: [
 							{
 								class: "Say",
-								actor: "test_actions",
+								actor: "$PLAYER",
 								text: "@01.test_actions.lookat.0.text",
 								type: "SUBTITLE",
 								queue: false,

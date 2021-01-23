@@ -9,15 +9,15 @@ GREEN> Fine, thanks!
 
 GREEN> Are you hungry?
 
-* PLAYER> No[.], I don't.
++ PLAYER> No[.], I I'm not.
 	GREEN> Ok, let me know when you want some food.
-* PLAYER> Yes.
++ PLAYER> Yes.
 	GREEN> Would you like a hamburger?
-	** PLAYER> Yes.
+	++ PLAYER> Yes.
 		GREEN> Maybe you are too fat, here you have a banana.
-	** PLAYER> No.
+	++ PLAYER> No.
 		GREEN> Well, here you have a banana.
-
+    --
 - PLAYER> Bye.
 
 -> END

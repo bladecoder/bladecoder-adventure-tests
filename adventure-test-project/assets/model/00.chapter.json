@@ -2267,6 +2267,187 @@ scenes: {
 		},
 		walkZone: "walkzone"
 	},
+	"ink-multiflow": {
+		id: "ink-multiflow",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			GREEN: {
+				class: "CharacterActor",
+				id: "GREEN",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1698.7587,
+					y: 262.90308
+				},
+				visible: true,
+				refPoint: {
+					x: -493.8849,
+					y: 8.514374
+				},
+				verbs: {},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left",
+					orgAlign: 0
+				},
+				tint: {
+					g: 1,
+					a: 1
+				},
+				scaleX: 0.41882372,
+				scaleY: 0.41882372,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
+			PLAYER: {
+				class: "CharacterActor",
+				id: "PLAYER",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 381.1529,
+					y: 120.9249
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 0
+				},
+				scaleX: 0.58708954,
+				scaleY: 0.58708954,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
+			target: {
+				class: "AnchorActor",
+				id: "target",
+				bbox: [],
+				pos: {
+					x: 734.9283,
+					y: 104.98978
+				},
+				visible: true
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
+				pos: {},
+				visible: true
+			}
+		},
+		musicDesc: null,
+		depthVector: {
+			x: 616.2952,
+			y: -227.47778
+		},
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "Cutmode",
+						value: true
+					},
+					{
+						class: "InkRun",
+						path: "multiflow.flow1",
+						flow: "flow1",
+						wait: false
+					},
+					{
+						class: "InkRun",
+						path: "multiflow.flow2",
+						flow: "flow2",
+						wait: false
+					}
+				]
+			}
+		},
+		player: "PLAYER",
+		walkZone: "walkzone"
+	},
 	ink1: {
 		id: "ink1",
 		layers: [

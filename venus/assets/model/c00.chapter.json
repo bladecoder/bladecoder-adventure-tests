@@ -1,5 +1,5 @@
 {
-bladeEngineVersion: "4.0.0",
+bladeEngineVersion: "4.0.3-SNAPSHOT",
 sounds: {
 	cable_click: {
 		id: "cable_click",
@@ -2640,17 +2640,47 @@ scenes: {
 						state: "INVENTORY",
 						actions: [
 							{
-								class: "Say",
-								actor: "player",
-								text: "@rope.use.INVENTORY.chair.0.text",
-								type: "SUBTITLE",
-								queue: false,
-								wait: false
+								class: "IfActorAttr",
+								actor: "chair",
+								attr: "STATE",
+								value: "BROKEN",
+								caID: "1701269635"
 							},
 							{
-								class: "RemoveInventoryItem",
-								id: "chair",
+								class: "Comment",
+								comment: "Pickup the chair if it is in the floor.",
+								debug: false
+							},
+							{
+								class: "RunVerb",
+								actor: "chair",
+								verb: "pickup",
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "1701269635"
+							},
+							{
+								class: "End",
+								caID: "1701269635"
+							},
+							{
+								class: "IfActorAttr",
+								actor: "chair",
+								attr: "STATE",
+								value: "INVENTORY",
+								caID: "598502262"
+							},
+							{
+								class: "DropItem",
+								actor: "chair",
 								scene: "limbo"
+							},
+							{
+								class: "ActorState",
+								actor: "rope",
+								state: "ARMED"
 							},
 							{
 								class: "Animation",
@@ -2661,9 +2691,25 @@ scenes: {
 								keepDirection: false
 							},
 							{
-								class: "ActorState",
-								actor: "rope",
-								state: "ARMED"
+								class: "Say",
+								actor: "player",
+								text: "@rope.use.INVENTORY.chair.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: false
+							},
+							{
+								class: "End",
+								caID: "598502262"
+							},
+							{
+								class: "RunVerb",
+								verb: "use",
+								wait: true
+							},
+							{
+								class: "End",
+								caID: "598502262"
 							}
 						]
 					},
@@ -2770,18 +2816,6 @@ scenes: {
 								actor: "rope",
 								text: "@rope.pickup.ARMED.0.9.text",
 								direction: "FRONT",
-								wait: true
-							}
-						]
-					},
-					"pickup.INVENTORY": {
-						id: "pickup",
-						state: "INVENTORY",
-						actions: [
-							{
-								class: "LookAt",
-								actor: "rope",
-								text: "@rope.pickup.INVENTORY.0.text",
 								wait: true
 							}
 						]

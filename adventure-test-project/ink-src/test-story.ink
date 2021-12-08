@@ -1,5 +1,6 @@
 INCLUDE scene1.ink
 INCLUDE scene2.ink
+INCLUDE multiflow.ink
 
 // ---------------------- TEST MENU -------------------------------
 

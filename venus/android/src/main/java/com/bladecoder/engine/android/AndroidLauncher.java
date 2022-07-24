@@ -15,7 +15,6 @@ public class AndroidLauncher extends AndroidApplication {
         AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
         cfg.useAccelerometer = false;
         cfg.useCompass = false;
-//        cfg.numSamples = 2;
         cfg.useImmersiveMode = true;
         
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

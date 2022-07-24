@@ -145,7 +145,7 @@ public class VenusMenuScreen extends MenuScreen {
 		}
 
 		// Show Johnny Bonasera button
-		if (bonaseraURL != null) {
+		if (bonaseraURL != null && !Gdx.app.getType().equals(ApplicationType.Android)) {
 
 			// LEFT TABLE
 			Table leftTable = new Table();

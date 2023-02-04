@@ -1,30 +1,28 @@
 apply plugin: 'java'
 apply plugin: 'java-library'
 
-sourceCompatibility = 1.7
-targetCompatibility=1.7
+sourceCompatibility = 1.8
+targetCompatibility=1.8
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-eclipse.project.name = appName + '-core'
 
 dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
-        api fileTree(dir: '../libs', include: '*.jar')
         api "com.bladecoder.engine:blade-engine:$bladeEngineVersion"
-        api "com.bladecoder.ink:blade-ink:$bladeInkVersion"
-        api "org.minimalcode:minimalcode-beans:0.5.1"
-        api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-		implementation "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"
- 
+        implementation "com.bladecoder.ink:blade-ink:$bladeInkVersion"
+        implementation "org.minimalcode:minimalcode-beans:0.5.1"
+        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        implementation "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"
+        
+        
         if(project.hasProperty("spinePlugin") && project.spinePlugin.equals("true")) {
         	println "Using Spine Plugin..."
-        	api "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion"
+        	implementation "com.bladecoder.engine:blade-engine-spine-plugin:$bladeEngineVersion"
         }
 }
 
 
 task setVersion(type: WriteProperties) {
-
 	def props = new Properties()
 	def propFile = project.file("../assets/BladeEngine.properties");
 	props.load(new FileReader(propFile))

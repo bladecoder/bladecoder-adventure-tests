@@ -1,199 +1,7 @@
 {
-bladeEngineVersion: "4.0.2",
+bladeEngineVersion: "4.1.1-SNAPSHOT",
 sounds: {},
 scenes: {
-	actor3d: {
-		id: "actor3d",
-		layers: [
-			{
-				name: "foreground"
-			},
-			{
-				name: "dynamic",
-				dynamic: true
-			},
-			{
-				name: "background"
-			}
-		],
-		actors: {
-			fg1: {
-				class: "SpriteActor",
-				id: "fg1",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 158.68916
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "AtlasRenderer",
-					fanims: {
-						column_fg: {
-							class: "AtlasAnimationDesc",
-							id: "column_fg",
-							source: "00",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "column_fg",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			fg2: {
-				class: "SpriteActor",
-				id: "fg2",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2727.407
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "foreground",
-				renderer: {
-					class: "AtlasRenderer",
-					fanims: {
-						head_fg: {
-							class: "AtlasAnimationDesc",
-							id: "head_fg",
-							source: "00",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "head_fg",
-					orgAlign: 4
-				},
-				scaleX: 1,
-				scaleY: 1,
-				rot: 0,
-				fakeDepth: false,
-				bboxFromRenderer: true
-			},
-			player: {
-				class: "CharacterActor",
-				id: "player",
-				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-				pos: {
-					x: 2174.0637,
-					y: 45.82788
-				},
-				visible: true,
-				refPoint: {},
-				verbs: {},
-				interaction: false,
-				zIndex: 0,
-				layer: "dynamic",
-				renderer: {
-					class: "Sprite3DRenderer",
-					fanims: {
-						stand: {
-							class: "com.bladecoder.engine.anim.AnimationDesc",
-							id: "stand",
-							source: "Robie",
-							duration: 1,
-							animationType: "NO_REPEAT",
-							count: -1,
-							preload: true
-						},
-						talk: {
-							class: "com.bladecoder.engine.anim.AnimationDesc",
-							id: "talk",
-							source: "Robie",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						},
-						walk: {
-							class: "com.bladecoder.engine.anim.AnimationDesc",
-							id: "walk",
-							source: "Robie",
-							duration: 1,
-							animationType: "REPEAT",
-							count: -1,
-							preload: true
-						}
-					},
-					initAnimation: "stand",
-					orgAlign: 4,
-					width: 700,
-					height: 700,
-					cameraPos: {
-						x: -3.06087E-8,
-						y: 1.5016524,
-						z: 2.325469
-					},
-					cameraRot: {
-						x: -14.617197,
-						y: -8.823316E-7,
-						z: 1.5707963
-					},
-					cameraName: "Camera",
-					cameraFOV: 49.3,
-					renderShadow: true,
-					modelRotation: 0
-				},
-				scaleX: 0.9786623,
-				scaleY: 0.9786623,
-				rot: 0,
-				fakeDepth: true,
-				bboxFromRenderer: true,
-				walkingSpeed: 700
-			},
-			walkzone: {
-				class: "WalkZoneActor",
-				id: "walkzone",
-				bbox: [ 108.911804, -40.125336, 627.953, 441.84213, 668.9139, 407.532, 533.09656, 221.31633, 907.7121, 111.8475, 1196.9875, 214.7468, 1176.444, 387.23248, 1793.0767, 449.25903, 1853.1136, 514.7108, 2497.128, 520.0789, 2869.7212, -0.8026047 ],
-				pos: {
-					x: 18.916138,
-					y: 3.7832947
-				},
-				visible: true
-			}
-		},
-		backgroundAtlas: "00",
-		backgroundRegionId: "bg1",
-		musicDesc: null,
-		depthVector: {
-			x: 2673.551,
-			y: -11.464233
-		},
-		verbs: {
-			init: {
-				id: "init",
-				actions: [
-					{
-						class: "Say",
-						actor: "$PLAYER",
-						text: "@actor3d.init.0.text",
-						type: "SUBTITLE",
-						queue: false,
-						wait: true
-					}
-				]
-			}
-		},
-		player: "player",
-		walkZone: "walkzone"
-	},
 	"basic-prop-states": {
 		id: "basic-prop-states",
 		layers: [
@@ -239,7 +47,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -282,7 +91,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 0.28235295,
@@ -417,7 +227,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				scaleX: 1,
 				scaleY: 1,
@@ -1670,7 +1481,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 4
+					orgAlign: 4,
+					maxWidth: 0
 				},
 				scaleX: 2,
 				scaleY: 2,
@@ -2659,7 +2471,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -2713,7 +2526,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -4192,6 +4006,10 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
+								class: "ShowInventory",
+								value: true
+							},
+							{
 								class: "Leave",
 								scene: "actor3d",
 								init: true
@@ -4218,7 +4036,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -4246,6 +4065,10 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
+								class: "ShowInventory",
+								value: true
+							},
+							{
 								class: "Leave",
 								scene: "basic1",
 								init: true
@@ -4272,7 +4095,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -4300,6 +4124,10 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
+								class: "ShowInventory",
+								value: true
+							},
+							{
 								class: "Leave",
 								scene: "ink1",
 								init: true
@@ -4326,7 +4154,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -4354,6 +4183,10 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
+								class: "ShowInventory",
+								value: true
+							},
+							{
 								class: "Leave",
 								scene: "inventory",
 								init: true
@@ -4380,7 +4213,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -4408,6 +4242,10 @@ scenes: {
 						id: "leave",
 						actions: [
 							{
+								class: "ShowInventory",
+								value: true
+							},
+							{
 								class: "Leave",
 								scene: "parallax",
 								init: true
@@ -4434,7 +4272,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					r: 1,
@@ -4488,7 +4327,8 @@ scenes: {
 						a: 1
 					},
 					align: 8,
-					orgAlign: 0
+					orgAlign: 0,
+					maxWidth: 0
 				},
 				tint: {
 					g: 1,
@@ -4512,6 +4352,10 @@ scenes: {
 						actor: "title",
 						position: "0.0,-200.0",
 						anchor: "TOP"
+					},
+					{
+						class: "ShowInventory",
+						value: false
 					}
 				]
 			}
@@ -4798,6 +4642,334 @@ scenes: {
 		},
 		verbs: {},
 		player: "char",
+		walkZone: "walkzone"
+	},
+	"test-char-images": {
+		id: "test-char-images",
+		layers: [
+			{
+				name: "foreground"
+			},
+			{
+				name: "dynamic",
+				dynamic: true
+			},
+			{
+				name: "background"
+			}
+		],
+		actors: {
+			Green: {
+				class: "CharacterActor",
+				id: "Green",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 1380.641,
+					y: 87.49176
+				},
+				visible: true,
+				refPoint: {
+					x: -641.4441,
+					y: -3.049347
+				},
+				verbs: {
+					option3: {
+						id: "option3",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@test-char-images.Green.option13.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "Green",
+								text: "@test-char-images.Green.option13.1.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					option1: {
+						id: "option1",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@test-char-images.Green.option1.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "Green",
+								text: "@test-char-images.Green.option1.1.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					option2: {
+						id: "option2",
+						actions: [
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Say",
+								actor: "$PLAYER",
+								text: "@test-char-images.Green.option12.0.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Say",
+								actor: "Green",
+								text: "@test-char-images.Green.option12.1.text",
+								type: "SUBTITLE",
+								queue: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					},
+					talkto: {
+						id: "talkto",
+						actions: [
+							{
+								class: "Goto",
+								actor: "$PLAYER",
+								target: "Green",
+								ignoreWalkZone: false,
+								wait: true
+							},
+							{
+								class: "Cutmode",
+								value: true
+							},
+							{
+								class: "Talkto",
+								actor: "Green",
+								dialog: "d"
+							},
+							{
+								class: "Cutmode",
+								value: false
+							}
+						]
+					}
+				},
+				interaction: true,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.left",
+					orgAlign: 4
+				},
+				tint: {
+					g: 1,
+					a: 1
+				},
+				scaleX: 0.4875236,
+				scaleY: 0.4875236,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				dialogs: {
+					d: {
+						id: "d",
+						options: [
+							{
+								text: "@test-char-images.Green.d.0.text",
+								responseText: null,
+								verbId: "option1",
+								next: "this",
+								once: false,
+								soundId: null,
+								responseSoundId: null,
+								visible: true
+							},
+							{
+								text: "@test-char-images.Green.d.1.text",
+								responseText: null,
+								verbId: "option2",
+								next: "this",
+								once: false,
+								soundId: null,
+								responseSoundId: null,
+								visible: true
+							},
+							{
+								text: "@test-char-images.Green.d.2.text",
+								responseText: null,
+								verbId: "option3",
+								next: null,
+								once: false,
+								soundId: null,
+								responseSoundId: null,
+								visible: true
+							}
+						]
+					}
+				},
+				walkingSpeed: 1000
+			},
+			Red: {
+				class: "CharacterActor",
+				id: "Red",
+				bbox: [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+				pos: {
+					x: 718.86035,
+					y: 81.915375
+				},
+				visible: true,
+				refPoint: {},
+				verbs: {},
+				interaction: false,
+				zIndex: 0,
+				layer: "dynamic",
+				renderer: {
+					class: "AtlasRenderer",
+					fanims: {
+						"stand.right": {
+							class: "AtlasAnimationDesc",
+							id: "stand.right",
+							source: "char",
+							duration: 1,
+							animationType: "NO_REPEAT",
+							count: -1,
+							preload: true
+						},
+						"talk.right": {
+							class: "AtlasAnimationDesc",
+							id: "talk.right",
+							source: "char",
+							duration: 0.4,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						},
+						"walk.right": {
+							class: "AtlasAnimationDesc",
+							id: "walk.right",
+							source: "char",
+							duration: 0.7,
+							animationType: "REPEAT",
+							count: -1,
+							preload: true
+						}
+					},
+					initAnimation: "stand.right",
+					orgAlign: 4
+				},
+				tint: {
+					r: 1,
+					a: 1
+				},
+				scaleX: 0.49266466,
+				scaleY: 0.49266466,
+				rot: 0,
+				fakeDepth: true,
+				bboxFromRenderer: true,
+				walkingSpeed: 1000
+			},
+			walkzone: {
+				class: "WalkZoneActor",
+				id: "walkzone",
+				bbox: [ 34.580566, 38.903107, 64.83856, 483.48502, 1850.839, 500.77533, 1885.4194, 30.257996 ],
+				pos: {
+					x: -24.151001,
+					y: 4.0252075
+				},
+				visible: true
+			}
+		},
+		musicDesc: null,
+		depthVector: {
+			x: 616.2952,
+			y: -468.37732
+		},
+		verbs: {
+			init: {
+				id: "init",
+				actions: [
+					{
+						class: "Cutmode",
+						value: true
+					},
+					{
+						class: "Say",
+						actor: "Green",
+						text: "@test-char-images.init.1.text",
+						type: "SUBTITLE",
+						queue: false,
+						wait: true
+					},
+					{
+						class: "Cutmode",
+						value: false
+					}
+				]
+			}
+		},
+		player: "Red",
 		walkZone: "walkzone"
 	}
 },

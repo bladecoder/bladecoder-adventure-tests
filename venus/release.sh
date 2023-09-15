@@ -84,7 +84,7 @@ elif [[ "$RELEASE_MODE" == "ios" ]]; then
   cp ios/build/robovm/IOSLauncher.ipa "$RELFILENAME"
 
   PASSWS=`cat $HOME/.config/upload-app-pass.local`
-  xcrun altool --upload-app --type ios --file "$RELFILENAME" --username bladecoder@gmail.com --password $PASSWS
+  #xcrun altool --upload-app --type ios --file "$RELFILENAME" --username bladecoder@gmail.com --password $PASSWS
 else
   echo Release type param not valid: $RELEASE_MODE. Valid options: amazon, apk, aab, ios or steam.
   exit -1

@@ -6,8 +6,8 @@ android {
     defaultConfig {
         applicationId "com.bladecoder.advtest"
         minSdkVersion 21
-        targetSdkVersion % API_LEVEL %
-                versionName version
+        targetSdkVersion 32
+        versionName version
 
         if (project.hasProperty('versionCode'))
             versionCode project.versionCode.toInteger()

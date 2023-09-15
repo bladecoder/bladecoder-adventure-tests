@@ -1,152 +1,152 @@
 
 scene1_rope_throw.png
-size: 1744,853
+size: 1746, 855
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear, Linear
 repeat: none
 rope.throw
   rotate: false
-  xy: 1, 386
+  xy: 2, 387
   size: 224, 466
   orig: 335, 500
   offset: 57, 8
   index: 15
 rope.throw
   rotate: false
-  xy: 227, 360
+  xy: 228, 361
   size: 166, 492
   orig: 335, 500
   offset: 115, 8
   index: 16
 rope.throw
   rotate: false
-  xy: 395, 360
+  xy: 396, 361
   size: 123, 492
   orig: 335, 500
   offset: 159, 8
   index: 20
 rope.throw
   rotate: false
-  xy: 520, 360
+  xy: 521, 361
   size: 121, 492
   orig: 335, 500
   offset: 160, 8
   index: 17
 rope.throw
   rotate: false
-  xy: 643, 360
+  xy: 644, 361
   size: 121, 492
   orig: 335, 500
   offset: 160, 8
   index: 18
 rope.throw
   rotate: false
-  xy: 766, 360
+  xy: 767, 361
   size: 121, 492
   orig: 335, 500
   offset: 160, 8
   index: 21
 rope.throw
   rotate: false
-  xy: 889, 360
+  xy: 890, 361
   size: 120, 492
   orig: 335, 500
   offset: 161, 8
   index: 19
 rope.throw
   rotate: false
-  xy: 1011, 495
+  xy: 1012, 496
   size: 238, 357
   orig: 335, 500
   offset: 43, 8
   index: 14
 rope.throw
   rotate: false
-  xy: 1251, 495
+  xy: 1252, 496
   size: 230, 357
   orig: 335, 500
   offset: 51, 8
   index: 13
 rope.throw
   rotate: false
-  xy: 1, 27
+  xy: 2, 28
   size: 222, 357
   orig: 335, 500
   offset: 59, 8
   index: 4
 rope.throw
   rotate: false
-  xy: 1483, 495
+  xy: 1484, 496
   size: 219, 357
   orig: 335, 500
   offset: 62, 8
   index: 3
 rope.throw
   rotate: false
-  xy: 225, 1
+  xy: 226, 2
   size: 181, 357
   orig: 335, 500
   offset: 100, 8
   index: 12
 rope.throw
   rotate: false
-  xy: 408, 1
+  xy: 409, 2
   size: 166, 357
   orig: 335, 500
   offset: 160, 8
   index: 9
 rope.throw
   rotate: false
-  xy: 576, 1
+  xy: 577, 2
   size: 163, 357
   orig: 335, 500
   offset: 160, 8
   index: 8
 rope.throw
   rotate: false
-  xy: 741, 1
+  xy: 742, 2
   size: 162, 357
   orig: 335, 500
   offset: 119, 8
   index: 2
 rope.throw
   rotate: false
-  xy: 905, 1
+  xy: 906, 2
   size: 124, 357
   orig: 335, 500
   offset: 157, 8
   index: 1
 rope.throw
   rotate: false
-  xy: 1031, 111
+  xy: 1032, 112
   size: 185, 382
   orig: 335, 500
   offset: 96, 8
   index: 5
 rope.throw
   rotate: false
-  xy: 1218, 97
+  xy: 1219, 98
   size: 147, 396
   orig: 335, 500
   offset: 134, 8
   index: 6
 rope.throw
   rotate: false
-  xy: 1367, 124
+  xy: 1368, 125
   size: 121, 369
   orig: 335, 500
   offset: 160, 8
   index: 7
 rope.throw
   rotate: false
-  xy: 1490, 136
+  xy: 1491, 137
   size: 130, 357
   orig: 335, 500
   offset: 160, 8
   index: 10
 rope.throw
   rotate: false
-  xy: 1622, 136
+  xy: 1623, 137
   size: 121, 357
   orig: 335, 500
   offset: 160, 8

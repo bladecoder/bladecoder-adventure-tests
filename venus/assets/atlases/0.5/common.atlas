@@ -1,61 +1,61 @@
 
 common.png
-size: 554,77
+size: 140, 291
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear, Linear
 repeat: none
 cutter.charging
   rotate: false
-  xy: 1, 20
+  xy: 2, 233
   size: 90, 56
   orig: 98, 62
   offset: 8, 6
   index: 1
 cutter.charging
   rotate: false
-  xy: 93, 20
+  xy: 2, 175
   size: 90, 56
   orig: 98, 62
   offset: 8, 6
   index: 2
 cutter.charging
   rotate: false
-  xy: 185, 20
+  xy: 2, 117
   size: 90, 56
   orig: 98, 62
   offset: 8, 6
   index: 3
 cutter.inventory
   rotate: false
-  xy: 277, 5
+  xy: 2, 44
   size: 70, 71
   orig: 75, 75
   offset: 2, 2
   index: -1
 cutter.withcable
   rotate: false
-  xy: 503, 29
+  xy: 74, 2
   size: 50, 47
   orig: 50, 50
   offset: 0, 1
   index: -1
 diosa
   rotate: false
-  xy: 460, 6
+  xy: 94, 142
   size: 41, 70
   orig: 41, 70
   offset: 0, 0
   index: -1
 diosa.inventory
   rotate: false
-  xy: 414, 1
+  xy: 94, 214
   size: 44, 75
   orig: 75, 75
   offset: 15, 0
   index: -1
 navaja.inventory
   rotate: false
-  xy: 349, 12
+  xy: 74, 51
   size: 63, 64
   orig: 75, 75
   offset: 5, 5

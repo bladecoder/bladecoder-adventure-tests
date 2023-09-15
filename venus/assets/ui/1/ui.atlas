@@ -1,12 +1,12 @@
 
 ui.png
-size: 695,524
+size: 963, 524
 format: RGBA8888
-filter: Linear,Linear
+filter: Linear, Linear
 repeat: none
 back
   rotate: false
-  xy: 476, 403
+  xy: 579, 101
   size: 120, 120
   orig: 120, 120
   offset: 0, 0
@@ -20,7 +20,7 @@ bonasera_icon
   index: -1
 border_rect
   rotate: false
-  xy: 170, 1
+  xy: 915, 192
   size: 29, 29
   split: 5, 5, 5, 5
   orig: 29, 29
@@ -28,7 +28,7 @@ border_rect
   index: -1
 border_rect4
   rotate: false
-  xy: 421, 208
+  xy: 170, 16
   size: 32, 32
   split: 4, 4, 5, 5
   orig: 32, 32
@@ -36,7 +36,7 @@ border_rect4
   index: -1
 bubblepointer
   rotate: false
-  xy: 339, 189
+  xy: 321, 38
   size: 79, 51
   orig: 79, 51
   offset: 0, 0
@@ -50,105 +50,147 @@ credits
   index: -1
 debug
   rotate: false
-  xy: 1, 15
+  xy: 174, 357
   size: 166, 166
   orig: 166, 166
   offset: 0, 0
   index: -1
 delete
   rotate: false
-  xy: 472, 94
+  xy: 702, 109
   size: 112, 112
   orig: 112, 112
   offset: 0, 0
   index: -1
 dialog_down
   rotate: false
-  xy: 597, 207
+  xy: 679, 5
   size: 93, 93
   orig: 93, 93
   offset: 0, 0
   index: -1
 dialog_up
   rotate: false
-  xy: 587, 111
+  xy: 775, 13
   size: 93, 93
   orig: 93, 93
   offset: 0, 0
   index: -1
 help
   rotate: false
-  xy: 170, 184
+  xy: 1, 15
   size: 166, 166
   orig: 166, 166
   offset: 0, 0
   index: -1
 hotspot
   rotate: false
-  xy: 597, 303
+  xy: 579, 1
   size: 97, 97
   orig: 97, 97
   offset: 0, 0
   index: -1
 hotspotpointer
   rotate: false
-  xy: 174, 375
+  xy: 343, 375
   size: 148, 148
   orig: 148, 148
   offset: 0, 0
   index: -1
 inventory
   rotate: false
-  xy: 339, 243
+  xy: 321, 92
   size: 129, 129
   orig: 129, 129
   offset: 0, 0
   index: -1
+lang_de
+  rotate: false
+  xy: 494, 375
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1
+lang_en
+  rotate: false
+  xy: 645, 375
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1
+lang_es
+  rotate: false
+  xy: 796, 375
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1
+lang_fr
+  rotate: false
+  xy: 343, 224
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1
+lang_it
+  rotate: false
+  xy: 494, 224
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1
+lang_ru
+  rotate: false
+  xy: 645, 224
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1
 leave
   rotate: false
-  xy: 472, 1
+  xy: 453, 5
   size: 94, 90
   orig: 94, 90
   offset: 0, 0
   index: -1
 lookat
   rotate: false
-  xy: 325, 375
+  xy: 796, 224
   size: 148, 148
   orig: 148, 148
   offset: 0, 0
   index: -1
 menu
   rotate: false
-  xy: 471, 249
+  xy: 453, 98
   size: 123, 123
   orig: 123, 123
   offset: 0, 0
   index: -1
 pickup
   rotate: false
-  xy: 170, 33
+  xy: 170, 202
   size: 148, 148
   orig: 148, 148
   offset: 0, 0
   index: -1
 plus
   rotate: false
-  xy: 587, 17
+  xy: 871, 32
   size: 91, 91
   orig: 91, 91
   offset: 0, 0
   index: -1
 pointer
   rotate: false
-  xy: 599, 428
+  xy: 817, 126
   size: 95, 95
   orig: 95, 95
   offset: 0, 0
   index: -1
 rect
   rotate: false
-  xy: 456, 209
+  xy: 403, 58
   size: 31, 31
   split: 5, 5, 5, 4
   orig: 31, 31
@@ -156,14 +198,14 @@ rect
   index: -1
 talkto
   rotate: false
-  xy: 321, 33
+  xy: 170, 51
   size: 148, 148
   orig: 148, 148
   offset: 0, 0
   index: -1
 white_pixel
   rotate: false
-  xy: 1, 9
+  xy: 702, 103
   size: 3, 3
   orig: 3, 3
   offset: 0, 0

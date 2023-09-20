@@ -1,13 +1,12 @@
 apply plugin: 'android'
 
 android {
-
     compileSdkVersion highestSdkAvailable("android-31")
 
     defaultConfig {
         applicationId "org.bladecoder.engine"
-        minSdkVersion 21
-        targetSdkVersion 32
+        minSdkVersion 23
+        targetSdkVersion 33
         versionName version
 
         if (project.hasProperty('versionCode'))

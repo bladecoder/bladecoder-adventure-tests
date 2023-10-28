@@ -23,21 +23,19 @@ dependencies {
 
 
 task setVersion(type: WriteProperties) {
-	def props = new Properties()
-	def propFile = project.file("../assets/BladeEngine.properties");
-	props.load(new FileReader(propFile))
+    def props = new Properties()
+    def propFile = project.file("../assets/BladeEngine.properties");
+    props.load(new FileReader(propFile))
 
     props."version" = version
-	props."bladeEngineVersion" = bladeEngineVersion
-	props."gdxVersion" = gdxVersion
-	props."roboVMVersion" = roboVMVersion
+    props."bladeEngineVersion" = bladeEngineVersion
+    props."gdxVersion" = gdxVersion
+    props."roboVMVersion" = roboVMVersion
 
-	setProperties(props);
-	setOutputFile(propFile);
-	
-	doLast {
-		println "Set version info in versions.properties"
-	}
+    setProperties(props);
+    setOutputFile(propFile);
+
+    doLast {
+        println "Set version info in versions.properties"
+    }
 }
-
-processResources.finalizedBy(setVersion)

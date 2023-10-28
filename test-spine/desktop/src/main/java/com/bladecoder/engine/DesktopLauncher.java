@@ -1,4 +1,4 @@
-package com.bladecoder.engine.desktop;
+package com.bladecoder.engine;
 
 import com.badlogic.gdx.Files.FileType;
 import com.badlogic.gdx.Gdx;
@@ -6,12 +6,10 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Graphics;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Window;
-import com.bladecoder.engine.BladeEngine;
 import com.bladecoder.engine.ui.SceneScreen;
 import com.bladecoder.engine.ui.UI.Screens;
 import com.bladecoder.engine.util.Config;
 import org.lwjgl.glfw.GLFW;
-import org.lwjgl.system.Configuration;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +23,7 @@ public class DesktopLauncher extends BladeEngine {
     private static final int WINDOW_HEIGHT = 1080 / 2;
 
     private boolean fullscreen = true;
-    private Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
+    private final Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
 
     private float speed = 1.0f;
 
@@ -43,10 +41,8 @@ public class DesktopLauncher extends BladeEngine {
         cfg.setTitle(p.getProperty(Config.TITLE_PROP, "Blade Engine Adventure") + " "
                 + p.getProperty(Config.VERSION_PROP, ""));
 
-        cfg.setWindowedMode(WINDOW_WIDTH, WINDOW_HEIGHT);
         cfg.setResizable(true);
         cfg.useVsync(true);
-        cfg.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.ANGLE_GLES20, 0, 0);
     }
 
     public void run() {
@@ -62,6 +58,7 @@ public class DesktopLauncher extends BladeEngine {
             iconList.add("icons/icon16.png");
 
         cfg.setWindowIcon(FileType.Internal, iconList.toArray(new String[0]));
+        cfg.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.GL20, 0, 0);
 
         new Lwjgl3Application(this, cfg);
     }
@@ -122,6 +119,10 @@ public class DesktopLauncher extends BladeEngine {
                 }
             } else if (s.equals("-h")) {
                 usage();
+            } else if (s.equals("-opengl")) {
+                cfg.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.GL20, 0, 0);
+            } else if (s.equals("-angle")) {
+                cfg.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.ANGLE_GLES20, 0, 0);
             } else {
                 if (i == 0 && !s.startsWith("-"))
                     continue; // When embeded JRE the 0 parameter is the app name
@@ -129,15 +130,26 @@ public class DesktopLauncher extends BladeEngine {
                 usage();
             }
         }
+
+        if (!fullscreen)
+            cfg.setWindowedMode(WINDOW_WIDTH, WINDOW_HEIGHT);
+
     }
 
     public void usage() {
-        System.out.println("Usage:\n" + "-chapter chapter\tLoads the selected chapter\n"
-                + "-t scene_name\tStart test mode for the scene\n" + "-p record_name\tPlay previusly recorded games\n"
-                + "-f\tSet fullscreen mode\n" + "-w\tSet windowed mode\n" + "-d\tShow debug messages\n"
-                + "-res width\tForce the resolution width\n" + "-l game_state\tLoad the previusly saved game state\n"
-                + "-r\tRun the game from the begining\n" + "-s speed\tSets the game speed\n"
-                + "-aspect aspect_ratio\tSets the specified screen aspect (16:9, 4:3, 16:10)\n");
+        System.out.println(
+                "Usage:\n"
+                        + "-chapter chapter\tLoads the selected chapter\n"
+                        + "-t scene_name\tStart test mode for the scene\n"
+                        + "-p record_name\tPlay previusly recorded games\n"
+                        + "-f\tSet fullscreen mode\n"
+                        + "-w\tSet windowed mode\n"
+                        + "-d\tShow debug messages\n"
+                        + "-res width\tForce the resolution width\n"
+                        + "-l game_state\tLoad the previusly saved game state\n"
+                        + "-r\tRun the game from the begining\n"
+                        + "-s speed\tSets the game speed\n"
+                        + "-aspect aspect_ratio\tSets the specified screen aspect (16:9, 4:3, 16:10)\n");
 
         System.exit(0);
     }
@@ -161,8 +173,10 @@ public class DesktopLauncher extends BladeEngine {
     }
 
     public static void main(String[] args) {
-        // if(System.getProperty("os.name").contains("Mac"))
-        //     Configuration.GLFW_LIBRARY_NAME.set("glfw_async");
+//        if (SharedLibraryLoader.isMac && !"1".equals(System.getenv("JAVA_STARTED_ON_FIRST_THREAD_" + LibC.getpid()))) {
+//            System.out.println("MacOs detected. Running in async mode.");
+//            Configuration.GLFW_LIBRARY_NAME.set("glfw_async");
+//        }
 
         DesktopLauncher game = new DesktopLauncher();
         game.parseParams(args);
